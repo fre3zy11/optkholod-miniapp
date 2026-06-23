@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>ОптХолод — Mini App</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="row small-row">
+        <button class="pill" id="langBtn" type="button">RU⌄</button>
+        <img src="assets/logo.png" class="logo" alt="ОптХолод" />
+        <button class="pill" id="currencyBtn" type="button">RUB⌄</button>
+      </div>
+      <div class="search-wrap">
+        <span>⌕</span>
+        <input id="search" placeholder="Поиск товаров" />
+        <button id="favBtn" class="heart">♡</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Ассортимент</h1>
+        <p>Замороженные продукты питания оптом с доставкой по всей России</p>
+      </div>
+    </section>
+
+    <nav class="chips" id="categories"></nav>
+
+    <main class="content">
+      <div class="section-title">
+        <h2 id="pageTitle">Новинки</h2>
+        <button id="showAll">Смотреть все ›</button>
+      </div>
+      <div class="grid" id="products"></div>
+    </main>
+
+    <footer class="bottom-nav">
+      <button class="nav active" data-tab="new">✦<span>Новинки</span></button>
+      <button class="nav" data-tab="catalog">▦<span>Каталог</span></button>
+      <button class="nav" data-tab="fav">♡<span>Избранное</span></button>
+      <button class="nav" data-tab="cart">🛒<span>Корзина</span><b id="cartCount">0</b></button>
+    </footer>
+  </div>
+
+  <div class="sheet" id="cartSheet">
+    <div class="sheet-box">
+      <div class="sheet-head">
+        <h3 id="cartTitle">Корзина</h3>
+        <button id="closeCart">×</button>
+      </div>
+      <div id="cartItems"></div>
+      <div class="total"><span id="totalLabel">Итого:</span> <b id="total">0 ₽</b></div>
+      <button class="checkout" id="checkout">Оформить заказ</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
