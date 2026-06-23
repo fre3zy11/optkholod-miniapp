@@ -3,14 +3,14 @@ import asyncio
 from dotenv import load_dotenv
 
 from aiohttp import web
-from aiogram import Bot, Dispatcher, F
+from aiogram import Bot, Dispatcher
 from aiogram.filters import CommandStart
 from aiogram.types import (
     Message,
     InlineKeyboardMarkup,
     InlineKeyboardButton,
-    MenuButtonWebApp,
     WebAppInfo,
+    MenuButtonWebApp,
 )
 from aiogram.utils.web_app import safe_parse_webapp_init_data
 
@@ -19,13 +19,28 @@ load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 WEBAPP_URL = os.getenv("WEBAPP_URL")
 
+if not BOT_TOKEN:
+    raise RuntimeError("BOT_TOKEN is missing in .env")
+if not WEBAPP_URL:
+    raise RuntimeError("WEBAPP_URL is missing in .env")
+
 bot = Bot(BOT_TOKEN)
 dp = Dispatcher()
 
 
 @dp.message(CommandStart())
 async def start(message: Message):
-    await message.answer("hello")
+    kb = InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(
+                    text="🛍 Магазин",
+                    web_app=WebAppInfo(url=WEBAPP_URL),
+                )
+            ]
+        ]
+    )
+    await message.answer("Открой Mini App:", reply_markup=kb)
 
 
 async def index(request: web.Request):
@@ -53,6 +68,12 @@ async def auth(request: web.Request):
 
 
 async def run_bot():
+    await bot.set_chat_menu_button(
+        menu_button=MenuButtonWebApp(
+            text="🛍 Магазин",
+            web_app=WebAppInfo(url=WEBAPP_URL),
+        )
+    )
     await dp.start_polling(bot)
 
 
@@ -69,13 +90,6 @@ async def run_web():
 
 
 async def main():
-    await bot.set_chat_menu_button(
-        menu_button=MenuButtonWebApp(
-            text="🛍 Магазин",
-            web_app=WebAppInfo(url=WEBAPP_URL)
-        )
-    )
-    
     await run_web()
     await run_bot()
 
