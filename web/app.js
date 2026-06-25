@@ -35,7 +35,7 @@ let cart = JSON.parse(localStorage.getItem('cart') || '{}');
 const $ = (s) => document.querySelector(s);
 const text = (key) => translations[currentLang][key];
 const money = (n) => Number(n).toLocaleString(currentLang === 'ru' ? 'ru-RU' : 'en-US', { minimumFractionDigits: 2 }) + ' ₽';
-const icon = (c) => ({все:'▦', ягоды:'❄️', фрукты:'🍎', грибы:'🍄', овощи:'🥕', полуфабрикаты:'📦', фри:'🍟'}[c] || '');
+const icon = (c) => '';  // official category style: no emoji/icons
 
 function save() {
   localStorage.setItem('fav', JSON.stringify(fav));
@@ -48,7 +48,7 @@ function updateCount() {
 
 function renderCats() {
   $('#categories').innerHTML = cats.map(c => `
-    <button class="chip ${c === activeCat ? 'active' : ''}" data-cat="${c}">${icon(c)} ${translations[currentLang].cats[c]}</button>
+    <button class="chip ${c === activeCat ? 'active' : ''}" data-cat="${c}">${translations[currentLang].cats[c]}</button>
   `).join('');
 }
 
