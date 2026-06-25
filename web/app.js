@@ -5,12 +5,12 @@ if (tg) {
 }
 
 const products = [
-  {id:1,name:{ru:'Голубика «Свежезамороженная»',en:'Frozen Blueberries'},cat:{ru:'Замороженные ягоды',en:'Frozen berries'},price:0,img:'assets/p1.jpg',tag:'ягоды'},
-  {id:2,name:{ru:'Грибы белые целые 1 сорт',en:'Whole Porcini Mushrooms, Grade 1'},cat:{ru:'Замороженные грибы',en:'Frozen mushrooms'},price:0,img:'assets/p2.jpg',tag:'грибы'},
-  {id:3,name:{ru:'Картофель фри 9×9 мм Fry Me',en:'French Fries 9×9 mm Fry Me'},cat:{ru:'Замороженный картофель',en:'Frozen potato'},price:0,img:'assets/p3.jpg',tag:'картофель'},
-  {id:4,name:{ru:'Смесь «Попрошайка» 1×10 кг',en:'Vegetable Mix “Poproshaika” 1×10 kg'},cat:{ru:'Замороженные овощи',en:'Frozen vegetables'},price:0,img:'assets/p4.jpg',tag:'овощи'},
-  {id:5,name:{ru:'Малина «Свежезамороженная»',en:'Frozen Raspberries'},cat:{ru:'Замороженные ягоды',en:'Frozen berries'},price:0,img:'assets/p5.jpg',tag:'ягоды'},
-  {id:6,name:{ru:'Пельмени «Иркутские» Мириталь',en:'Irkutskie Dumplings Mirital'},cat:{ru:'Полуфабрикаты',en:'Ready meals'},price:0,img:'assets/p6.jpg',tag:'полуфабрикаты'}
+  {id:1,name:{ru:'Голубика замороженная',en:'Frozen Blueberries'},cat:{ru:'Замороженные ягоды',en:'Frozen berries'},price:0,img:'assets/p1.jpg',tag:'ягоды'},
+  {id:2,name:{ru:'Грибы белые, 1 сорт',en:'Whole Porcini Mushrooms, Grade 1'},cat:{ru:'Замороженные грибы',en:'Frozen mushrooms'},price:0,img:'assets/p2.jpg',tag:'грибы'},
+  {id:3,name:{ru:'Картофель фри Fry Me',en:'French Fries 9×9 mm Fry Me'},cat:{ru:'Замороженный картофель',en:'Frozen potato'},price:0,img:'assets/p3.jpg',tag:'картофель'},
+  {id:4,name:{ru:'Смесь овощная 1×10 кг',en:'Vegetable Mix “Poproshaika” 1×10 kg'},cat:{ru:'Замороженные овощи',en:'Frozen vegetables'},price:0,img:'assets/p4.jpg',tag:'овощи'},
+  {id:5,name:{ru:'Малина замороженная',en:'Frozen Raspberries'},cat:{ru:'Замороженные ягоды',en:'Frozen berries'},price:0,img:'assets/p5.jpg',tag:'ягоды'},
+  {id:6,name:{ru:'Пельмени «Иркутские»',en:'Irkutskie Dumplings Mirital'},cat:{ru:'Полуфабрикаты',en:'Ready meals'},price:0,img:'assets/p6.jpg',tag:'полуфабрикаты'}
 ];
 
 const translations = {
