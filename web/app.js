@@ -644,3 +644,15 @@ $('#favBtn').addEventListener('click', () => {
 });
 
 applyLanguage();
+
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.ask-btn');
+  if (!btn) return;
+  e.preventDefault();
+  if (window.Telegram && Telegram.WebApp && Telegram.WebApp.openTelegramLink) {
+    Telegram.WebApp.openTelegramLink('https://t.me/dissapointeddk');
+  } else {
+    window.open('https://t.me/dissapointeddk','_blank');
+  }
+});
