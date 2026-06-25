@@ -703,3 +703,186 @@ input::placeholder{color:#a9b6bf}
   .price{font-size:20px !important;}
   .add{font-size:12px !important;}
 }
+
+/* === Product detail + kg cart + scalable Telegram window === */
+.app{
+  width:min(100%,540px) !important;
+  max-width:540px !important;
+}
+.bottom-nav{
+  width:min(100%,540px) !important;
+}
+.card{cursor:pointer;}
+.price{white-space:nowrap !important;}
+.app.detail-mode .search-wrap{display:none !important;}
+.app.detail-mode .section-title{display:none !important;}
+.app.detail-mode .top{padding-bottom:18px !important;}
+.app.detail-mode .content{padding:0 0 calc(92px + var(--safe-bottom)) !important;}
+.product-detail{
+  display:block;
+  width:100%;
+}
+.detail-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 16px;
+  border-top:1px solid var(--line2);
+  border-bottom:1px solid var(--line2);
+  background:rgba(255,255,255,.015);
+}
+.detail-back,
+.detail-heart{
+  border:0;
+  background:transparent;
+  color:#fff;
+}
+.detail-back{
+  font-size:18px;
+  font-weight:800;
+  padding:8px 0;
+}
+.detail-heart{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.04);
+  font-size:26px;
+  display:grid;
+  place-items:center;
+}
+.detail-heart.on{background:var(--blue);border-color:var(--blue);}
+.detail-image{
+  width:100%;
+  max-height:390px;
+  background:#fff;
+  overflow:hidden;
+}
+.detail-image img{
+  width:100%;
+  height:100%;
+  max-height:390px;
+  object-fit:cover;
+}
+.detail-body{
+  padding:20px 18px 26px;
+}
+.detail-body h1{
+  margin:0 0 10px;
+  font-size:24px;
+  line-height:1.18;
+  font-weight:950;
+  letter-spacing:-.02em;
+}
+.detail-cat{
+  margin-bottom:14px;
+  color:#c4d0d7;
+  font-size:14px;
+  line-height:1.35;
+}
+.detail-body p{
+  margin:0 0 18px;
+  color:#c4d0d7;
+  font-size:15px;
+  line-height:1.55;
+}
+.detail-price{
+  margin:0 0 18px;
+  font-size:28px;
+  line-height:1;
+  font-weight:950;
+  letter-spacing:-.03em;
+}
+.weight-title{
+  margin-bottom:10px;
+  font-size:15px;
+  font-weight:900;
+}
+.weights{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:8px;
+  margin-bottom:18px;
+}
+.weight{
+  min-height:48px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:rgba(255,255,255,.035);
+  color:#fff;
+  font-size:14px;
+  font-weight:850;
+}
+.weight.active{
+  border-color:var(--blue);
+  background:linear-gradient(135deg,#12a2ff,#0078d7);
+  box-shadow:0 10px 24px rgba(0,141,255,.28);
+}
+.detail-total{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--line2);
+  font-size:22px;
+  font-weight:950;
+}
+.detail-add{
+  width:100%;
+  min-height:54px;
+  border:0;
+  border-radius:10px;
+  background:linear-gradient(135deg,#ff3535,#f5222d);
+  color:#fff;
+  font-size:17px;
+  font-weight:950;
+  box-shadow:0 12px 26px rgba(245,34,45,.28);
+}
+.ask-btn{
+  width:100%;
+  min-height:50px;
+  margin-top:12px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:transparent;
+  color:#fff;
+  font-size:15px;
+  font-weight:850;
+}
+.cart-row{
+  grid-template-columns:92px 1fr 28px !important;
+  align-items:start !important;
+}
+.cart-info{min-width:0;}
+.cart-info p{
+  margin:0 0 8px;
+  color:#aeb8bf;
+  font-size:12px;
+  line-height:1.35;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.cart-meta{
+  margin-bottom:8px;
+  color:#59caff;
+  font-size:12px;
+  font-weight:800;
+}
+.cart-row .cart-price{font-size:18px !important;}
+@media (min-width:520px){
+  .grid{gap:14px !important;}
+  .name{font-size:15px !important;}
+  .cat{font-size:13px !important;}
+  .add{font-size:14px !important;}
+}
+@media (max-width:380px){
+  .weights{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .detail-body h1{font-size:21px;}
+  .detail-price{font-size:25px;}
+  .cart-row{grid-template-columns:78px 1fr 24px !important;gap:10px !important;}
+  .cart-row img{width:78px !important;height:78px !important;}
+}
