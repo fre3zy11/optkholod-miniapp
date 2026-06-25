@@ -942,3 +942,19 @@ input::placeholder{color:#a9b6bf}
   background:linear-gradient(135deg,#15a2ff,#0082e3) !important;
   box-shadow:0 10px 20px rgba(0,132,227,.28) !important;
 }
+
+
+/* === Potato catalog final cache-safe patch === */
+.empty-pic,
+.no-photo,
+.cart-img.empty-pic{
+  background:#000 !important;
+  color:transparent !important;
+}
+.detail-add,
+.ask-btn{
+  border:0 !important;
+  background:linear-gradient(135deg,#15a2ff,#0082e3) !important;
+  color:#fff !important;
+  box-shadow:0 10px 20px rgba(0,132,227,.28) !important;
+}

@@ -328,7 +328,7 @@ const kgLabel = (kg) => `${String(kg).replace('.', ',')} ${text('kg')}`;
 const money = (n) => Number(n || 0).toLocaleString(currentLang === 'ru' ? 'ru-RU' : 'en-US', { minimumFractionDigits: 2 }) + ' ₽';
 const moneyKg = (n) => `${money(n).replace(' ₽','')} ${text('priceKg')}`;
 const productTotal = (p) => Number(p.pricePerKg || 0) * Number(p.packKg || 0);
-const productImage = (p) => p.img ? `<img src="${p.img}" alt="${p.name[currentLang]}">` : `<div class="no-photo">Фото скоро</div>`;
+const productImage = (p) => p.img ? `<img src="${p.img}" alt="${p.name[currentLang]}">` : `<div class="no-photo" aria-label="Нет фото"></div>`;
 
 function save() {
   localStorage.setItem('fav', JSON.stringify(fav));
