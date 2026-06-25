@@ -11,21 +11,22 @@
   <div class="app">
     <header class="top">
       <div class="row small-row">
-        <button class="pill" id="langBtn" type="button">RU</button>
+        <button class="pill" id="langBtn" type="button">RU⌄</button>
         <img src="assets/logo.png" class="logo" alt="ОптХолод" />
-        <button class="pill" id="currencyBtn" type="button">RUB</button>
+        <button class="pill" id="currencyBtn" type="button">RUB⌄</button>
       </div>
-
       <div class="search-wrap">
-        <span class="search-icon">⌕</span>
+        <span>⌕</span>
         <input id="search" placeholder="Поиск товаров" />
-        <button id="favBtn" class="heart" type="button">♡</button>
+        <button id="favBtn" class="heart">♡</button>
       </div>
     </header>
 
-    <section class="hero" id="hero">
-      <h1>Ассортимент</h1>
-      <p>Замороженные продукты питания оптом с доставкой по всей России</p>
+    <section class="hero">
+      <div>
+        <h1>Ассортимент</h1>
+        <p>Замороженные продукты питания оптом с доставкой по всей России</p>
+      </div>
     </section>
 
     <nav class="chips" id="categories"></nav>
@@ -33,31 +34,29 @@
     <main class="content">
       <div class="section-title">
         <h2 id="pageTitle">Новинки</h2>
-        <button id="showAll" type="button">Смотреть все ›</button>
+        <button id="showAll">Смотреть все ›</button>
       </div>
-
-      <div id="view"></div>
+      <div class="grid" id="products"></div>
     </main>
 
     <footer class="bottom-nav">
-      <button class="nav active" data-tab="new" type="button">
-        <span class="nav-ico">✦</span>
-        <span class="nav-text">Новинки</span>
-      </button>
-      <button class="nav" data-tab="catalog" type="button">
-        <span class="nav-ico">▦</span>
-        <span class="nav-text">Каталог</span>
-      </button>
-      <button class="nav" data-tab="fav" type="button">
-        <span class="nav-ico">♡</span>
-        <span class="nav-text">Избранное</span>
-      </button>
-      <button class="nav" data-tab="cart" type="button">
-        <span class="nav-ico">🛒</span>
-        <span class="nav-text">Корзина</span>
-        <b id="cartCount">0</b>
-      </button>
+      <button class="nav active" data-tab="new">✦<span>Новинки</span></button>
+      <button class="nav" data-tab="catalog">▦<span>Каталог</span></button>
+      <button class="nav" data-tab="fav">♡<span>Избранное</span></button>
+      <button class="nav" data-tab="cart">🛒<span>Корзина</span><b id="cartCount">0</b></button>
     </footer>
+  </div>
+
+  <div class="sheet" id="cartSheet">
+    <div class="sheet-box">
+      <div class="sheet-head">
+        <h3 id="cartTitle">Корзина</h3>
+        <button id="closeCart">×</button>
+      </div>
+      <div id="cartItems"></div>
+      <div class="total"><span id="totalLabel">Итого:</span> <b id="total">0 ₽</b></div>
+      <button class="checkout" id="checkout">Оформить заказ</button>
+    </div>
   </div>
 
   <script src="app.js"></script>
