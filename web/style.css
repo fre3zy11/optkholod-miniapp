@@ -834,11 +834,11 @@ input::placeholder{color:#a9b6bf}
   min-height:54px;
   border:0;
   border-radius:10px;
-  background:linear-gradient(135deg,#ff3535,#f5222d);
+  background:linear-gradient(135deg,#15a2ff,#0082e3);
   color:#fff;
   font-size:17px;
   font-weight:950;
-  box-shadow:0 12px 26px rgba(245,34,45,.28);
+  box-shadow:0 12px 26px rgba(0,132,227,.28);
 }
 .ask-btn{
   width:100%;
