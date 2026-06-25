@@ -886,3 +886,59 @@ input::placeholder{color:#a9b6bf}
   .cart-row{grid-template-columns:78px 1fr 24px !important;gap:10px !important;}
   .cart-row img{width:78px !important;height:78px !important;}
 }
+
+/* === Potato price list update: fixed package weight, no weight selector === */
+.empty-pic,
+.no-photo,
+.cart-img.empty-pic{
+  background:#05090c !important;
+  color:#3c4a52 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+  font-size:12px !important;
+  font-weight:800 !important;
+  letter-spacing:.02em !important;
+}
+.pic.empty-pic{aspect-ratio:1/1 !important;}
+.detail-image.empty-pic{
+  height:320px !important;
+  max-height:320px !important;
+  border-top:1px solid var(--line2);
+  border-bottom:1px solid var(--line2);
+}
+.cart-img.empty-pic{
+  width:92px !important;
+  height:92px !important;
+  border-radius:9px !important;
+  overflow:hidden !important;
+}
+.pack-info{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin:0 0 18px;
+  padding:14px 16px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:rgba(255,255,255,.035);
+  color:#c4d0d7;
+  font-size:15px;
+  font-weight:800;
+}
+.pack-info b{
+  color:#fff;
+  font-size:18px;
+  font-weight:950;
+}
+.detail-add{
+  background:linear-gradient(135deg,#15a2ff,#0082e3) !important;
+  box-shadow:0 10px 20px rgba(0,132,227,.28) !important;
+}
+.ask-btn{
+  border:0 !important;
+  background:linear-gradient(135deg,#15a2ff,#0082e3) !important;
+  box-shadow:0 10px 20px rgba(0,132,227,.28) !important;
+}

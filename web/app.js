@@ -4,80 +4,292 @@ if (tg) {
   // Не включаем fullscreen: окно Mini App масштабируется вместе с окном Telegram.
 }
 
-const WEIGHTS = [0.5, 1, 2, 5, 10];
-
 const products = [
   {
     id: 1,
-    name: { ru: 'Голубика «Свежезамороженная»', en: 'Frozen Blueberries' },
-    cat: { ru: 'Замороженные ягоды', en: 'Frozen berries' },
+    name: { ru: 'Картофель фри Global Fries 10 мм 10 кг', en: 'Global Fries French Fries 10 mm, 10 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 10 кг', en: 'Frozen potato · 10 kg pack' },
     desc: {
-      ru: 'Натуральная свежезамороженная голубика без сахара и добавок. Подходит для десертов, смузи, выпечки и здорового питания.',
-      en: 'Natural frozen blueberries with no added sugar. Great for desserts, smoothies, baking and healthy meals.'
+      ru: 'Картофель фри ровной нарезки 10 мм. Формат 2,5 кг × 4 шт. Подходит для кафе, доставки, фудкортов и ресторанной кухни.',
+      en: 'Straight-cut 10 mm frozen fries. Pack format: 2.5 kg × 4 pcs. Suitable for cafés, delivery, food courts and restaurants.'
     },
-    pricePerKg: 0,
-    img: 'assets/p1.jpg',
-    tag: 'ягоды'
+    pricePerKg: 155,
+    packKg: 10,
+    img: '',
+    tag: 'картофель'
   },
   {
     id: 2,
-    name: { ru: 'Грибы белые целые 1 сорт', en: 'Whole Porcini Mushrooms, Grade 1' },
-    cat: { ru: 'Замороженные грибы', en: 'Frozen mushrooms' },
+    name: { ru: "Картофельные дольки BART'S GOURMET", en: "BART'S GOURMET Potato Wedges" },
+    cat: { ru: 'Замороженный картофель · упаковка 10 кг', en: 'Frozen potato · 10 kg pack' },
     desc: {
-      ru: 'Отборные белые грибы быстрой заморозки. Сохраняют насыщенный аромат и подходят для супов, соусов и горячих блюд.',
-      en: 'Selected quick-frozen porcini mushrooms with rich aroma. Suitable for soups, sauces and hot dishes.'
+      ru: 'Картофельные дольки BART’S GOURMET. Формат 2,5 кг × 4 шт. Универсальный гарнир для HoReCa и оптовых поставок.',
+      en: 'BART’S GOURMET potato wedges. Pack format: 2.5 kg × 4 pcs. Universal side dish for HoReCa and wholesale.'
     },
-    pricePerKg: 0,
-    img: 'assets/p2.jpg',
-    tag: 'грибы'
+    pricePerKg: 170,
+    packKg: 10,
+    img: '',
+    tag: 'картофель'
   },
   {
     id: 3,
-    name: { ru: 'Картофель фри 9×9 мм Fry Me', en: 'French Fries 9×9 mm Fry Me' },
-    cat: { ru: 'Замороженный картофель', en: 'Frozen potato' },
+    name: { ru: "Картофельные дольки со специями BART'S GOURMET", en: "BART'S GOURMET Spiced Potato Wedges" },
+    cat: { ru: 'Замороженный картофель · упаковка 10 кг', en: 'Frozen potato · 10 kg pack' },
     desc: {
-      ru: 'Картофель фри ровной нарезки 9×9 мм. Удобен для кафе, доставки, фудкортов и домашнего приготовления.',
-      en: 'Even-cut 9×9 mm frozen fries. Convenient for cafés, delivery, food courts and home cooking.'
+      ru: 'Картофельные дольки со специями BART’S GOURMET. Формат 2,5 кг × 4 шт. Готовое решение для насыщенного гарнира.',
+      en: 'BART’S GOURMET spiced potato wedges. Pack format: 2.5 kg × 4 pcs. Ready solution for a flavorful side dish.'
     },
-    pricePerKg: 0,
-    img: 'assets/p3.jpg',
+    pricePerKg: 205,
+    packKg: 10,
+    img: '',
     tag: 'картофель'
   },
   {
     id: 4,
-    name: { ru: 'Смесь «Попрошайка» 1×10 кг', en: 'Vegetable Mix “Poproshaika” 1×10 kg' },
-    cat: { ru: 'Замороженные овощи', en: 'Frozen vegetables' },
+    name: { ru: 'Картофельные шарики Pomuni Frozen 10 кг', en: 'Pomuni Frozen Potato Balls, 10 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 10 кг', en: 'Frozen potato · 10 kg pack' },
     desc: {
-      ru: 'Овощная замороженная смесь для гарниров, супов и горячих блюд. Быстро готовится и подходит для оптовых закупок.',
-      en: 'Frozen vegetable mix for side dishes, soups and hot meals. Quick to cook and suitable for wholesale orders.'
+      ru: 'Картофельные шарики Pomuni Frozen. Формат 1 кг × 10 шт. Удобный продукт для гарниров, закусок и детского меню.',
+      en: 'Pomuni Frozen potato balls. Pack format: 1 kg × 10 pcs. Convenient for sides, snacks and kids menus.'
     },
-    pricePerKg: 0,
-    img: 'assets/p4.jpg',
-    tag: 'овощи'
+    pricePerKg: 220,
+    packKg: 10,
+    img: '',
+    tag: 'картофель'
   },
   {
     id: 5,
-    name: { ru: 'Малина «Свежезамороженная»', en: 'Frozen Raspberries' },
-    cat: { ru: 'Замороженные ягоды', en: 'Frozen berries' },
+    name: { ru: 'Треугольные картофельные котлеты POMUNI 10 кг', en: 'POMUNI Triangle Potato Patties, 10 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 10 кг', en: 'Frozen potato · 10 kg pack' },
     desc: {
-      ru: 'Ароматная свежезамороженная малина. Подходит для морсов, десертов, начинок и ресторанной кухни.',
-      en: 'Aromatic frozen raspberries for drinks, desserts, fillings and restaurant kitchens.'
+      ru: 'Треугольные картофельные котлеты POMUNI. Формат 2,5 кг × 4 шт. Быстро готовятся и хорошо держат форму.',
+      en: 'POMUNI triangle potato patties. Pack format: 2.5 kg × 4 pcs. Quick to cook and hold their shape well.'
     },
-    pricePerKg: 0,
-    img: 'assets/p5.jpg',
-    tag: 'ягоды'
+    pricePerKg: 215,
+    packKg: 10,
+    img: '',
+    tag: 'картофель'
   },
   {
     id: 6,
-    name: { ru: 'Пельмени «Иркутские» Мириталь', en: 'Irkutskie Dumplings Mirital' },
-    cat: { ru: 'Полуфабрикаты', en: 'Ready meals' },
+    name: { ru: 'Картофельные дольки без специй Global Fries', en: 'Global Fries Plain Potato Wedges' },
+    cat: { ru: 'Замороженный картофель · упаковка 10 кг', en: 'Frozen potato · 10 kg pack' },
     desc: {
-      ru: 'Замороженные пельмени для быстрого приготовления. Удобный товар для розницы, кафе и домашней кухни.',
-      en: 'Frozen dumplings for quick cooking. Convenient for retail, cafés and home kitchens.'
+      ru: 'Картофельные дольки без специй Global Fries. Формат 2,5 кг × 4 шт. Нейтральный вкус для любых блюд и соусов.',
+      en: 'Global Fries plain potato wedges. Pack format: 2.5 kg × 4 pcs. Neutral taste for any dishes and sauces.'
     },
-    pricePerKg: 0,
-    img: 'assets/p6.jpg',
-    tag: 'полуфабрикаты'
+    pricePerKg: 160,
+    packKg: 10,
+    img: '',
+    tag: 'картофель'
+  },
+  {
+    id: 7,
+    name: { ru: 'Картофель фри соломка 10 мм Global Fries 10 кг', en: 'Global Fries Shoestring Fries 10 mm, 10 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 10 кг', en: 'Frozen potato · 10 kg pack' },
+    desc: {
+      ru: 'Картофель фри соломка 10 мм Global Fries. Формат 2,5 кг × 4 шт. Классический вариант для быстрого приготовления.',
+      en: 'Global Fries 10 mm shoestring fries. Pack format: 2.5 kg × 4 pcs. Classic option for quick cooking.'
+    },
+    pricePerKg: 145,
+    packKg: 10,
+    img: '',
+    tag: 'картофель'
+  },
+  {
+    id: 8,
+    name: { ru: 'Farm Frites фри соломка 10 мм 12,5 кг', en: 'Farm Frites French Fries 10 mm, 12.5 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 12,5 кг', en: 'Frozen potato · 12.5 kg pack' },
+    desc: {
+      ru: 'Картофель Farm Frites фри соломка 10 мм. Формат 2,5 кг × 5 шт. Стабильное качество для профессиональной кухни.',
+      en: 'Farm Frites 10 mm fries. Pack format: 2.5 kg × 5 pcs. Stable quality for professional kitchens.'
+    },
+    pricePerKg: 178,
+    packKg: 12.5,
+    img: '',
+    tag: 'картофель'
+  },
+  {
+    id: 9,
+    name: { ru: 'Farm Frites Crispy Coated 10 мм 12,5 кг', en: 'Farm Frites Crispy Coated 10 mm, 12.5 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 12,5 кг', en: 'Frozen potato · 12.5 kg pack' },
+    desc: {
+      ru: 'Картофель фри в панировке Crispy Coated 10 мм Farm Frites. Формат 2,5 кг × 5 шт. Хрустящая корочка после приготовления.',
+      en: 'Farm Frites Crispy Coated 10 mm fries. Pack format: 2.5 kg × 5 pcs. Crispy coating after cooking.'
+    },
+    pricePerKg: 197,
+    packKg: 12.5,
+    img: '',
+    tag: 'картофель'
+  },
+  {
+    id: 10,
+    name: { ru: 'Farm Frites BRAVI соломка 10 мм 12,5 кг', en: 'Farm Frites BRAVI 10 mm Fries, 12.5 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 12,5 кг', en: 'Frozen potato · 12.5 kg pack' },
+    desc: {
+      ru: 'Картофель фри BRAVI Farm Frites соломка 10 мм. Формат 2,5 кг × 5 шт. Практичный вариант для регулярных закупок.',
+      en: 'Farm Frites BRAVI 10 mm fries. Pack format: 2.5 kg × 5 pcs. Practical option for regular supplies.'
+    },
+    pricePerKg: 155,
+    packKg: 12.5,
+    img: '',
+    tag: 'картофель'
+  },
+  {
+    id: 11,
+    name: { ru: 'Farm Frites фри волнистая 12 мм 12,5 кг', en: 'Farm Frites Crinkle Fries 12 mm, 12.5 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 12,5 кг', en: 'Frozen potato · 12.5 kg pack' },
+    desc: {
+      ru: 'Волнистый картофель фри Farm Frites 12 мм. Формат 2,5 кг × 5 шт. Хорошо подходит для гарниров и снеков.',
+      en: 'Farm Frites 12 mm crinkle fries. Pack format: 2.5 kg × 5 pcs. Great for sides and snacks.'
+    },
+    pricePerKg: 210,
+    packKg: 12.5,
+    img: '',
+    tag: 'картофель'
+  },
+  {
+    id: 12,
+    name: { ru: 'Farm Frites фри 7 мм 12,5 кг', en: 'Farm Frites Fries 7 mm, 12.5 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 12,5 кг', en: 'Frozen potato · 12.5 kg pack' },
+    desc: {
+      ru: 'Тонкий картофель фри Farm Frites 7 мм. Формат 2,5 кг × 5 шт. Быстро готовится и подходит для меню fast food.',
+      en: 'Farm Frites thin 7 mm fries. Pack format: 2.5 kg × 5 pcs. Quick to cook and suitable for fast-food menus.'
+    },
+    pricePerKg: 210,
+    packKg: 12.5,
+    img: '',
+    tag: 'картофель'
+  },
+  {
+    id: 13,
+    name: { ru: 'FastFry 12 мм волнистая Farm Frites 12,5 кг', en: 'Farm Frites FastFry Crinkle 12 mm, 12.5 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 12,5 кг', en: 'Frozen potato · 12.5 kg pack' },
+    desc: {
+      ru: 'FastFry 12 мм волнистая Farm Frites. Формат 2,5 кг × 5 шт. Быстрое приготовление и выраженная форма нарезки.',
+      en: 'Farm Frites FastFry 12 mm crinkle fries. Pack format: 2.5 kg × 5 pcs. Fast cooking with a distinct cut.'
+    },
+    pricePerKg: 230,
+    packKg: 12.5,
+    img: '',
+    tag: 'картофель'
+  },
+  {
+    id: 14,
+    name: { ru: 'FastFry 10 мм Farm Frites 12,5 кг', en: 'Farm Frites FastFry 10 mm, 12.5 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 12,5 кг', en: 'Frozen potato · 12.5 kg pack' },
+    desc: {
+      ru: 'FastFry 10 мм Farm Frites. Формат 2,5 кг × 5 шт. Удобен для кафе и точек с высокой скоростью отдачи.',
+      en: 'Farm Frites FastFry 10 mm. Pack format: 2.5 kg × 5 pcs. Convenient for cafés and high-speed service points.'
+    },
+    pricePerKg: 225,
+    packKg: 12.5,
+    img: '',
+    tag: 'картофель'
+  },
+  {
+    id: 15,
+    name: { ru: 'Farm Frites дольки в кожуре 10 кг', en: 'Farm Frites Skin-on Potato Wedges, 10 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 10 кг', en: 'Frozen potato · 10 kg pack' },
+    desc: {
+      ru: 'Картофельные дольки в кожуре Farm Frites. Формат 2,5 кг × 4 шт. Натуральный внешний вид и насыщенный картофельный вкус.',
+      en: 'Farm Frites skin-on potato wedges. Pack format: 2.5 kg × 4 pcs. Natural look and rich potato flavor.'
+    },
+    pricePerKg: 183,
+    packKg: 10,
+    img: '',
+    tag: 'картофель'
+  },
+  {
+    id: 16,
+    name: { ru: 'Farm Frites дольки в кожуре со специями 10 кг', en: 'Farm Frites Spiced Skin-on Wedges, 10 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 10 кг', en: 'Frozen potato · 10 kg pack' },
+    desc: {
+      ru: 'Картофельные дольки в кожуре со специями Farm Frites. Упаковка 10 кг. Готовый пряный гарнир для HoReCa.',
+      en: 'Farm Frites spiced skin-on potato wedges. 10 kg pack. Ready spiced side dish for HoReCa.'
+    },
+    pricePerKg: 225,
+    packKg: 10,
+    img: '',
+    tag: 'картофель'
+  },
+  {
+    id: 17,
+    name: { ru: 'Farm Frites картофельные шарики 10 кг', en: 'Farm Frites Potato Balls, 10 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 10 кг', en: 'Frozen potato · 10 kg pack' },
+    desc: {
+      ru: 'Картофельные шарики Farm Frites. Формат 2,5 кг × 4 шт. Подходят для закусок, гарниров и детского меню.',
+      en: 'Farm Frites potato balls. Pack format: 2.5 kg × 4 pcs. Suitable for snacks, sides and kids menus.'
+    },
+    pricePerKg: 280,
+    packKg: 10,
+    img: '',
+    tag: 'картофель'
+  },
+  {
+    id: 18,
+    name: { ru: 'Farm Frites картофельное пюре 10 кг', en: 'Farm Frites Mashed Potato, 10 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 10 кг', en: 'Frozen potato · 10 kg pack' },
+    desc: {
+      ru: 'Картофельное пюре Farm Frites 10 кг. Формат 2,5 кг × 4 шт. Удобная основа для гарниров и горячих блюд.',
+      en: 'Farm Frites mashed potato, 10 kg. Pack format: 2.5 kg × 4 pcs. Convenient base for sides and hot dishes.'
+    },
+    pricePerKg: 250,
+    packKg: 10,
+    img: '',
+    tag: 'картофель'
+  },
+  {
+    id: 19,
+    name: { ru: 'Farm Frites овальные картофельные котлетки 10 кг', en: 'Farm Frites Oval Potato Patties, 10 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 10 кг', en: 'Frozen potato · 10 kg pack' },
+    desc: {
+      ru: 'Овальные картофельные котлетки Farm Frites. Упаковка 10 кг. Ровный формат для порционной подачи.',
+      en: 'Farm Frites oval potato patties. 10 kg pack. Even format for portioned serving.'
+    },
+    pricePerKg: 320,
+    packKg: 10,
+    img: '',
+    tag: 'картофель'
+  },
+  {
+    id: 20,
+    name: { ru: 'Farm Frites треугольные картофельные котлетки 10 кг', en: 'Farm Frites Triangle Potato Patties, 10 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 10 кг', en: 'Frozen potato · 10 kg pack' },
+    desc: {
+      ru: 'Треугольные картофельные котлетки Farm Frites. Формат 2,5 кг × 4 шт. Подходят для гарниров и готовых блюд.',
+      en: 'Farm Frites triangle potato patties. Pack format: 2.5 kg × 4 pcs. Suitable for sides and ready meals.'
+    },
+    pricePerKg: 285,
+    packKg: 10,
+    img: '',
+    tag: 'картофель'
+  },
+  {
+    id: 21,
+    name: { ru: 'Farm Frites картофельные оладьи 9 кг', en: 'Farm Frites Potato Pancakes, 9 kg' },
+    cat: { ru: 'Замороженный картофель · упаковка 9 кг', en: 'Frozen potato · 9 kg pack' },
+    desc: {
+      ru: 'Картофельные оладьи Farm Frites. Формат 1,5 кг × 6 шт. Удобный продукт для завтраков, гарниров и кафе.',
+      en: 'Farm Frites potato pancakes. Pack format: 1.5 kg × 6 pcs. Convenient for breakfasts, sides and cafés.'
+    },
+    pricePerKg: 240,
+    packKg: 9,
+    img: '',
+    tag: 'картофель'
+  },
+  {
+    id: 22,
+    name: { ru: 'Луковые кольца Farm Frites 6 кг', en: 'Farm Frites Onion Rings, 6 kg' },
+    cat: { ru: 'Замороженные снеки · упаковка 6 кг', en: 'Frozen snacks · 6 kg pack' },
+    desc: {
+      ru: 'Луковые кольца Farm Frites. Формат 1 кг × 6 шт. Хрустящая закуска для фудкортов, бургерных и кафе.',
+      en: 'Farm Frites onion rings. Pack format: 1 kg × 6 pcs. Crispy snack for food courts, burger bars and cafés.'
+    },
+    pricePerKg: 360,
+    packKg: 6,
+    img: '',
+    tag: 'картофель'
   }
 ];
 
@@ -86,36 +298,37 @@ const translations = {
     lang: 'RU', currency: 'RUB', search: 'Поиск товаров', showAll: 'Смотреть все ›', backAll: 'Все товары',
     new: 'Все товары', catalog: 'Каталог', fav: 'Избранное', cart: 'Корзина', add: '🛒 В корзину',
     emptyProducts: 'Товары не найдены', emptyCart: 'Корзина пустая', total: 'Итого', back: 'Назад',
-    priceKg: '₽/кг', weight: 'Вес', ask: 'ⓘ Задать вопрос', itemTotal: 'Итого', kg: 'кг',
-    inCart: 'Добавлено в корзину', qty: 'Кол-во', description: 'Описание', pricePerKg: 'Цена за кг',
-    cats: { все:'ВСЕ', ягоды:'ЯГОДЫ', овощи:'ОВОЩИ', грибы:'ГРИБЫ', картофель:'КАРТОФЕЛЬ', полуфабрикаты:'ПОЛУФАБРИКАТЫ' }
+    priceKg: '₽/кг', packWeight: 'Вес упаковки', ask: 'ⓘ Задать вопрос', itemTotal: 'Итого', kg: 'кг',
+    inCart: 'Добавлено в корзину', qty: 'Кол-во', description: 'Описание', pricePerKg: 'Цена за кг', pack: 'Упаковка',
+    cats: { все:'ВСЕ', картофель:'КАРТОФЕЛЬ И СНЕКИ' }
   },
   en: {
     lang: 'EN', currency: 'RUB', search: 'Search products', showAll: 'View all ›', backAll: 'All products',
     new: 'All products', catalog: 'Catalog', fav: 'Favorites', cart: 'Cart', add: '🛒 Add to cart',
     emptyProducts: 'No products found', emptyCart: 'Cart is empty', total: 'Total', back: 'Back',
-    priceKg: '₽/kg', weight: 'Weight', ask: 'ⓘ Ask a question', itemTotal: 'Total', kg: 'kg',
-    inCart: 'Added to cart', qty: 'Qty', description: 'Description', pricePerKg: 'Price per kg',
-    cats: { все:'ALL', ягоды:'BERRIES', овощи:'VEGETABLES', грибы:'MUSHROOMS', картофель:'POTATO', полуфабрикаты:'READY MEALS' }
+    priceKg: '₽/kg', packWeight: 'Pack weight', ask: 'ⓘ Ask a question', itemTotal: 'Total', kg: 'kg',
+    inCart: 'Added to cart', qty: 'Qty', description: 'Description', pricePerKg: 'Price per kg', pack: 'Pack',
+    cats: { все:'ALL', картофель:'POTATO & SNACKS' }
   }
 };
 
-const catalogCats = ['ягоды', 'овощи', 'грибы', 'картофель', 'полуфабрикаты'];
+const catalogCats = ['картофель'];
 let currentLang = localStorage.getItem('lang') || 'ru';
 let activeCat = 'все';
 let mode = 'new';
 let previousMode = 'new';
 let selectedProductId = null;
-let selectedWeight = 1;
 let fav = JSON.parse(localStorage.getItem('fav') || '[]');
 let cart = JSON.parse(localStorage.getItem('cart') || '{}');
 
 const $ = (s) => document.querySelector(s);
 const text = (key) => translations[currentLang][key];
 const productById = (id) => products.find(p => p.id === Number(id));
-const weightLabel = (w) => `${String(w).replace('.', ',')} ${text('kg')}`;
+const kgLabel = (kg) => `${String(kg).replace('.', ',')} ${text('kg')}`;
 const money = (n) => Number(n || 0).toLocaleString(currentLang === 'ru' ? 'ru-RU' : 'en-US', { minimumFractionDigits: 2 }) + ' ₽';
 const moneyKg = (n) => `${money(n).replace(' ₽','')} ${text('priceKg')}`;
+const productTotal = (p) => Number(p.pricePerKg || 0) * Number(p.packKg || 0);
+const productImage = (p) => p.img ? `<img src="${p.img}" alt="${p.name[currentLang]}">` : `<div class="no-photo">Фото скоро</div>`;
 
 function save() {
   localStorage.setItem('fav', JSON.stringify(fav));
@@ -126,10 +339,9 @@ function normalizeCartEntry(id) {
   const old = cart[id];
   if (!old) return null;
   if (typeof old === 'number') {
-    cart[id] = { qty: old, weight: 1 };
+    cart[id] = { qty: old };
   }
   if (!cart[id].qty) cart[id].qty = 1;
-  if (!cart[id].weight) cart[id].weight = 1;
   return cart[id];
 }
 
@@ -154,6 +366,7 @@ function filteredProducts() {
   let arr = products.filter(p => {
     const haystack = [
       p.name.ru, p.name.en, p.cat.ru, p.cat.en, p.desc.ru, p.desc.en, p.tag,
+      p.pricePerKg, p.packKg,
       translations.ru.cats[p.tag] || '', translations.en.cats[p.tag] || ''
     ].join(' ').toLowerCase();
     const matchCategory = activeCat === 'все' || p.tag === activeCat;
@@ -168,10 +381,10 @@ function renderProductCards(arr) {
   $('#products').innerHTML = arr.length ? arr.map(p => `
     <article class="card" data-open-product="${p.id}">
       <button class="fav ${fav.includes(p.id) ? 'on' : ''}" data-fav="${p.id}" type="button">♡</button>
-      <div class="pic"><img src="${p.img}" alt="${p.name[currentLang]}"></div>
+      <div class="pic ${p.img ? '' : 'empty-pic'}">${productImage(p)}</div>
       <div class="body">
         <h3 class="name">${p.name[currentLang]}</h3>
-        <div class="cat">${p.cat[currentLang]}</div>
+        <div class="cat">${text('pack')}: ${kgLabel(p.packKg)}</div>
         <div class="price">${moneyKg(p.pricePerKg)}</div>
         <button class="add" data-cart="${p.id}" type="button">${text('add')}</button>
       </div>
@@ -194,7 +407,7 @@ function renderCatalog() {
 function renderDetail() {
   const p = productById(selectedProductId);
   if (!p) { mode = 'new'; renderProducts(); return; }
-  const itemTotal = Number(p.pricePerKg) * Number(selectedWeight);
+  const itemTotal = productTotal(p);
   $('#pageTitle').textContent = '';
   $('#showAll').style.display = 'none';
   $('#products').className = 'product-detail';
@@ -203,15 +416,15 @@ function renderDetail() {
       <button class="detail-back" type="button" data-back-detail>‹ ${text('back')}</button>
       <button class="detail-heart ${fav.includes(p.id) ? 'on' : ''}" data-fav="${p.id}" type="button">♡</button>
     </div>
-    <div class="detail-image"><img src="${p.img}" alt="${p.name[currentLang]}"></div>
+    <div class="detail-image ${p.img ? '' : 'empty-pic'}">${productImage(p)}</div>
     <div class="detail-body">
       <h1>${p.name[currentLang]}</h1>
       <div class="detail-cat">${p.cat[currentLang]}</div>
       <p>${p.desc[currentLang]}</p>
       <div class="detail-price">${moneyKg(p.pricePerKg)}</div>
-      <div class="weight-title">${text('weight')}</div>
-      <div class="weights">
-        ${WEIGHTS.map(w => `<button class="weight ${Number(selectedWeight) === Number(w) ? 'active' : ''}" data-weight="${w}" type="button">${weightLabel(w)}</button>`).join('')}
+      <div class="pack-info">
+        <span>${text('packWeight')}</span>
+        <b>${kgLabel(p.packKg)}</b>
       </div>
       <div class="detail-total"><span>${text('itemTotal')}:</span><b>${money(itemTotal)}</b></div>
       <button class="detail-add" data-cart="${p.id}" data-detail-cart="1" type="button">${text('add')}</button>
@@ -229,14 +442,14 @@ function renderCartPage() {
   const rows = entries.map(([id, item]) => {
     const p = productById(id);
     if (!p) return '';
-    const rowTotal = Number(p.pricePerKg) * Number(item.weight) * Number(item.qty);
+    const rowTotal = productTotal(p) * Number(item.qty);
     return `
       <div class="cart-row">
-        <img src="${p.img}" alt="${p.name[currentLang]}">
+        <div class="cart-img ${p.img ? '' : 'empty-pic'}">${productImage(p)}</div>
         <div class="cart-info">
           <h4>${p.name[currentLang]}</h4>
           <p>${p.desc[currentLang]}</p>
-          <div class="cart-meta">${weightLabel(item.weight)} · ${moneyKg(p.pricePerKg)}</div>
+          <div class="cart-meta">${text('pack')}: ${kgLabel(p.packKg)} · ${moneyKg(p.pricePerKg)}</div>
           <div class="cart-price">${money(rowTotal)}</div>
           <div class="qty">
             <button data-qty-minus="${p.id}" type="button">−</button>
@@ -251,7 +464,7 @@ function renderCartPage() {
 
   const total = entries.reduce((s, [id, item]) => {
     const p = productById(id);
-    return s + (p ? Number(p.pricePerKg) * Number(item.weight) * Number(item.qty) : 0);
+    return s + (p ? productTotal(p) * Number(item.qty) : 0);
   }, 0);
 
   $('#products').innerHTML = (rows || `<div class="empty">${text('emptyCart')}</div>`) + `
@@ -287,14 +500,13 @@ function setActiveNav(tab) {
   document.querySelectorAll('.nav').forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tab));
 }
 
-function addCart(id, weight = 1) {
+function addCart(id) {
   const key = String(id);
   const old = normalizeCartEntry(key);
   if (old) {
     old.qty += 1;
-    old.weight = Number(weight || old.weight || 1);
   } else {
-    cart[key] = { qty: 1, weight: Number(weight || 1) };
+    cart[key] = { qty: 1 };
   }
   save();
   updateCount();
@@ -325,7 +537,6 @@ function removeCart(id) {
 function openProduct(id) {
   previousMode = mode === 'detail' ? previousMode : mode;
   selectedProductId = Number(id);
-  selectedWeight = 1;
   mode = 'detail';
   setActiveNav('');
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -361,13 +572,6 @@ document.addEventListener('click', (e) => {
     return;
   }
 
-  const weightBtn = e.target.closest('[data-weight]');
-  if (weightBtn) {
-    selectedWeight = Number(weightBtn.dataset.weight);
-    renderProducts();
-    return;
-  }
-
   const catalogCat = e.target.closest('[data-catalog-cat]');
   if (catalogCat) {
     activeCat = catalogCat.dataset.catalogCat;
@@ -385,8 +589,7 @@ document.addEventListener('click', (e) => {
 
   const cartBtn = e.target.closest('[data-cart]');
   if (cartBtn) {
-    const w = cartBtn.dataset.detailCart ? selectedWeight : 1;
-    addCart(Number(cartBtn.dataset.cart), w);
+    addCart(Number(cartBtn.dataset.cart));
     return;
   }
 
