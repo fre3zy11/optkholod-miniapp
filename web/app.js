@@ -103,7 +103,9 @@ function setAppModeClass() {
 }
 
 function renderCats() {
-  $('#categories').innerHTML = chipCats.map(c => `
+  const catsEl = $('#categories');
+  if (!catsEl) return;
+  catsEl.innerHTML = chipCats.map(c => `
     <button class="chip ${c === activeCat ? 'active' : ''}" data-cat="${c}">
       ${translations[currentLang].cats[c]}
     </button>
@@ -239,8 +241,8 @@ function applyLanguage() {
   document.documentElement.lang = currentLang;
   $('#langBtn').textContent = text('lang');
   $('#currencyBtn').textContent = text('currency');
-  $('.hero h1').textContent = text('heroTitle');
-  $('.hero p').textContent = text('heroText');
+  if ($('.hero h1')) $('.hero h1').textContent = text('heroTitle');
+  if ($('.hero p')) $('.hero p').textContent = text('heroText');
   $('#search').placeholder = text('search');
   $('#showAll').textContent = text('showAll');
   document.querySelector('[data-tab="new"] span').textContent = text('new');

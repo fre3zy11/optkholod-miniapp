@@ -460,3 +460,8 @@ input::placeholder{color:#a9b6bf}
 .app.catalog-mode .hero,.app.catalog-mode .chips,.app.catalog-mode .search-wrap,.app.cart-mode .hero,.app.cart-mode .chips,.app.cart-mode .search-wrap{display:none}
 .app.catalog-mode .top,.app.cart-mode .top{padding-bottom:18px}
 .app.catalog-mode .content,.app.cart-mode .content{padding-top:24px}
+
+/* Removed middle assortment banner and category chip row globally */
+.hero, .chips { display: none !important; }
+.content { padding-top: 20px; }
+.app.catalog-mode .content, .app.cart-mode .content { padding-top: 24px; }
