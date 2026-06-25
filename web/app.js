@@ -1,5 +1,11 @@
 const tg = window.Telegram?.WebApp;
-if (tg) { tg.ready(); tg.expand(); }
+if (tg) {
+  tg.ready();
+  tg.expand();
+  if (typeof tg.requestFullscreen === 'function') {
+    try { tg.requestFullscreen(); } catch (e) {}
+  }
+}
 
 const products = [
   {id:1,name:{ru:'Голубика «Свежезамороженная»',en:'Frozen Blueberries'},cat:{ru:'Замороженные ягоды',en:'Frozen berries'},price:0,img:'assets/p1.jpg',tag:'ягоды'},
