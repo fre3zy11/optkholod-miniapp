@@ -115,11 +115,19 @@ function renderCats() {
 }
 
 function filteredProducts() {
-  const q = ($('#search')?.value || '').toLowerCase();
+  const q = ($('#search')?.value || '').trim().toLowerCase();
   let arr = products.filter(p => {
-    const name = p.name[currentLang].toLowerCase();
-    const cat = p.cat[currentLang].toLowerCase();
-    return (activeCat === 'все' || p.tag === activeCat) && (name.includes(q) || cat.includes(q));
+    const haystack = [
+      p.name.ru, p.name.en,
+      p.cat.ru, p.cat.en,
+      p.tag,
+      translations.ru.cats[p.tag] || '',
+      translations.en.cats[p.tag] || ''
+    ].join(' ').toLowerCase();
+
+    const matchCategory = activeCat === 'все' || p.tag === activeCat;
+    const matchSearch = !q || haystack.includes(q);
+    return matchCategory && matchSearch;
   });
 
   if (mode === 'fav') arr = arr.filter(p => fav.includes(p.id));
