@@ -15,12 +15,13 @@ const products = [
 
 const translations = {
   ru: {
-    lang: 'RU⌄',
-    currency: 'RUB⌄',
+    lang: 'RU',
+    currency: 'RUB',
     heroTitle: 'Ассортимент',
     heroText: 'Замороженные продукты питания оптом с доставкой по всей России',
     search: 'Поиск товаров',
     showAll: 'Смотреть все ›',
+    backAll: 'Все товары',
     new: 'Все товары',
     catalog: 'Каталог',
     fav: 'Избранное',
@@ -44,12 +45,13 @@ const translations = {
     }
   },
   en: {
-    lang: 'EN⌄',
-    currency: 'RUB⌄',
+    lang: 'EN',
+    currency: 'RUB',
     heroTitle: 'Product Range',
     heroText: 'Wholesale frozen foods with delivery across Russia',
     search: 'Search products',
     showAll: 'View all ›',
+    backAll: 'All products',
     new: 'All products',
     catalog: 'Catalog',
     fav: 'Favorites',
@@ -200,9 +202,21 @@ function renderProducts() {
     return;
   }
 
-  $('#showAll').style.display = '';
   $('#products').className = 'grid';
-  $('#pageTitle').textContent = mode === 'fav' ? text('fav') : text('new');
+
+  if (mode === 'fav') {
+    $('#pageTitle').textContent = text('fav');
+    $('#showAll').style.display = 'none';
+  } else if (activeCat !== 'все') {
+    $('#pageTitle').textContent = translations[currentLang].cats[activeCat] || text('new');
+    $('#showAll').style.display = '';
+    $('#showAll').textContent = text('backAll');
+  } else {
+    $('#pageTitle').textContent = text('new');
+    $('#showAll').style.display = '';
+    $('#showAll').textContent = text('showAll');
+  }
+
   renderProductCards(filteredProducts());
 }
 
@@ -295,6 +309,10 @@ document.addEventListener('click', (e) => {
   const nav = e.target.closest('.nav');
   if (nav) {
     mode = nav.dataset.tab;
+    if (mode === 'new') {
+      activeCat = 'все';
+      renderCats();
+    }
     setActiveNav(mode);
     renderProducts();
     return;
@@ -325,6 +343,15 @@ $('#search').addEventListener('input', () => {
 });
 
 $('#showAll').addEventListener('click', () => {
+  if (activeCat !== 'все' && mode === 'new') {
+    activeCat = 'все';
+    mode = 'new';
+    setActiveNav('new');
+    renderCats();
+    renderProducts();
+    return;
+  }
+
   mode = 'catalog';
   setActiveNav('catalog');
   renderProducts();

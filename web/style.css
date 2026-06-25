@@ -582,3 +582,13 @@ input::placeholder{color:#a9b6bf}
   .cat{font-size:11px}
   .add{font-size:12px}
 }
+
+
+/* Category return button and clean language/currency labels */
+.pill{letter-spacing:.01em;text-align:center;}
+.section-title button{
+  white-space:nowrap;
+}
+.app .section-title button#showAll{
+  min-height:28px;
+}
