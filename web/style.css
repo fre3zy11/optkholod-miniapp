@@ -1038,3 +1038,71 @@ input::placeholder{color:#a9b6bf}
   .currency-wrap{min-width:62px;}
   .currency-dropdown{min-width:108px;}
 }
+
+/* === Selectable package weight: 10 / 25 / 50 / 100 / custom === */
+.weight-title{
+  margin:0 0 10px !important;
+  color:#fff !important;
+  font-size:15px !important;
+  font-weight:900 !important;
+}
+.weight-options{
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:8px !important;
+  margin:0 0 12px !important;
+}
+.weight-option{
+  min-height:46px !important;
+  border:1px solid rgba(130,210,255,.28) !important;
+  border-radius:10px !important;
+  background:rgba(255,255,255,.045) !important;
+  color:#fff !important;
+  font-size:14px !important;
+  font-weight:900 !important;
+  box-shadow:inset 0 0 18px rgba(255,255,255,.025) !important;
+}
+.weight-option.active{
+  border-color:#56c5ff !important;
+  background:linear-gradient(135deg,#22aaff,#007fe0) !important;
+  box-shadow:0 10px 24px rgba(0,141,255,.30), inset 0 0 18px rgba(255,255,255,.16) !important;
+}
+.custom-weight{
+  display:grid !important;
+  grid-template-columns:1fr minmax(88px,120px) auto !important;
+  align-items:center !important;
+  gap:10px !important;
+  margin:0 0 18px !important;
+  padding:12px 14px !important;
+  border:1px solid rgba(130,210,255,.24) !important;
+  border-radius:12px !important;
+  background:rgba(255,255,255,.04) !important;
+  color:#c4d0d7 !important;
+  font-size:14px !important;
+  font-weight:800 !important;
+}
+.custom-weight input{
+  width:100% !important;
+  height:38px !important;
+  border:1px solid rgba(130,210,255,.28) !important;
+  border-radius:9px !important;
+  background:rgba(2,12,18,.55) !important;
+  color:#fff !important;
+  text-align:center !important;
+  font-size:16px !important;
+  font-weight:900 !important;
+  outline:none !important;
+}
+.custom-weight input:focus{
+  border-color:#56c5ff !important;
+  box-shadow:0 0 0 3px rgba(0,151,245,.18) !important;
+}
+.custom-weight b{
+  color:#fff !important;
+  font-size:15px !important;
+  font-weight:900 !important;
+}
+@media (max-width:380px){
+  .weight-options{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+  .custom-weight{grid-template-columns:1fr 92px auto !important;}
+}

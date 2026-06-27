@@ -298,7 +298,7 @@ const translations = {
     lang: 'RU', currency: 'RUB', search: 'Поиск товаров', showAll: 'Смотреть все ›', backAll: 'Все товары',
     new: 'Все товары', catalog: 'Каталог', fav: 'Избранное', cart: 'Корзина', add: '🛒 В корзину',
     emptyProducts: 'Товары не найдены', emptyCart: 'Корзина пустая', total: 'Итого', back: 'Назад',
-    priceKg: '₽/кг', packWeight: 'Вес упаковки', ask: 'ⓘ Задать вопрос', itemTotal: 'Итого', kg: 'кг',
+    priceKg: '₽/кг', packWeight: 'Вес упаковки', customWeight: 'Свой вес', ask: 'ⓘ Задать вопрос', itemTotal: 'Итого', kg: 'кг',
     inCart: 'Добавлено в корзину', qty: 'Кол-во', description: 'Описание', pricePerKg: 'Цена за кг', pack: 'Упаковка',
     cats: { все:'ВСЕ', картофель:'КАРТОФЕЛЬ И СНЕКИ' }
   },
@@ -306,7 +306,7 @@ const translations = {
     lang: 'EN', currency: 'RUB', search: 'Search products', showAll: 'View all ›', backAll: 'All products',
     new: 'All products', catalog: 'Catalog', fav: 'Favorites', cart: 'Cart', add: '🛒 Add to cart',
     emptyProducts: 'No products found', emptyCart: 'Cart is empty', total: 'Total', back: 'Back',
-    priceKg: '₽/kg', packWeight: 'Pack weight', ask: 'ⓘ Ask a question', itemTotal: 'Total', kg: 'kg',
+    priceKg: '₽/kg', packWeight: 'Pack weight', customWeight: 'Custom weight', ask: 'ⓘ Ask a question', itemTotal: 'Total', kg: 'kg',
     inCart: 'Added to cart', qty: 'Qty', description: 'Description', pricePerKg: 'Price per kg', pack: 'Pack',
     cats: { все:'ALL', картофель:'POTATO & SNACKS' }
   }
@@ -321,6 +321,9 @@ const CURRENCIES = {
 };
 let currentCurrency = localStorage.getItem('currency') || 'RUB';
 if (!CURRENCIES[currentCurrency]) currentCurrency = 'RUB';
+const WEIGHT_OPTIONS = [10, 25, 50, 100];
+let selectedWeight = Number(localStorage.getItem('selectedWeight') || 10);
+if (!Number.isFinite(selectedWeight) || selectedWeight <= 0) selectedWeight = 10;
 let activeCat = 'все';
 let mode = 'new';
 let previousMode = 'new';
@@ -341,7 +344,16 @@ const money = (rub) => {
   return currentCurrency === 'RUB' ? `${value} ${cur.symbol}` : `${cur.symbol}${value}`;
 };
 const moneyKg = (rub) => `${money(rub)}/${text('kg')}`;
-const productTotal = (p) => Number(p.pricePerKg || 0) * Number(p.packKg || 0);
+const productTotal = (p, weight = p.packKg) => Number(p.pricePerKg || 0) * Number(weight || 0);
+const cleanWeight = (value) => {
+  const n = Number(String(value).replace(',', '.'));
+  return Number.isFinite(n) && n > 0 ? Math.round(n * 100) / 100 : 10;
+};
+const cartKey = (id, weight) => `${id}|${cleanWeight(weight)}`;
+const parseCartKey = (key) => {
+  const [id, weight] = String(key).split('|');
+  return { id: Number(id), weight: cleanWeight(weight || productById(id)?.packKg || 10) };
+};
 const productImage = (p) => p.img ? `<img src="${p.img}" alt="${p.name[currentLang]}">` : `<div class="no-photo" aria-label="Нет фото"></div>`;
 
 function save() {
@@ -349,14 +361,16 @@ function save() {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-function normalizeCartEntry(id) {
-  const old = cart[id];
+function normalizeCartEntry(key) {
+  const old = cart[key];
   if (!old) return null;
   if (typeof old === 'number') {
-    cart[id] = { qty: old };
+    const parsed = parseCartKey(key);
+    cart[key] = { qty: old, weight: parsed.weight };
   }
-  if (!cart[id].qty) cart[id].qty = 1;
-  return cart[id];
+  if (!cart[key].qty) cart[key].qty = 1;
+  if (!cart[key].weight) cart[key].weight = parseCartKey(key).weight;
+  return cart[key];
 }
 
 function updateCount() {
@@ -421,7 +435,8 @@ function renderCatalog() {
 function renderDetail() {
   const p = productById(selectedProductId);
   if (!p) { mode = 'new'; renderProducts(); return; }
-  const itemTotal = productTotal(p);
+  const currentWeight = cleanWeight(selectedWeight);
+  const itemTotal = productTotal(p, currentWeight);
   $('#pageTitle').textContent = '';
   $('#showAll').style.display = 'none';
   $('#products').className = 'product-detail';
@@ -436,10 +451,17 @@ function renderDetail() {
       <div class="detail-cat">${p.cat[currentLang]}</div>
       <p>${p.desc[currentLang]}</p>
       <div class="detail-price">${moneyKg(p.pricePerKg)}</div>
-      <div class="pack-info">
-        <span>${text('packWeight')}</span>
-        <b>${kgLabel(p.packKg)}</b>
+      <div class="weight-title">${text('packWeight')}</div>
+      <div class="weight-options">
+        ${WEIGHT_OPTIONS.map(w => `
+          <button class="weight-option ${currentWeight === w ? 'active' : ''}" data-weight="${w}" type="button">${kgLabel(w)}</button>
+        `).join('')}
       </div>
+      <label class="custom-weight">
+        <span>${text('customWeight')}</span>
+        <input id="customWeight" type="number" min="0.1" step="0.1" inputmode="decimal" value="${currentWeight}" />
+        <b>${text('kg')}</b>
+      </label>
       <div class="detail-total"><span>${text('itemTotal')}:</span><b>${money(itemTotal)}</b></div>
       <button class="detail-add" data-cart="${p.id}" data-detail-cart="1" type="button">${text('add')}</button>
       <button class="ask-btn" type="button">${text('ask')}</button>
@@ -452,33 +474,37 @@ function renderCartPage() {
   $('#showAll').style.display = 'none';
   $('#products').className = 'cart-page';
 
-  const entries = Object.keys(cart).map(id => [id, normalizeCartEntry(id)]).filter(([, item]) => item);
-  const rows = entries.map(([id, item]) => {
-    const p = productById(id);
+  const entries = Object.keys(cart).map(key => [key, normalizeCartEntry(key)]).filter(([, item]) => item);
+  const rows = entries.map(([key, item]) => {
+    const parsed = parseCartKey(key);
+    const p = productById(parsed.id);
     if (!p) return '';
-    const rowTotal = productTotal(p) * Number(item.qty);
+    const weight = cleanWeight(item.weight || parsed.weight);
+    const rowTotal = productTotal(p, weight) * Number(item.qty);
     return `
       <div class="cart-row">
         <div class="cart-img ${p.img ? '' : 'empty-pic'}">${productImage(p)}</div>
         <div class="cart-info">
           <h4>${p.name[currentLang]}</h4>
           <p>${p.desc[currentLang]}</p>
-          <div class="cart-meta">${text('pack')}: ${kgLabel(p.packKg)} · ${moneyKg(p.pricePerKg)}</div>
+          <div class="cart-meta">${text('pack')}: ${kgLabel(weight)} · ${moneyKg(p.pricePerKg)}</div>
           <div class="cart-price">${money(rowTotal)}</div>
           <div class="qty">
-            <button data-qty-minus="${p.id}" type="button">−</button>
+            <button data-qty-minus="${key}" type="button">−</button>
             <b>${item.qty}</b>
-            <button data-qty-plus="${p.id}" type="button">+</button>
+            <button data-qty-plus="${key}" type="button">+</button>
           </div>
         </div>
-        <button class="remove" data-remove="${p.id}" type="button">⌫</button>
+        <button class="remove" data-remove="${key}" type="button">⌫</button>
       </div>
     `;
   }).join('');
 
-  const total = entries.reduce((s, [id, item]) => {
-    const p = productById(id);
-    return s + (p ? productTotal(p) * Number(item.qty) : 0);
+  const total = entries.reduce((s, [key, item]) => {
+    const parsed = parseCartKey(key);
+    const p = productById(parsed.id);
+    const weight = cleanWeight(item.weight || parsed.weight);
+    return s + (p ? productTotal(p, weight) * Number(item.qty) : 0);
   }, 0);
 
   $('#products').innerHTML = (rows || `<div class="empty">${text('emptyCart')}</div>`) + `
@@ -514,13 +540,17 @@ function setActiveNav(tab) {
   document.querySelectorAll('.nav').forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tab));
 }
 
-function addCart(id) {
-  const key = String(id);
+function addCart(id, weight = null) {
+  const p = productById(id);
+  if (!p) return;
+  const selected = cleanWeight(weight || (mode === 'detail' ? selectedWeight : p.packKg));
+  const key = cartKey(id, selected);
   const old = normalizeCartEntry(key);
   if (old) {
     old.qty += 1;
+    old.weight = selected;
   } else {
-    cart[key] = { qty: 1 };
+    cart[key] = { qty: 1, weight: selected };
   }
   save();
   updateCount();
@@ -551,6 +581,8 @@ function removeCart(id) {
 function openProduct(id) {
   previousMode = mode === 'detail' ? previousMode : mode;
   selectedProductId = Number(id);
+  selectedWeight = 10;
+  localStorage.setItem('selectedWeight', String(selectedWeight));
   mode = 'detail';
   setActiveNav('');
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -652,9 +684,17 @@ document.addEventListener('click', (e) => {
     return;
   }
 
+  const weightBtn = e.target.closest('[data-weight]');
+  if (weightBtn) {
+    selectedWeight = cleanWeight(weightBtn.dataset.weight);
+    localStorage.setItem('selectedWeight', String(selectedWeight));
+    renderProducts();
+    return;
+  }
+
   const cartBtn = e.target.closest('[data-cart]');
   if (cartBtn) {
-    addCart(Number(cartBtn.dataset.cart));
+    addCart(Number(cartBtn.dataset.cart), cartBtn.dataset.detailCart ? selectedWeight : null);
     return;
   }
 
@@ -674,19 +714,32 @@ document.addEventListener('click', (e) => {
   }
 
   const minus = e.target.closest('[data-qty-minus]');
-  if (minus) return changeQty(Number(minus.dataset.qtyMinus), -1);
+  if (minus) return changeQty(minus.dataset.qtyMinus, -1);
 
   const plus = e.target.closest('[data-qty-plus]');
-  if (plus) return changeQty(Number(plus.dataset.qtyPlus), 1);
+  if (plus) return changeQty(plus.dataset.qtyPlus, 1);
 
   const remove = e.target.closest('[data-remove]');
-  if (remove) removeCart(Number(remove.dataset.remove));
+  if (remove) removeCart(remove.dataset.remove);
 });
 
 $('#search').addEventListener('input', () => {
   if (mode === 'cart' || mode === 'catalog' || mode === 'detail') mode = 'new';
   setActiveNav(mode);
   renderProducts();
+});
+
+document.addEventListener('input', (e) => {
+  const custom = e.target.closest('#customWeight');
+  if (!custom) return;
+  selectedWeight = cleanWeight(custom.value);
+  localStorage.setItem('selectedWeight', String(selectedWeight));
+  const p = productById(selectedProductId);
+  const total = p ? productTotal(p, selectedWeight) : 0;
+  document.querySelector('.detail-total b').textContent = money(total);
+  document.querySelectorAll('[data-weight]').forEach(btn => {
+    btn.classList.toggle('active', cleanWeight(btn.dataset.weight) === selectedWeight);
+  });
 });
 
 $('#showAll').addEventListener('click', () => {
