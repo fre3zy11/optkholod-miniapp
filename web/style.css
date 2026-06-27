@@ -1134,3 +1134,8 @@ input::placeholder{color:#a9b6bf}
   .weight-custom{grid-template-columns:1fr !important;}
   .weight-input-wrap{max-width:180px !important; justify-self:start !important;}
 }
+
+.remove{color:#2da8ff;display:flex;align-items:center;justify-content:center}
+.remove svg{stroke:#2da8ff}
+.currency-btn{color:#fff!important}
+.currency-btn .chevron,.currency-btn .arrow,.currency-btn::after{display:none!important}
