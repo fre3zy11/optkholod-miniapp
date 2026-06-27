@@ -298,7 +298,7 @@ const translations = {
     lang: 'RU', currency: 'RUB', search: 'Поиск товаров', showAll: 'Смотреть все ›', backAll: 'Все товары',
     new: 'Все товары', catalog: 'Каталог', fav: 'Избранное', cart: 'Корзина', add: '🛒 В корзину',
     emptyProducts: 'Товары не найдены', emptyCart: 'Корзина пустая', total: 'Итого', back: 'Назад',
-    priceKg: '₽/кг', packWeight: 'Вес упаковки', customWeight: 'Свой вес', ask: 'ⓘ Задать вопрос', itemTotal: 'Итого', kg: 'кг',
+    priceKg: '₽/кг', packWeight: 'Вес упаковки', customWeight: 'Минимум', ask: 'ⓘ Задать вопрос', itemTotal: 'Итого', kg: 'кг',
     inCart: 'Добавлено в корзину', qty: 'Кол-во', description: 'Описание', pricePerKg: 'Цена за кг', pack: 'Упаковка',
     cats: { все:'ВСЕ', картофель:'КАРТОФЕЛЬ И СНЕКИ' }
   },
@@ -306,7 +306,7 @@ const translations = {
     lang: 'EN', currency: 'RUB', search: 'Search products', showAll: 'View all ›', backAll: 'All products',
     new: 'All products', catalog: 'Catalog', fav: 'Favorites', cart: 'Cart', add: '🛒 Add to cart',
     emptyProducts: 'No products found', emptyCart: 'Cart is empty', total: 'Total', back: 'Back',
-    priceKg: '₽/kg', packWeight: 'Pack weight', customWeight: 'Custom weight', ask: 'ⓘ Ask a question', itemTotal: 'Total', kg: 'kg',
+    priceKg: '₽/kg', packWeight: 'Pack weight', customWeight: 'Minimum', ask: 'ⓘ Ask a question', itemTotal: 'Total', kg: 'kg',
     inCart: 'Added to cart', qty: 'Qty', description: 'Description', pricePerKg: 'Price per kg', pack: 'Pack',
     cats: { все:'ALL', картофель:'POTATO & SNACKS' }
   }
@@ -322,6 +322,12 @@ const CURRENCIES = {
 let currentCurrency = localStorage.getItem('currency') || 'RUB';
 if (!CURRENCIES[currentCurrency]) currentCurrency = 'RUB';
 const WEIGHT_OPTIONS = [10, 25, 50, 100];
+const getWeightOptions = (p) => {
+  const base = cleanWeight(p?.packKg || 10);
+  return [...new Set([base, ...WEIGHT_OPTIONS.filter(w => w >= base)])];
+};
+const minProductWeight = (p) => cleanWeight(p?.packKg || 10);
+const clampProductWeight = (p, value) => Math.max(minProductWeight(p), cleanWeight(value));
 let selectedWeight = Number(localStorage.getItem('selectedWeight') || 10);
 if (!Number.isFinite(selectedWeight) || selectedWeight <= 0) selectedWeight = 10;
 let activeCat = 'все';
@@ -435,7 +441,8 @@ function renderCatalog() {
 function renderDetail() {
   const p = productById(selectedProductId);
   if (!p) { mode = 'new'; renderProducts(); return; }
-  const currentWeight = cleanWeight(selectedWeight);
+  const currentWeight = clampProductWeight(p, selectedWeight);
+  const weightOptions = getWeightOptions(p);
   const itemTotal = productTotal(p, currentWeight);
   $('#pageTitle').textContent = '';
   $('#showAll').style.display = 'none';
@@ -453,15 +460,20 @@ function renderDetail() {
       <div class="detail-price">${moneyKg(p.pricePerKg)}</div>
       <div class="weight-title">${text('packWeight')}</div>
       <div class="weight-options">
-        ${WEIGHT_OPTIONS.map(w => `
+        ${weightOptions.map(w => `
           <button class="weight-option ${currentWeight === w ? 'active' : ''}" data-weight="${w}" type="button">${kgLabel(w)}</button>
         `).join('')}
       </div>
-      <label class="custom-weight">
-        <span>${text('customWeight')}</span>
-        <input id="customWeight" type="number" min="0.1" step="0.1" inputmode="decimal" value="${currentWeight}" />
-        <b>${text('kg')}</b>
-      </label>
+      <div class="weight-custom">
+        <div class="weight-min">
+          <b>${text('customWeight')}: ${kgLabel(p.packKg)}</b>
+          <span>${currentLang === 'ru' ? 'Введите любое значение не меньше упаковки' : 'Enter any value not below pack weight'}</span>
+        </div>
+        <label class="weight-input-wrap" aria-label="${text('packWeight')}">
+          <input id="customWeight" type="number" min="${p.packKg}" step="0.1" inputmode="decimal" value="${currentWeight}" placeholder="${kgLabel(p.packKg)}" />
+          <b>${text('kg')}</b>
+        </label>
+      </div>
       <div class="detail-total"><span>${text('itemTotal')}:</span><b>${money(itemTotal)}</b></div>
       <button class="detail-add" data-cart="${p.id}" data-detail-cart="1" type="button">${text('add')}</button>
       <button class="ask-btn" type="button">${text('ask')}</button>
@@ -581,7 +593,8 @@ function removeCart(id) {
 function openProduct(id) {
   previousMode = mode === 'detail' ? previousMode : mode;
   selectedProductId = Number(id);
-  selectedWeight = 10;
+  const p = productById(id);
+  selectedWeight = minProductWeight(p);
   localStorage.setItem('selectedWeight', String(selectedWeight));
   mode = 'detail';
   setActiveNav('');
@@ -686,7 +699,8 @@ document.addEventListener('click', (e) => {
 
   const weightBtn = e.target.closest('[data-weight]');
   if (weightBtn) {
-    selectedWeight = cleanWeight(weightBtn.dataset.weight);
+    const p = productById(selectedProductId);
+    selectedWeight = clampProductWeight(p, weightBtn.dataset.weight);
     localStorage.setItem('selectedWeight', String(selectedWeight));
     renderProducts();
     return;
@@ -732,9 +746,10 @@ $('#search').addEventListener('input', () => {
 document.addEventListener('input', (e) => {
   const custom = e.target.closest('#customWeight');
   if (!custom) return;
-  selectedWeight = cleanWeight(custom.value);
-  localStorage.setItem('selectedWeight', String(selectedWeight));
   const p = productById(selectedProductId);
+  selectedWeight = p ? clampProductWeight(p, custom.value) : cleanWeight(custom.value);
+  if (p && Number(custom.value) < minProductWeight(p)) custom.value = selectedWeight;
+  localStorage.setItem('selectedWeight', String(selectedWeight));
   const total = p ? productTotal(p, selectedWeight) : 0;
   document.querySelector('.detail-total b').textContent = money(total);
   document.querySelectorAll('[data-weight]').forEach(btn => {
