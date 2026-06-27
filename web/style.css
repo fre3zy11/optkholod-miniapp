@@ -1038,3 +1038,229 @@ input::placeholder{color:#a9b6bf}
   .currency-wrap{min-width:62px;}
   .currency-dropdown{min-width:108px;}
 }
+
+/* === Ice visual theme: frozen premium style, no logic changes === */
+:root{
+  --bg:#071926 !important;
+  --panel:#0b2e46 !important;
+  --panel2:#0e4161 !important;
+  --card:#0b334d !important;
+  --line:rgba(184,232,255,.26) !important;
+  --line2:rgba(184,232,255,.16) !important;
+  --text:#ffffff !important;
+  --muted:#b8d9ea !important;
+  --blue:#19a7ff !important;
+  --blue2:#006fc7 !important;
+  --ice:#dff7ff !important;
+  --frost:rgba(214,245,255,.13) !important;
+}
+html{
+  background:
+    radial-gradient(circle at 18% 0%, rgba(171,229,255,.32), transparent 30%),
+    radial-gradient(circle at 100% 20%, rgba(44,164,255,.22), transparent 34%),
+    linear-gradient(180deg,#dff4ff 0%,#a8dbf2 38%,#245f84 100%) !important;
+}
+body{
+  background:
+    radial-gradient(circle at 50% -16%, rgba(255,255,255,.9), transparent 24%),
+    linear-gradient(180deg,#caecfb 0%,#82c8e8 34%,#113650 100%) !important;
+}
+.app{
+  width:min(100%,540px) !important;
+  max-width:540px !important;
+  background:
+    radial-gradient(circle at 12% 5%, rgba(255,255,255,.22), transparent 18%),
+    radial-gradient(circle at 92% 2%, rgba(97,201,255,.26), transparent 24%),
+    linear-gradient(180deg,#0b3d60 0%,#052235 36%,#061923 100%) !important;
+  border-left:1px solid rgba(255,255,255,.22) !important;
+  border-right:1px solid rgba(255,255,255,.12) !important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.08), 0 28px 90px rgba(0,58,100,.38) !important;
+}
+.app::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.10) 0 1px, transparent 1px 58px),
+    radial-gradient(circle at 10% 10%, rgba(255,255,255,.34) 0 1px, transparent 2px),
+    radial-gradient(circle at 86% 16%, rgba(255,255,255,.28) 0 1px, transparent 2px),
+    radial-gradient(circle at 22% 44%, rgba(255,255,255,.22) 0 1px, transparent 2px),
+    radial-gradient(circle at 75% 72%, rgba(255,255,255,.18) 0 1px, transparent 2px);
+  opacity:.45;
+}
+.top,.content,.bottom-nav{position:relative;z-index:1;}
+.top{
+  background:
+    radial-gradient(circle at 50% -10%, rgba(255,255,255,.23), transparent 40%),
+    linear-gradient(180deg,rgba(11,64,94,.94),rgba(5,26,39,.92)) !important;
+  border-bottom:1px solid rgba(199,238,255,.22) !important;
+}
+.brand-logo{
+  filter:drop-shadow(0 12px 26px rgba(121,221,255,.28)) !important;
+}
+.brand-img{
+  border-radius:10px !important;
+  background:rgba(255,255,255,.18) !important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.34),0 12px 30px rgba(0,0,0,.18) !important;
+}
+.pill,.currency-btn{
+  border:1.5px solid rgba(120,219,255,.95) !important;
+  background:linear-gradient(180deg,rgba(9,55,83,.72),rgba(5,28,43,.82)) !important;
+  color:#fff !important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 0 20px rgba(25,167,255,.22) !important;
+}
+.currency-btn{color:#daf7ff !important;}
+.currency-dropdown{
+  border-color:rgba(170,236,255,.34) !important;
+  background:linear-gradient(180deg,rgba(11,56,84,.98),rgba(5,29,44,.98)) !important;
+  box-shadow:0 22px 46px rgba(0,42,76,.44),0 0 0 1px rgba(255,255,255,.05) inset !important;
+}
+.currency-dropdown button:hover,
+.currency-dropdown button.active{
+  background:rgba(103,210,255,.18) !important;
+}
+.search-wrap{
+  border:1px solid rgba(189,235,255,.26) !important;
+  background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.065)) !important;
+  box-shadow:0 12px 28px rgba(0,34,55,.24), inset 0 0 0 1px rgba(255,255,255,.04) !important;
+}
+.search-wrap span{color:#e9fbff !important;}
+.heart,.fav,.detail-heart{
+  background:rgba(5,31,46,.62) !important;
+  border:1px solid rgba(211,244,255,.25) !important;
+  box-shadow:0 8px 18px rgba(0,36,58,.22) !important;
+}
+.content{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,0) 130px) !important;
+}
+.section-title h2{
+  color:#fff !important;
+  text-shadow:0 2px 0 rgba(0,0,0,.22),0 0 18px rgba(62,196,255,.20) !important;
+}
+.section-title button{
+  color:#7bd8ff !important;
+  text-decoration-color:rgba(123,216,255,.6) !important;
+}
+.card{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.045)),
+    linear-gradient(180deg,#0e405e,#08283b) !important;
+  border:1px solid rgba(200,240,255,.25) !important;
+  box-shadow:0 16px 34px rgba(0,27,45,.34), inset 0 1px 0 rgba(255,255,255,.08) !important;
+}
+.card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,.16),transparent 28%,transparent 100%);
+  opacity:.35;
+}
+.pic{
+  background:linear-gradient(135deg,#e9fbff,#8cd8ff) !important;
+}
+.empty-pic,
+.no-photo,
+.cart-img.empty-pic{
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255,255,255,.38), transparent 0 42%, transparent 43%),
+    linear-gradient(135deg,#d7f5ff 0%,#4db9f7 45%,#0a527d 100%) !important;
+  color:#eefbff !important;
+  position:relative;
+  overflow:hidden;
+}
+.no-photo::before{
+  content:"❄";
+  position:absolute;
+  top:20%;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:48px;
+  color:rgba(255,255,255,.6);
+  text-shadow:0 6px 18px rgba(0,61,107,.28);
+}
+.no-photo::after{
+  content:"Заморожено";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:18%;
+  color:#fff;
+  font-size:13px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  text-shadow:0 2px 10px rgba(0,48,88,.4);
+}
+.body{
+  background:linear-gradient(180deg,rgba(5,32,48,.28),rgba(3,21,32,.08)) !important;
+}
+.name{
+  color:#fff !important;
+  text-shadow:0 1px 0 rgba(0,0,0,.18) !important;
+}
+.cat,.detail-cat,.detail-body p,.cart-info p{
+  color:#cce8f4 !important;
+}
+.price,.detail-price,.cart-price,.total b{
+  color:#fff !important;
+  text-shadow:0 0 16px rgba(105,213,255,.18) !important;
+}
+.add,.detail-add,.ask-btn,.checkout{
+  background:linear-gradient(180deg,#25b6ff 0%,#0286ea 100%) !important;
+  box-shadow:0 10px 24px rgba(0,134,234,.32), inset 0 1px 0 rgba(255,255,255,.16) !important;
+  border:0 !important;
+  color:#fff !important;
+}
+.add:hover,.detail-add:hover,.ask-btn:hover{
+  background:linear-gradient(180deg,#48c6ff 0%,#0a97fb 100%) !important;
+}
+.catalog-item,.cart-row,.total,.pack-info{
+  border:1px solid rgba(194,238,255,.24) !important;
+  background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.04)) !important;
+  box-shadow:0 14px 32px rgba(0,31,52,.22), inset 0 1px 0 rgba(255,255,255,.06) !important;
+}
+.catalog-item .arrow{
+  color:#7bd8ff !important;
+}
+.detail-top{
+  border-color:rgba(194,238,255,.18) !important;
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025)) !important;
+}
+.detail-back{
+  color:#fff !important;
+}
+.detail-image{
+  background:linear-gradient(135deg,#eafaff,#7ccfff) !important;
+}
+.bottom-nav{
+  background:linear-gradient(180deg,rgba(7,31,45,.92),rgba(4,20,31,.96)) !important;
+  border-top:1px solid rgba(199,238,255,.25) !important;
+  box-shadow:0 -18px 40px rgba(0,32,52,.42), inset 0 1px 0 rgba(255,255,255,.05) !important;
+}
+.nav{
+  color:#c4d2da !important;
+}
+.nav.active{
+  color:#36baff !important;
+  text-shadow:0 0 16px rgba(31,177,255,.30) !important;
+}
+.nav b{
+  background:linear-gradient(180deg,#2cc0ff,#078df0) !important;
+}
+.remove{color:#cce8f4 !important;}
+.qty{
+  border-color:rgba(194,238,255,.22) !important;
+  background:rgba(255,255,255,.05) !important;
+}
+.qty button{
+  background:rgba(255,255,255,.08) !important;
+}
+.empty{
+  border-color:rgba(194,238,255,.28) !important;
+  background:rgba(255,255,255,.055) !important;
+  color:#cce8f4 !important;
+}
