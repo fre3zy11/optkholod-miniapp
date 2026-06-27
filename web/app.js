@@ -314,6 +314,13 @@ const translations = {
 
 const catalogCats = ['картофель'];
 let currentLang = localStorage.getItem('lang') || 'ru';
+const CURRENCIES = {
+  RUB: { code: 'RUB', symbol: '₽', rate: 1, locale: 'ru-RU' },
+  USD: { code: 'USD', symbol: '$', rate: 90, locale: 'en-US' },
+  EUR: { code: 'EUR', symbol: '€', rate: 100, locale: 'de-DE' }
+};
+let currentCurrency = localStorage.getItem('currency') || 'RUB';
+if (!CURRENCIES[currentCurrency]) currentCurrency = 'RUB';
 let activeCat = 'все';
 let mode = 'new';
 let previousMode = 'new';
@@ -325,8 +332,15 @@ const $ = (s) => document.querySelector(s);
 const text = (key) => translations[currentLang][key];
 const productById = (id) => products.find(p => p.id === Number(id));
 const kgLabel = (kg) => `${String(kg).replace('.', ',')} ${text('kg')}`;
-const money = (n) => Number(n || 0).toLocaleString(currentLang === 'ru' ? 'ru-RU' : 'en-US', { minimumFractionDigits: 2 }) + ' ₽';
-const moneyKg = (n) => `${money(n).replace(' ₽','')} ${text('priceKg')}`;
+const currency = () => CURRENCIES[currentCurrency] || CURRENCIES.RUB;
+const convertMoney = (rub) => Number(rub || 0) / currency().rate;
+const money = (rub) => {
+  const cur = currency();
+  const converted = convertMoney(rub);
+  const value = converted.toLocaleString(cur.locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return currentCurrency === 'RUB' ? `${value} ${cur.symbol}` : `${cur.symbol}${value}`;
+};
+const moneyKg = (rub) => `${money(rub)}/${text('kg')}`;
 const productTotal = (p) => Number(p.pricePerKg || 0) * Number(p.packKg || 0);
 const productImage = (p) => p.img ? `<img src="${p.img}" alt="${p.name[currentLang]}">` : `<div class="no-photo" aria-label="Нет фото"></div>`;
 
@@ -543,11 +557,47 @@ function openProduct(id) {
   renderProducts();
 }
 
+function renderCurrencyButton() {
+  const btn = $('#currencyBtn');
+  if (!btn) return;
+  btn.innerHTML = `${currency().code} <span class="currency-chevron">⌄</span>`;
+  document.querySelectorAll('[data-currency]').forEach(item => {
+    item.classList.toggle('active', item.dataset.currency === currentCurrency);
+  });
+}
+
+function closeCurrencyDropdown() {
+  const wrap = document.querySelector('.currency-wrap');
+  const btn = $('#currencyBtn');
+  const dropdown = $('#currencyDropdown');
+  wrap?.classList.remove('open');
+  btn?.setAttribute('aria-expanded', 'false');
+  dropdown?.setAttribute('aria-hidden', 'true');
+}
+
+function toggleCurrencyDropdown() {
+  const wrap = document.querySelector('.currency-wrap');
+  const btn = $('#currencyBtn');
+  const dropdown = $('#currencyDropdown');
+  const isOpen = wrap?.classList.toggle('open');
+  btn?.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  dropdown?.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+}
+
+function setCurrency(code) {
+  if (!CURRENCIES[code]) return;
+  currentCurrency = code;
+  localStorage.setItem('currency', code);
+  renderCurrencyButton();
+  closeCurrencyDropdown();
+  renderProducts();
+}
+
 function applyLanguage() {
   localStorage.setItem('lang', currentLang);
   document.documentElement.lang = currentLang;
   $('#langBtn').textContent = text('lang');
-  $('#currencyBtn').textContent = text('currency');
+  renderCurrencyButton();
   $('#search').placeholder = text('search');
   $('#showAll').textContent = text('showAll');
   document.querySelector('[data-tab="new"] span').textContent = text('new');
@@ -558,6 +608,21 @@ function applyLanguage() {
 }
 
 document.addEventListener('click', (e) => {
+  const currencyOption = e.target.closest('[data-currency]');
+  if (currencyOption) {
+    setCurrency(currencyOption.dataset.currency);
+    return;
+  }
+
+  if (e.target.closest('#currencyBtn')) {
+    toggleCurrencyDropdown();
+    return;
+  }
+
+  if (!e.target.closest('.currency-wrap')) {
+    closeCurrencyDropdown();
+  }
+
   if (e.target.closest('#langBtn')) {
     currentLang = currentLang === 'ru' ? 'en' : 'ru';
     applyLanguage();

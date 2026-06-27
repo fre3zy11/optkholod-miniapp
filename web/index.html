@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>ОптХолод — Mini App</title>
-  <link rel="stylesheet" href="style.css?v=potato-pack-20260625" />
+  <link rel="stylesheet" href="style.css?v=currency-20260627" />
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
@@ -15,7 +15,14 @@
         <div class="brand-logo" aria-label="ОптХолод">
           <img class="brand-img" src="assets/optkholod_logo_new.png" alt="ОптХолод">
         </div>
-        <button class="pill" id="currencyBtn" type="button">RUB</button>
+        <div class="currency-wrap">
+          <button class="pill currency-btn" id="currencyBtn" type="button" aria-expanded="false">RUB <span class="currency-chevron">⌄</span></button>
+          <div class="currency-dropdown" id="currencyDropdown" aria-hidden="true">
+            <button type="button" data-currency="RUB"><span>RUB</span><b>₽</b></button>
+            <button type="button" data-currency="USD"><span>USD</span><b>$</b></button>
+            <button type="button" data-currency="EUR"><span>EUR</span><b>€</b></button>
+          </div>
+        </div>
       </div>
       <div class="search-wrap">
         <span>⌕</span>
@@ -53,6 +60,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=potato-pack-20260625"></script>
+  <script src="app.js?v=currency-20260627"></script>
 </body>
 </html>
