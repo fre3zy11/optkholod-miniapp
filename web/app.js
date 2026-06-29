@@ -15,7 +15,7 @@ const products = [
     },
     pricePerKg: 155,
     packKg: 10,
-    img: '',
+    img: 'assets/products/fries-10mm.webp',
     tag: 'картофель'
   },
   {
@@ -28,7 +28,7 @@ const products = [
     },
     pricePerKg: 170,
     packKg: 10,
-    img: '',
+    img: 'assets/products/potato-wedges.webp',
     tag: 'картофель'
   },
   {
@@ -41,7 +41,7 @@ const products = [
     },
     pricePerKg: 205,
     packKg: 10,
-    img: '',
+    img: 'assets/products/potato-wedges.webp',
     tag: 'картофель'
   },
   {
@@ -54,7 +54,7 @@ const products = [
     },
     pricePerKg: 220,
     packKg: 10,
-    img: '',
+    img: 'assets/products/potato-balls.webp',
     tag: 'картофель'
   },
   {
@@ -67,7 +67,7 @@ const products = [
     },
     pricePerKg: 215,
     packKg: 10,
-    img: '',
+    img: 'assets/products/pomuni-triangles.jpg',
     tag: 'картофель'
   },
   {
@@ -80,7 +80,7 @@ const products = [
     },
     pricePerKg: 160,
     packKg: 10,
-    img: '',
+    img: 'assets/products/potato-wedges.webp',
     tag: 'картофель'
   },
   {
@@ -93,7 +93,7 @@ const products = [
     },
     pricePerKg: 145,
     packKg: 10,
-    img: '',
+    img: 'assets/products/fries-10mm.webp',
     tag: 'картофель'
   },
   {
@@ -106,7 +106,7 @@ const products = [
     },
     pricePerKg: 178,
     packKg: 12.5,
-    img: '',
+    img: 'assets/products/fries-10mm.webp',
     tag: 'картофель'
   },
   {
@@ -119,7 +119,7 @@ const products = [
     },
     pricePerKg: 197,
     packKg: 12.5,
-    img: '',
+    img: 'assets/products/fries-10mm.webp',
     tag: 'картофель'
   },
   {
@@ -132,7 +132,7 @@ const products = [
     },
     pricePerKg: 155,
     packKg: 12.5,
-    img: '',
+    img: 'assets/products/fries-10mm.webp',
     tag: 'картофель'
   },
   {
@@ -145,7 +145,7 @@ const products = [
     },
     pricePerKg: 210,
     packKg: 12.5,
-    img: '',
+    img: 'assets/products/fries-12mm.webp',
     tag: 'картофель'
   },
   {
@@ -158,7 +158,7 @@ const products = [
     },
     pricePerKg: 210,
     packKg: 12.5,
-    img: '',
+    img: 'assets/products/fries-7mm.webp',
     tag: 'картофель'
   },
   {
@@ -171,7 +171,7 @@ const products = [
     },
     pricePerKg: 230,
     packKg: 12.5,
-    img: '',
+    img: 'assets/products/fries-12mm.webp',
     tag: 'картофель'
   },
   {
@@ -184,7 +184,7 @@ const products = [
     },
     pricePerKg: 225,
     packKg: 12.5,
-    img: '',
+    img: 'assets/products/fries-10mm.webp',
     tag: 'картофель'
   },
   {
@@ -197,7 +197,7 @@ const products = [
     },
     pricePerKg: 183,
     packKg: 10,
-    img: '',
+    img: 'assets/products/potato-wedges.webp',
     tag: 'картофель'
   },
   {
@@ -210,7 +210,7 @@ const products = [
     },
     pricePerKg: 225,
     packKg: 10,
-    img: '',
+    img: 'assets/products/potato-wedges.webp',
     tag: 'картофель'
   },
   {
@@ -223,7 +223,7 @@ const products = [
     },
     pricePerKg: 280,
     packKg: 10,
-    img: '',
+    img: 'assets/products/potato-balls.webp',
     tag: 'картофель'
   },
   {
@@ -236,7 +236,7 @@ const products = [
     },
     pricePerKg: 250,
     packKg: 10,
-    img: '',
+    img: 'assets/products/potato-specialties.webp',
     tag: 'картофель'
   },
   {
@@ -249,7 +249,7 @@ const products = [
     },
     pricePerKg: 320,
     packKg: 10,
-    img: '',
+    img: 'assets/products/potato-specialties.webp',
     tag: 'картофель'
   },
   {
@@ -262,7 +262,7 @@ const products = [
     },
     pricePerKg: 285,
     packKg: 10,
-    img: '',
+    img: 'assets/products/pomuni-triangles.jpg',
     tag: 'картофель'
   },
   {
@@ -275,7 +275,7 @@ const products = [
     },
     pricePerKg: 240,
     packKg: 9,
-    img: '',
+    img: 'assets/products/potato-specialties.webp',
     tag: 'картофель'
   },
   {
@@ -288,7 +288,7 @@ const products = [
     },
     pricePerKg: 360,
     packKg: 6,
-    img: '',
+    img: 'assets/products/onion-rings.webp',
     tag: 'картофель'
   }
 ];
