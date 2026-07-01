@@ -338,6 +338,13 @@ let fav = JSON.parse(localStorage.getItem('fav') || '[]');
 let cart = JSON.parse(localStorage.getItem('cart') || '{}');
 
 const $ = (s) => document.querySelector(s);
+const showAllBtn = () => $('#showAll');
+function setShowAll(display = 'none', label = '') {
+  const btn = showAllBtn();
+  if (!btn) return;
+  btn.style.display = display;
+  if (label) btn.textContent = label;
+}
 const text = (key) => translations[currentLang][key];
 const productById = (id) => products.find(p => p.id === Number(id));
 const kgLabel = (kg) => `${String(kg).replace('.', ',')} ${text('kg')}`;
@@ -428,7 +435,7 @@ function renderProductCards(arr) {
 
 function renderCatalog() {
   $('#pageTitle').textContent = text('catalog');
-  $('#showAll').style.display = 'none';
+  setShowAll('none');
   $('#products').className = 'catalog-list';
   $('#products').innerHTML = catalogCats.map(c => `
     <button class="catalog-item" data-catalog-cat="${c}" type="button">
@@ -445,7 +452,7 @@ function renderDetail() {
   const weightOptions = getWeightOptions(p);
   const itemTotal = productTotal(p, currentWeight);
   $('#pageTitle').textContent = '';
-  $('#showAll').style.display = 'none';
+  setShowAll('none');
   $('#products').className = 'product-detail';
   $('#products').innerHTML = `
     <div class="detail-top">
@@ -483,7 +490,7 @@ function renderDetail() {
 
 function renderCartPage() {
   $('#pageTitle').textContent = text('cart');
-  $('#showAll').style.display = 'none';
+  setShowAll('none');
   $('#products').className = 'cart-page';
 
   const entries = Object.keys(cart).map(key => [key, normalizeCartEntry(key)]).filter(([, item]) => item);
@@ -535,15 +542,13 @@ function renderProducts() {
   $('#products').className = 'grid';
   if (mode === 'fav') {
     $('#pageTitle').textContent = text('fav');
-    $('#showAll').style.display = 'none';
+    setShowAll('none');
   } else if (activeCat !== 'все') {
     $('#pageTitle').textContent = translations[currentLang].cats[activeCat] || text('new');
-    $('#showAll').style.display = '';
-    $('#showAll').textContent = text('backAll');
+    setShowAll('', text('backAll'));
   } else {
     $('#pageTitle').textContent = text('new');
-    $('#showAll').style.display = '';
-    $('#showAll').textContent = text('showAll');
+    setShowAll('', text('showAll'));
   }
   renderProductCards(filteredProducts());
 }
@@ -644,7 +649,7 @@ function applyLanguage() {
   $('#langBtn').textContent = text('lang');
   renderCurrencyButton();
   $('#search').placeholder = text('search');
-  $('#showAll').textContent = text('showAll');
+  setShowAll('none', text('showAll'));
   document.querySelector('[data-tab="new"] span').textContent = text('new');
   document.querySelector('[data-tab="catalog"] span').textContent = text('catalog');
   document.querySelector('[data-tab="fav"] span').textContent = text('fav');
@@ -757,7 +762,7 @@ document.addEventListener('input', (e) => {
   });
 });
 
-$('#showAll').addEventListener('click', () => {
+showAllBtn()?.addEventListener('click', () => {
   if (activeCat !== 'все' && mode === 'new') {
     activeCat = 'все';
     mode = 'new';
