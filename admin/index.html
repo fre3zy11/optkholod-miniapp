@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#06111d" />
+  <title>ОптХолод — управление каталогом</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin-static/style.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="/admin" aria-label="ОптХолод">
+        <span class="brand-mark">ОХ</span>
+        <span><b>ОптХолод</b><small>панель управления</small></span>
+      </a>
+
+      <nav class="nav" aria-label="Навигация">
+        <button class="nav-item active" type="button" data-section="catalog"><span>▦</span> Каталог</button>
+        <button class="nav-item" type="button" disabled><span>◎</span> Заказы <i>скоро</i></button>
+        <button class="nav-item" type="button" disabled><span>▤</span> Остатки <i>скоро</i></button>
+        <button class="nav-item" type="button" data-section="categories"><span>◇</span> Категории</button>
+        <button class="nav-item" type="button" data-section="history"><span>↶</span> История цен</button>
+        <button class="nav-item" type="button" data-section="notifications"><span>◉</span> Уведомления</button>
+        <button class="nav-item" type="button" data-section="offers"><span>❄</span> Холодные предложения</button>
+        <button class="nav-item" type="button" disabled><span>◫</span> Аналитика <i>скоро</i></button>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="store-state"><span></span><div><b>Магазин работает</b><small>Каталог доступен</small></div></div>
+        <button id="logoutBtn" class="logout hidden" type="button">Выйти</button>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">Управление магазином</p>
+          <h1 id="pageHeading">Каталог товаров</h1>
+        </div>
+        <div class="top-actions">
+          <button id="reloadBtn" class="icon-btn hidden" type="button" title="Обновить">↻</button>
+          <label id="importPriceBtn" class="import-button hidden">Импорт XLS<input id="priceImport" type="file" accept=".xls" /></label>
+          <button id="openCreateBtn" class="primary hidden" type="button"><span>＋</span> Добавить товар</button>
+        </div>
+      </header>
+
+      <section id="loginView" class="login-view">
+        <div class="login-visual">
+          <span class="visual-label">ОптХолод · Admin</span>
+          <h2>Всё важное<br>в одном месте.</h2>
+          <p>Обновляйте цены и ассортимент — изменения сразу появятся в Telegram-магазине.</p>
+          <div class="ice-orb"><span>❄</span></div>
+        </div>
+        <form id="loginForm" class="login-card">
+          <span class="lock">⌁</span>
+          <p class="eyebrow">Добро пожаловать</p>
+          <h2>Вход в панель</h2>
+          <p>Используйте пароль администратора, указанный в настройках сервера.</p>
+          <label for="password">Пароль</label>
+          <div class="password-wrap">
+            <input id="password" type="password" placeholder="Введите пароль" autocomplete="current-password" />
+            <button id="togglePassword" type="button" aria-label="Показать пароль">◉</button>
+          </div>
+          <button id="loginBtn" class="primary login-submit" type="submit">Войти в панель <span>→</span></button>
+          <div id="loginStatus" class="login-status"></div>
+        </form>
+      </section>
+
+      <div id="panel" class="dashboard hidden">
+        <section class="stats" aria-label="Сводка">
+          <article><span class="stat-icon blue">▦</span><div><small>Всего товаров</small><strong id="totalProducts">0</strong></div></article>
+          <article><span class="stat-icon green">₽</span><div><small>Средняя цена</small><strong id="averagePrice">0 ₽</strong></div></article>
+          <article><span class="stat-icon orange">◇</span><div><small>Категорий</small><strong id="totalCategories">0</strong></div></article>
+          <article><span class="stat-icon violet">✓</span><div><small>Заполненность</small><strong id="catalogHealth">0%</strong></div></article>
+        </section>
+
+        <section class="catalog-panel">
+          <div class="catalog-head">
+            <div><h2>Все товары</h2><p id="catalogCaption">Управляйте ассортиментом и ценами</p></div>
+            <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Найти товар или категорию..." /></label>
+          </div>
+          <div id="status" class="status" role="status"></div>
+          <div class="table-labels"><span>Товар</span><span>Цена за кг</span><span>Упаковка</span><span>Действия</span></div>
+          <div id="products" class="products"></div>
+        </section>
+
+        <section id="categoriesView" class="feature-panel hidden">
+          <div class="feature-head"><div><p class="eyebrow">Структура каталога</p><h2>Категории и порядок товаров</h2><p>Меняйте порядок стрелками — он сразу применяется в магазине.</p></div></div>
+          <div id="categoryGroups" class="category-groups"></div>
+        </section>
+
+        <section id="historyView" class="feature-panel hidden">
+          <div class="feature-head"><div><p class="eyebrow">Журнал изменений</p><h2>История цен</h2><p>Последние 500 изменений стоимости товаров.</p></div></div>
+          <div id="historyList" class="history-list"></div>
+        </section>
+
+        <section id="notificationsView" class="feature-panel hidden">
+          <div class="feature-head"><div><p class="eyebrow">Telegram</p><h2>Уведомления</h2><p>Сообщения отправляются в чат, указанный в ORDER_CHAT_ID.</p></div><button id="testNotification" class="ghost" type="button">Отправить тест</button></div>
+          <div class="settings-list">
+            <label class="setting-row"><div><b>Новые заказы</b><small>Отправлять состав заказа и данные клиента</small></div><input id="notifyOrders" type="checkbox" /></label>
+            <label class="setting-row"><div><b>Низкие остатки</b><small>Будет активно после запуска модуля «Остатки»</small></div><input id="notifyStock" type="checkbox" /></label>
+          </div>
+          <button id="saveNotifications" class="primary" type="button">Сохранить настройки</button>
+        </section>
+
+        <section id="offersView" class="feature-panel hidden">
+          <div class="feature-head"><div><p class="eyebrow">Рассылка покупателям</p><h2>Холодные предложения</h2><p>Сообщение получат пользователи, которые уже запускали бота.</p></div></div>
+          <div class="offer-composer">
+            <label>Текст предложения<textarea id="offerText" placeholder="Например: Картофель фри Global Fries по новой цене 155 ₽/кг с НДС."></textarea></label>
+            <div class="offer-preview"><span>❄️ Холодное предложение</span><p id="offerPreview">Здесь появится текст рассылки</p><button type="button">❄️ Перейти в магазин</button></div>
+          </div>
+          <button id="sendOffer" class="primary" type="button">Отправить предложение</button>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div id="createModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="createTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section id="addProduct" class="modal-card">
+      <header><div><p id="modalEyebrow" class="eyebrow">Новая позиция</p><h2 id="createTitle">Добавить товар</h2></div><button class="close-btn" type="button" data-close-modal>×</button></header>
+      <div class="form-grid">
+        <label class="wide">Название товара <input id="newNameRu" placeholder="Например, картофель фри 10 мм" /></label>
+        <label class="wide">Название на английском <input id="newNameEn" placeholder="Product name in English" /></label>
+        <label>Цена за кг, ₽ <input id="newPrice" type="number" min="0" step="0.01" placeholder="155" /></label>
+        <label>Вес упаковки, кг <input id="newPack" type="number" min="0" step="0.1" placeholder="10" /></label>
+        <label class="wide">Категория <input id="newCatRu" placeholder="Замороженный картофель" /></label>
+        <label class="wide">Изображение <div class="upload-row"><input id="newImg" placeholder="assets/products/product.webp" /><label class="upload-button">Загрузить<input id="imageUpload" type="file" accept="image/jpeg,image/png,image/webp" /></label></div><small id="uploadStatus">JPG, PNG или WEBP · до 10 МБ</small></label>
+        <label class="wide">Описание <textarea id="newDescRu" placeholder="Коротко расскажите о товаре"></textarea></label>
+        <label class="visible-control wide"><input id="newVisible" type="checkbox" checked /><span>Показывать товар в магазине</span></label>
+      </div>
+      <footer><button class="ghost" type="button" data-close-modal>Отмена</button><button id="createBtn" class="primary" type="button">Добавить товар</button></footer>
+    </section>
+  </div>
+  <script src="/admin-static/admin.js"></script>
+</body>
+</html>

@@ -1,3 +1,8 @@
+// @ts-nocheck -- legacy storefront is being migrated incrementally to typed modules.
+import './style.scss';
+import { initSnowCanvas } from './ambient';
+import { animateCards, animateCart, animateCatalog, animateDetail, animateSuccessModal, initMotion, pulseCart } from './motion';
+
 const tg = window.Telegram?.WebApp;
 if (tg) {
   tg.ready();
@@ -372,7 +377,7 @@ const parseCartKey = (key) => {
   const [id, weight] = String(key).split('|');
   return { id: Number(id), weight: cleanWeight(weight || productById(id)?.packKg || 10) };
 };
-const productImage = (p) => p.img ? `<img src="${p.img}" alt="${p.name[currentLang]}">` : `<div class="no-photo" aria-label="Нет фото"></div>`;
+const productImage = (p) => p.img ? `<img src="${p.img}" alt="${p.name[currentLang]}" loading="lazy" decoding="async">` : `<div class="no-photo" aria-label="Нет фото"></div>`;
 
 function save() {
   localStorage.setItem('fav', JSON.stringify(fav));
@@ -438,6 +443,7 @@ function renderProductCards(arr) {
       </div>
     </article>
   `).join('') : `<div class="empty">${text('emptyProducts')}</div>`;
+  animateCards();
 }
 
 function renderCatalog() {
@@ -448,6 +454,7 @@ function renderCatalog() {
     $('#products').innerHTML = ['Европа','Китай','Россия'].map(country => `
       <button class="catalog-item country-item" data-catalog-country="${country}" type="button"><span><b>${country === 'Европа' ? '🇪🇺' : country === 'Китай' ? '🇨🇳' : '🇷🇺'}</b>${country}</span><span class="arrow">›</span></button>
     `).join('');
+    animateCatalog();
     return;
   }
   const tags = [...new Set(products.filter(p => p.visible !== false && p.country === catalogCountry).map(p => p.tag).filter(Boolean))];
@@ -458,6 +465,7 @@ function renderCatalog() {
       <span class="arrow">›</span>
     </button>
   `).join('');
+  animateCatalog();
 }
 
 function renderDetail() {
@@ -501,6 +509,7 @@ function renderDetail() {
       <button class="ask-btn" type="button">${text('ask')}</button>
     </div>
   `;
+  animateDetail();
 }
 
 
@@ -550,6 +559,8 @@ function showOrderSuccess() {
     </div>
   `;
   document.body.appendChild(modal);
+  import('./success-animation').then(module => module.mountSuccessAnimation(modal.querySelector('.order-modal-icon'))).catch(() => {});
+  animateSuccessModal(modal);
   tg?.HapticFeedback?.notificationOccurred?.('success');
 }
 
@@ -639,6 +650,7 @@ function renderCartPage() {
     </div>
     <button class="checkout cart-checkout" data-checkout type="button" ${hasItems ? '' : 'disabled'}>${text('checkout')}</button>
   `;
+  animateCart();
 }
 
 function renderProducts() {
@@ -681,6 +693,7 @@ function addCart(id, weight = null) {
   }
   save();
   updateCount();
+  pulseCart();
   tg?.HapticFeedback?.impactOccurred?.('light');
 }
 
@@ -858,10 +871,14 @@ document.addEventListener('click', (e) => {
   if (remove) removeCart(remove.dataset.remove);
 });
 
+let searchTimer;
 $('#search').addEventListener('input', () => {
-  if (mode === 'cart' || mode === 'catalog' || mode === 'detail') mode = 'new';
-  setActiveNav(mode);
-  renderProducts();
+  window.clearTimeout(searchTimer);
+  searchTimer = window.setTimeout(() => {
+    if (mode === 'cart' || mode === 'catalog' || mode === 'detail') mode = 'new';
+    setActiveNav(mode);
+    renderProducts();
+  }, 120);
 });
 
 document.addEventListener('input', (e) => {
@@ -921,7 +938,9 @@ $('#favBtn').addEventListener('click', () => {
 
 async function loadProducts() {
   try {
-    const response = await fetch(`products.json?v=${Date.now()}`);
+    const productsUrl = new URL('products.json', document.baseURI);
+    productsUrl.searchParams.set('v', String(Date.now()));
+    const response = await fetch(productsUrl);
     if (!response.ok) return;
     const data = await response.json();
     const loaded = Array.isArray(data) ? data : data.products;
@@ -931,6 +950,9 @@ async function loadProducts() {
   }
 }
 
+initSnowCanvas();
+initMotion();
+if (document.querySelector('#brandRive[data-src]')) import('./rive-logo').then(module => module.initRiveLogo());
 loadProducts().finally(() => applyLanguage());
 
 
