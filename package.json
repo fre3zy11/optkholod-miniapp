@@ -9,8 +9,6 @@
     "typecheck": "tsc --noEmit -p frontend/tsconfig.json"
   },
   "dependencies": {
-    "@lottiefiles/dotlottie-web": "^0.50.0",
-    "@rive-app/canvas": "^2.31.5",
     "gsap": "^3.13.0"
   },
   "devDependencies": {

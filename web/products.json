@@ -2,90 +2,94 @@
   {
     "id": 1,
     "name": {
-      "ru": "Картофель фри Global Fries 10 мм 10 кг",
+      "ru": "Картофель фри Global Fries 10 mm 10 кг (2,5кг*4шт) FR000037",
       "en": "Global Fries French Fries 10 mm, 10 kg"
     },
     "cat": {
-      "ru": "Замороженный картофель · упаковка 10 кг",
-      "en": "Frozen potato · 10 kg pack"
+      "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
+      "en": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ"
     },
     "desc": {
       "ru": "Картофель фри ровной нарезки 10 мм. Формат 2,5 кг × 4 шт. Подходит для кафе, доставки, фудкортов и ресторанной кухни.",
       "en": "Straight-cut 10 mm frozen fries. Pack format: 2.5 kg × 4 pcs. Suitable for cafés, delivery, food courts and restaurants."
     },
-    "pricePerKg": 155,
-    "packKg": 10,
+    "pricePerKg": 155.0,
+    "packKg": 10.0,
     "img": "assets/products/fries-10mm.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 0
+    "sortOrder": 0,
+    "priceUnit": "кг"
   },
   {
     "id": 2,
     "name": {
-      "ru": "Картофельные дольки BART'S GOURMET",
+      "ru": "Картофельные дольки  BART`S GOURMET (2,5кг*4шт) F000782",
       "en": "BART'S GOURMET Potato Wedges"
     },
     "cat": {
-      "ru": "Замороженный картофель · упаковка 10 кг",
-      "en": "Frozen potato · 10 kg pack"
+      "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
+      "en": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ"
     },
     "desc": {
       "ru": "Картофельные дольки BART’S GOURMET. Формат 2,5 кг × 4 шт. Универсальный гарнир для HoReCa и оптовых поставок.",
       "en": "BART’S GOURMET potato wedges. Pack format: 2.5 kg × 4 pcs. Universal side dish for HoReCa and wholesale."
     },
-    "pricePerKg": 170,
-    "packKg": 10,
+    "pricePerKg": 170.0,
+    "packKg": 10.0,
     "img": "assets/products/potato-wedges.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 1
+    "sortOrder": 1,
+    "priceUnit": "кг"
   },
   {
     "id": 3,
     "name": {
-      "ru": "Картофельные дольки со специями BART'S GOURMET",
+      "ru": "Картофельные дольки со специями BART`S GOURMET (2,5кг*4шт) F000783",
       "en": "BART'S GOURMET Spiced Potato Wedges"
     },
     "cat": {
-      "ru": "Замороженный картофель · упаковка 10 кг",
-      "en": "Frozen potato · 10 kg pack"
+      "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
+      "en": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ"
     },
     "desc": {
       "ru": "Картофельные дольки со специями BART’S GOURMET. Формат 2,5 кг × 4 шт. Готовое решение для насыщенного гарнира.",
       "en": "BART’S GOURMET spiced potato wedges. Pack format: 2.5 kg × 4 pcs. Ready solution for a flavorful side dish."
     },
-    "pricePerKg": 205,
-    "packKg": 10,
+    "pricePerKg": 205.0,
+    "packKg": 10.0,
     "img": "assets/products/potato-wedges.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 2
+    "sortOrder": 2,
+    "priceUnit": "кг"
   },
   {
     "id": 4,
     "name": {
-      "ru": "Картофельные шарики Pomuni Frozen 10 кг",
+      "ru": "Картофельные Шарики Pomuni Frozen (1,0 кг*10шт)",
       "en": "Pomuni Frozen Potato Balls, 10 kg"
     },
     "cat": {
-      "ru": "Замороженный картофель · упаковка 10 кг",
-      "en": "Frozen potato · 10 kg pack"
+      "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
+      "en": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ"
     },
     "desc": {
       "ru": "Картофельные шарики Pomuni Frozen. Формат 1 кг × 10 шт. Удобный продукт для гарниров, закусок и детского меню.",
       "en": "Pomuni Frozen potato balls. Pack format: 1 kg × 10 pcs. Convenient for sides, snacks and kids menus."
     },
-    "pricePerKg": 220,
-    "packKg": 10,
+    "pricePerKg": 220.0,
+    "packKg": 10.0,
     "img": "assets/products/potato-balls.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 3
+    "sortOrder": 3,
+    "priceUnit": "кг"
   },
   {
     "id": 5,
@@ -464,24 +468,25 @@
   {
     "id": 22,
     "name": {
-      "ru": "Луковые кольца Farm Frites 6 кг",
+      "ru": "Луковые кольца FARM FRITES 6 кг (1кг*6шт)549.004",
       "en": "Farm Frites Onion Rings, 6 kg"
     },
     "cat": {
-      "ru": "Замороженные снеки · упаковка 6 кг",
-      "en": "Frozen snacks · 6 kg pack"
+      "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
+      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
     },
     "desc": {
       "ru": "Луковые кольца Farm Frites. Формат 1 кг × 6 шт. Хрустящая закуска для фудкортов, бургерных и кафе.",
       "en": "Farm Frites onion rings. Pack format: 1 kg × 6 pcs. Crispy snack for food courts, burger bars and cafés."
     },
-    "pricePerKg": 360,
-    "packKg": 6,
+    "pricePerKg": 370.0,
+    "packKg": 6.0,
     "img": "assets/products/onion-rings.webp",
-    "tag": "картофель",
+    "tag": "овощи",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 21
+    "sortOrder": 21,
+    "priceUnit": "кг"
   },
   {
     "id": 23,
@@ -500,10 +505,11 @@
     "pricePerKg": 210.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "фрукты",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 22
+    "sortOrder": 22,
+    "priceUnit": "кг"
   },
   {
     "id": 24,
@@ -522,10 +528,11 @@
     "pricePerKg": 130.0,
     "packKg": 7.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "овощи",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 23
+    "sortOrder": 23,
+    "priceUnit": "кг"
   },
   {
     "id": 25,
@@ -544,10 +551,11 @@
     "pricePerKg": 130.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "овощи",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 24
+    "sortOrder": 24,
+    "priceUnit": "кг"
   },
   {
     "id": 26,
@@ -566,10 +574,11 @@
     "pricePerKg": 150.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "овощи",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 25
+    "sortOrder": 25,
+    "priceUnit": "кг"
   },
   {
     "id": 27,
@@ -591,7 +600,8 @@
     "tag": "ягоды",
     "country": "Россия",
     "visible": true,
-    "sortOrder": 26
+    "sortOrder": 26,
+    "priceUnit": "кг"
   },
   {
     "id": 28,
@@ -613,7 +623,8 @@
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 27
+    "sortOrder": 27,
+    "priceUnit": "кг"
   },
   {
     "id": 29,
@@ -632,10 +643,11 @@
     "pricePerKg": 230.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "овощи",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 28
+    "sortOrder": 28,
+    "priceUnit": "кг"
   },
   {
     "id": 30,
@@ -654,10 +666,11 @@
     "pricePerKg": 50.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "овощи",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 29
+    "sortOrder": 29,
+    "priceUnit": "кг"
   },
   {
     "id": 31,
@@ -676,10 +689,11 @@
     "pricePerKg": 175.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "овощи",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 30
+    "sortOrder": 30,
+    "priceUnit": "кг"
   },
   {
     "id": 32,
@@ -701,7 +715,8 @@
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 31
+    "sortOrder": 31,
+    "priceUnit": "кг"
   },
   {
     "id": 33,
@@ -723,7 +738,8 @@
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 32
+    "sortOrder": 32,
+    "priceUnit": "кг"
   },
   {
     "id": 34,
@@ -745,7 +761,8 @@
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 33
+    "sortOrder": 33,
+    "priceUnit": "кг"
   },
   {
     "id": 35,
@@ -767,7 +784,8 @@
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 34
+    "sortOrder": 34,
+    "priceUnit": "кг"
   },
   {
     "id": 36,
@@ -789,7 +807,8 @@
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 35
+    "sortOrder": 35,
+    "priceUnit": "кг"
   },
   {
     "id": 37,
@@ -811,7 +830,8 @@
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 36
+    "sortOrder": 36,
+    "priceUnit": "кг"
   },
   {
     "id": 38,
@@ -833,7 +853,8 @@
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 37
+    "sortOrder": 37,
+    "priceUnit": "кг"
   },
   {
     "id": 39,
@@ -855,7 +876,8 @@
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 38
+    "sortOrder": 38,
+    "priceUnit": "кг"
   },
   {
     "id": 40,
@@ -874,10 +896,11 @@
     "pricePerKg": 450.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "грибы",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 39
+    "sortOrder": 39,
+    "priceUnit": "кг"
   },
   {
     "id": 41,
@@ -896,10 +919,11 @@
     "pricePerKg": 415.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "грибы",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 40
+    "sortOrder": 40,
+    "priceUnit": "кг"
   },
   {
     "id": 42,
@@ -918,10 +942,11 @@
     "pricePerKg": 95.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "грибы",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 41
+    "sortOrder": 41,
+    "priceUnit": "кг"
   },
   {
     "id": 43,
@@ -943,7 +968,8 @@
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 42
+    "sortOrder": 42,
+    "priceUnit": "кг"
   },
   {
     "id": 44,
@@ -962,10 +988,11 @@
     "pricePerKg": 120.0,
     "packKg": 15.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "овощи",
     "country": "Россия",
     "visible": true,
-    "sortOrder": 43
+    "sortOrder": 43,
+    "priceUnit": "кг"
   },
   {
     "id": 45,
@@ -974,7 +1001,7 @@
       "en": "Киви кубик"
     },
     "cat": {
-      "ru": "Калина вес 1*10 кг Россия",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Калина вес 1*10 кг Россия"
     },
     "desc": {
@@ -984,10 +1011,11 @@
     "pricePerKg": 185.0,
     "packKg": 10.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "фрукты",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 44
+    "sortOrder": 44,
+    "priceUnit": "кг"
   },
   {
     "id": 46,
@@ -996,7 +1024,7 @@
       "en": "Клубника  Египет А кл вес 1*10 кг"
     },
     "cat": {
-      "ru": "Калина вес 1*10 кг Россия",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Калина вес 1*10 кг Россия"
     },
     "desc": {
@@ -1009,7 +1037,8 @@
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 45
+    "sortOrder": 45,
+    "priceUnit": "кг"
   },
   {
     "id": 47,
@@ -1018,7 +1047,7 @@
       "en": "Клубника Китай А кл вес 1*10 кг"
     },
     "cat": {
-      "ru": "Калина вес 1*10 кг Россия",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Калина вес 1*10 кг Россия"
     },
     "desc": {
@@ -1031,7 +1060,8 @@
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 46
+    "sortOrder": 46,
+    "priceUnit": "кг"
   },
   {
     "id": 48,
@@ -1040,7 +1070,7 @@
       "en": "Клюква (дикор)  вес 1*10 кг"
     },
     "cat": {
-      "ru": "Калина вес 1*10 кг Россия",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Калина вес 1*10 кг Россия"
     },
     "desc": {
@@ -1053,7 +1083,8 @@
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 47
+    "sortOrder": 47,
+    "priceUnit": "кг"
   },
   {
     "id": 49,
@@ -1062,7 +1093,7 @@
       "en": "Клюква (садовая) 1 класс вес 1*18,14 кг/10кг"
     },
     "cat": {
-      "ru": "Калина вес 1*10 кг Россия",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Калина вес 1*10 кг Россия"
     },
     "desc": {
@@ -1075,7 +1106,8 @@
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 48
+    "sortOrder": 48,
+    "priceUnit": "кг"
   },
   {
     "id": 50,
@@ -1084,7 +1116,7 @@
       "en": "Компотная смесь вес 1*10 кг РОССИЯ (Слива, яблоко, киви, виноград, кизил )"
     },
     "cat": {
-      "ru": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг"
     },
     "desc": {
@@ -1094,10 +1126,11 @@
     "pricePerKg": 130.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "фрукты",
     "country": "Россия",
     "visible": true,
-    "sortOrder": 49
+    "sortOrder": 49,
+    "priceUnit": "кг"
   },
   {
     "id": 51,
@@ -1106,7 +1139,7 @@
       "en": "Компотная смесь вес 1*10 кг КИТАЙ (БЕЗ КОСТОЧКИ )"
     },
     "cat": {
-      "ru": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг"
     },
     "desc": {
@@ -1116,10 +1149,11 @@
     "pricePerKg": 156.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "смеси",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 50
+    "sortOrder": 50,
+    "priceUnit": "кг"
   },
   {
     "id": 52,
@@ -1128,7 +1162,7 @@
       "en": "Красная смородина вес 1*10 кг Китай"
     },
     "cat": {
-      "ru": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг"
     },
     "desc": {
@@ -1141,7 +1175,8 @@
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 51
+    "sortOrder": 51,
+    "priceUnit": "кг"
   },
   {
     "id": 53,
@@ -1150,7 +1185,7 @@
       "en": "Крыжовник (зеленый) замороженный  вес 1*10 кг"
     },
     "cat": {
-      "ru": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг"
     },
     "desc": {
@@ -1160,10 +1195,11 @@
     "pricePerKg": 260.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "овощи",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 52
+    "sortOrder": 52,
+    "priceUnit": "кг"
   },
   {
     "id": 54,
@@ -1172,7 +1208,7 @@
       "en": "Кукуруза зерно вес 1*10 кг КИТАЙ"
     },
     "cat": {
-      "ru": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг"
     },
     "desc": {
@@ -1182,10 +1218,11 @@
     "pricePerKg": 140.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "овощи",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 53
+    "sortOrder": 53,
+    "priceUnit": "кг"
   },
   {
     "id": 55,
@@ -1194,7 +1231,7 @@
       "en": "Малина гриз КИТАЙ вес 1*10кг"
     },
     "cat": {
-      "ru": "Малина гриз Республика Беларусь вес 1*10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Малина гриз Республика Беларусь вес 1*10кг"
     },
     "desc": {
@@ -1207,7 +1244,8 @@
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 54
+    "sortOrder": 54,
+    "priceUnit": "кг"
   },
   {
     "id": 56,
@@ -1216,7 +1254,7 @@
       "en": "Малина целая КИТАЙ вес 4*2,5кг"
     },
     "cat": {
-      "ru": "Малина гриз Республика Беларусь вес 1*10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Малина гриз Республика Беларусь вес 1*10кг"
     },
     "desc": {
@@ -1229,7 +1267,8 @@
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 55
+    "sortOrder": 55,
+    "priceUnit": "кг"
   },
   {
     "id": 57,
@@ -1238,7 +1277,7 @@
       "en": "Малина целая Республика Беларусь вес 1*10кг"
     },
     "cat": {
-      "ru": "Малина гриз Республика Беларусь вес 1*10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Малина гриз Республика Беларусь вес 1*10кг"
     },
     "desc": {
@@ -1251,7 +1290,8 @@
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 56
+    "sortOrder": 56,
+    "priceUnit": "кг"
   },
   {
     "id": 58,
@@ -1260,7 +1300,7 @@
       "en": "Малина целая УЗБЕКИСТАН вес 1*10кг"
     },
     "cat": {
-      "ru": "Малина гриз Республика Беларусь вес 1*10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Малина гриз Республика Беларусь вес 1*10кг"
     },
     "desc": {
@@ -1273,7 +1313,8 @@
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 57
+    "sortOrder": 57,
+    "priceUnit": "кг"
   },
   {
     "id": 59,
@@ -1282,7 +1323,7 @@
       "en": "Манго кубик 1*10 кг КИТАЙ"
     },
     "cat": {
-      "ru": "Малина гриз Республика Беларусь вес 1*10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Малина гриз Республика Беларусь вес 1*10кг"
     },
     "desc": {
@@ -1292,10 +1333,11 @@
     "pricePerKg": 175.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "фрукты",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 58
+    "sortOrder": 58,
+    "priceUnit": "кг"
   },
   {
     "id": 60,
@@ -1304,7 +1346,7 @@
       "en": "Манго слайсы 1*10 кг КИТАЙ"
     },
     "cat": {
-      "ru": "Малина гриз Республика Беларусь вес 1*10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Малина гриз Республика Беларусь вес 1*10кг"
     },
     "desc": {
@@ -1314,10 +1356,11 @@
     "pricePerKg": 183.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "фрукты",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 59
+    "sortOrder": 59,
+    "priceUnit": "кг"
   },
   {
     "id": 61,
@@ -1326,7 +1369,7 @@
       "en": "Морковь мини 1*10 кг КИТАЙ"
     },
     "cat": {
-      "ru": "Малина гриз Республика Беларусь вес 1*10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Малина гриз Республика Беларусь вес 1*10кг"
     },
     "desc": {
@@ -1336,10 +1379,11 @@
     "pricePerKg": 180.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "овощи",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 60
+    "sortOrder": 60,
+    "priceUnit": "кг"
   },
   {
     "id": 62,
@@ -1348,7 +1392,7 @@
       "en": "Облепиха вес 1*10 кг КИТАЙ"
     },
     "cat": {
-      "ru": "Малина гриз Республика Беларусь вес 1*10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Малина гриз Республика Беларусь вес 1*10кг"
     },
     "desc": {
@@ -1361,7 +1405,8 @@
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 61
+    "sortOrder": 61,
+    "priceUnit": "кг"
   },
   {
     "id": 63,
@@ -1370,7 +1415,7 @@
       "en": "Опята замороженные вес 1*10 кг"
     },
     "cat": {
-      "ru": "Малина гриз Республика Беларусь вес 1*10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Малина гриз Республика Беларусь вес 1*10кг"
     },
     "desc": {
@@ -1380,10 +1425,11 @@
     "pricePerKg": 180.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "грибы",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 62
+    "sortOrder": 62,
+    "priceUnit": "кг"
   },
   {
     "id": 64,
@@ -1392,7 +1438,7 @@
       "en": "Перец кубик (меланж) КИТАЙ 1*10 кг"
     },
     "cat": {
-      "ru": "Малина гриз Республика Беларусь вес 1*10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Малина гриз Республика Беларусь вес 1*10кг"
     },
     "desc": {
@@ -1402,10 +1448,11 @@
     "pricePerKg": 142.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "овощи",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 63
+    "sortOrder": 63,
+    "priceUnit": "кг"
   },
   {
     "id": 65,
@@ -1414,7 +1461,7 @@
       "en": "Перец полоска (меланж) КИТАЙ 1*10 кг"
     },
     "cat": {
-      "ru": "Малина гриз Республика Беларусь вес 1*10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Малина гриз Республика Беларусь вес 1*10кг"
     },
     "desc": {
@@ -1424,10 +1471,11 @@
     "pricePerKg": 142.0,
     "packKg": 10.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "овощи",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 64
+    "sortOrder": 64,
+    "priceUnit": "кг"
   },
   {
     "id": 66,
@@ -1436,7 +1484,7 @@
       "en": "Перец красный полоски   УЗБЕКИСТАН 1*10 кг"
     },
     "cat": {
-      "ru": "Перец красный кубик КИТАЙ 1*10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Перец красный кубик КИТАЙ 1*10кг"
     },
     "desc": {
@@ -1449,7 +1497,8 @@
     "tag": "овощи",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 65
+    "sortOrder": 65,
+    "priceUnit": "кг"
   },
   {
     "id": 67,
@@ -1458,7 +1507,7 @@
       "en": "Перец красный полоска КИТАЙ 1*10 кг"
     },
     "cat": {
-      "ru": "Перец красный кубик КИТАЙ 1*10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Перец красный кубик КИТАЙ 1*10кг"
     },
     "desc": {
@@ -1471,7 +1520,8 @@
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 66
+    "sortOrder": 66,
+    "priceUnit": "кг"
   },
   {
     "id": 68,
@@ -1480,7 +1530,7 @@
       "en": "Слива половинка  вес 1*10 кг КИТАЙ"
     },
     "cat": {
-      "ru": "Слива половинка  вес 1*14 кг РФ",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Слива половинка  вес 1*14 кг РФ"
     },
     "desc": {
@@ -1490,10 +1540,11 @@
     "pricePerKg": 175.0,
     "packKg": 10.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "фрукты",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 67
+    "sortOrder": 67,
+    "priceUnit": "кг"
   },
   {
     "id": 69,
@@ -1502,7 +1553,7 @@
       "en": "Смесь Весенние овощи (морковь, цветная капуста, сладкий перец,зеленый горошек,цукини) вес 1*10 кг"
     },
     "cat": {
-      "ru": "Слива половинка  вес 1*14 кг РФ",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Слива половинка  вес 1*14 кг РФ"
     },
     "desc": {
@@ -1515,7 +1566,8 @@
     "tag": "смеси",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 68
+    "sortOrder": 68,
+    "priceUnit": "кг"
   },
   {
     "id": 70,
@@ -1524,7 +1576,7 @@
       "en": "Смесь Гавайская  вес 1*10 кг Россия (рис,морковь,перец сладкий, кукуруза,горох)"
     },
     "cat": {
-      "ru": "Слива половинка  вес 1*14 кг РФ",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Слива половинка  вес 1*14 кг РФ"
     },
     "desc": {
@@ -1537,7 +1589,8 @@
     "tag": "смеси",
     "country": "Россия",
     "visible": true,
-    "sortOrder": 69
+    "sortOrder": 69,
+    "priceUnit": "кг"
   },
   {
     "id": 71,
@@ -1546,7 +1599,7 @@
       "en": "Смесь Европейский гарнир (брокколи, цветная, морковь рифленый диск, фасоль) 1*10 кг Китай"
     },
     "cat": {
-      "ru": "Слива половинка  вес 1*14 кг РФ",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Слива половинка  вес 1*14 кг РФ"
     },
     "desc": {
@@ -1559,7 +1612,8 @@
     "tag": "смеси",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 70
+    "sortOrder": 70,
+    "priceUnit": "кг"
   },
   {
     "id": 72,
@@ -1568,7 +1622,7 @@
       "en": "Смесь Лечо вес 1*10 кг  Россия"
     },
     "cat": {
-      "ru": "Слива половинка  вес 1*14 кг РФ",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Слива половинка  вес 1*14 кг РФ"
     },
     "desc": {
@@ -1581,7 +1635,8 @@
     "tag": "смеси",
     "country": "Россия",
     "visible": true,
-    "sortOrder": 71
+    "sortOrder": 71,
+    "priceUnit": "кг"
   },
   {
     "id": 73,
@@ -1590,7 +1645,7 @@
       "en": "Смесь Мексиканская вес 1*10 кг Россия (Перец куб, Морковь куб, фасоль струч, Зел.горошек, Лук кубик, Кукуруза зерно)"
     },
     "cat": {
-      "ru": "Слива половинка  вес 1*14 кг РФ",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Слива половинка  вес 1*14 кг РФ"
     },
     "desc": {
@@ -1603,7 +1658,8 @@
     "tag": "смеси",
     "country": "Россия",
     "visible": true,
-    "sortOrder": 72
+    "sortOrder": 72,
+    "priceUnit": "кг"
   },
   {
     "id": 74,
@@ -1612,7 +1668,7 @@
       "en": "Капуста Романеско ВЕС 8,5 кг РОССИЯ"
     },
     "cat": {
-      "ru": "Слива половинка  вес 1*14 кг РФ",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Слива половинка  вес 1*14 кг РФ"
     },
     "desc": {
@@ -1625,7 +1681,8 @@
     "tag": "овощи",
     "country": "Россия",
     "visible": true,
-    "sortOrder": 73
+    "sortOrder": 73,
+    "priceUnit": "кг"
   },
   {
     "id": 75,
@@ -1634,7 +1691,7 @@
       "en": "Спаржа 1*10 Китай"
     },
     "cat": {
-      "ru": "Слива половинка  вес 1*14 кг РФ",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Слива половинка  вес 1*14 кг РФ"
     },
     "desc": {
@@ -1647,7 +1704,8 @@
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 74
+    "sortOrder": 74,
+    "priceUnit": "кг"
   },
   {
     "id": 76,
@@ -1656,7 +1714,7 @@
       "en": "Фасоль плоскоплодная Романо Китай 1*10кг"
     },
     "cat": {
-      "ru": "Тыква куб замороженный Россия/ УЗБЕКИСТАН 1*10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Тыква куб замороженный Россия/ УЗБЕКИСТАН 1*10кг"
     },
     "desc": {
@@ -1669,7 +1727,8 @@
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 75
+    "sortOrder": 75,
+    "priceUnit": "кг"
   },
   {
     "id": 77,
@@ -1678,7 +1737,7 @@
       "en": "Фасоль стручковая Египет 1*10 кг"
     },
     "cat": {
-      "ru": "Тыква куб замороженный Россия/ УЗБЕКИСТАН 1*10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Тыква куб замороженный Россия/ УЗБЕКИСТАН 1*10кг"
     },
     "desc": {
@@ -1691,7 +1750,8 @@
     "tag": "овощи",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 76
+    "sortOrder": 76,
+    "priceUnit": "кг"
   },
   {
     "id": 78,
@@ -1700,7 +1760,7 @@
       "en": "Фасоль стручковая СЕРБИЯ 1*10 кг"
     },
     "cat": {
-      "ru": "Тыква куб замороженный Россия/ УЗБЕКИСТАН 1*10кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Тыква куб замороженный Россия/ УЗБЕКИСТАН 1*10кг"
     },
     "desc": {
@@ -1713,7 +1773,8 @@
     "tag": "овощи",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 77
+    "sortOrder": 77,
+    "priceUnit": "кг"
   },
   {
     "id": 79,
@@ -1722,7 +1783,7 @@
       "en": "Цветная капуста  вес 1*10 кг Китай"
     },
     "cat": {
-      "ru": "Фасоль стручковая РОССИЯ 1*10 кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Фасоль стручковая РОССИЯ 1*10 кг"
     },
     "desc": {
@@ -1735,7 +1796,8 @@
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 78
+    "sortOrder": 78,
+    "priceUnit": "кг"
   },
   {
     "id": 80,
@@ -1744,7 +1806,7 @@
       "en": "Цветная капуста  вес 1*9 кг УЗБЕКИСТАН"
     },
     "cat": {
-      "ru": "Фасоль стручковая РОССИЯ 1*10 кг",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Фасоль стручковая РОССИЯ 1*10 кг"
     },
     "desc": {
@@ -1757,7 +1819,8 @@
     "tag": "овощи",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 79
+    "sortOrder": 79,
+    "priceUnit": "кг"
   },
   {
     "id": 81,
@@ -1766,7 +1829,7 @@
       "en": "Черная Смородина  1*10кг /Китай"
     },
     "cat": {
-      "ru": "Черешня 1*10кг /Узбекистан",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Черешня 1*10кг /Узбекистан"
     },
     "desc": {
@@ -1779,7 +1842,8 @@
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 80
+    "sortOrder": 80,
+    "priceUnit": "кг"
   },
   {
     "id": 82,
@@ -1788,7 +1852,7 @@
       "en": "Черная Смородина  1*15кг /Китай"
     },
     "cat": {
-      "ru": "Черешня 1*10кг /Узбекистан",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Черешня 1*10кг /Узбекистан"
     },
     "desc": {
@@ -1801,7 +1865,8 @@
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 81
+    "sortOrder": 81,
+    "priceUnit": "кг"
   },
   {
     "id": 83,
@@ -1810,7 +1875,7 @@
       "en": "Черника 1*10 кг Дикорос"
     },
     "cat": {
-      "ru": "Черешня 1*10кг /Узбекистан",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Черешня 1*10кг /Узбекистан"
     },
     "desc": {
@@ -1820,10 +1885,11 @@
     "pricePerKg": 700.0,
     "packKg": 10.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "ягоды",
     "country": "Россия",
     "visible": true,
-    "sortOrder": 82
+    "sortOrder": 82,
+    "priceUnit": "кг"
   },
   {
     "id": 84,
@@ -1832,7 +1898,7 @@
       "en": "Черника 1*10 кг КИТАЙ"
     },
     "cat": {
-      "ru": "Черешня 1*10кг /Узбекистан",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Черешня 1*10кг /Узбекистан"
     },
     "desc": {
@@ -1842,10 +1908,11 @@
     "pricePerKg": 275.0,
     "packKg": 10.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "ягоды",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 83
+    "sortOrder": 83,
+    "priceUnit": "кг"
   },
   {
     "id": 85,
@@ -1854,7 +1921,7 @@
       "en": "Черноплодная рябина с/з  КИТАЙ вес 1*10 кг"
     },
     "cat": {
-      "ru": "Черешня 1*10кг /Узбекистан",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Черешня 1*10кг /Узбекистан"
     },
     "desc": {
@@ -1867,7 +1934,8 @@
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 84
+    "sortOrder": 84,
+    "priceUnit": "кг"
   },
   {
     "id": 86,
@@ -1876,7 +1944,7 @@
       "en": "Шпинат порционный измельченный  УЗБЕКИСТАН вес 1*12 кг"
     },
     "cat": {
-      "ru": "Черешня 1*10кг /Узбекистан",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Черешня 1*10кг /Узбекистан"
     },
     "desc": {
@@ -1889,7 +1957,8 @@
     "tag": "овощи",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 85
+    "sortOrder": 85,
+    "priceUnit": "кг"
   },
   {
     "id": 87,
@@ -1898,7 +1967,7 @@
       "en": "Шпинат порционный измельченный КИТАЙ вес 1*10 кг"
     },
     "cat": {
-      "ru": "Черешня 1*10кг /Узбекистан",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Черешня 1*10кг /Узбекистан"
     },
     "desc": {
@@ -1911,7 +1980,8 @@
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 86
+    "sortOrder": 86,
+    "priceUnit": "кг"
   },
   {
     "id": 88,
@@ -1920,7 +1990,7 @@
       "en": "Яблоко куб вес 1*10 кг КИТАЙ"
     },
     "cat": {
-      "ru": "Черешня 1*10кг /Узбекистан",
+      "ru": "Весовые овощи,ягоды,фрукты",
       "en": "Черешня 1*10кг /Узбекистан"
     },
     "desc": {
@@ -1930,10 +2000,11 @@
     "pricePerKg": 170.0,
     "packKg": 10.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "фрукты",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 87
+    "sortOrder": 87,
+    "priceUnit": "кг"
   },
   {
     "id": 89,
@@ -1955,7 +2026,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 88
+    "sortOrder": 88,
+    "priceUnit": "кг"
   },
   {
     "id": 90,
@@ -1977,7 +2049,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 89
+    "sortOrder": 89,
+    "priceUnit": "кг"
   },
   {
     "id": 91,
@@ -1999,7 +2072,8 @@
     "tag": "картофель",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 90
+    "sortOrder": 90,
+    "priceUnit": "кг"
   },
   {
     "id": 92,
@@ -2021,7 +2095,8 @@
     "tag": "картофель",
     "country": "Китай",
     "visible": true,
-    "sortOrder": 91
+    "sortOrder": 91,
+    "priceUnit": "кг"
   },
   {
     "id": 93,
@@ -2043,7 +2118,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 92
+    "sortOrder": 92,
+    "priceUnit": "кг"
   },
   {
     "id": 94,
@@ -2065,7 +2141,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 93
+    "sortOrder": 93,
+    "priceUnit": "кг"
   },
   {
     "id": 95,
@@ -2087,95 +2164,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 94
-  },
-  {
-    "id": 96,
-    "name": {
-      "ru": "Картофель фри Global Fries 10 mm 10 кг (2,5кг*4шт) FR000037",
-      "en": "Картофель фри Global Fries 10 mm 10 кг (2,5кг*4шт) FR000037"
-    },
-    "cat": {
-      "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
-      "en": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ"
-    },
-    "desc": {
-      "ru": "",
-      "en": ""
-    },
-    "pricePerKg": 155.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
-    "tag": "картофель",
-    "country": "Европа",
-    "visible": true,
-    "sortOrder": 95
-  },
-  {
-    "id": 97,
-    "name": {
-      "ru": "Картофельные дольки  BART`S GOURMET (2,5кг*4шт) F000782",
-      "en": "Картофельные дольки  BART`S GOURMET (2,5кг*4шт) F000782"
-    },
-    "cat": {
-      "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
-      "en": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ"
-    },
-    "desc": {
-      "ru": "",
-      "en": ""
-    },
-    "pricePerKg": 170.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
-    "tag": "картофель",
-    "country": "Европа",
-    "visible": true,
-    "sortOrder": 96
-  },
-  {
-    "id": 98,
-    "name": {
-      "ru": "Картофельные дольки со специями BART`S GOURMET (2,5кг*4шт) F000783",
-      "en": "Картофельные дольки со специями BART`S GOURMET (2,5кг*4шт) F000783"
-    },
-    "cat": {
-      "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
-      "en": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ"
-    },
-    "desc": {
-      "ru": "",
-      "en": ""
-    },
-    "pricePerKg": 205.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
-    "tag": "картофель",
-    "country": "Европа",
-    "visible": true,
-    "sortOrder": 97
-  },
-  {
-    "id": 99,
-    "name": {
-      "ru": "Картофельные Шарики Pomuni Frozen (1,0 кг*10шт)",
-      "en": "Картофельные Шарики Pomuni Frozen (1,0 кг*10шт)"
-    },
-    "cat": {
-      "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
-      "en": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ"
-    },
-    "desc": {
-      "ru": "",
-      "en": ""
-    },
-    "pricePerKg": 220.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
-    "tag": "картофель",
-    "country": "Европа",
-    "visible": true,
-    "sortOrder": 98
+    "sortOrder": 94,
+    "priceUnit": "кг"
   },
   {
     "id": 100,
@@ -2197,7 +2187,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 99
+    "sortOrder": 95,
+    "priceUnit": "кг"
   },
   {
     "id": 101,
@@ -2219,7 +2210,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 100
+    "sortOrder": 96,
+    "priceUnit": "кг"
   },
   {
     "id": 102,
@@ -2241,7 +2233,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 101
+    "sortOrder": 97,
+    "priceUnit": "кг"
   },
   {
     "id": 103,
@@ -2263,7 +2256,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 102
+    "sortOrder": 98,
+    "priceUnit": "кг"
   },
   {
     "id": 104,
@@ -2285,7 +2279,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 103
+    "sortOrder": 99,
+    "priceUnit": "кг"
   },
   {
     "id": 105,
@@ -2307,7 +2302,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 104
+    "sortOrder": 100,
+    "priceUnit": "кг"
   },
   {
     "id": 106,
@@ -2329,7 +2325,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 105
+    "sortOrder": 101,
+    "priceUnit": "кг"
   },
   {
     "id": 107,
@@ -2351,7 +2348,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 106
+    "sortOrder": 102,
+    "priceUnit": "кг"
   },
   {
     "id": 108,
@@ -2373,7 +2371,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 107
+    "sortOrder": 103,
+    "priceUnit": "кг"
   },
   {
     "id": 109,
@@ -2395,7 +2394,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 108
+    "sortOrder": 104,
+    "priceUnit": "кг"
   },
   {
     "id": 110,
@@ -2417,7 +2417,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 109
+    "sortOrder": 105,
+    "priceUnit": "кг"
   },
   {
     "id": 111,
@@ -2439,7 +2440,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 110
+    "sortOrder": 106,
+    "priceUnit": "кг"
   },
   {
     "id": 112,
@@ -2461,7 +2463,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 111
+    "sortOrder": 107,
+    "priceUnit": "кг"
   },
   {
     "id": 113,
@@ -2483,7 +2486,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 112
+    "sortOrder": 108,
+    "priceUnit": "кг"
   },
   {
     "id": 114,
@@ -2505,7 +2509,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 113
+    "sortOrder": 109,
+    "priceUnit": "кг"
   },
   {
     "id": 115,
@@ -2527,7 +2532,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 114
+    "sortOrder": 110,
+    "priceUnit": "кг"
   },
   {
     "id": 116,
@@ -2549,7 +2555,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 115
+    "sortOrder": 111,
+    "priceUnit": "кг"
   },
   {
     "id": 117,
@@ -2571,7 +2578,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 116
+    "sortOrder": 112,
+    "priceUnit": "кг"
   },
   {
     "id": 118,
@@ -2593,7 +2601,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 117
+    "sortOrder": 113,
+    "priceUnit": "кг"
   },
   {
     "id": 119,
@@ -2615,29 +2624,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 118
-  },
-  {
-    "id": 120,
-    "name": {
-      "ru": "Луковые кольца FARM FRITES 6 кг (1кг*6шт)549.004",
-      "en": "Луковые кольца FARM FRITES 6 кг (1кг*6шт)549.004"
-    },
-    "cat": {
-      "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
-    },
-    "desc": {
-      "ru": "",
-      "en": ""
-    },
-    "pricePerKg": 370.0,
-    "packKg": 6.0,
-    "img": "assets/p2.jpg",
-    "tag": "овощи",
-    "country": "Европа",
-    "visible": true,
-    "sortOrder": 119
+    "sortOrder": 114,
+    "priceUnit": "кг"
   },
   {
     "id": 121,
@@ -2656,10 +2644,11 @@
     "pricePerKg": 480.0,
     "packKg": 5.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "снеки",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 120
+    "sortOrder": 115,
+    "priceUnit": "кг"
   },
   {
     "id": 122,
@@ -2678,10 +2667,11 @@
     "pricePerKg": 490.0,
     "packKg": 5.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "снеки",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 121
+    "sortOrder": 116,
+    "priceUnit": "кг"
   },
   {
     "id": 123,
@@ -2700,10 +2690,11 @@
     "pricePerKg": 500.0,
     "packKg": 4.5,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "снеки",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 122
+    "sortOrder": 117,
+    "priceUnit": "кг"
   },
   {
     "id": 124,
@@ -2725,7 +2716,8 @@
     "tag": "грибы",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 123
+    "sortOrder": 118,
+    "priceUnit": "упак"
   },
   {
     "id": 125,
@@ -2747,7 +2739,8 @@
     "tag": "грибы",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 124
+    "sortOrder": 119,
+    "priceUnit": "упак"
   },
   {
     "id": 126,
@@ -2766,10 +2759,11 @@
     "pricePerKg": 111.0,
     "packKg": 16.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "выпечка",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 125
+    "sortOrder": 120,
+    "priceUnit": "упак"
   },
   {
     "id": 127,
@@ -2788,10 +2782,11 @@
     "pricePerKg": 111.0,
     "packKg": 16.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "выпечка",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 126
+    "sortOrder": 121,
+    "priceUnit": "упак"
   },
   {
     "id": 128,
@@ -2810,10 +2805,11 @@
     "pricePerKg": 40.0,
     "packKg": 12.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "выпечка",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 127
+    "sortOrder": 122,
+    "priceUnit": "шт"
   },
   {
     "id": 129,
@@ -2832,10 +2828,11 @@
     "pricePerKg": 40.0,
     "packKg": 12.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "выпечка",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 128
+    "sortOrder": 123,
+    "priceUnit": "шт"
   },
   {
     "id": 130,
@@ -2854,10 +2851,11 @@
     "pricePerKg": 40.0,
     "packKg": 12.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "выпечка",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 129
+    "sortOrder": 124,
+    "priceUnit": "шт"
   },
   {
     "id": 131,
@@ -2876,10 +2874,11 @@
     "pricePerKg": 40.0,
     "packKg": 12.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "выпечка",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 130
+    "sortOrder": 125,
+    "priceUnit": "шт"
   },
   {
     "id": 132,
@@ -2898,10 +2897,11 @@
     "pricePerKg": 40.0,
     "packKg": 12.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "выпечка",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 131
+    "sortOrder": 126,
+    "priceUnit": "шт"
   },
   {
     "id": 133,
@@ -2920,10 +2920,11 @@
     "pricePerKg": 40.0,
     "packKg": 12.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "выпечка",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 132
+    "sortOrder": 127,
+    "priceUnit": "шт"
   },
   {
     "id": 134,
@@ -2942,10 +2943,11 @@
     "pricePerKg": 40.0,
     "packKg": 12.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "выпечка",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 133
+    "sortOrder": 128,
+    "priceUnit": "шт"
   },
   {
     "id": 135,
@@ -2964,10 +2966,11 @@
     "pricePerKg": 40.0,
     "packKg": 12.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "выпечка",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 134
+    "sortOrder": 129,
+    "priceUnit": "шт"
   },
   {
     "id": 136,
@@ -2986,10 +2989,11 @@
     "pricePerKg": 40.0,
     "packKg": 12.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "выпечка",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 135
+    "sortOrder": 130,
+    "priceUnit": "шт"
   },
   {
     "id": 137,
@@ -3008,10 +3012,11 @@
     "pricePerKg": 40.0,
     "packKg": 12.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "выпечка",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 136
+    "sortOrder": 131,
+    "priceUnit": "шт"
   },
   {
     "id": 138,
@@ -3030,10 +3035,11 @@
     "pricePerKg": 40.0,
     "packKg": 12.0,
     "img": "assets/p1.jpg",
-    "tag": "ягоды",
+    "tag": "выпечка",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 137
+    "sortOrder": 132,
+    "priceUnit": "шт"
   },
   {
     "id": 139,
@@ -3052,10 +3058,11 @@
     "pricePerKg": 40.0,
     "packKg": 12.0,
     "img": "assets/p5.jpg",
-    "tag": "фрукты",
+    "tag": "выпечка",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 138
+    "sortOrder": 133,
+    "priceUnit": "шт"
   },
   {
     "id": 140,
@@ -3074,9 +3081,355 @@
     "pricePerKg": 40.0,
     "packKg": 12.0,
     "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "tag": "выпечка",
     "country": "Европа",
     "visible": true,
+    "sortOrder": 134,
+    "priceUnit": "шт"
+  },
+  {
+    "id": 141,
+    "name": {
+      "ru": "Калина вес 1*10 кг Россия",
+      "en": "Калина вес 1*10 кг Россия"
+    },
+    "cat": {
+      "ru": "Весовые овощи,ягоды,фрукты",
+      "en": "Весовые овощи,ягоды,фрукты"
+    },
+    "desc": {
+      "ru": "",
+      "en": ""
+    },
+    "pricePerKg": 0.0,
+    "packKg": 10.0,
+    "priceUnit": "кг",
+    "img": "assets/p1.jpg",
+    "tag": "ягоды",
+    "country": "Россия",
+    "visible": false,
+    "sortOrder": 135
+  },
+  {
+    "id": 142,
+    "name": {
+      "ru": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг",
+      "en": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг"
+    },
+    "cat": {
+      "ru": "Весовые овощи,ягоды,фрукты",
+      "en": "Весовые овощи,ягоды,фрукты"
+    },
+    "desc": {
+      "ru": "",
+      "en": ""
+    },
+    "pricePerKg": 0.0,
+    "packKg": 10.0,
+    "priceUnit": "кг",
+    "img": "assets/p1.jpg",
+    "tag": "ягоды",
+    "country": "Европа",
+    "visible": false,
+    "sortOrder": 136
+  },
+  {
+    "id": 143,
+    "name": {
+      "ru": "Малина гриз Республика Беларусь вес 1*10кг",
+      "en": "Малина гриз Республика Беларусь вес 1*10кг"
+    },
+    "cat": {
+      "ru": "Весовые овощи,ягоды,фрукты",
+      "en": "Весовые овощи,ягоды,фрукты"
+    },
+    "desc": {
+      "ru": "",
+      "en": ""
+    },
+    "pricePerKg": 0.0,
+    "packKg": 10.0,
+    "priceUnit": "кг",
+    "img": "assets/p1.jpg",
+    "tag": "ягоды",
+    "country": "Европа",
+    "visible": false,
+    "sortOrder": 137
+  },
+  {
+    "id": 144,
+    "name": {
+      "ru": "Перец красный кубик КИТАЙ 1*10кг",
+      "en": "Перец красный кубик КИТАЙ 1*10кг"
+    },
+    "cat": {
+      "ru": "Весовые овощи,ягоды,фрукты",
+      "en": "Весовые овощи,ягоды,фрукты"
+    },
+    "desc": {
+      "ru": "",
+      "en": ""
+    },
+    "pricePerKg": 0.0,
+    "packKg": 10.0,
+    "priceUnit": "кг",
+    "img": "assets/p2.jpg",
+    "tag": "овощи",
+    "country": "Китай",
+    "visible": false,
+    "sortOrder": 138
+  },
+  {
+    "id": 145,
+    "name": {
+      "ru": "Перец полоски Mix 1*10 РОССИЯ",
+      "en": "Перец полоски Mix 1*10 РОССИЯ"
+    },
+    "cat": {
+      "ru": "Весовые овощи,ягоды,фрукты",
+      "en": "Весовые овощи,ягоды,фрукты"
+    },
+    "desc": {
+      "ru": "",
+      "en": ""
+    },
+    "pricePerKg": 0.0,
+    "packKg": 10.0,
+    "priceUnit": "кг",
+    "img": "assets/p2.jpg",
+    "tag": "овощи",
+    "country": "Россия",
+    "visible": false,
     "sortOrder": 139
+  },
+  {
+    "id": 146,
+    "name": {
+      "ru": "Слива половинка  вес 1*14 кг РФ",
+      "en": "Слива половинка  вес 1*14 кг РФ"
+    },
+    "cat": {
+      "ru": "Весовые овощи,ягоды,фрукты",
+      "en": "Весовые овощи,ягоды,фрукты"
+    },
+    "desc": {
+      "ru": "",
+      "en": ""
+    },
+    "pricePerKg": 0.0,
+    "packKg": 10.0,
+    "priceUnit": "кг",
+    "img": "assets/p5.jpg",
+    "tag": "фрукты",
+    "country": "Европа",
+    "visible": false,
+    "sortOrder": 140
+  },
+  {
+    "id": 147,
+    "name": {
+      "ru": "Томат резанный кубик вес 1*10 Россия",
+      "en": "Томат резанный кубик вес 1*10 Россия"
+    },
+    "cat": {
+      "ru": "Весовые овощи,ягоды,фрукты",
+      "en": "Весовые овощи,ягоды,фрукты"
+    },
+    "desc": {
+      "ru": "",
+      "en": ""
+    },
+    "pricePerKg": 0.0,
+    "packKg": 10.0,
+    "priceUnit": "кг",
+    "img": "assets/p2.jpg",
+    "tag": "овощи",
+    "country": "Россия",
+    "visible": false,
+    "sortOrder": 141
+  },
+  {
+    "id": 148,
+    "name": {
+      "ru": "Тыква куб замороженный Россия/ УЗБЕКИСТАН 1*10кг",
+      "en": "Тыква куб замороженный Россия/ УЗБЕКИСТАН 1*10кг"
+    },
+    "cat": {
+      "ru": "Весовые овощи,ягоды,фрукты",
+      "en": "Весовые овощи,ягоды,фрукты"
+    },
+    "desc": {
+      "ru": "",
+      "en": ""
+    },
+    "pricePerKg": 0.0,
+    "packKg": 10.0,
+    "priceUnit": "кг",
+    "img": "assets/p2.jpg",
+    "tag": "овощи",
+    "country": "Россия",
+    "visible": false,
+    "sortOrder": 142
+  },
+  {
+    "id": 149,
+    "name": {
+      "ru": "Фасоль стручковая РОССИЯ 1*10 кг",
+      "en": "Фасоль стручковая РОССИЯ 1*10 кг"
+    },
+    "cat": {
+      "ru": "Весовые овощи,ягоды,фрукты",
+      "en": "Весовые овощи,ягоды,фрукты"
+    },
+    "desc": {
+      "ru": "",
+      "en": ""
+    },
+    "pricePerKg": 0.0,
+    "packKg": 10.0,
+    "priceUnit": "кг",
+    "img": "assets/p2.jpg",
+    "tag": "овощи",
+    "country": "Россия",
+    "visible": false,
+    "sortOrder": 143
+  },
+  {
+    "id": 150,
+    "name": {
+      "ru": "Цветная капуста вес 1*10 кг Египет",
+      "en": "Цветная капуста вес 1*10 кг Египет"
+    },
+    "cat": {
+      "ru": "Весовые овощи,ягоды,фрукты",
+      "en": "Весовые овощи,ягоды,фрукты"
+    },
+    "desc": {
+      "ru": "",
+      "en": ""
+    },
+    "pricePerKg": 0.0,
+    "packKg": 10.0,
+    "priceUnit": "кг",
+    "img": "assets/p2.jpg",
+    "tag": "овощи",
+    "country": "Европа",
+    "visible": false,
+    "sortOrder": 144
+  },
+  {
+    "id": 151,
+    "name": {
+      "ru": "Цветная капуста вес 1*10 кг Узбекистан",
+      "en": "Цветная капуста вес 1*10 кг Узбекистан"
+    },
+    "cat": {
+      "ru": "Весовые овощи,ягоды,фрукты",
+      "en": "Весовые овощи,ягоды,фрукты"
+    },
+    "desc": {
+      "ru": "",
+      "en": ""
+    },
+    "pricePerKg": 0.0,
+    "packKg": 10.0,
+    "priceUnit": "кг",
+    "img": "assets/p2.jpg",
+    "tag": "овощи",
+    "country": "Европа",
+    "visible": false,
+    "sortOrder": 145
+  },
+  {
+    "id": 152,
+    "name": {
+      "ru": "Черешня 1*10кг /Китай",
+      "en": "Черешня 1*10кг /Китай"
+    },
+    "cat": {
+      "ru": "Весовые овощи,ягоды,фрукты",
+      "en": "Весовые овощи,ягоды,фрукты"
+    },
+    "desc": {
+      "ru": "",
+      "en": ""
+    },
+    "pricePerKg": 0.0,
+    "packKg": 10.0,
+    "priceUnit": "кг",
+    "img": "assets/p1.jpg",
+    "tag": "ягоды",
+    "country": "Китай",
+    "visible": false,
+    "sortOrder": 146
+  },
+  {
+    "id": 153,
+    "name": {
+      "ru": "Черешня 1*10кг /Узбекистан",
+      "en": "Черешня 1*10кг /Узбекистан"
+    },
+    "cat": {
+      "ru": "Весовые овощи,ягоды,фрукты",
+      "en": "Весовые овощи,ягоды,фрукты"
+    },
+    "desc": {
+      "ru": "",
+      "en": ""
+    },
+    "pricePerKg": 0.0,
+    "packKg": 10.0,
+    "priceUnit": "кг",
+    "img": "assets/p1.jpg",
+    "tag": "ягоды",
+    "country": "Европа",
+    "visible": false,
+    "sortOrder": 147
+  },
+  {
+    "id": 154,
+    "name": {
+      "ru": "Картофельные дольки с ароматной паприкой (спайси) 2,5 кг*4",
+      "en": "Картофельные дольки с ароматной паприкой (спайси) 2,5 кг*4"
+    },
+    "cat": {
+      "ru": "НИКА (РОССИЯ) ЦЕНЫ ЗА КГ",
+      "en": "НИКА (РОССИЯ) ЦЕНЫ ЗА КГ"
+    },
+    "desc": {
+      "ru": "",
+      "en": ""
+    },
+    "pricePerKg": 0.0,
+    "packKg": 10.0,
+    "priceUnit": "кг",
+    "img": "assets/products/fries-10mm.webp",
+    "tag": "картофель",
+    "country": "Европа",
+    "visible": false,
+    "sortOrder": 148
+  },
+  {
+    "id": 155,
+    "name": {
+      "ru": "Картофельные дольки Деревенские 2,5 кг*5",
+      "en": "Картофельные дольки Деревенские 2,5 кг*5"
+    },
+    "cat": {
+      "ru": "НИКА (РОССИЯ) ЦЕНЫ ЗА КГ",
+      "en": "НИКА (РОССИЯ) ЦЕНЫ ЗА КГ"
+    },
+    "desc": {
+      "ru": "",
+      "en": ""
+    },
+    "pricePerKg": 0.0,
+    "packKg": 10.0,
+    "priceUnit": "кг",
+    "img": "assets/products/fries-10mm.webp",
+    "tag": "картофель",
+    "country": "Европа",
+    "visible": false,
+    "sortOrder": 149
   }
 ]

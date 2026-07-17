@@ -98,9 +98,6 @@ img { display: block; max-width: 100%; }
 .brand-logo { position: relative; width: 128px; height: 86px; display: grid; place-items: center; }
 .brand-img { position: relative; z-index: 2; width: 94px; max-height: 82px; object-fit: contain; filter: drop-shadow(0 10px 22px rgba(0, 5, 12, .45)) drop-shadow(0 0 15px rgba(91, 210, 255, .22)); }
 .brand-halo { position: absolute; z-index: 0; width: 118px; height: 80px; border-radius: 50%; background: radial-gradient(ellipse, rgba(84, 206, 255, .22), rgba(15, 118, 181, .06) 50%, transparent 72%); filter: blur(9px); }
-.brand-rive { display: none; position: absolute; z-index: 3; width: 125px; height: 90px; }
-.brand-rive[data-src] { display: block; & + .brand-img { opacity: 0; } }
-
 .search-wrap {
   @include glass(.5);
   height: 50px;
@@ -219,11 +216,9 @@ img { display: block; max-width: 100%; }
 }
 .nav { position: relative; border: 0; border-radius: 16px; background: transparent; color: #6f91a5; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 17px; transition: color .35s $ease, background .35s $ease; span { font-size: 7px; font-weight: 750; } &.active { color: #89e1ff; background: linear-gradient(180deg, rgba(32, 136, 190, .2), rgba(12, 72, 105, .12)); text-shadow: 0 0 13px rgba(86, 208, 255, .4); } #cartCount { position: absolute; top: 5px; right: 10px; min-width: 16px; height: 16px; padding: 0 4px; display: grid; place-items: center; border-radius: 8px; background: #159df6; color: #fff; font-size: 7px; box-shadow: 0 5px 12px rgba(6, 133, 205, .32); } }
 
-.sheet { display: none; }
 .order-modal { position: fixed; z-index: 100; inset: 0; padding: 22px; display: grid; place-items: center; background: rgba(1, 8, 14, .72); backdrop-filter: blur(16px); }
 .order-modal-box { @include glass(.88); width: min(100%, 350px); padding: 28px 22px 21px; border-radius: 25px; text-align: center; h3 { margin: 14px 0 8px; font-size: 22px; letter-spacing: -.03em; } p { margin: 0 0 19px; color: $muted; font-size: 12px; line-height: 1.55; } > button { @include button-glow; width: 100%; min-height: 46px; border-radius: 12px; font-weight: 850; } }
 .order-modal-icon { width: 92px; height: 92px; margin: 0 auto; display: grid; place-items: center; color: #fff; font-size: 34px; }
-.success-lottie { width: 92px; height: 92px; }
 
 @media (max-width: 360px) {
   .top { padding-inline: 12px; }
@@ -235,11 +230,12 @@ img { display: block; max-width: 100%; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-  .snow-canvas { opacity: .28; }
+  .snow-canvas { display: none !important; }
 }
 
 /* Light glacier direction selected from the approved concept */
 :root { color-scheme: light; }
+html { background: #dff4ff; }
 body {
   background: #dff4ff;
   color: #0b3655;
@@ -374,6 +370,61 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 }
 .vat-inline { color: #7197ac; }
 .empty { color: #668da4; }
+.empty [data-retry-products] {
+  min-height: 42px;
+  margin-top: 12px;
+  padding: 0 20px;
+  border: 1px solid rgba(104, 188, 231, .5);
+  border-radius: 15px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .9), rgba(211, 241, 255, .7));
+  color: #075487;
+  font-weight: 850;
+  box-shadow: inset 0 1px rgba(255, 255, 255, .95), 0 9px 22px rgba(35, 132, 184, .14);
+}
+.loading-status { grid-column: 1 / -1; color: #527f99; font-size: 12px; font-weight: 750; text-align: center; }
+.skeleton-card {
+  pointer-events: none;
+
+  .skeleton-block, i, span {
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    background: linear-gradient(100deg, rgba(194, 227, 243, .55) 20%, rgba(255, 255, 255, .92) 40%, rgba(194, 227, 243, .55) 60%);
+    background-size: 220% 100%;
+    animation: ice-shimmer 1.6s ease-in-out infinite;
+  }
+  .skeleton-picture { height: 150px; border-radius: 20px 20px 9px 9px; }
+  .body { display: grid; gap: 8px; }
+  i { width: 86%; height: 12px; }
+  i:nth-child(2) { width: 58%; height: 9px; }
+  i:nth-child(3) { width: 46%; height: 17px; }
+  span { width: 100%; height: 38px; margin-top: 2px; }
+}
+@keyframes ice-shimmer { to { background-position: -120% 0; } }
+.app-toast {
+  position: fixed;
+  z-index: 95;
+  left: 50%;
+  bottom: calc(82px + env(safe-area-inset-bottom));
+  width: max-content;
+  max-width: calc(100% - 36px);
+  padding: 11px 17px;
+  border: 1px solid rgba(105, 196, 238, .5);
+  border-radius: 16px;
+  background: rgba(239, 250, 255, .9);
+  color: #064f7f;
+  font-size: 12px;
+  font-weight: 850;
+  text-align: center;
+  box-shadow: inset 0 1px #fff, 0 12px 30px rgba(25, 111, 157, .2);
+  backdrop-filter: blur(18px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 10px) scale(.97);
+  transition: opacity .24s ease, transform .3s $ease;
+
+  &.visible { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
 
 .catalog-item,.product-detail,.cart-row {
   border-color: rgba(255,255,255,.86);
@@ -415,4 +466,78 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 @media(max-width:360px) {
   .country-chip { font-size: 8px; padding-inline: 5px; .flag { font-size: 10px; } }
   .card .pic { height: 140px; }
+}
+
+/* Usability refinements keep the approved layout while making controls and
+   dense product information easier to read and operate. */
+:where(button, input, .card):focus-visible {
+  outline: 3px solid rgba(8, 132, 202, .55);
+  outline-offset: 2px;
+}
+
+.country-chip { min-height: 44px; font-size: 10px; }
+.section-title button { min-height: 44px; padding-inline: 8px; font-size: 12px; }
+.card {
+  content-visibility: auto;
+  contain-intrinsic-size: 236px 302px;
+
+  .name { font-size: 12px; line-height: 1.38; }
+  .cat { color: #577f98; font-size: 10px; }
+}
+.fav { width: 36px; height: 36px; }
+.add { min-height: 42px; font-size: 11px; }
+.vat-inline { color: #587f97; font-size: 9px; }
+.catalog-item, .cart-row {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 86px;
+}
+.catalog-back { min-height: 44px; padding-inline: 8px; }
+.detail-back { min-height: 40px; }
+.weight-title { font-size: 11px; }
+.weight-min {
+  b { font-size: 10px; }
+  span { color: #587f97; font-size: 9px; }
+}
+.cart-row {
+  grid-template-columns: 67px minmax(0, 1fr) 36px;
+  align-items: center;
+}
+.cart-info {
+  h4 { font-size: 12px; }
+}
+.cart-meta { color: #577f98; font-size: 10px; }
+.cart-price { color: #0a3857; font-size: 13px; font-weight: 900; }
+.qty {
+  margin-top: 7px;
+  gap: 6px;
+
+  button { width: 34px; height: 34px; font-size: 16px; }
+  b { min-width: 14px; color: #0a3857; font-size: 11px; text-align: center; }
+}
+.remove {
+  width: 36px;
+  height: 44px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+}
+.cart-note {
+  b { font-size: 10px; }
+  span { color: #587f97; font-size: 10px; }
+}
+.nav {
+  min-height: 55px;
+
+  span { font-size: 9px; }
+}
+
+@media (max-width: 360px) {
+  .country-chip { font-size: 9px; }
+  .card .name { font-size: 11px; }
+}
+
+@media (hover: none) {
+  .card:hover,
+  .card:hover .pic img { transform: none; }
 }

@@ -2,11 +2,11 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>ОптХолод — магазин</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script type="module" crossorigin src="./assets/storefront-BQrY1b0q.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/storefront-CzKediD1.css">
+  <script type="module" crossorigin src="./assets/storefront-B2bCs8EG.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/storefront-l4dJpOo1.css">
 </head>
 <body>
   <svg class="ice-filters" aria-hidden="true">
@@ -33,18 +33,17 @@
       <div class="row small-row">
         <button class="pill" id="langBtn" type="button">RU</button>
         <div class="brand-logo" aria-label="ОптХолод">
-          <canvas id="brandRive" class="brand-rive" aria-hidden="true"></canvas>
           <img class="brand-img" src="assets/optkholod_logo_new.png" alt="ОптХолод">
           <span class="brand-halo" aria-hidden="true"></span>
         </div>
         <div class="top-spacer" aria-hidden="true"></div>
       </div>
-      <div class="search-wrap">
-        <span class="search-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.6-3.6"></path></svg></span>
-        <input id="search" placeholder="Поиск товаров" />
-        <button id="filterBtn" class="filter-button" type="button" aria-label="Фильтры"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8M14 4v6M8 14v6"></path></svg></button>
+      <div class="search-wrap" role="search">
+        <span class="search-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.6-3.6"></path></svg></span>
+        <input id="search" type="search" name="search" placeholder="Поиск товаров" aria-label="Поиск товаров" autocomplete="off" enterkeyhint="search" />
+        <button id="filterBtn" class="filter-button" type="button" aria-label="Фильтры по стране" aria-controls="countryFilters"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8M14 4v6M8 14v6"></path></svg></button>
       </div>
-      <div class="country-chips" aria-label="Страна производства">
+      <div id="countryFilters" class="country-chips" aria-label="Страна производства">
         <button class="country-chip active" data-country-filter="" type="button">Все товары</button>
         <button class="country-chip" data-country-filter="Европа" type="button"><span class="flag">🇪🇺</span> Европа</button>
         <button class="country-chip" data-country-filter="Китай" type="button"><span class="flag">🇨🇳</span> Китай</button>
@@ -60,24 +59,12 @@
       <div class="grid" id="products"></div>
     </main>
 
-    <footer class="bottom-nav">
+    <nav class="bottom-nav" aria-label="Основная навигация">
       <button class="nav active" data-tab="new"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5V21h-6v-6H9v6H3z"></path></svg><span>Все товары</span></button>
       <button class="nav" data-tab="catalog"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"></rect><rect x="14" y="4" width="6" height="6" rx="1"></rect><rect x="4" y="14" width="6" height="6" rx="1"></rect><rect x="14" y="14" width="6" height="6" rx="1"></rect></svg><span>Каталог</span></button>
       <button class="nav" data-tab="fav"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.7-7.5 1.1-1.1a5.5 5.5 0 0 0 0-7.8Z"></path></svg><span>Избранное</span></button>
       <button class="nav" data-tab="cart"><svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.5h7.8a2 2 0 0 0 2-1.6L21 7H6"></path></svg><span>Корзина</span><b id="cartCount">0</b></button>
-    </footer>
-  </div>
-
-  <div class="sheet" id="cartSheet">
-    <div class="sheet-box">
-      <div class="sheet-head">
-        <h3 id="cartTitle">Корзина</h3>
-        <button id="closeCart">×</button>
-      </div>
-      <div id="cartItems"></div>
-      <div class="total"><span id="totalLabel">Итого:</span> <b id="total">0 ₽</b></div>
-      <button class="checkout" id="checkout">Оформить заказ</button>
-    </div>
+    </nav>
   </div>
 
 </body>

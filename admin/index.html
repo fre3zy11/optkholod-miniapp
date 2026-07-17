@@ -84,7 +84,7 @@
             <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Найти товар или категорию..." /></label>
           </div>
           <div id="status" class="status" role="status"></div>
-          <div class="table-labels"><span>Товар</span><span>Цена за кг</span><span>Упаковка</span><span>Действия</span></div>
+          <div class="table-labels"><span>Товар</span><span>Цена с НДС</span><span>Минимум</span><span>Действия</span></div>
           <div id="products" class="products"></div>
         </section>
 
@@ -126,8 +126,9 @@
       <div class="form-grid">
         <label class="wide">Название товара <input id="newNameRu" placeholder="Например, картофель фри 10 мм" /></label>
         <label class="wide">Название на английском <input id="newNameEn" placeholder="Product name in English" /></label>
-        <label>Цена за кг, ₽ <input id="newPrice" type="number" min="0" step="0.01" placeholder="155" /></label>
-        <label>Вес упаковки, кг <input id="newPack" type="number" min="0" step="0.1" placeholder="10" /></label>
+        <label>Цена с НДС, ₽ <input id="newPrice" type="number" min="0" step="0.01" placeholder="155" /></label>
+        <label>Единица цены <select id="newPriceUnit"><option value="кг">за кг</option><option value="шт">за штуку</option><option value="упак">за упаковку</option></select></label>
+        <label>Минимальное количество <input id="newPack" type="number" min="0" step="0.1" placeholder="10" /></label>
         <label class="wide">Категория <input id="newCatRu" placeholder="Замороженный картофель" /></label>
         <label class="wide">Изображение <div class="upload-row"><input id="newImg" placeholder="assets/products/product.webp" /><label class="upload-button">Загрузить<input id="imageUpload" type="file" accept="image/jpeg,image/png,image/webp" /></label></div><small id="uploadStatus">JPG, PNG или WEBP · до 10 МБ</small></label>
         <label class="wide">Описание <textarea id="newDescRu" placeholder="Коротко расскажите о товаре"></textarea></label>

@@ -2,6 +2,7 @@ import { gsap } from 'gsap';
 
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 let cardObserver: IntersectionObserver | null = null;
+let pressedTarget: Element | null = null;
 gsap.defaults({ ease: 'power3.out', duration: reduced ? .01 : .48 });
 
 export function initMotion() {
@@ -14,12 +15,19 @@ export function initMotion() {
   gsap.to('.brand-halo', { scale: 1.08, opacity: .72, duration: 3.8, repeat: -1, yoyo: true, ease: 'sine.inOut' });
   document.addEventListener('pointerdown', event => {
     const target = (event.target as Element)?.closest('button, .country-chip, .catalog-item');
-    if (target) gsap.to(target, { scale: .975, duration: .12, overwrite: true });
+    if (target) {
+      pressedTarget = target;
+      gsap.to(target, { scale: .975, duration: .12, overwrite: true });
+    }
   });
-  document.addEventListener('pointerup', event => {
-    const target = (event.target as Element)?.closest('button, .country-chip, .catalog-item');
-    if (target) gsap.to(target, { scale: 1, duration: .38, ease: 'elastic.out(1,.55)', overwrite: true });
-  });
+  const releasePressedTarget = () => {
+    if (!pressedTarget) return;
+    gsap.to(pressedTarget, { scale: 1, duration: .38, ease: 'elastic.out(1,.55)', overwrite: true });
+    pressedTarget = null;
+  };
+  document.addEventListener('pointerup', releasePressedTarget);
+  document.addEventListener('pointercancel', releasePressedTarget);
+  window.addEventListener('blur', releasePressedTarget);
 }
 
 export function animateCards() {
@@ -31,6 +39,10 @@ export function animateCards() {
   gsap.fromTo(cards, { y: 18, opacity: 0, scale: .985 }, { y: 0, opacity: 1, scale: 1, stagger: .035, duration: .5, clearProps: 'transform,opacity' });
   const deferred = allCards.slice(12);
   if (!deferred.length) return;
+  if (!('IntersectionObserver' in window)) {
+    gsap.set(deferred, { clearProps: 'transform,opacity' });
+    return;
+  }
   gsap.set(deferred, { y: 16, opacity: 0 });
   cardObserver = new IntersectionObserver(entries => {
     for (const entry of entries) if (entry.isIntersecting) {

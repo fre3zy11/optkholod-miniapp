@@ -1,5 +1,20 @@
 .env
+.env.*
+!.env.example
 .venv/
 __pycache__/
 node_modules/
 *.zip
+*.log
+coverage/
+
+# Runtime state and private customer data
+admin/subscribers.json
+admin/settings.json
+admin/price_history.json
+admin/price-import*.xls
+admin/*.tmp
+data/
+
+# User uploads are runtime data, not build artifacts
+web/assets/products/uploads/
