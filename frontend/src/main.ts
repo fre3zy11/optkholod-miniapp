@@ -301,7 +301,7 @@ let products = [
 const translations = {
   ru: {
     lang: 'RU', currency: 'RUB', search: 'Поиск товаров', showAll: 'Смотреть все ›', backAll: 'Все товары',
-    new: 'Все товары', catalog: 'Каталог', fav: 'Избранное', cart: 'Корзина', add: '🛒 В корзину',
+    new: 'Все товары', catalog: 'Каталог', fav: 'Избранное', cart: 'Корзина', add: 'В корзину',
     emptyProducts: 'Товары не найдены', emptyCart: 'Корзина пустая', total: 'Итого', back: 'Назад',
     priceKg: '₽/кг', vatShort: 'с ндс*', packWeight: 'Вес упаковки', customWeight: 'Минимум', ask: 'ⓘ Задать вопрос', itemTotal: 'Итого', kg: 'кг',
     inCart: 'Добавлено в корзину', qty: 'Кол-во', description: 'Описание', pricePerKg: 'Цена за кг', pack: 'Упаковка',
@@ -310,7 +310,7 @@ const translations = {
   },
   en: {
     lang: 'EN', currency: 'RUB', search: 'Search products', showAll: 'View all ›', backAll: 'All products',
-    new: 'All products', catalog: 'Catalog', fav: 'Favorites', cart: 'Cart', add: '🛒 Add to cart',
+    new: 'All products', catalog: 'Catalog', fav: 'Favorites', cart: 'Cart', add: 'Add to cart',
     emptyProducts: 'No products found', emptyCart: 'Cart is empty', total: 'Total', back: 'Back',
     priceKg: '₽/kg', vatShort: 'vat incl.*', packWeight: 'Pack weight', customWeight: 'Minimum', ask: 'ⓘ Ask a question', itemTotal: 'Total', kg: 'kg',
     inCart: 'Added to cart', qty: 'Qty', description: 'Description', pricePerKg: 'Price per kg', pack: 'Pack',
@@ -378,6 +378,10 @@ const parseCartKey = (key) => {
   return { id: Number(id), weight: cleanWeight(weight || productById(id)?.packKg || 10) };
 };
 const productImage = (p) => p.img ? `<img src="${p.img}" alt="${p.name[currentLang]}" loading="lazy" decoding="async">` : `<div class="no-photo" aria-label="Нет фото"></div>`;
+const icon = (name) => ({
+  heart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.7-7.5 1.1-1.1a5.5 5.5 0 0 0 0-7.8Z"></path></svg>',
+  cart: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.5h7.8a2 2 0 0 0 2-1.6L21 7H6"></path></svg>'
+}[name] || '');
 
 function save() {
   localStorage.setItem('fav', JSON.stringify(fav));
@@ -433,13 +437,13 @@ function filteredProducts() {
 function renderProductCards(arr) {
   $('#products').innerHTML = arr.length ? arr.map(p => `
     <article class="card" data-open-product="${p.id}">
-      <button class="fav ${fav.includes(p.id) ? 'on' : ''}" data-fav="${p.id}" type="button">♡</button>
+      <button class="fav ${fav.includes(p.id) ? 'on' : ''}" data-fav="${p.id}" type="button">${icon('heart')}</button>
       <div class="pic ${p.img ? '' : 'empty-pic'}">${productImage(p)}</div>
       <div class="body">
         <h3 class="name">${p.name[currentLang]}</h3>
         <div class="cat">${text('pack')}: ${kgLabel(p.packKg)}</div>
         <div class="price">${moneyKg(p.pricePerKg)}</div>
-        <button class="add" data-cart="${p.id}" type="button">${text('add')}</button>
+        <button class="add" data-cart="${p.id}" type="button">${icon('cart')}<span>${text('add')}</span></button>
       </div>
     </article>
   `).join('') : `<div class="empty">${text('emptyProducts')}</div>`;
@@ -480,7 +484,7 @@ function renderDetail() {
   $('#products').innerHTML = `
     <div class="detail-top">
       <button class="detail-back" type="button" data-back-detail>‹ ${text('back')}</button>
-      <button class="detail-heart ${fav.includes(p.id) ? 'on' : ''}" data-fav="${p.id}" type="button">♡</button>
+      <button class="detail-heart ${fav.includes(p.id) ? 'on' : ''}" data-fav="${p.id}" type="button">${icon('heart')}</button>
     </div>
     <div class="detail-image ${p.img ? '' : 'empty-pic'}">${productImage(p)}</div>
     <div class="detail-body">
@@ -505,7 +509,7 @@ function renderDetail() {
         </label>
       </div>
       <div class="detail-total"><span>${text('itemTotal')}:</span><b>${money(itemTotal)}</b></div>
-      <button class="detail-add" data-cart="${p.id}" data-detail-cart="1" type="button">${text('add')}</button>
+      <button class="detail-add" data-cart="${p.id}" data-detail-cart="1" type="button">${icon('cart')}<span>${text('add')}</span></button>
       <button class="ask-btn" type="button">${text('ask')}</button>
     </div>
   `;
@@ -930,10 +934,8 @@ showAllBtn()?.addEventListener('click', () => {
   renderProducts();
 });
 
-$('#favBtn').addEventListener('click', () => {
-  mode = 'fav';
-  setActiveNav('fav');
-  renderProducts();
+$('#filterBtn')?.addEventListener('click', () => {
+  document.querySelector('.country-chips')?.classList.toggle('highlighted');
 });
 
 async function loadProducts() {

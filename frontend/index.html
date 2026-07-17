@@ -23,6 +23,7 @@
   </svg>
   <div class="app">
     <canvas id="snowCanvas" class="snow-canvas" aria-hidden="true"></canvas>
+    <div class="ice-landscape" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
     <div class="ambient-glow glow-one" aria-hidden="true"></div>
     <div class="ambient-glow glow-two" aria-hidden="true"></div>
     <header class="top">
@@ -37,15 +38,15 @@
         <div class="top-spacer" aria-hidden="true"></div>
       </div>
       <div class="search-wrap">
-        <span>⌕</span>
+        <span class="search-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.6-3.6"></path></svg></span>
         <input id="search" placeholder="Поиск товаров" />
-        <button id="favBtn" class="heart">♡</button>
+        <button id="filterBtn" class="filter-button" type="button" aria-label="Фильтры"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8M14 4v6M8 14v6"></path></svg></button>
       </div>
       <div class="country-chips" aria-label="Страна производства">
         <button class="country-chip active" data-country-filter="" type="button">Все товары</button>
-        <button class="country-chip" data-country-filter="Европа" type="button">🇪🇺 Европа</button>
-        <button class="country-chip" data-country-filter="Китай" type="button">🇨🇳 Китай</button>
-        <button class="country-chip" data-country-filter="Россия" type="button">🇷🇺 Россия</button>
+        <button class="country-chip" data-country-filter="Европа" type="button"><span class="flag">🇪🇺</span> Европа</button>
+        <button class="country-chip" data-country-filter="Китай" type="button"><span class="flag">🇨🇳</span> Китай</button>
+        <button class="country-chip" data-country-filter="Россия" type="button"><span class="flag">🇷🇺</span> Россия</button>
       </div>
     </header>
 
@@ -58,10 +59,10 @@
     </main>
 
     <footer class="bottom-nav">
-      <button class="nav active" data-tab="new">✦<span>Новинки</span></button>
-      <button class="nav" data-tab="catalog">▦<span>Каталог</span></button>
-      <button class="nav" data-tab="fav">♡<span>Избранное</span></button>
-      <button class="nav" data-tab="cart">🛒<span>Корзина</span><b id="cartCount">0</b></button>
+      <button class="nav active" data-tab="new"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5V21h-6v-6H9v6H3z"></path></svg><span>Все товары</span></button>
+      <button class="nav" data-tab="catalog"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"></rect><rect x="14" y="4" width="6" height="6" rx="1"></rect><rect x="4" y="14" width="6" height="6" rx="1"></rect><rect x="14" y="14" width="6" height="6" rx="1"></rect></svg><span>Каталог</span></button>
+      <button class="nav" data-tab="fav"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.7-7.5 1.1-1.1a5.5 5.5 0 0 0 0-7.8Z"></path></svg><span>Избранное</span></button>
+      <button class="nav" data-tab="cart"><svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.5h7.8a2 2 0 0 0 2-1.6L21 7H6"></path></svg><span>Корзина</span><b id="cartCount">0</b></button>
     </footer>
   </div>
 
