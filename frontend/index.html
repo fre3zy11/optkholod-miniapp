@@ -2,8 +2,18 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>ОптХолод — магазин</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
+  <meta name="theme-color" content="#eaf8ff" />
+  <meta name="color-scheme" content="light" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="ОптХолод" />
+  <meta name="application-name" content="ОптХолод" />
+  <meta name="description" content="Оптовый каталог замороженных продуктов с доставкой и самовывозом в Москве." />
+  <title>ОптХолод — замороженные продукты оптом</title>
+  <link rel="preconnect" href="https://telegram.org" crossorigin />
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
@@ -29,39 +39,39 @@
     <header class="top">
       <div class="frost-edge" aria-hidden="true"></div>
       <div class="row small-row">
-        <button class="pill" id="langBtn" type="button">RU</button>
-        <div class="brand-logo" aria-label="ОптХолод">
-          <img class="brand-img" src="assets/optkholod_logo_new.png" alt="ОптХолод">
+        <button class="pill" id="langBtn" type="button" aria-label="Сменить язык">RU</button>
+        <div class="brand-logo">
+          <img class="brand-img" src="assets/optkholod_logo_mobile.png" width="384" height="384" alt="ОптХолод — замороженные продукты оптом" decoding="async" fetchpriority="high">
           <span class="brand-halo" aria-hidden="true"></span>
         </div>
         <div class="top-spacer" aria-hidden="true"></div>
       </div>
       <div class="search-wrap" role="search">
-        <span class="search-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.6-3.6"></path></svg></span>
-        <input id="search" type="search" name="search" placeholder="Поиск товаров" aria-label="Поиск товаров" autocomplete="off" enterkeyhint="search" />
-        <button id="filterBtn" class="filter-button" type="button" aria-label="Фильтры по стране" aria-controls="countryFilters"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8M14 4v6M8 14v6"></path></svg></button>
+        <span class="search-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.6-3.6"></path></svg></span>
+        <input id="search" type="search" name="search" placeholder="Найти товар" aria-label="Поиск по каталогу" autocomplete="off" autocapitalize="none" enterkeyhint="search" spellcheck="false" />
+        <button id="filterBtn" class="filter-button" type="button" aria-label="Перейти к выбору страны" aria-controls="countryFilters"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h10M18 7h2M4 17h4M12 17h8M14 4v6M8 14v6"></path></svg></button>
       </div>
-      <div id="countryFilters" class="country-chips" aria-label="Страна производства">
-        <button class="country-chip active" data-country-filter="" type="button">Все товары</button>
-        <button class="country-chip" data-country-filter="Европа" type="button"><span class="flag">🇪🇺</span> Европа</button>
-        <button class="country-chip" data-country-filter="Китай" type="button"><span class="flag">🇨🇳</span> Китай</button>
-        <button class="country-chip" data-country-filter="Россия" type="button"><span class="flag">🇷🇺</span> Россия</button>
+      <div id="countryFilters" class="country-chips" role="group" aria-label="Фильтр по стране производства">
+        <button class="country-chip active" data-country-filter="" type="button" aria-pressed="true">Все</button>
+        <button class="country-chip" data-country-filter="Европа" type="button" aria-pressed="false"><span class="flag" aria-hidden="true">🇪🇺</span> Европа</button>
+        <button class="country-chip" data-country-filter="Китай" type="button" aria-pressed="false"><span class="flag" aria-hidden="true">🇨🇳</span> Китай</button>
+        <button class="country-chip" data-country-filter="Россия" type="button" aria-pressed="false"><span class="flag" aria-hidden="true">🇷🇺</span> Россия</button>
       </div>
     </header>
 
 
     <main class="content">
       <div class="section-title">
-        <h2 id="pageTitle">Новинки</h2>
+        <h2 id="pageTitle" aria-live="polite">Все товары</h2>
       </div>
       <div class="grid" id="products"></div>
     </main>
 
     <nav class="bottom-nav" aria-label="Основная навигация">
-      <button class="nav active" data-tab="new"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5V21h-6v-6H9v6H3z"></path></svg><span>Все товары</span></button>
-      <button class="nav" data-tab="catalog"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"></rect><rect x="14" y="4" width="6" height="6" rx="1"></rect><rect x="4" y="14" width="6" height="6" rx="1"></rect><rect x="14" y="14" width="6" height="6" rx="1"></rect></svg><span>Каталог</span></button>
-      <button class="nav" data-tab="fav"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.7-7.5 1.1-1.1a5.5 5.5 0 0 0 0-7.8Z"></path></svg><span>Избранное</span></button>
-      <button class="nav" data-tab="cart"><svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.5h7.8a2 2 0 0 0 2-1.6L21 7H6"></path></svg><span>Корзина</span><b id="cartCount">0</b></button>
+      <button class="nav active" data-tab="new" type="button" aria-controls="products"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11.5 12 4l9 7.5V21h-6v-6H9v6H3z"></path></svg><span>Все товары</span></button>
+      <button class="nav" data-tab="catalog" type="button" aria-controls="products"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4" width="6" height="6" rx="1"></rect><rect x="14" y="4" width="6" height="6" rx="1"></rect><rect x="4" y="14" width="6" height="6" rx="1"></rect><rect x="14" y="14" width="6" height="6" rx="1"></rect></svg><span>Каталог</span></button>
+      <button class="nav" data-tab="fav" type="button" aria-controls="products"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.7-7.5 1.1-1.1a5.5 5.5 0 0 0 0-7.8Z"></path></svg><span>Избранное</span></button>
+      <button class="nav" data-tab="cart" type="button" aria-controls="products"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle><path d="M3 4h2l2.4 10.2a2 2 0 0 0 2 1.5h7.8a2 2 0 0 0 2-1.6L21 7H6"></path></svg><span>Корзина</span><b id="cartCount" aria-live="polite" aria-atomic="true">0</b></button>
     </nav>
   </div>
 

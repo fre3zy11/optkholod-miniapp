@@ -6,6 +6,14 @@ import { animateCards, animateCart, animateCatalog, animateDetail, animateSucces
 const tg = window.Telegram?.WebApp;
 if (tg) {
   tg.ready();
+  tg.expand();
+  try {
+    tg.setHeaderColor?.('#eaf8ff');
+    tg.setBackgroundColor?.('#e1f5ff');
+    tg.setBottomBarColor?.('#edf9ff');
+  } catch (_) {
+    // Старые версии Telegram принимают не все цветовые параметры.
+  }
   // Не включаем fullscreen: окно Mini App масштабируется вместе с окном Telegram.
 }
 
@@ -76,24 +84,38 @@ function createRequestId() {
 
 const translations = {
   ru: {
-    lang: 'RU', currency: 'RUB', search: 'Поиск товаров', showAll: 'Смотреть все ›', backAll: 'Все товары',
-    new: 'Все товары', catalog: 'Каталог', fav: 'Избранное', cart: 'Корзина', add: 'В корзину',
-    emptyProducts: 'Товары не найдены', emptyCart: 'Корзина пустая', total: 'Итого', back: 'Назад',
-    priceKg: '₽/кг', vatShort: 'с ндс*', packWeight: 'Вес упаковки', customWeight: 'Минимум', ask: 'ⓘ Задать вопрос', itemTotal: 'Итого', kg: 'кг',
-    inCart: 'Добавлено в корзину', qty: 'Кол-во', description: 'Описание', pricePerKg: 'Цена за кг', pack: 'Упаковка',
-    checkout: 'Оформить заказ', sending: 'Отправляем...', orderNote: 'Минимальный заказ от палета. Самовывоз со склада в Москве.', vatNote: 'с НДС*', orderSuccessTitle: 'Спасибо за заказ!', orderSuccessText: 'С вами свяжется наш менеджер\nДля обсуждения деталей)', orderSuccessOk: 'Понятно', orderError: 'Не получилось отправить заказ. Попробуйте еще раз или напишите менеджеру.',
-    loadingProducts: 'Загружаем товары...', loadProductsError: 'Не удалось загрузить каталог', retry: 'Повторить', minimumAmount: 'Минимум',
-    cats: { все:'ВСЕ', картофель:'КАРТОФЕЛЬ И СНЕКИ' }
+    lang: 'RU', appTitle: 'ОптХолод — замороженные продукты оптом', search: 'Найти товар', searchLabel: 'Поиск по каталогу', filtersLabel: 'Выбрать страну', countriesLabel: 'Страна производства', mainNavLabel: 'Основная навигация',
+    showAll: 'Категории ›', backAll: 'Все товары', allProducts: 'Все товары', allCountryChip: 'Все', new: 'Товары', catalog: 'Каталог', fav: 'Избранное', cart: 'Корзина', add: 'В корзину',
+    emptyProducts: 'Ничего не найдено', emptyCart: 'В корзине пока пусто', total: 'Итого', back: 'Назад', allCountries: 'Все страны',
+    vatShort: 'с НДС', amount: 'Количество', amountFrom: 'От', customWeight: 'Минимум', amountHint: 'Можно ввести своё количество', amountInput: 'Количество товара', ask: 'Написать менеджеру', itemTotal: 'Сумма',
+    inCart: 'Товар добавлен', description: 'Описание', checkout: 'Отправить заказ', sending: 'Отправляем…',
+    orderNote: 'Минимальный заказ — от одной палеты. Самовывоз со склада в Москве.', vatNote: 'Все цены с НДС.',
+    orderSuccessTitle: 'Спасибо за заказ!', orderSuccessText: 'Заказ принят. Менеджер свяжется с вами, чтобы уточнить детали.', orderSuccessOk: 'Готово',
+    orderError: 'Не удалось отправить заказ. Попробуйте ещё раз чуть позже.', orderSessionError: 'Сессия устарела. Закройте и снова откройте магазин.', orderRateError: 'Слишком много попыток. Подождите минуту и повторите.', orderValidationError: 'Проверьте количество товаров и повторите заказ.', orderTimeoutError: 'Сервер долго не отвечает. Попробуйте ещё раз.',
+    loadingProducts: 'Загружаем каталог…', loadProductsError: 'Каталог не загрузился', retry: 'Попробовать снова', loadMore: 'Показать ещё',
+    noPhoto: 'Фото скоро появится', detailsManager: 'Подробности и наличие уточнит менеджер.', openProduct: 'Открыть товар', addFavorite: 'Добавить в избранное', removeFavorite: 'Убрать из избранного',
+    decreaseQty: 'Уменьшить количество', increaseQty: 'Увеличить количество', removeItem: 'Удалить из корзины',
+    switchLanguage: 'Switch to English', offline: 'Нет подключения к интернету', online: 'Подключение восстановлено',
+    managerPopupTitle: 'Написать менеджеру', managerPopupText: 'Закройте магазин и напишите вопрос в чат с ботом. Или позвоните: +7 995 796-20-36.', openChat: 'Перейти в чат',
+    countries: { Европа: 'Европа', Китай: 'Китай', Россия: 'Россия' },
+    cats: { все:'Все товары', картофель:'Картофель', овощи:'Овощи', ягоды:'Ягоды', грибы:'Грибы', фрукты:'Фрукты', смеси:'Овощные смеси', снеки:'Снеки', выпечка:'Выпечка и донаты' }
   },
   en: {
-    lang: 'EN', currency: 'RUB', search: 'Search products', showAll: 'View all ›', backAll: 'All products',
-    new: 'All products', catalog: 'Catalog', fav: 'Favorites', cart: 'Cart', add: 'Add to cart',
-    emptyProducts: 'No products found', emptyCart: 'Cart is empty', total: 'Total', back: 'Back',
-    priceKg: '₽/kg', vatShort: 'vat incl.*', packWeight: 'Pack weight', customWeight: 'Minimum', ask: 'ⓘ Ask a question', itemTotal: 'Total', kg: 'kg',
-    inCart: 'Added to cart', qty: 'Qty', description: 'Description', pricePerKg: 'Price per kg', pack: 'Pack',
-    checkout: 'Checkout', sending: 'Sending...', orderNote: 'Minimum order from one pallet. Pickup from warehouse in Moscow.', vatNote: 'VAT incl.*', orderSuccessTitle: 'Thank you for your order!', orderSuccessText: 'Our manager will contact you\nTo discuss the details)', orderSuccessOk: 'OK', orderError: 'Could not send the order. Please try again or message the manager.',
-    loadingProducts: 'Loading products...', loadProductsError: 'Could not load the catalog', retry: 'Try again', minimumAmount: 'Minimum',
-    cats: { все:'ALL', картофель:'POTATO & SNACKS' }
+    lang: 'EN', appTitle: 'OptKholod — frozen foods wholesale', search: 'Find a product', searchLabel: 'Search the catalog', filtersLabel: 'Choose a country', countriesLabel: 'Country of origin', mainNavLabel: 'Main navigation',
+    showAll: 'Categories ›', backAll: 'All products', allProducts: 'All products', allCountryChip: 'All', new: 'Products', catalog: 'Catalog', fav: 'Favorites', cart: 'Cart', add: 'Add to cart',
+    emptyProducts: 'No matching products', emptyCart: 'Your cart is empty', total: 'Total', back: 'Back', allCountries: 'All countries',
+    vatShort: 'VAT incl.', amount: 'Quantity', amountFrom: 'From', customWeight: 'Minimum', amountHint: 'You can enter a custom quantity', amountInput: 'Product quantity', ask: 'Message the manager', itemTotal: 'Subtotal',
+    inCart: 'Added to cart', description: 'Description', checkout: 'Send order', sending: 'Sending…',
+    orderNote: 'Minimum order: one pallet. Pickup from our Moscow warehouse.', vatNote: 'All prices include VAT.',
+    orderSuccessTitle: 'Thank you!', orderSuccessText: 'Your order is confirmed. Our manager will contact you to discuss the details.', orderSuccessOk: 'Done',
+    orderError: 'Could not send the order. Please try again a little later.', orderSessionError: 'Your session has expired. Close and reopen the shop.', orderRateError: 'Too many attempts. Wait a minute and try again.', orderValidationError: 'Check the product quantities and try again.', orderTimeoutError: 'The server took too long to respond. Please try again.',
+    loadingProducts: 'Loading catalog…', loadProductsError: 'Catalog could not be loaded', retry: 'Try again', loadMore: 'Show more',
+    noPhoto: 'Photo coming soon', detailsManager: 'Ask the manager for details and availability.', openProduct: 'Open product', addFavorite: 'Add to favorites', removeFavorite: 'Remove from favorites',
+    decreaseQty: 'Decrease quantity', increaseQty: 'Increase quantity', removeItem: 'Remove from cart',
+    switchLanguage: 'Переключить на русский', offline: 'No internet connection', online: 'Connection restored',
+    managerPopupTitle: 'Message the manager', managerPopupText: 'Close the shop and send your question in the bot chat. Or call +7 995 796-20-36.', openChat: 'Open chat',
+    countries: { Европа: 'Europe', Китай: 'China', Россия: 'Russia' },
+    cats: { все:'All products', картофель:'Potato', овощи:'Vegetables', ягоды:'Berries', грибы:'Mushrooms', фрукты:'Fruit', смеси:'Vegetable mixes', снеки:'Snacks', выпечка:'Bakery and donuts' }
   }
 };
 
@@ -101,6 +123,10 @@ let catalogCountry = '';
 let countryFilter = '';
 let currentLang = readStoredString('lang') === 'en' ? 'en' : 'ru';
 let productsLoadState = 'loading';
+const CARD_BATCH_SIZE = 24;
+let visibleProductLimit = CARD_BATCH_SIZE;
+let productWindowKey = '';
+let productObserver = null;
 const WEIGHT_OPTIONS = [10, 25, 50, 100];
 const getWeightOptions = (p) => {
   const base = minProductAmount(p);
@@ -134,9 +160,11 @@ const productById = (id) => products.find(p => p.id === Number(id));
 const localized = (value) => typeof value === 'string'
   ? value
   : String(value?.[currentLang] ?? value?.ru ?? value?.en ?? '');
+const countryLabel = (country) => translations[currentLang].countries[country] || String(country || '');
+const favoriteLabel = (id) => text(fav.includes(Number(id)) ? 'removeFavorite' : 'addFavorite');
 const normalizePriceUnit = (p) => PRODUCT_UNITS.has(p?.priceUnit) ? p.priceUnit : 'кг';
 const unitLabel = (p) => ({
-  ru: { кг: 'кг', шт: 'шт', упак: 'упак' },
+  ru: { кг: 'кг', шт: 'шт.', упак: 'упак.' },
   en: { кг: 'kg', шт: 'pc', упак: 'pack' }
 }[currentLang][normalizePriceUnit(p)]);
 const productPrice = (p) => {
@@ -160,7 +188,7 @@ const amountLabel = (p, amount) => `${String(amount).replace('.', ',')} ${unitLa
 const money = (rub) => {
   const converted = Number(rub || 0);
   const isInteger = Math.abs(converted - Math.round(converted)) < 0.001;
-  const value = converted.toLocaleString('ru-RU', {
+  const value = converted.toLocaleString(currentLang === 'ru' ? 'ru-RU' : 'en-US', {
     minimumFractionDigits: isInteger ? 0 : 2,
     maximumFractionDigits: 2
   });
@@ -182,11 +210,11 @@ const parseCartKey = (key) => {
   const [id, weight] = String(key).split('|');
   return { id: Number(id), weight: cleanWeight(weight || minProductAmount(productById(id)), minProductAmount(productById(id))) };
 };
-const productImage = (p) => {
+const productImage = (p, eager = false) => {
   const src = safeImageUrl(p?.img);
   return src
-    ? `<img src="${escapeHtml(src)}" alt="${escapeHtml(localized(p?.name))}" loading="lazy" decoding="async">`
-    : `<div class="no-photo" aria-label="${currentLang === 'ru' ? 'Нет фото' : 'No photo'}"></div>`;
+    ? `<img src="${escapeHtml(src)}" alt="${escapeHtml(localized(p?.name))}" width="360" height="360" loading="${eager ? 'eager' : 'lazy'}" fetchpriority="${eager ? 'high' : 'low'}" decoding="async">`
+    : `<div class="no-photo" role="img" aria-label="${escapeHtml(text('noPhoto'))}"></div>`;
 };
 const icon = (name) => ({
   heart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.7-7.5 1.1-1.1a5.5 5.5 0 0 0 0-7.8Z"></path></svg>',
@@ -203,19 +231,59 @@ function save() {
 }
 
 let toastTimer;
-function showToast(message) {
+function showToast(message, duration = 1700, assertive = false) {
   let toast = document.querySelector('.app-toast');
   if (!toast) {
     toast = document.createElement('div');
     toast.className = 'app-toast';
-    toast.setAttribute('role', 'status');
-    toast.setAttribute('aria-live', 'polite');
     document.body.appendChild(toast);
   }
+  toast.setAttribute('role', assertive ? 'alert' : 'status');
+  toast.setAttribute('aria-live', assertive ? 'assertive' : 'polite');
   toast.textContent = message;
   toast.classList.add('visible');
   window.clearTimeout(toastTimer);
-  toastTimer = window.setTimeout(() => toast.classList.remove('visible'), 1700);
+  toastTimer = window.setTimeout(() => toast.classList.remove('visible'), duration);
+}
+
+let largestVisualViewport = window.visualViewport?.height || window.innerHeight;
+
+function focusedTextControl() {
+  const active = document.activeElement;
+  return active instanceof HTMLInputElement || active instanceof HTMLTextAreaElement ? active : null;
+}
+
+function syncPhoneViewport() {
+  const visualHeight = window.visualViewport?.height || window.innerHeight;
+  const telegramHeight = Number(tg?.viewportHeight || 0);
+  const stableHeight = Number(tg?.viewportStableHeight || 0);
+  const currentHeight = telegramHeight || visualHeight;
+  if (!focusedTextControl()) largestVisualViewport = Math.max(largestVisualViewport, visualHeight);
+  const referenceHeight = Math.max(stableHeight, largestVisualViewport);
+  const keyboardVisible = Boolean(focusedTextControl()) && referenceHeight - Math.min(currentHeight, visualHeight) > 120;
+
+  document.documentElement.style.setProperty('--app-viewport-height', `${Math.round(currentHeight)}px`);
+  document.documentElement.style.setProperty('--app-viewport-stable-height', `${Math.round(referenceHeight)}px`);
+  document.body.classList.toggle('keyboard-open', keyboardVisible);
+
+  const nav = document.querySelector('.bottom-nav');
+  if (nav) {
+    nav.style.visibility = keyboardVisible ? 'hidden' : '';
+    nav.style.pointerEvents = keyboardVisible ? 'none' : '';
+    if (keyboardVisible) nav.setAttribute('aria-hidden', 'true');
+    else nav.removeAttribute('aria-hidden');
+  }
+}
+
+function dismissKeyboard() {
+  focusedTextControl()?.blur();
+  window.requestAnimationFrame(syncPhoneViewport);
+}
+
+function keepFocusedControlVisible() {
+  const control = focusedTextControl();
+  if (!control) return;
+  window.setTimeout(() => control.scrollIntoView({ block: 'center', behavior: 'smooth' }), 180);
 }
 
 function normalizeCartEntry(key) {
@@ -244,7 +312,9 @@ function updateCount() {
     const item = normalizeCartEntry(id);
     return sum + (item ? Number(item.qty) : 0);
   }, 0);
-  $('#cartCount').textContent = count;
+  const badge = $('#cartCount');
+  badge.textContent = count > 99 ? '99+' : String(count);
+  badge.setAttribute('aria-label', `${text('cart')}: ${count}`);
   save();
 }
 
@@ -268,6 +338,8 @@ function filteredProducts() {
 }
 
 function renderProductCards(arr) {
+  productObserver?.disconnect();
+  productObserver = null;
   if (productsLoadState === 'loading') {
     $('#products').innerHTML = `<div class="loading-status" role="status">${escapeHtml(text('loadingProducts'))}</div>` + Array.from({ length: 6 }, () => `
       <article class="card skeleton-card" aria-hidden="true">
@@ -281,19 +353,47 @@ function renderProductCards(arr) {
     $('#products').innerHTML = `<div class="empty" role="alert">${escapeHtml(text('loadProductsError'))}<br><button type="button" data-retry-products>${escapeHtml(text('retry'))}</button></div>`;
     return;
   }
-  $('#products').innerHTML = arr.length ? arr.map(p => `
-    <article class="card" data-open-product="${Number(p.id)}" tabindex="0" aria-label="${escapeHtml(localized(p.name))}">
-      <button class="fav ${fav.includes(Number(p.id)) ? 'on' : ''}" data-fav="${Number(p.id)}" type="button" aria-label="${escapeHtml(text('fav'))}" aria-pressed="${fav.includes(Number(p.id))}">${icon('heart')}</button>
-      <div class="pic ${safeImageUrl(p.img) ? '' : 'empty-pic'}">${productImage(p)}</div>
+  const query = ($('#search')?.value || '').trim().toLowerCase();
+  const nextWindowKey = [mode, activeCat, countryFilter, query, currentLang, productsLoadState].join('|');
+  if (productWindowKey !== nextWindowKey) {
+    productWindowKey = nextWindowKey;
+    visibleProductLimit = CARD_BATCH_SIZE;
+  }
+  const visibleProducts = arr.slice(0, visibleProductLimit);
+  const cards = visibleProducts.map((p, index) => `
+    <article class="card" data-open-product="${Number(p.id)}" tabindex="0" aria-label="${escapeHtml(`${text('openProduct')}: ${localized(p.name)}`)}">
+      <button class="fav ${fav.includes(Number(p.id)) ? 'on' : ''}" data-fav="${Number(p.id)}" type="button" aria-label="${escapeHtml(favoriteLabel(p.id))}" aria-pressed="${fav.includes(Number(p.id))}">${icon('heart')}</button>
+      <div class="pic ${safeImageUrl(p.img) ? '' : 'empty-pic'}">${productImage(p, index < 2)}</div>
       <div class="body">
         <h3 class="name">${escapeHtml(localized(p.name))}</h3>
-        <div class="cat">${escapeHtml(text('minimumAmount'))}: ${escapeHtml(amountLabel(p, minProductAmount(p)))}</div>
+        <div class="cat">${escapeHtml(text('amountFrom'))} ${escapeHtml(amountLabel(p, minProductAmount(p)))}</div>
         <div class="price">${moneyPerUnit(p)}</div>
-        <button class="add" data-cart="${Number(p.id)}" type="button">${icon('cart')}<span>${escapeHtml(text('add'))}</span></button>
+        <button class="add" data-cart="${Number(p.id)}" type="button" aria-label="${escapeHtml(`${text('add')}: ${localized(p.name)}`)}">${icon('cart')}<span>${escapeHtml(text('add'))}</span></button>
       </div>
     </article>
-  `).join('') : `<div class="empty">${escapeHtml(text('emptyProducts'))}</div>`;
+  `).join('');
+  const hasMore = visibleProducts.length < arr.length;
+  const pagination = hasMore
+    ? ('IntersectionObserver' in window
+      ? `<div class="product-sentinel" data-product-sentinel aria-hidden="true" style="height:1px;grid-column:1/-1"></div>`
+      : `<button class="load-more" data-load-more-products type="button">${escapeHtml(text('loadMore'))}</button>`)
+    : '';
+  $('#products').innerHTML = arr.length ? cards + pagination : `<div class="empty">${escapeHtml(text('emptyProducts'))}</div>`;
   animateCards();
+  const sentinel = document.querySelector('[data-product-sentinel]');
+  if (sentinel) {
+    const observedWindowKey = nextWindowKey;
+    const observer = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      observer.disconnect();
+      if (productObserver === observer) productObserver = null;
+      if (!['new', 'fav'].includes(mode) || productWindowKey !== observedWindowKey) return;
+      visibleProductLimit += CARD_BATCH_SIZE;
+      renderProductCards(filteredProducts());
+    }, { rootMargin: '600px 0px' });
+    productObserver = observer;
+    observer.observe(sentinel);
+  }
 }
 
 function renderCatalog() {
@@ -302,19 +402,17 @@ function renderCatalog() {
   $('#products').className = 'catalog-list';
   if (!catalogCountry) {
     $('#products').innerHTML = ['Европа','Китай','Россия'].map(country => `
-      <button class="catalog-item country-item" data-catalog-country="${escapeHtml(country)}" type="button"><span><b>${country === 'Европа' ? '🇪🇺' : country === 'Китай' ? '🇨🇳' : '🇷🇺'}</b>${escapeHtml(country)}</span><span class="arrow">›</span></button>
+      <button class="catalog-item country-item" data-catalog-country="${escapeHtml(country)}" type="button"><span><b aria-hidden="true">${country === 'Европа' ? '🇪🇺' : country === 'Китай' ? '🇨🇳' : '🇷🇺'}</b>${escapeHtml(countryLabel(country))}</span><span class="arrow" aria-hidden="true">›</span></button>
     `).join('');
     animateCatalog();
     return;
   }
   const tags = [...new Set(products.filter(p => p.visible !== false && p.country === catalogCountry).map(p => p.tag).filter(Boolean))];
-  const labels = currentLang === 'ru'
-    ? {картофель:'Картофель',овощи:'Овощи',ягоды:'Ягоды',грибы:'Грибы',фрукты:'Фрукты',смеси:'Овощные смеси',снеки:'Снеки',выпечка:'Выпечка и донаты'}
-    : {картофель:'Potato',овощи:'Vegetables',ягоды:'Berries',грибы:'Mushrooms',фрукты:'Fruit',смеси:'Vegetable mixes',снеки:'Snacks',выпечка:'Bakery and donuts'};
-  $('#products').innerHTML = `<button class="catalog-back" data-catalog-back type="button">‹ Все страны</button><div class="catalog-country-title">${escapeHtml(catalogCountry)}</div>` + tags.map(c => `
+  const labels = translations[currentLang].cats;
+  $('#products').innerHTML = `<button class="catalog-back" data-catalog-back type="button">‹ ${escapeHtml(text('allCountries'))}</button><div class="catalog-country-title">${escapeHtml(countryLabel(catalogCountry))}</div>` + tags.map(c => `
     <button class="catalog-item" data-catalog-cat="${escapeHtml(c)}" type="button">
       <span>${escapeHtml(labels[c] || c)}</span>
-      <span class="arrow">›</span>
+      <span class="arrow" aria-hidden="true">›</span>
     </button>
   `).join('');
   animateCatalog();
@@ -326,21 +424,23 @@ function renderDetail() {
   const currentWeight = clampProductWeight(p, selectedWeight);
   const weightOptions = getWeightOptions(p);
   const itemTotal = productTotal(p, currentWeight);
+  const description = localized(p.desc).trim() || text('detailsManager');
+  const category = localized(p.cat).trim();
   $('#pageTitle').textContent = '';
   setShowAll('none');
   $('#products').className = 'product-detail';
   $('#products').innerHTML = `
     <div class="detail-top">
       <button class="detail-back" type="button" data-back-detail>‹ ${escapeHtml(text('back'))}</button>
-      <button class="detail-heart ${fav.includes(Number(p.id)) ? 'on' : ''}" data-fav="${Number(p.id)}" type="button" aria-label="${escapeHtml(text('fav'))}" aria-pressed="${fav.includes(Number(p.id))}">${icon('heart')}</button>
+      <button class="detail-heart ${fav.includes(Number(p.id)) ? 'on' : ''}" data-fav="${Number(p.id)}" type="button" aria-label="${escapeHtml(favoriteLabel(p.id))}" aria-pressed="${fav.includes(Number(p.id))}">${icon('heart')}</button>
     </div>
-    <div class="detail-image ${safeImageUrl(p.img) ? '' : 'empty-pic'}">${productImage(p)}</div>
+    <div class="detail-image ${safeImageUrl(p.img) ? '' : 'empty-pic'}">${productImage(p, true)}</div>
     <div class="detail-body">
       <h1>${escapeHtml(localized(p.name))}</h1>
-      <div class="detail-cat">${escapeHtml(localized(p.cat))}</div>
-      <p>${escapeHtml(localized(p.desc))}</p>
+      ${category ? `<div class="detail-cat">${escapeHtml(category)}</div>` : ''}
+      <p>${escapeHtml(description)}</p>
       <div class="detail-price">${moneyPerUnit(p)}</div>
-      <div class="weight-title">${escapeHtml(text('minimumAmount'))}</div>
+      <div class="weight-title">${escapeHtml(text('amount'))}</div>
       <div class="weight-options">
         ${weightOptions.map(w => `
           <button class="weight-option ${currentWeight === w ? 'active' : ''}" data-weight="${w}" type="button">${escapeHtml(amountLabel(p, w))}</button>
@@ -349,15 +449,15 @@ function renderDetail() {
       <div class="weight-custom">
         <div class="weight-min">
           <b>${escapeHtml(text('customWeight'))}: ${escapeHtml(amountLabel(p, minProductAmount(p)))}</b>
-          <span>${currentLang === 'ru' ? 'Введите любое значение не меньше минимума' : 'Enter any value not below the minimum'}</span>
+          <span id="amountHint">${escapeHtml(text('amountHint'))}</span>
         </div>
-        <label class="weight-input-wrap" aria-label="${escapeHtml(text('minimumAmount'))}">
-          <input id="customWeight" type="number" min="${minProductAmount(p)}" step="${amountStep(p)}" inputmode="${normalizePriceUnit(p) === 'кг' ? 'decimal' : 'numeric'}" value="${currentWeight}" placeholder="${escapeHtml(amountLabel(p, minProductAmount(p)))}" />
+        <label class="weight-input-wrap" aria-label="${escapeHtml(text('amountInput'))}">
+          <input id="customWeight" name="quantity" type="number" min="${minProductAmount(p)}" step="${amountStep(p)}" inputmode="${normalizePriceUnit(p) === 'кг' ? 'decimal' : 'numeric'}" enterkeyhint="done" aria-describedby="amountHint" value="${currentWeight}" placeholder="${escapeHtml(amountLabel(p, minProductAmount(p)))}" />
           <b>${escapeHtml(unitLabel(p))}</b>
         </label>
       </div>
-      <div class="detail-total"><span>${escapeHtml(text('itemTotal'))}:</span><b>${money(itemTotal)}</b></div>
-      <button class="detail-add" data-cart="${Number(p.id)}" data-detail-cart="1" type="button">${icon('cart')}<span>${escapeHtml(text('add'))}</span></button>
+      <div class="detail-total" aria-live="polite"><span>${escapeHtml(text('itemTotal'))}:</span><b>${money(itemTotal)}</b></div>
+      <button class="detail-add" data-cart="${Number(p.id)}" data-detail-cart="1" type="button" aria-label="${escapeHtml(`${text('add')}: ${localized(p.name)}`)}">${icon('cart')}<span>${escapeHtml(text('add'))}</span></button>
       <button class="ask-btn" type="button">${escapeHtml(text('ask'))}</button>
     </div>
   `;
@@ -391,19 +491,33 @@ function buildOrderPayload(requestId = createRequestId()) {
   };
 }
 
+let modalReturnFocus = null;
+let bodyOverflowBeforeModal = '';
+
+function closeOrderSuccess() {
+  document.querySelector('.order-modal')?.remove();
+  document.body.style.overflow = bodyOverflowBeforeModal;
+  modalReturnFocus?.focus?.({ preventScroll: true });
+  modalReturnFocus = null;
+}
+
 function showOrderSuccess() {
-  const old = document.querySelector('.order-modal');
-  if (old) old.remove();
+  closeOrderSuccess();
+  modalReturnFocus = document.querySelector('[data-tab="cart"]')
+    || (document.activeElement instanceof HTMLElement ? document.activeElement : null);
+  bodyOverflowBeforeModal = document.body.style.overflow;
+  document.body.style.overflow = 'hidden';
   const modal = document.createElement('div');
   modal.className = 'order-modal';
   modal.setAttribute('role', 'dialog');
   modal.setAttribute('aria-modal', 'true');
   modal.setAttribute('aria-labelledby', 'orderSuccessTitle');
+  modal.setAttribute('aria-describedby', 'orderSuccessText');
   modal.innerHTML = `
     <div class="order-modal-box">
-      <div class="order-modal-icon">✓</div>
+      <div class="order-modal-icon" aria-hidden="true">✓</div>
       <h3 id="orderSuccessTitle">${escapeHtml(text('orderSuccessTitle'))}</h3>
-      <p>${escapeHtml(text('orderSuccessText')).replace(/\n/g, '<br>')}</p>
+      <p id="orderSuccessText">${escapeHtml(text('orderSuccessText')).replace(/\n/g, '<br>')}</p>
       <button type="button" data-close-order-success>${escapeHtml(text('orderSuccessOk'))}</button>
     </div>
   `;
@@ -431,6 +545,7 @@ async function checkoutOrder() {
   }
   const controller = new AbortController();
   const timeoutId = window.setTimeout(() => controller.abort(), 20000);
+  let responseStatus = 0;
   try {
     const response = await fetch(apiUrl('order'), {
       method: 'POST',
@@ -438,6 +553,7 @@ async function checkoutOrder() {
       body: JSON.stringify(payload),
       signal: controller.signal
     });
+    responseStatus = response.status;
     const result = await response.json().catch(() => ({}));
     if (!response.ok || result.ok === false) throw new Error(result.error || 'order_failed');
     cart = {};
@@ -449,7 +565,18 @@ async function checkoutOrder() {
   } catch (error) {
     console.error('Order delivery failed', error);
     tg?.HapticFeedback?.notificationOccurred?.('error');
-    alert(text('orderError'));
+    const message = !navigator.onLine
+      ? text('offline')
+      : error?.name === 'AbortError'
+        ? text('orderTimeoutError')
+        : [401, 403].includes(responseStatus)
+          ? text('orderSessionError')
+          : responseStatus === 429
+            ? text('orderRateError')
+            : [400, 409, 422].includes(responseStatus)
+              ? text('orderValidationError')
+              : text('orderError');
+    showToast(message, 4600, true);
     renderProducts();
   } finally {
     window.clearTimeout(timeoutId);
@@ -469,21 +596,22 @@ function renderCartPage() {
     if (!p) return '';
     const amount = normalizeProductAmount(p, item.amount ?? item.weight ?? parsed.weight);
     const rowTotal = productTotal(p, amount) * Number(item.qty);
+    const description = localized(p.desc).trim();
     return `
       <div class="cart-row">
         <div class="cart-img ${safeImageUrl(p.img) ? '' : 'empty-pic'}">${productImage(p)}</div>
         <div class="cart-info">
           <h4>${escapeHtml(localized(p.name))}</h4>
-          <p>${escapeHtml(localized(p.desc))}</p>
-          <div class="cart-meta">${escapeHtml(text('minimumAmount'))}: ${escapeHtml(amountLabel(p, amount))} · ${moneyPerUnit(p)}</div>
+          ${description ? `<p>${escapeHtml(description)}</p>` : ''}
+          <div class="cart-meta">${escapeHtml(text('amount'))}: ${escapeHtml(amountLabel(p, amount))} · ${moneyPerUnit(p)}</div>
           <div class="cart-price">${money(rowTotal)}</div>
-          <div class="qty">
-            <button data-qty-minus="${escapeHtml(key)}" type="button">−</button>
+          <div class="qty" aria-label="${escapeHtml(text('amount'))}">
+            <button data-qty-minus="${escapeHtml(key)}" type="button" aria-label="${escapeHtml(`${text('decreaseQty')}: ${localized(p.name)}`)}">−</button>
             <b>${Number(item.qty)}</b>
-            <button data-qty-plus="${escapeHtml(key)}" type="button">+</button>
+            <button data-qty-plus="${escapeHtml(key)}" type="button" aria-label="${escapeHtml(`${text('increaseQty')}: ${localized(p.name)}`)}">+</button>
           </div>
         </div>
-        <button class="remove" data-remove="${escapeHtml(key)}" type="button" aria-label="${currentLang === 'ru' ? 'Удалить товар' : 'Remove item'}"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg></button>
+        <button class="remove" data-remove="${escapeHtml(key)}" type="button" aria-label="${escapeHtml(`${text('removeItem')}: ${localized(p.name)}`)}"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg></button>
       </div>
     `;
   }).join('');
@@ -508,6 +636,8 @@ function renderCartPage() {
 }
 
 function renderProducts() {
+  productObserver?.disconnect();
+  productObserver = null;
   setAppModeClass();
   updateCount();
 
@@ -523,7 +653,7 @@ function renderProducts() {
     $('#pageTitle').textContent = translations[currentLang].cats[activeCat] || text('new');
     setShowAll('', text('backAll'));
   } else {
-    $('#pageTitle').textContent = text('new');
+    $('#pageTitle').textContent = text('allProducts');
     setShowAll('', text('showAll'));
   }
   renderProductCards(filteredProducts());
@@ -541,7 +671,9 @@ function setActiveNav(tab) {
 function setCountryFilter(country = '') {
   countryFilter = ['Европа', 'Китай', 'Россия'].includes(country) ? country : '';
   document.querySelectorAll('[data-country-filter]').forEach(button => {
-    button.classList.toggle('active', button.dataset.countryFilter === countryFilter);
+    const selected = button.dataset.countryFilter === countryFilter;
+    button.classList.toggle('active', selected);
+    button.setAttribute('aria-pressed', String(selected));
   });
 }
 
@@ -577,6 +709,7 @@ function toggleFav(id) {
   document.querySelectorAll(`[data-fav="${id}"]`).forEach(button => {
     button.classList.toggle('on', selected);
     button.setAttribute('aria-pressed', String(selected));
+    button.setAttribute('aria-label', favoriteLabel(id));
   });
 }
 
@@ -613,8 +746,28 @@ function openProduct(id) {
 function applyLanguage() {
   writeStoredString('lang', currentLang);
   document.documentElement.lang = currentLang;
+  document.title = text('appTitle');
   $('#langBtn').textContent = text('lang');
+  $('#langBtn').setAttribute('aria-label', text('switchLanguage'));
   $('#search').placeholder = text('search');
+  $('#search').setAttribute('aria-label', text('searchLabel'));
+  $('#filterBtn')?.setAttribute('aria-label', text('filtersLabel'));
+  $('#countryFilters')?.setAttribute('aria-label', text('countriesLabel'));
+  document.querySelector('.bottom-nav')?.setAttribute('aria-label', text('mainNavLabel'));
+  document.querySelectorAll('[data-country-filter]').forEach(button => {
+    const country = button.dataset.countryFilter;
+    if (!country) {
+      button.textContent = text('allCountryChip');
+      return;
+    }
+    const flag = button.querySelector('.flag');
+    if (flag) {
+      flag.setAttribute('aria-hidden', 'true');
+      button.replaceChildren(flag, document.createTextNode(` ${countryLabel(country)}`));
+    } else {
+      button.textContent = countryLabel(country);
+    }
+  });
   setShowAll('none', text('showAll'));
   document.querySelector('[data-tab="new"] span').textContent = text('new');
   document.querySelector('[data-tab="catalog"] span').textContent = text('catalog');
@@ -624,6 +777,8 @@ function applyLanguage() {
 }
 
 document.addEventListener('click', (e) => {
+  if (!e.target.closest('input, textarea')) dismissKeyboard();
+
   if (e.target.closest('#langBtn')) {
     currentLang = currentLang === 'ru' ? 'en' : 'ru';
     applyLanguage();
@@ -686,14 +841,25 @@ document.addEventListener('click', (e) => {
     return;
   }
 
-  const closeOrderSuccess = e.target.closest('[data-close-order-success]');
-  if (closeOrderSuccess) {
-    document.querySelector('.order-modal')?.remove();
+  const closeSuccessButton = e.target.closest('[data-close-order-success]');
+  if (closeSuccessButton) {
+    closeOrderSuccess();
+    return;
+  }
+
+  if (e.target.classList?.contains('order-modal')) {
+    closeOrderSuccess();
     return;
   }
 
   if (e.target.closest('[data-retry-products]')) {
     loadProducts().then(() => applyLanguage());
+    return;
+  }
+
+  if (e.target.closest('[data-load-more-products]')) {
+    visibleProductLimit += CARD_BATCH_SIZE;
+    renderProductCards(filteredProducts());
     return;
   }
 
@@ -732,17 +898,20 @@ document.addEventListener('click', (e) => {
 });
 
 let searchTimer;
+function applySearch() {
+  window.clearTimeout(searchTimer);
+  if (mode === 'cart' || mode === 'catalog' || mode === 'detail') {
+    if (mode === 'catalog' && catalogCountry) setCountryFilter(catalogCountry);
+    mode = 'new';
+    catalogCountry = '';
+  }
+  setActiveNav(mode);
+  renderProducts();
+}
+
 $('#search').addEventListener('input', () => {
   window.clearTimeout(searchTimer);
-  searchTimer = window.setTimeout(() => {
-    if (mode === 'cart' || mode === 'catalog' || mode === 'detail') {
-      if (mode === 'catalog' && catalogCountry) setCountryFilter(catalogCountry);
-      mode = 'new';
-      catalogCountry = '';
-    }
-    setActiveNav(mode);
-    renderProducts();
-  }, 120);
+  searchTimer = window.setTimeout(applySearch, 120);
 });
 
 document.addEventListener('input', (e) => {
@@ -782,6 +951,17 @@ document.addEventListener('change', (e) => {
 });
 
 document.addEventListener('keydown', event => {
+  if (event.target?.id === 'search' && event.key === 'Enter') {
+    event.preventDefault();
+    applySearch();
+    dismissKeyboard();
+    return;
+  }
+  if (event.target?.id === 'customWeight' && event.key === 'Enter') {
+    event.preventDefault();
+    dismissKeyboard();
+    return;
+  }
   const card = event.target instanceof Element ? event.target.closest('[data-open-product]') : null;
   if (card && event.target === card && (event.key === 'Enter' || event.key === ' ')) {
     event.preventDefault();
@@ -791,7 +971,7 @@ document.addEventListener('keydown', event => {
   if (event.key !== 'Escape') return;
   const modal = document.querySelector('.order-modal');
   if (modal) {
-    modal.remove();
+    closeOrderSuccess();
     return;
   }
   if (mode === 'detail') {
@@ -860,8 +1040,22 @@ async function loadProducts() {
   }
 }
 
+window.visualViewport?.addEventListener('resize', syncPhoneViewport, { passive: true });
+window.visualViewport?.addEventListener('scroll', syncPhoneViewport, { passive: true });
+window.addEventListener('resize', syncPhoneViewport, { passive: true });
+document.addEventListener('focusin', () => {
+  syncPhoneViewport();
+  keepFocusedControlVisible();
+});
+document.addEventListener('focusout', () => window.setTimeout(syncPhoneViewport, 80));
+window.addEventListener('offline', () => showToast(text('offline'), 3200, true));
+window.addEventListener('online', () => showToast(text('online'), 2200));
+window.addEventListener('pagehide', () => productObserver?.disconnect(), { once: true });
+tg?.onEvent?.('viewportChanged', syncPhoneViewport);
+
 initSnowCanvas();
 initMotion();
+syncPhoneViewport();
 setActiveNav('new');
 applyLanguage();
 loadProducts().finally(() => applyLanguage());
@@ -881,8 +1075,12 @@ document.addEventListener('click', (e) => {
   const btn = e.target.closest('.ask-btn');
   if (!btn) return;
   e.preventDefault();
-  if (window.Telegram?.WebApp) {
-    Telegram.WebApp.showPopup({title:'Написать менеджеру',message:'Закройте магазин и напишите вопрос прямо в чат с ботом. Сообщение будет передано менеджеру.',buttons:[{id:'chat',type:'default',text:'Перейти в чат'},{type:'cancel'}]}, id => { if (id === 'chat') Telegram.WebApp.close(); });
+  if (tg?.initData && tg.showPopup) {
+    tg.showPopup({
+      title: text('managerPopupTitle'),
+      message: text('managerPopupText'),
+      buttons: [{ id: 'chat', type: 'default', text: text('openChat') }, { type: 'cancel' }]
+    }, id => { if (id === 'chat') tg.close(); });
   } else {
     window.location.href = 'tel:+79957962036';
   }
