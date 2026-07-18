@@ -183,7 +183,7 @@ def infer_tag(name: str, section: str) -> str:
     if any(word in value for word in ("донат", "donut", "тесто")): return "выпечка"
     if any(word in value for word in ("гриб", "шампин", "опят", "лисич", "маслят")): return "грибы"
     if any(word in value for word in ("фри", "картоф", "дольк", "хэшбраун")): return "картофель"
-    if any(word in value for word in ("ягод", "клубник", "малин", "вишн", "череш", "смород", "брусник", "клюкв", "ежевик", "облепих", "черник", "калин")): return "ягоды"
+    if any(word in value for word in ("ягод", "клубник", "малин", "вишн", "череш", "смород", "брусник", "клюкв", "ежевик", "облепих", "черник", "калин", "крыжов", "рябин")): return "ягоды"
     if any(word in value for word in ("фрукт", "ананас", "манго", "персик", "киви", "слив", "яблок")): return "фрукты"
     if "смес" in value: return "смеси"
     if any(word in value for word in ("моцарел", "сыр", "халапеньо")): return "снеки"
@@ -191,7 +191,10 @@ def infer_tag(name: str, section: str) -> str:
 
 
 def placeholder_for(tag: str) -> str:
-    return {"картофель":"assets/products/fries-10mm.webp", "ягоды":"assets/p1.jpg", "овощи":"assets/p2.jpg", "грибы":"assets/p4.jpg", "фрукты":"assets/p5.jpg", "смеси":"assets/p6.jpg"}.get(tag, "assets/p3.jpg")
+    # A missing photo is intentionally explicit: assigning a random category
+    # image makes a wholesale catalogue misleading and is worse than a clear
+    # “photo coming soon” state in the storefront.
+    return ""
 
 
 def import_price_xls(path: Path) -> dict[str, Any]:

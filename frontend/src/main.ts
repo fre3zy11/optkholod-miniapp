@@ -84,7 +84,7 @@ function createRequestId() {
 
 const translations = {
   ru: {
-    lang: 'RU', appTitle: 'ОптХолод — замороженные продукты оптом', search: 'Найти товар', searchLabel: 'Поиск по каталогу', filtersLabel: 'Выбрать страну', countriesLabel: 'Страна производства', mainNavLabel: 'Основная навигация',
+    lang: 'RU', appTitle: 'ОптХолод — замороженные продукты оптом', appName: 'ОптХолод', brandAlt: 'ОптХолод — замороженные продукты оптом', metaDescription: 'Оптовый каталог замороженных продуктов с доставкой и самовывозом в Москве.', search: 'Найти товар', searchLabel: 'Поиск по каталогу', filtersLabel: 'Выбрать страну', countriesLabel: 'Страна производства', mainNavLabel: 'Основная навигация',
     showAll: 'Категории ›', backAll: 'Все товары', allProducts: 'Все товары', allCountryChip: 'Все', new: 'Товары', catalog: 'Каталог', fav: 'Избранное', cart: 'Корзина', add: 'В корзину',
     emptyProducts: 'Ничего не найдено', emptyCart: 'В корзине пока пусто', total: 'Итого', back: 'Назад', allCountries: 'Все страны',
     vatShort: 'с НДС', amount: 'Количество', amountFrom: 'От', customWeight: 'Минимум', amountHint: 'Можно ввести своё количество', amountInput: 'Количество товара', ask: 'Написать менеджеру', itemTotal: 'Сумма',
@@ -101,7 +101,7 @@ const translations = {
     cats: { все:'Все товары', картофель:'Картофель', овощи:'Овощи', ягоды:'Ягоды', грибы:'Грибы', фрукты:'Фрукты', смеси:'Овощные смеси', снеки:'Снеки', выпечка:'Выпечка и донаты' }
   },
   en: {
-    lang: 'EN', appTitle: 'OptKholod — frozen foods wholesale', search: 'Find a product', searchLabel: 'Search the catalog', filtersLabel: 'Choose a country', countriesLabel: 'Country of origin', mainNavLabel: 'Main navigation',
+    lang: 'EN', appTitle: 'OptKholod — frozen foods wholesale', appName: 'OptKholod', brandAlt: 'OptKholod — frozen foods wholesale', metaDescription: 'Wholesale catalog of frozen foods with delivery and pickup in Moscow.', search: 'Find a product', searchLabel: 'Search the catalog', filtersLabel: 'Choose a country', countriesLabel: 'Country of origin', mainNavLabel: 'Main navigation',
     showAll: 'Categories ›', backAll: 'All products', allProducts: 'All products', allCountryChip: 'All', new: 'Products', catalog: 'Catalog', fav: 'Favorites', cart: 'Cart', add: 'Add to cart',
     emptyProducts: 'No matching products', emptyCart: 'Your cart is empty', total: 'Total', back: 'Back', allCountries: 'All countries',
     vatShort: 'VAT incl.', amount: 'Quantity', amountFrom: 'From', customWeight: 'Minimum', amountHint: 'You can enter a custom quantity', amountInput: 'Product quantity', ask: 'Message the manager', itemTotal: 'Subtotal',
@@ -112,7 +112,7 @@ const translations = {
     loadingProducts: 'Loading catalog…', loadProductsError: 'Catalog could not be loaded', retry: 'Try again', loadMore: 'Show more',
     noPhoto: 'Photo coming soon', detailsManager: 'Ask the manager for details and availability.', openProduct: 'Open product', addFavorite: 'Add to favorites', removeFavorite: 'Remove from favorites',
     decreaseQty: 'Decrease quantity', increaseQty: 'Increase quantity', removeItem: 'Remove from cart',
-    switchLanguage: 'Переключить на русский', offline: 'No internet connection', online: 'Connection restored',
+    switchLanguage: 'Switch to Russian', offline: 'No internet connection', online: 'Connection restored',
     managerPopupTitle: 'Message the manager', managerPopupText: 'Close the shop and send your question in the bot chat. Or call +7 995 796-20-36.', openChat: 'Open chat',
     countries: { Европа: 'Europe', Китай: 'China', Россия: 'Russia' },
     cats: { все:'All products', картофель:'Potato', овощи:'Vegetables', ягоды:'Berries', грибы:'Mushrooms', фрукты:'Fruit', смеси:'Vegetable mixes', снеки:'Snacks', выпечка:'Bakery and donuts' }
@@ -214,7 +214,7 @@ const productImage = (p, eager = false) => {
   const src = safeImageUrl(p?.img);
   return src
     ? `<img src="${escapeHtml(src)}" alt="${escapeHtml(localized(p?.name))}" width="360" height="360" loading="${eager ? 'eager' : 'lazy'}" fetchpriority="${eager ? 'high' : 'low'}" decoding="async">`
-    : `<div class="no-photo" role="img" aria-label="${escapeHtml(text('noPhoto'))}"></div>`;
+    : `<div class="no-photo" role="img" aria-label="${escapeHtml(text('noPhoto'))}"><span aria-hidden="true">❄</span><small aria-hidden="true">${escapeHtml(text('noPhoto'))}</small></div>`;
 };
 const icon = (name) => ({
   heart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.7-7.5 1.1-1.1a5.5 5.5 0 0 0 0-7.8Z"></path></svg>',
@@ -747,6 +747,10 @@ function applyLanguage() {
   writeStoredString('lang', currentLang);
   document.documentElement.lang = currentLang;
   document.title = text('appTitle');
+  document.querySelector('.brand-img')?.setAttribute('alt', text('brandAlt'));
+  document.querySelector('meta[name="description"]')?.setAttribute('content', text('metaDescription'));
+  document.querySelector('meta[name="application-name"]')?.setAttribute('content', text('appName'));
+  document.querySelector('meta[name="apple-mobile-web-app-title"]')?.setAttribute('content', text('appName'));
   $('#langBtn').textContent = text('lang');
   $('#langBtn').setAttribute('aria-label', text('switchLanguage'));
   $('#search').placeholder = text('search');

@@ -7,15 +7,15 @@
     },
     "cat": {
       "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
-      "en": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ"
+      "en": "GLOBAL FRIES/POMUNI (BELGIUM, FRANCE) · PRICES PER KG"
     },
     "desc": {
       "ru": "Картофель фри ровной нарезки 10 мм. Формат 2,5 кг × 4 шт. Подходит для кафе, доставки, фудкортов и ресторанной кухни.",
       "en": "Straight-cut 10 mm frozen fries. Pack format: 2.5 kg × 4 pcs. Suitable for cafés, delivery, food courts and restaurants."
     },
-    "pricePerKg": 155.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 155,
+    "packKg": 10,
+    "img": "assets/products/ff-bravi-10mm.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -30,14 +30,14 @@
     },
     "cat": {
       "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
-      "en": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ"
+      "en": "GLOBAL FRIES/POMUNI (BELGIUM, FRANCE) · PRICES PER KG"
     },
     "desc": {
       "ru": "Картофельные дольки BART’S GOURMET. Формат 2,5 кг × 4 шт. Универсальный гарнир для HoReCa и оптовых поставок.",
       "en": "BART’S GOURMET potato wedges. Pack format: 2.5 kg × 4 pcs. Universal side dish for HoReCa and wholesale."
     },
-    "pricePerKg": 170.0,
-    "packKg": 10.0,
+    "pricePerKg": 170,
+    "packKg": 10,
     "img": "assets/products/potato-wedges.webp",
     "tag": "картофель",
     "country": "Европа",
@@ -53,14 +53,14 @@
     },
     "cat": {
       "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
-      "en": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ"
+      "en": "GLOBAL FRIES/POMUNI (BELGIUM, FRANCE) · PRICES PER KG"
     },
     "desc": {
       "ru": "Картофельные дольки со специями BART’S GOURMET. Формат 2,5 кг × 4 шт. Готовое решение для насыщенного гарнира.",
       "en": "BART’S GOURMET spiced potato wedges. Pack format: 2.5 kg × 4 pcs. Ready solution for a flavorful side dish."
     },
-    "pricePerKg": 205.0,
-    "packKg": 10.0,
+    "pricePerKg": 205,
+    "packKg": 10,
     "img": "assets/products/potato-wedges.webp",
     "tag": "картофель",
     "country": "Европа",
@@ -76,14 +76,14 @@
     },
     "cat": {
       "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
-      "en": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ"
+      "en": "GLOBAL FRIES/POMUNI (BELGIUM, FRANCE) · PRICES PER KG"
     },
     "desc": {
       "ru": "Картофельные шарики Pomuni Frozen. Формат 1 кг × 10 шт. Удобный продукт для гарниров, закусок и детского меню.",
       "en": "Pomuni Frozen potato balls. Pack format: 1 kg × 10 pcs. Convenient for sides, snacks and kids menus."
     },
-    "pricePerKg": 220.0,
-    "packKg": 10.0,
+    "pricePerKg": 220,
+    "packKg": 10,
     "img": "assets/products/potato-balls.webp",
     "tag": "картофель",
     "country": "Европа",
@@ -111,7 +111,8 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 4
+    "sortOrder": 4,
+    "priceUnit": "кг"
   },
   {
     "id": 6,
@@ -133,13 +134,14 @@
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 5
+    "sortOrder": 5,
+    "priceUnit": "кг"
   },
   {
     "id": 7,
     "name": {
       "ru": "Картофель фри соломка 10 мм Global Fries 10 кг",
-      "en": "Global Fries Shoestring Fries 10 mm, 10 kg"
+      "en": "Global Fries straight-cut French fries, 10 mm, 10 kg"
     },
     "cat": {
       "ru": "Замороженный картофель · упаковка 10 кг",
@@ -151,11 +153,12 @@
     },
     "pricePerKg": 145,
     "packKg": 10,
-    "img": "assets/products/fries-10mm.webp",
+    "img": "assets/products/ff-bravi-10mm.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 6
+    "sortOrder": 6,
+    "priceUnit": "кг"
   },
   {
     "id": 8,
@@ -173,11 +176,12 @@
     },
     "pricePerKg": 178,
     "packKg": 12.5,
-    "img": "assets/products/fries-10mm.webp",
+    "img": "assets/products/ff-regular-10mm.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 7
+    "sortOrder": 7,
+    "priceUnit": "кг"
   },
   {
     "id": 9,
@@ -195,11 +199,12 @@
     },
     "pricePerKg": 197,
     "packKg": 12.5,
-    "img": "assets/products/fries-10mm.webp",
+    "img": "assets/products/ff-crispy-coated-10mm.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 8
+    "sortOrder": 8,
+    "priceUnit": "кг"
   },
   {
     "id": 10,
@@ -217,11 +222,12 @@
     },
     "pricePerKg": 155,
     "packKg": 12.5,
-    "img": "assets/products/fries-10mm.webp",
+    "img": "assets/products/ff-bravi-10mm.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 9
+    "sortOrder": 9,
+    "priceUnit": "кг"
   },
   {
     "id": 11,
@@ -239,11 +245,12 @@
     },
     "pricePerKg": 210,
     "packKg": 12.5,
-    "img": "assets/products/fries-12mm.webp",
+    "img": "assets/products/ff-crinkle-12mm.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 10
+    "sortOrder": 10,
+    "priceUnit": "кг"
   },
   {
     "id": 12,
@@ -261,11 +268,12 @@
     },
     "pricePerKg": 210,
     "packKg": 12.5,
-    "img": "assets/products/fries-7mm.webp",
+    "img": "assets/products/ff-regular-7mm.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 11
+    "sortOrder": 11,
+    "priceUnit": "кг"
   },
   {
     "id": 13,
@@ -283,11 +291,12 @@
     },
     "pricePerKg": 230,
     "packKg": 12.5,
-    "img": "assets/products/fries-12mm.webp",
+    "img": "assets/products/ff-fast-fry-crinkle.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 12
+    "sortOrder": 12,
+    "priceUnit": "кг"
   },
   {
     "id": 14,
@@ -305,11 +314,12 @@
     },
     "pricePerKg": 225,
     "packKg": 12.5,
-    "img": "assets/products/fries-10mm.webp",
+    "img": "assets/products/ff-fast-fry-10mm.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 13
+    "sortOrder": 13,
+    "priceUnit": "кг"
   },
   {
     "id": 15,
@@ -327,11 +337,12 @@
     },
     "pricePerKg": 183,
     "packKg": 10,
-    "img": "assets/products/potato-wedges.webp",
+    "img": "assets/products/ff-wedges-skin-on.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 14
+    "sortOrder": 14,
+    "priceUnit": "кг"
   },
   {
     "id": 16,
@@ -349,11 +360,12 @@
     },
     "pricePerKg": 225,
     "packKg": 10,
-    "img": "assets/products/potato-wedges.webp",
+    "img": "assets/products/ff-seasoned-wedges.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 15
+    "sortOrder": 15,
+    "priceUnit": "кг"
   },
   {
     "id": 17,
@@ -371,11 +383,12 @@
     },
     "pricePerKg": 280,
     "packKg": 10,
-    "img": "assets/products/potato-balls.webp",
+    "img": "assets/products/ff-noisettes.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 16
+    "sortOrder": 16,
+    "priceUnit": "кг"
   },
   {
     "id": 18,
@@ -393,11 +406,12 @@
     },
     "pricePerKg": 250,
     "packKg": 10,
-    "img": "assets/products/potato-specialties.webp",
+    "img": "assets/products/ff-mash.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 17
+    "sortOrder": 17,
+    "priceUnit": "кг"
   },
   {
     "id": 19,
@@ -415,11 +429,12 @@
     },
     "pricePerKg": 320,
     "packKg": 10,
-    "img": "assets/products/potato-specialties.webp",
+    "img": "assets/products/ff-oval-hashbrown.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 18
+    "sortOrder": 18,
+    "priceUnit": "кг"
   },
   {
     "id": 20,
@@ -437,11 +452,12 @@
     },
     "pricePerKg": 285,
     "packKg": 10,
-    "img": "assets/products/pomuni-triangles.jpg",
+    "img": "assets/products/ff-triangular-hashbrown.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 19
+    "sortOrder": 19,
+    "priceUnit": "кг"
   },
   {
     "id": 21,
@@ -459,11 +475,12 @@
     },
     "pricePerKg": 240,
     "packKg": 9,
-    "img": "assets/products/potato-specialties.webp",
+    "img": "assets/products/ff-potato-pancakes.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
-    "sortOrder": 20
+    "sortOrder": 20,
+    "priceUnit": "кг"
   },
   {
     "id": 22,
@@ -473,16 +490,16 @@
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
+      "en": "FARM FRITES (Belgium, Netherlands, Poland) · PRICES PER KG"
     },
     "desc": {
       "ru": "Луковые кольца Farm Frites. Формат 1 кг × 6 шт. Хрустящая закуска для фудкортов, бургерных и кафе.",
       "en": "Farm Frites onion rings. Pack format: 1 kg × 6 pcs. Crispy snack for food courts, burger bars and cafés."
     },
-    "pricePerKg": 370.0,
-    "packKg": 6.0,
-    "img": "assets/products/onion-rings.webp",
-    "tag": "овощи",
+    "pricePerKg": 370,
+    "packKg": 6,
+    "img": "assets/products/ff-onion-rings.webp",
+    "tag": "снеки",
     "country": "Европа",
     "visible": true,
     "sortOrder": 21,
@@ -492,19 +509,19 @@
     "id": 23,
     "name": {
       "ru": "Ананас кубик КИТАЙ 1*10кг",
-      "en": "Ананас кубик КИТАЙ 1*10кг"
+      "en": "Diced pineapple, China, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Ананас кубик КИТАЙ» — замороженный фруктовый продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Diced pineapple, China” is a frozen fruit product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 210.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 210,
+    "packKg": 10,
+    "img": "",
     "tag": "фрукты",
     "country": "Китай",
     "visible": true,
@@ -515,19 +532,19 @@
     "id": 24,
     "name": {
       "ru": "Брокколи 1*7 кг с/м Узбекистан",
-      "en": "Брокколи 1*7 кг с/м Узбекистан"
+      "en": "Frozen broccoli, Uzbekistan, 1 × 7 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Брокколи» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 7 кг.",
+      "en": "“Frozen broccoli, Uzbekistan” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 7 kg."
     },
-    "pricePerKg": 130.0,
-    "packKg": 7.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 130,
+    "packKg": 7,
+    "img": "",
     "tag": "овощи",
     "country": "Европа",
     "visible": true,
@@ -538,19 +555,19 @@
     "id": 25,
     "name": {
       "ru": "Брокколи некалиброванная  1*10кг вес Китай",
-      "en": "Брокколи некалиброванная  1*10кг вес Китай"
+      "en": "Uncalibrated broccoli, China, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Брокколи некалиброванная» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Uncalibrated broccoli, China” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 130.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 130,
+    "packKg": 10,
+    "img": "",
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
@@ -561,19 +578,19 @@
     "id": 26,
     "name": {
       "ru": "Брокколи некалиброванная  1*10кг вес ЕК",
-      "en": "Брокколи некалиброванная  1*10кг вес ЕК"
+      "en": "Uncalibrated broccoli, EC, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Брокколи некалиброванная» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Uncalibrated broccoli, EC” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 150.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 150,
+    "packKg": 10,
+    "img": "",
     "tag": "овощи",
     "country": "Европа",
     "visible": true,
@@ -584,19 +601,19 @@
     "id": 27,
     "name": {
       "ru": "Брусника свежезамороженная весовая 1*10 кг  дикорос",
-      "en": "Брусника свежезамороженная весовая 1*10 кг  дикорос"
+      "en": "Frozen wild lingonberries, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Брусника свежезамороженная» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Frozen wild lingonberries” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 490.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 490,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Россия",
     "visible": true,
@@ -607,19 +624,19 @@
     "id": 28,
     "name": {
       "ru": "Брусника свежезамороженная весовая 1*10 кг Китай электронная очистка",
-      "en": "Брусника свежезамороженная весовая 1*10 кг Китай электронная очистка"
+      "en": "Frozen lingonberries, China, electronic sorting, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Брусника свежезамороженная» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Frozen lingonberries, China, electronic sorting” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 497.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 497,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
@@ -630,19 +647,19 @@
     "id": 29,
     "name": {
       "ru": "Бобы ЭДАМАМЕ с КИТАЙ",
-      "en": "Бобы ЭДАМАМЕ с КИТАЙ"
+      "en": "Edamame beans, China"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Бобы ЭДАМАМЕ с КИТАЙ» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Edamame beans, China” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 230.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 230,
+    "packKg": 10,
+    "img": "",
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
@@ -653,19 +670,19 @@
     "id": 30,
     "name": {
       "ru": "Бобы зеленые в стручках ЭДАМАМЕ  1*10 кг Китай",
-      "en": "Бобы зеленые в стручках ЭДАМАМЕ  1*10 кг Китай"
+      "en": "Green edamame pods, China, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Бобы зеленые в стручках ЭДАМАМЕ» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Green edamame pods, China” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 50.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 50,
+    "packKg": 10,
+    "img": "",
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
@@ -676,19 +693,19 @@
     "id": 31,
     "name": {
       "ru": "Брюссельская капуста  вес 1*10 кг",
-      "en": "Брюссельская капуста  вес 1*10 кг"
+      "en": "Brussels sprouts, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Брюссельская капуста» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Brussels sprouts” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 175.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 175,
+    "packKg": 10,
+    "img": "",
     "tag": "овощи",
     "country": "Европа",
     "visible": true,
@@ -699,19 +716,19 @@
     "id": 32,
     "name": {
       "ru": "Вишня без косточки весовая   Китай вес  1*10 кг",
-      "en": "Вишня без косточки весовая   Китай вес  1*10 кг"
+      "en": "Pitted cherries, China, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Вишня без косточки весовая Китай» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Pitted cherries, China” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 465.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 465,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
@@ -722,19 +739,19 @@
     "id": 33,
     "name": {
       "ru": "Вишня без косточки весовая класс 2 Китай вес  1*10 кг",
-      "en": "Вишня без косточки весовая класс 2 Китай вес  1*10 кг"
+      "en": "Pitted cherries, grade 2, China, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Вишня без косточки весовая класс 2 Китай» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Pitted cherries, grade 2, China” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 340.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 340,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
@@ -745,19 +762,19 @@
     "id": 34,
     "name": {
       "ru": "Вишня без косточки HONGMING КИТАЙ 10 кг",
-      "en": "Вишня без косточки HONGMING КИТАЙ 10 кг"
+      "en": "HONGMING pitted cherries, China, 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Вишня без косточки HONGMING КИТАЙ» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“HONGMING pitted cherries, China” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 300.0,
-    "packKg": 13.61,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 300,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
@@ -768,19 +785,19 @@
     "id": 35,
     "name": {
       "ru": "Вишня без косточки Б/C 10 кг",
-      "en": "Вишня без косточки Б/C 10 кг"
+      "en": "Pitted cherries B/C, 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Вишня без косточки Б/C» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Pitted cherries B/C” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 350.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 350,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
@@ -791,19 +808,19 @@
     "id": 36,
     "name": {
       "ru": "ВИШНЯ С КОСТОЧКОЙ КИРГИЗИЯ весовая 10 кг",
-      "en": "ВИШНЯ С КОСТОЧКОЙ КИРГИЗИЯ весовая 10 кг"
+      "en": "Cherries with pits, Kyrgyzstan, bulk 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«ВИШНЯ С КОСТОЧКОЙ КИРГИЗИЯ» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Cherries with pits, Kyrgyzstan” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 205.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 205,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
@@ -814,19 +831,19 @@
     "id": 37,
     "name": {
       "ru": "Вишня без косточки весовая  КИРГИЗИЯ вес  1*10 кг",
-      "en": "Вишня без косточки весовая  КИРГИЗИЯ вес  1*10 кг"
+      "en": "Pitted cherries, Kyrgyzstan, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Вишня без косточки весовая КИРГИЗИЯ» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Pitted cherries, Kyrgyzstan” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 340.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 340,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
@@ -837,19 +854,19 @@
     "id": 38,
     "name": {
       "ru": "Вишня без косточки весовая  УЗБЕКИСТАН вес  1*10 кг",
-      "en": "Вишня без косточки весовая  УЗБЕКИСТАН вес  1*10 кг"
+      "en": "Pitted cherries, Uzbekistan, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Вишня без косточки весовая УЗБЕКИСТАН» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Pitted cherries, Uzbekistan” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 360.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 360,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
@@ -860,19 +877,19 @@
     "id": 39,
     "name": {
       "ru": "Вишня без косточки весовая СЕРБИЯ  вес  1*10 кг",
-      "en": "Вишня без косточки весовая СЕРБИЯ  вес  1*10 кг"
+      "en": "Pitted cherries, Serbia, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Вишня без косточки весовая СЕРБИЯ» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Pitted cherries, Serbia” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 340.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 340,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
@@ -883,19 +900,19 @@
     "id": 40,
     "name": {
       "ru": "Грибы Белые резанные кубик  вес 1*10 кг",
-      "en": "Грибы Белые резанные кубик  вес 1*10 кг"
+      "en": "Diced porcini mushrooms, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Грибы Белые резанные кубик» — замороженный грибной продукт. Подходит для супов, соусов, гарниров и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Diced porcini mushrooms” is a frozen mushroom product. Suitable for soups, sauces, side dishes and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 450.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 450,
+    "packKg": 10,
+    "img": "assets/p2.jpg",
     "tag": "грибы",
     "country": "Европа",
     "visible": true,
@@ -906,19 +923,19 @@
     "id": 41,
     "name": {
       "ru": "Грибы Лисички целые вес",
-      "en": "Грибы Лисички целые вес"
+      "en": "Whole chanterelle mushrooms, bulk"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Грибы Лисички целые» — замороженный грибной продукт. Подходит для супов, соусов, гарниров и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Whole chanterelle mushrooms, bulk” is a frozen mushroom product. Suitable for soups, sauces, side dishes and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 415.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 415,
+    "packKg": 10,
+    "img": "assets/p2.jpg",
     "tag": "грибы",
     "country": "Европа",
     "visible": true,
@@ -929,19 +946,19 @@
     "id": 42,
     "name": {
       "ru": "Грибы Шампиньоны резанные вес 1*10кг  Беларусь",
-      "en": "Грибы Шампиньоны резанные вес 1*10кг  Беларусь"
+      "en": "Sliced champignon mushrooms, Belarus, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Грибы Шампиньоны резанные» — замороженный грибной продукт. Подходит для супов, соусов, гарниров и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Sliced champignon mushrooms, Belarus” is a frozen mushroom product. Suitable for soups, sauces, side dishes and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 95.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 95,
+    "packKg": 10,
+    "img": "assets/p2.jpg",
     "tag": "грибы",
     "country": "Европа",
     "visible": true,
@@ -952,19 +969,19 @@
     "id": 43,
     "name": {
       "ru": "Ежевика замороженная вес 1*10 кг Китай",
-      "en": "Ежевика замороженная вес 1*10 кг Китай"
+      "en": "Frozen blackberries, China, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Ежевика замороженная» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Frozen blackberries, China” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 245.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 245,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
@@ -975,19 +992,19 @@
     "id": 44,
     "name": {
       "ru": "Зеленый горошек Россия вес 1*15 кг",
-      "en": "Зеленый горошек Россия вес 1*15 кг"
+      "en": "Green peas, Russia, bulk 1 × 15 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Зеленый горошек Россия» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 15 кг.",
+      "en": "“Green peas, Russia” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 15 kg."
     },
-    "pricePerKg": 120.0,
-    "packKg": 15.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 120,
+    "packKg": 15,
+    "img": "",
     "tag": "овощи",
     "country": "Россия",
     "visible": true,
@@ -998,19 +1015,19 @@
     "id": 45,
     "name": {
       "ru": "Киви кубик",
-      "en": "Киви кубик"
+      "en": "Diced kiwi"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Калина вес 1*10 кг Россия"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Киви кубик» — замороженный фруктовый продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Diced kiwi” is a frozen fruit product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 185.0,
-    "packKg": 10.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 185,
+    "packKg": 10,
+    "img": "",
     "tag": "фрукты",
     "country": "Европа",
     "visible": true,
@@ -1021,19 +1038,19 @@
     "id": 46,
     "name": {
       "ru": "Клубника  Египет А кл вес 1*10 кг",
-      "en": "Клубника  Египет А кл вес 1*10 кг"
+      "en": "Strawberries, Egypt, grade A, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Калина вес 1*10 кг Россия"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Клубника Египет А кл» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Strawberries, Egypt, grade A” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 120.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 120,
+    "packKg": 10,
+    "img": "assets/p4.jpg",
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
@@ -1044,19 +1061,19 @@
     "id": 47,
     "name": {
       "ru": "Клубника Китай А кл вес 1*10 кг",
-      "en": "Клубника Китай А кл вес 1*10 кг"
+      "en": "Strawberries, China, grade A, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Калина вес 1*10 кг Россия"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Клубника Китай А кл» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Strawberries, China, grade A” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 150.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 150,
+    "packKg": 10,
+    "img": "assets/p4.jpg",
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
@@ -1067,19 +1084,19 @@
     "id": 48,
     "name": {
       "ru": "Клюква (дикор)  вес 1*10 кг",
-      "en": "Клюква (дикор)  вес 1*10 кг"
+      "en": "Wild cranberries, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Калина вес 1*10 кг Россия"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Клюква (дикор)» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Wild cranberries” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 355.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 355,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
@@ -1090,19 +1107,19 @@
     "id": 49,
     "name": {
       "ru": "Клюква (садовая) 1 класс вес 1*18,14 кг/10кг",
-      "en": "Клюква (садовая) 1 класс вес 1*18,14 кг/10кг"
+      "en": "Cultivated cranberries, grade 1, bulk 18.14 kg / 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Калина вес 1*10 кг Россия"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Клюква (садовая) 1 класс» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Cultivated cranberries, grade 1” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 260.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 260,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
@@ -1113,20 +1130,20 @@
     "id": 50,
     "name": {
       "ru": "Компотная смесь вес 1*10 кг РОССИЯ (Слива, яблоко, киви, виноград, кизил )",
-      "en": "Компотная смесь вес 1*10 кг РОССИЯ (Слива, яблоко, киви, виноград, кизил )"
+      "en": "Compote mix, Russia, bulk 1 × 10 kg (plum, apple, kiwi, grapes, cornelian cherry)"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Компотная смесь» — замороженная фруктово-ягодная смесь. Подходит для компотов, морсов, десертов и выпечки. Минимальное количество по позиции: 10 кг.",
+      "en": "“Compote mix, Russia” is a frozen fruit and berry mix. Suitable for compotes, fruit drinks, desserts and baking. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 130.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
-    "tag": "фрукты",
+    "pricePerKg": 130,
+    "packKg": 10,
+    "img": "",
+    "tag": "смеси",
     "country": "Россия",
     "visible": true,
     "sortOrder": 49,
@@ -1136,19 +1153,19 @@
     "id": 51,
     "name": {
       "ru": "Компотная смесь вес 1*10 кг КИТАЙ (БЕЗ КОСТОЧКИ )",
-      "en": "Компотная смесь вес 1*10 кг КИТАЙ (БЕЗ КОСТОЧКИ )"
+      "en": "Pitted compote mix, China, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Компотная смесь» — замороженная фруктово-ягодная смесь. Подходит для компотов, морсов, десертов и выпечки. Минимальное количество по позиции: 10 кг.",
+      "en": "“Pitted compote mix, China” is a frozen fruit and berry mix. Suitable for compotes, fruit drinks, desserts and baking. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 156.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 156,
+    "packKg": 10,
+    "img": "",
     "tag": "смеси",
     "country": "Китай",
     "visible": true,
@@ -1159,19 +1176,19 @@
     "id": 52,
     "name": {
       "ru": "Красная смородина вес 1*10 кг Китай",
-      "en": "Красная смородина вес 1*10 кг Китай"
+      "en": "Redcurrants, China, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Красная смородина» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Redcurrants, China” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 370.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 370,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
@@ -1182,20 +1199,20 @@
     "id": 53,
     "name": {
       "ru": "Крыжовник (зеленый) замороженный  вес 1*10 кг",
-      "en": "Крыжовник (зеленый) замороженный  вес 1*10 кг"
+      "en": "Frozen green gooseberries, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Замороженный зелёный крыжовник для напитков, десертов, выпечки и соусов. Оптовый формат подходит для кафе, ресторанов и пищевых производств.",
+      "en": "Frozen green gooseberries for drinks, desserts, baking and sauces. The bulk format is suitable for cafés, restaurants and food production."
     },
-    "pricePerKg": 260.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
-    "tag": "овощи",
+    "pricePerKg": 260,
+    "packKg": 10,
+    "img": "",
+    "tag": "ягоды",
     "country": "Европа",
     "visible": true,
     "sortOrder": 52,
@@ -1205,19 +1222,19 @@
     "id": 54,
     "name": {
       "ru": "Кукуруза зерно вес 1*10 кг КИТАЙ",
-      "en": "Кукуруза зерно вес 1*10 кг КИТАЙ"
+      "en": "Sweetcorn kernels, China, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Кукуруза зерно» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Sweetcorn kernels, China” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 140.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 140,
+    "packKg": 10,
+    "img": "",
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
@@ -1228,19 +1245,19 @@
     "id": 55,
     "name": {
       "ru": "Малина гриз КИТАЙ вес 1*10кг",
-      "en": "Малина гриз КИТАЙ вес 1*10кг"
+      "en": "Broken raspberries, China, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Малина гриз Республика Беларусь вес 1*10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Малина гриз КИТАЙ» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Broken raspberries, China” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 440.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 440,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
@@ -1251,19 +1268,19 @@
     "id": 56,
     "name": {
       "ru": "Малина целая КИТАЙ вес 4*2,5кг",
-      "en": "Малина целая КИТАЙ вес 4*2,5кг"
+      "en": "Whole raspberries, China, 4 × 2.5 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Малина гриз Республика Беларусь вес 1*10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Малина целая КИТАЙ» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Whole raspberries, China” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 605.0,
-    "packKg": 2.5,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 605,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
@@ -1274,19 +1291,19 @@
     "id": 57,
     "name": {
       "ru": "Малина целая Республика Беларусь вес 1*10кг",
-      "en": "Малина целая Республика Беларусь вес 1*10кг"
+      "en": "Whole raspberries, Belarus, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Малина гриз Республика Беларусь вес 1*10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Малина целая Республика Беларусь» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Whole raspberries, Belarus” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 565.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 565,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
@@ -1297,19 +1314,19 @@
     "id": 58,
     "name": {
       "ru": "Малина целая УЗБЕКИСТАН вес 1*10кг",
-      "en": "Малина целая УЗБЕКИСТАН вес 1*10кг"
+      "en": "Whole raspberries, Uzbekistan, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Малина гриз Республика Беларусь вес 1*10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Малина целая УЗБЕКИСТАН» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Whole raspberries, Uzbekistan” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 590.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 590,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Европа",
     "visible": true,
@@ -1320,19 +1337,19 @@
     "id": 59,
     "name": {
       "ru": "Манго кубик 1*10 кг КИТАЙ",
-      "en": "Манго кубик 1*10 кг КИТАЙ"
+      "en": "Diced mango, China, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Малина гриз Республика Беларусь вес 1*10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Манго кубик» — замороженный фруктовый продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Diced mango, China” is a frozen fruit product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 175.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 175,
+    "packKg": 10,
+    "img": "",
     "tag": "фрукты",
     "country": "Китай",
     "visible": true,
@@ -1343,19 +1360,19 @@
     "id": 60,
     "name": {
       "ru": "Манго слайсы 1*10 кг КИТАЙ",
-      "en": "Манго слайсы 1*10 кг КИТАЙ"
+      "en": "Mango slices, China, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Малина гриз Республика Беларусь вес 1*10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Манго слайсы» — замороженный фруктовый продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Mango slices, China” is a frozen fruit product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 183.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 183,
+    "packKg": 10,
+    "img": "",
     "tag": "фрукты",
     "country": "Китай",
     "visible": true,
@@ -1366,19 +1383,19 @@
     "id": 61,
     "name": {
       "ru": "Морковь мини 1*10 кг КИТАЙ",
-      "en": "Морковь мини 1*10 кг КИТАЙ"
+      "en": "Baby carrots, China, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Малина гриз Республика Беларусь вес 1*10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Морковь мини» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Baby carrots, China” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 180.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 180,
+    "packKg": 10,
+    "img": "",
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
@@ -1389,19 +1406,19 @@
     "id": 62,
     "name": {
       "ru": "Облепиха вес 1*10 кг КИТАЙ",
-      "en": "Облепиха вес 1*10 кг КИТАЙ"
+      "en": "Sea buckthorn berries, China, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Малина гриз Республика Беларусь вес 1*10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Облепиха» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Sea buckthorn berries, China” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 170.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 170,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
@@ -1412,19 +1429,19 @@
     "id": 63,
     "name": {
       "ru": "Опята замороженные вес 1*10 кг",
-      "en": "Опята замороженные вес 1*10 кг"
+      "en": "Frozen honey mushrooms, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Малина гриз Республика Беларусь вес 1*10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Опята замороженные» — замороженный грибной продукт. Подходит для супов, соусов, гарниров и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Frozen honey mushrooms” is a frozen mushroom product. Suitable for soups, sauces, side dishes and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 180.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 180,
+    "packKg": 10,
+    "img": "assets/p2.jpg",
     "tag": "грибы",
     "country": "Европа",
     "visible": true,
@@ -1435,19 +1452,19 @@
     "id": 64,
     "name": {
       "ru": "Перец кубик (меланж) КИТАЙ 1*10 кг",
-      "en": "Перец кубик (меланж) КИТАЙ 1*10 кг"
+      "en": "Diced mixed peppers, China, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Малина гриз Республика Беларусь вес 1*10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Перец кубик (меланж) КИТАЙ» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Diced mixed peppers, China” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 142.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 142,
+    "packKg": 10,
+    "img": "",
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
@@ -1458,19 +1475,19 @@
     "id": 65,
     "name": {
       "ru": "Перец полоска (меланж) КИТАЙ 1*10 кг",
-      "en": "Перец полоска (меланж) КИТАЙ 1*10 кг"
+      "en": "Mixed pepper strips, China, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Малина гриз Республика Беларусь вес 1*10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Перец полоска (меланж) КИТАЙ» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Mixed pepper strips, China” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 142.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 142,
+    "packKg": 10,
+    "img": "",
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
@@ -1481,19 +1498,19 @@
     "id": 66,
     "name": {
       "ru": "Перец красный полоски   УЗБЕКИСТАН 1*10 кг",
-      "en": "Перец красный полоски   УЗБЕКИСТАН 1*10 кг"
+      "en": "Red pepper strips, Uzbekistan, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Перец красный кубик КИТАЙ 1*10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Перец красный полоски УЗБЕКИСТАН» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Red pepper strips, Uzbekistan” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 157.0,
-    "packKg": 10.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 157,
+    "packKg": 10,
+    "img": "",
     "tag": "овощи",
     "country": "Европа",
     "visible": true,
@@ -1504,19 +1521,19 @@
     "id": 67,
     "name": {
       "ru": "Перец красный полоска КИТАЙ 1*10 кг",
-      "en": "Перец красный полоска КИТАЙ 1*10 кг"
+      "en": "Red pepper strips, China, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Перец красный кубик КИТАЙ 1*10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Перец красный полоска КИТАЙ» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Red pepper strips, China” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 160.0,
-    "packKg": 10.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 160,
+    "packKg": 10,
+    "img": "",
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
@@ -1527,19 +1544,19 @@
     "id": 68,
     "name": {
       "ru": "Слива половинка  вес 1*10 кг КИТАЙ",
-      "en": "Слива половинка  вес 1*10 кг КИТАЙ"
+      "en": "Plum halves, China, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Слива половинка  вес 1*14 кг РФ"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Слива половинка» — замороженный фруктовый продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Plum halves, China” is a frozen fruit product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 175.0,
-    "packKg": 10.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 175,
+    "packKg": 10,
+    "img": "",
     "tag": "фрукты",
     "country": "Китай",
     "visible": true,
@@ -1550,18 +1567,18 @@
     "id": 69,
     "name": {
       "ru": "Смесь Весенние овощи (морковь, цветная капуста, сладкий перец,зеленый горошек,цукини) вес 1*10 кг",
-      "en": "Смесь Весенние овощи (морковь, цветная капуста, сладкий перец,зеленый горошек,цукини) вес 1*10 кг"
+      "en": "Spring vegetable mix, bulk 1 × 10 kg (carrot, cauliflower, sweet pepper, green peas, zucchini)"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Слива половинка  вес 1*14 кг РФ"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Смесь Весенние овощи (морковь, цветная капуста, сладкий перец,зеленый горошек,цукини)» — готовая замороженная овощная смесь. Подходит для гарниров и горячих блюд на профессиональной кухне. Минимальное количество по позиции: 10 кг.",
+      "en": "“Spring vegetable mix” is a ready-to-use frozen vegetable mix. Suitable for side dishes and hot meals in professional kitchens. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 115.0,
-    "packKg": 10.0,
+    "pricePerKg": 115,
+    "packKg": 10,
     "img": "assets/p6.jpg",
     "tag": "смеси",
     "country": "Европа",
@@ -1573,18 +1590,18 @@
     "id": 70,
     "name": {
       "ru": "Смесь Гавайская  вес 1*10 кг Россия (рис,морковь,перец сладкий, кукуруза,горох)",
-      "en": "Смесь Гавайская  вес 1*10 кг Россия (рис,морковь,перец сладкий, кукуруза,горох)"
+      "en": "Hawaiian mix, Russia, bulk 1 × 10 kg (rice, carrot, sweet pepper, corn, peas)"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Слива половинка  вес 1*14 кг РФ"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Смесь Гавайская» — готовая замороженная овощная смесь. Подходит для гарниров и горячих блюд на профессиональной кухне. Минимальное количество по позиции: 10 кг.",
+      "en": "“Hawaiian mix, Russia” is a ready-to-use frozen vegetable mix. Suitable for side dishes and hot meals in professional kitchens. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 116.0,
-    "packKg": 10.0,
+    "pricePerKg": 116,
+    "packKg": 10,
     "img": "assets/p6.jpg",
     "tag": "смеси",
     "country": "Россия",
@@ -1596,18 +1613,18 @@
     "id": 71,
     "name": {
       "ru": "Смесь Европейский гарнир (брокколи, цветная, морковь рифленый диск, фасоль) 1*10 кг Китай",
-      "en": "Смесь Европейский гарнир (брокколи, цветная, морковь рифленый диск, фасоль) 1*10 кг Китай"
+      "en": "European side-dish mix, China, 1 × 10 kg (broccoli, cauliflower, crinkle-cut carrot, beans)"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Слива половинка  вес 1*14 кг РФ"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Смесь Европейский гарнир (брокколи, цветная, морковь рифленый диск, фасоль)» — готовая замороженная овощная смесь. Подходит для гарниров и горячих блюд на профессиональной кухне. Минимальное количество по позиции: 10 кг.",
+      "en": "“European side-dish mix, China” is a ready-to-use frozen vegetable mix. Suitable for side dishes and hot meals in professional kitchens. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 131.0,
-    "packKg": 10.0,
+    "pricePerKg": 131,
+    "packKg": 10,
     "img": "assets/p6.jpg",
     "tag": "смеси",
     "country": "Китай",
@@ -1619,18 +1636,18 @@
     "id": 72,
     "name": {
       "ru": "Смесь Лечо вес 1*10 кг  Россия",
-      "en": "Смесь Лечо вес 1*10 кг  Россия"
+      "en": "Lecho vegetable mix, Russia, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Слива половинка  вес 1*14 кг РФ"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Смесь Лечо» — готовая замороженная овощная смесь. Подходит для гарниров и горячих блюд на профессиональной кухне. Минимальное количество по позиции: 10 кг.",
+      "en": "“Lecho vegetable mix, Russia” is a ready-to-use frozen vegetable mix. Suitable for side dishes and hot meals in professional kitchens. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 115.0,
-    "packKg": 10.0,
+    "pricePerKg": 115,
+    "packKg": 10,
     "img": "assets/p6.jpg",
     "tag": "смеси",
     "country": "Россия",
@@ -1642,18 +1659,18 @@
     "id": 73,
     "name": {
       "ru": "Смесь Мексиканская вес 1*10 кг Россия (Перец куб, Морковь куб, фасоль струч, Зел.горошек, Лук кубик, Кукуруза зерно)",
-      "en": "Смесь Мексиканская вес 1*10 кг Россия (Перец куб, Морковь куб, фасоль струч, Зел.горошек, Лук кубик, Кукуруза зерно)"
+      "en": "Mexican vegetable mix, Russia, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Слива половинка  вес 1*14 кг РФ"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Смесь Мексиканская» — готовая замороженная овощная смесь. Подходит для гарниров и горячих блюд на профессиональной кухне. Минимальное количество по позиции: 10 кг.",
+      "en": "“Mexican vegetable mix, Russia” is a ready-to-use frozen vegetable mix. Suitable for side dishes and hot meals in professional kitchens. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 115.0,
-    "packKg": 10.0,
+    "pricePerKg": 115,
+    "packKg": 10,
     "img": "assets/p6.jpg",
     "tag": "смеси",
     "country": "Россия",
@@ -1665,19 +1682,19 @@
     "id": 74,
     "name": {
       "ru": "Капуста Романеско ВЕС 8,5 кг РОССИЯ",
-      "en": "Капуста Романеско ВЕС 8,5 кг РОССИЯ"
+      "en": "Romanesco cauliflower, Russia, bulk 8.5 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Слива половинка  вес 1*14 кг РФ"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Капуста Романеско» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 8,5 кг.",
+      "en": "“Romanesco cauliflower, Russia” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 8.5 kg."
     },
-    "pricePerKg": 155.0,
+    "pricePerKg": 155,
     "packKg": 8.5,
-    "img": "assets/p2.jpg",
+    "img": "",
     "tag": "овощи",
     "country": "Россия",
     "visible": true,
@@ -1688,19 +1705,19 @@
     "id": 75,
     "name": {
       "ru": "Спаржа 1*10 Китай",
-      "en": "Спаржа 1*10 Китай"
+      "en": "Asparagus, China, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Слива половинка  вес 1*14 кг РФ"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Спаржа» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Asparagus, China” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 350.0,
-    "packKg": 10.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 350,
+    "packKg": 10,
+    "img": "",
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
@@ -1711,19 +1728,19 @@
     "id": 76,
     "name": {
       "ru": "Фасоль плоскоплодная Романо Китай 1*10кг",
-      "en": "Фасоль плоскоплодная Романо Китай 1*10кг"
+      "en": "Romano flat beans, China, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Тыква куб замороженный Россия/ УЗБЕКИСТАН 1*10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Фасоль плоскоплодная Романо Китай» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Romano flat beans, China” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 175.0,
-    "packKg": 10.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 175,
+    "packKg": 10,
+    "img": "",
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
@@ -1734,19 +1751,19 @@
     "id": 77,
     "name": {
       "ru": "Фасоль стручковая Египет 1*10 кг",
-      "en": "Фасоль стручковая Египет 1*10 кг"
+      "en": "Green beans, Egypt, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Тыква куб замороженный Россия/ УЗБЕКИСТАН 1*10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Фасоль стручковая Египет» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Green beans, Egypt” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 130.0,
-    "packKg": 10.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 130,
+    "packKg": 10,
+    "img": "",
     "tag": "овощи",
     "country": "Европа",
     "visible": true,
@@ -1757,19 +1774,19 @@
     "id": 78,
     "name": {
       "ru": "Фасоль стручковая СЕРБИЯ 1*10 кг",
-      "en": "Фасоль стручковая СЕРБИЯ 1*10 кг"
+      "en": "Green beans, Serbia, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Тыква куб замороженный Россия/ УЗБЕКИСТАН 1*10кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Фасоль стручковая СЕРБИЯ» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Green beans, Serbia” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 140.0,
-    "packKg": 10.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 140,
+    "packKg": 10,
+    "img": "",
     "tag": "овощи",
     "country": "Европа",
     "visible": true,
@@ -1780,19 +1797,19 @@
     "id": 79,
     "name": {
       "ru": "Цветная капуста  вес 1*10 кг Китай",
-      "en": "Цветная капуста  вес 1*10 кг Китай"
+      "en": "Cauliflower, China, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Фасоль стручковая РОССИЯ 1*10 кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Цветная капуста» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Cauliflower, China” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 129.0,
-    "packKg": 10.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 129,
+    "packKg": 10,
+    "img": "",
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
@@ -1803,19 +1820,19 @@
     "id": 80,
     "name": {
       "ru": "Цветная капуста  вес 1*9 кг УЗБЕКИСТАН",
-      "en": "Цветная капуста  вес 1*9 кг УЗБЕКИСТАН"
+      "en": "Cauliflower, Uzbekistan, bulk 1 × 9 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Фасоль стручковая РОССИЯ 1*10 кг"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Цветная капуста» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 9 кг.",
+      "en": "“Cauliflower, Uzbekistan” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 9 kg."
     },
-    "pricePerKg": 125.0,
-    "packKg": 9.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 125,
+    "packKg": 9,
+    "img": "",
     "tag": "овощи",
     "country": "Европа",
     "visible": true,
@@ -1826,19 +1843,19 @@
     "id": 81,
     "name": {
       "ru": "Черная Смородина  1*10кг /Китай",
-      "en": "Черная Смородина  1*10кг /Китай"
+      "en": "Blackcurrants, China, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Черешня 1*10кг /Узбекистан"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Черная Смородина» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Blackcurrants, China” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 456.0,
-    "packKg": 10.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 456,
+    "packKg": 10,
+    "img": "",
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
@@ -1849,19 +1866,19 @@
     "id": 82,
     "name": {
       "ru": "Черная Смородина  1*15кг /Китай",
-      "en": "Черная Смородина  1*15кг /Китай"
+      "en": "Blackcurrants, China, 1 × 15 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Черешня 1*10кг /Узбекистан"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Черная Смородина» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 15 кг.",
+      "en": "“Blackcurrants, China” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 15 kg."
     },
-    "pricePerKg": 446.0,
-    "packKg": 15.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 446,
+    "packKg": 15,
+    "img": "",
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
@@ -1872,19 +1889,19 @@
     "id": 83,
     "name": {
       "ru": "Черника 1*10 кг Дикорос",
-      "en": "Черника 1*10 кг Дикорос"
+      "en": "Wild blueberries, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Черешня 1*10кг /Узбекистан"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Черника» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Wild blueberries” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 700.0,
-    "packKg": 10.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 700,
+    "packKg": 10,
+    "img": "assets/p1.jpg",
     "tag": "ягоды",
     "country": "Россия",
     "visible": true,
@@ -1895,19 +1912,19 @@
     "id": 84,
     "name": {
       "ru": "Черника 1*10 кг КИТАЙ",
-      "en": "Черника 1*10 кг КИТАЙ"
+      "en": "Blueberries, China, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Черешня 1*10кг /Узбекистан"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Черника» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Blueberries, China” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 275.0,
-    "packKg": 10.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 275,
+    "packKg": 10,
+    "img": "assets/p1.jpg",
     "tag": "ягоды",
     "country": "Китай",
     "visible": true,
@@ -1918,20 +1935,20 @@
     "id": 85,
     "name": {
       "ru": "Черноплодная рябина с/з  КИТАЙ вес 1*10 кг",
-      "en": "Черноплодная рябина с/з  КИТАЙ вес 1*10 кг"
+      "en": "Frozen chokeberries, China, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Черешня 1*10кг /Узбекистан"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Замороженная черноплодная рябина для напитков, десертов, выпечки и соусов. Оптовый формат подходит для кафе, ресторанов и пищевых производств.",
+      "en": "Frozen chokeberries for drinks, desserts, baking and sauces. The bulk format is suitable for cafés, restaurants and food production."
     },
-    "pricePerKg": 210.0,
-    "packKg": 10.0,
-    "img": "assets/p2.jpg",
-    "tag": "овощи",
+    "pricePerKg": 210,
+    "packKg": 10,
+    "img": "",
+    "tag": "ягоды",
     "country": "Китай",
     "visible": true,
     "sortOrder": 84,
@@ -1941,19 +1958,19 @@
     "id": 86,
     "name": {
       "ru": "Шпинат порционный измельченный  УЗБЕКИСТАН вес 1*12 кг",
-      "en": "Шпинат порционный измельченный  УЗБЕКИСТАН вес 1*12 кг"
+      "en": "Portioned chopped spinach, Uzbekistan, bulk 1 × 12 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Черешня 1*10кг /Узбекистан"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Шпинат порционный измельченный УЗБЕКИСТАН» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 12 кг.",
+      "en": "“Portioned chopped spinach, Uzbekistan” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 12 kg."
     },
-    "pricePerKg": 140.0,
-    "packKg": 12.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 140,
+    "packKg": 12,
+    "img": "",
     "tag": "овощи",
     "country": "Европа",
     "visible": true,
@@ -1964,19 +1981,19 @@
     "id": 87,
     "name": {
       "ru": "Шпинат порционный измельченный КИТАЙ вес 1*10 кг",
-      "en": "Шпинат порционный измельченный КИТАЙ вес 1*10 кг"
+      "en": "Portioned chopped spinach, China, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Черешня 1*10кг /Узбекистан"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Шпинат порционный измельченный КИТАЙ» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Portioned chopped spinach, China” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 140.0,
-    "packKg": 10.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 140,
+    "packKg": 10,
+    "img": "",
     "tag": "овощи",
     "country": "Китай",
     "visible": true,
@@ -1987,19 +2004,19 @@
     "id": 88,
     "name": {
       "ru": "Яблоко куб вес 1*10 кг КИТАЙ",
-      "en": "Яблоко куб вес 1*10 кг КИТАЙ"
+      "en": "Diced apples, China, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Черешня 1*10кг /Узбекистан"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Яблоко куб» — замороженный фруктовый продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Diced apples, China” is a frozen fruit product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 170.0,
-    "packKg": 10.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 170,
+    "packKg": 10,
+    "img": "",
     "tag": "фрукты",
     "country": "Китай",
     "visible": true,
@@ -2010,19 +2027,19 @@
     "id": 89,
     "name": {
       "ru": "Картофель фри \"Байсад\" замороженный 10х10мм 2,5 кг*4",
-      "en": "Картофель фри \"Байсад\" замороженный 10х10мм 2,5 кг*4"
+      "en": "BAYSAD frozen French fries, 10 × 10 mm, 2.5 kg × 4"
     },
     "cat": {
       "ru": "БАЙСАД (РОССИЯ) ЦЕНЫ ЗА КГ",
-      "en": "БАЙСАД (РОССИЯ) ЦЕНЫ ЗА КГ"
+      "en": "BAYSAD (RUSSIA) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Картофель фри \"Байсад\" замороженный» — замороженный картофель фри. Подходит для ресторанов, кафе, фудкортов и доставки. Минимальное количество по позиции: 10 кг.",
+      "en": "“BAYSAD frozen French fries, 10 × 10 mm” is frozen French fries. Suitable for restaurants, cafés, food courts and delivery. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 105.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 105,
+    "packKg": 10,
+    "img": "assets/products/ff-bravi-10mm.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2033,19 +2050,19 @@
     "id": 90,
     "name": {
       "ru": "Картофельные дольки без специй \"Байсад\" замороженные 2,5 кг*4",
-      "en": "Картофельные дольки без специй \"Байсад\" замороженные 2,5 кг*4"
+      "en": "BAYSAD frozen unseasoned potato wedges, 2.5 kg × 4"
     },
     "cat": {
       "ru": "БАЙСАД (РОССИЯ) ЦЕНЫ ЗА КГ",
-      "en": "БАЙСАД (РОССИЯ) ЦЕНЫ ЗА КГ"
+      "en": "BAYSAD (RUSSIA) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Картофельные дольки без специй \"Байсад\" замороженные» — замороженные картофельные дольки. Подходят для гарниров, закусок и доставки. Минимальное количество по позиции: 10 кг.",
+      "en": "“BAYSAD frozen unseasoned potato wedges” is frozen potato wedges. Suitable for side dishes, appetizers and delivery. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 105.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 105,
+    "packKg": 10,
+    "img": "assets/products/potato-wedges.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2056,19 +2073,19 @@
     "id": 91,
     "name": {
       "ru": "Картофель фри Быстрозамороженный соломка 9 мм BETA TRADE(КИТАЙ) 10 кг (2,5кг*4шт)",
-      "en": "Картофель фри Быстрозамороженный соломка 9 мм BETA TRADE(КИТАЙ) 10 кг (2,5кг*4шт)"
+      "en": "BETA TRADE quick-frozen French fries, 9 mm, China, 10 kg (2.5 kg × 4)"
     },
     "cat": {
       "ru": "BETA TRADE (КИТАЙ) ЦЕНЫ ЗА КГ",
-      "en": "BETA TRADE (КИТАЙ) ЦЕНЫ ЗА КГ"
+      "en": "BETA TRADE (CHINA) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Картофель фри Быстрозамороженный соломка 9 мм BETA TRADE(КИТАЙ)» — замороженный картофель фри. Подходит для ресторанов, кафе, фудкортов и доставки. Минимальное количество по позиции: 10 кг.",
+      "en": "“BETA TRADE quick-frozen French fries, 9 mm, China” is frozen French fries. Suitable for restaurants, cafés, food courts and delivery. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 150.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 150,
+    "packKg": 10,
+    "img": "assets/products/ff-bravi-10mm.webp",
     "tag": "картофель",
     "country": "Китай",
     "visible": true,
@@ -2079,19 +2096,19 @@
     "id": 92,
     "name": {
       "ru": "Картофельные Хэшбрауны треугольные Быстрозамороженные  BETA TRADE(КИТАЙ) 10 кг (2,0кг*5шт)",
-      "en": "Картофельные Хэшбрауны треугольные Быстрозамороженные  BETA TRADE(КИТАЙ) 10 кг (2,0кг*5шт)"
+      "en": "BETA TRADE quick-frozen triangular hash browns, China, 10 kg (2 kg × 5)"
     },
     "cat": {
       "ru": "BETA TRADE (КИТАЙ) ЦЕНЫ ЗА КГ",
-      "en": "BETA TRADE (КИТАЙ) ЦЕНЫ ЗА КГ"
+      "en": "BETA TRADE (CHINA) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Картофельные Хэшбрауны треугольные Быстрозамороженные BETA TRADE(КИТАЙ)» — порционный картофельный продукт. Подходит для завтраков, гарниров и закусок. Минимальное количество по позиции: 10 кг.",
+      "en": "“BETA TRADE quick-frozen triangular hash browns, China” is a portioned potato product. Suitable for breakfasts, sides and appetizers. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 220.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 220,
+    "packKg": 10,
+    "img": "assets/products/pomuni-triangles.jpg",
     "tag": "картофель",
     "country": "Китай",
     "visible": true,
@@ -2102,19 +2119,19 @@
     "id": 93,
     "name": {
       "ru": "Сладкий картофель фри  БАТАТ в панировке Lamb Weston  2,5кг*4шт",
-      "en": "Сладкий картофель фри  БАТАТ в панировке Lamb Weston  2,5кг*4шт"
+      "en": "Lamb Weston coated sweet potato fries, 2.5 kg × 4"
     },
     "cat": {
       "ru": "Lamb Weston(Нидерланды) ЦЕНЫ ЗА КГ",
-      "en": "Lamb Weston(Нидерланды) ЦЕНЫ ЗА КГ"
+      "en": "Lamb Weston (Netherlands) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Сладкий картофель фри БАТАТ в панировке Lamb Weston» — замороженный батат фри. Отличается хрустящей текстурой и естественным сладковатым вкусом. Минимальное количество по позиции: 10 кг.",
+      "en": "“Lamb Weston coated sweet potato fries” is frozen sweet potato fries. They have a crisp texture and naturally sweet flavour. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 270.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 270,
+    "packKg": 10,
+    "img": "assets/products/sweet-potato-fries.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2125,19 +2142,19 @@
     "id": 94,
     "name": {
       "ru": "Картофельные фри дольки со специями Lamb Weston 2,5*4 W01 ИМПОРТ",
-      "en": "Картофельные фри дольки со специями Lamb Weston 2,5*4 W01 ИМПОРТ"
+      "en": "Lamb Weston seasoned potato wedges, 2.5 kg × 4, W01 IMPORT"
     },
     "cat": {
       "ru": "Lamb Weston(Нидерланды) ЦЕНЫ ЗА КГ",
-      "en": "Lamb Weston(Нидерланды) ЦЕНЫ ЗА КГ"
+      "en": "Lamb Weston (Netherlands) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Картофельные фри дольки со специями Lamb Weston» — замороженные картофельные дольки. Подходят для гарниров, закусок и доставки. Минимальное количество по позиции: 10 кг.",
+      "en": "“Lamb Weston seasoned potato wedges” is frozen potato wedges. Suitable for side dishes, appetizers and delivery. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 230.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 230,
+    "packKg": 10,
+    "img": "assets/products/potato-wedges.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2148,19 +2165,19 @@
     "id": 95,
     "name": {
       "ru": "Картофельные фри дольки со специями Lamb Weston 2,5*5 Прозрачный пакет",
-      "en": "Картофельные фри дольки со специями Lamb Weston 2,5*5 Прозрачный пакет"
+      "en": "Lamb Weston seasoned potato wedges, 2.5 kg × 5, clear bag"
     },
     "cat": {
       "ru": "Lamb Weston(Нидерланды) ЦЕНЫ ЗА КГ",
-      "en": "Lamb Weston(Нидерланды) ЦЕНЫ ЗА КГ"
+      "en": "Lamb Weston (Netherlands) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Картофельные фри дольки со специями Lamb Weston» — замороженные картофельные дольки. Подходят для гарниров, закусок и доставки. Минимальное количество по позиции: 12,5 кг.",
+      "en": "“Lamb Weston seasoned potato wedges” is frozen potato wedges. Suitable for side dishes, appetizers and delivery. Minimum quantity for this item: 12.5 kg."
     },
-    "pricePerKg": 225.0,
+    "pricePerKg": 225,
     "packKg": 12.5,
-    "img": "assets/products/fries-10mm.webp",
+    "img": "assets/products/potato-wedges.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2171,19 +2188,19 @@
     "id": 100,
     "name": {
       "ru": "Треугольные картофельные котлетки POMUNI 10 кг (2,5 кг х 4 шт)",
-      "en": "Треугольные картофельные котлетки POMUNI 10 кг (2,5 кг х 4 шт)"
+      "en": "POMUNI triangular hash browns, 10 kg (2.5 kg × 4)"
     },
     "cat": {
       "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
-      "en": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ"
+      "en": "GLOBAL FRIES/POMUNI (BELGIUM, FRANCE) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Треугольные картофельные котлетки POMUNI» — порционный картофельный продукт. Подходит для завтраков, гарниров и закусок. Минимальное количество по позиции: 10 кг.",
+      "en": "“POMUNI triangular hash browns” is a portioned potato product. Suitable for breakfasts, sides and appetizers. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 215.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 215,
+    "packKg": 10,
+    "img": "assets/products/pomuni-triangles.jpg",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2194,19 +2211,19 @@
     "id": 101,
     "name": {
       "ru": "Треугольные картофельные котлетки BART`S GOURMET (2,5кг*4шт) F000785",
-      "en": "Треугольные картофельные котлетки BART`S GOURMET (2,5кг*4шт) F000785"
+      "en": "BART'S GOURMET triangular hash browns, 2.5 kg × 4, F000785"
     },
     "cat": {
       "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
-      "en": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ"
+      "en": "GLOBAL FRIES/POMUNI (BELGIUM, FRANCE) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Треугольные картофельные котлетки BART`S GOURMET (2» — порционный картофельный продукт. Подходит для завтраков, гарниров и закусок. Минимальное количество по позиции: 10 кг.",
+      "en": "“BART'S GOURMET triangular hash browns” is a portioned potato product. Suitable for breakfasts, sides and appetizers. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 245.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 245,
+    "packKg": 10,
+    "img": "assets/products/pomuni-triangles.jpg",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2217,19 +2234,19 @@
     "id": 102,
     "name": {
       "ru": "Картофельные дольки БЕЗ СПЕЦИЙ Global Fries (2.5кг*4шт)",
-      "en": "Картофельные дольки БЕЗ СПЕЦИЙ Global Fries (2.5кг*4шт)"
+      "en": "Global Fries unseasoned potato wedges, 2.5 kg × 4"
     },
     "cat": {
       "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
-      "en": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ"
+      "en": "GLOBAL FRIES/POMUNI (BELGIUM, FRANCE) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Картофельные дольки БЕЗ СПЕЦИЙ Global Fries (2.5кг*4шт)» — замороженные картофельные дольки. Подходят для гарниров, закусок и доставки. Минимальное количество по позиции: 10 кг.",
+      "en": "“Global Fries unseasoned potato wedges” is frozen potato wedges. Suitable for side dishes, appetizers and delivery. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 160.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 160,
+    "packKg": 10,
+    "img": "assets/products/potato-wedges.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2240,19 +2257,19 @@
     "id": 103,
     "name": {
       "ru": "Картофель фри соломка 10 мм FRIES4US (БЕЛЬГИЯ) 10 кг (2,5кг*4шт) FR000093",
-      "en": "Картофель фри соломка 10 мм FRIES4US (БЕЛЬГИЯ) 10 кг (2,5кг*4шт) FR000093"
+      "en": "FRIES4US French fries, 10 mm, Belgium, 10 kg (2.5 kg × 4), FR000093"
     },
     "cat": {
       "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
-      "en": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ"
+      "en": "GLOBAL FRIES/POMUNI (BELGIUM, FRANCE) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Картофель фри соломка 10 мм FRIES4US (БЕЛЬГИЯ)» — замороженный картофель фри. Подходит для ресторанов, кафе, фудкортов и доставки. Минимальное количество по позиции: 10 кг.",
+      "en": "“FRIES4US French fries, 10 mm, Belgium” is frozen French fries. Suitable for restaurants, cafés, food courts and delivery. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 145.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 145,
+    "packKg": 10,
+    "img": "assets/products/ff-bravi-10mm.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2263,19 +2280,19 @@
     "id": 104,
     "name": {
       "ru": "Картофель FARM FRITES фри соломка 10mm 12,5 кг (2,5кг*5шт)/ТС 093.014, 093.081",
-      "en": "Картофель FARM FRITES фри соломка 10mm 12,5 кг (2,5кг*5шт)/ТС 093.014, 093.081"
+      "en": "FARM FRITES French fries, 10 mm, 12.5 kg (2.5 kg × 5), 093.014 / 093.081"
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
+      "en": "FARM FRITES (Belgium, Netherlands, Poland) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Классический замороженный картофель фри прямой нарезки 10 мм. Универсальный формат для ресторанов, кафе, фудкортов и доставки.",
+      "en": "Classic frozen straight-cut 10 mm fries. A versatile format for restaurants, cafés, food courts and delivery."
     },
-    "pricePerKg": 180.0,
+    "pricePerKg": 180,
     "packKg": 12.5,
-    "img": "assets/products/fries-10mm.webp",
+    "img": "assets/products/ff-regular-10mm.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2286,19 +2303,19 @@
     "id": 105,
     "name": {
       "ru": "Картофель фри в панировке Crispy Coated 10 мм Farm Frites 12,5 кг (2,5кг*5шт)  441.001",
-      "en": "Картофель фри в панировке Crispy Coated 10 мм Farm Frites 12,5 кг (2,5кг*5шт)  441.001"
+      "en": "Farm Frites Crispy Coated French fries, 10 mm, 12.5 kg (2.5 kg × 5), 441.001"
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
+      "en": "FARM FRITES (Belgium, Netherlands, Poland) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Картофель фри 10 мм в хрустящей панировке Chef’s Specials. Покрытие помогает дольше сохранять тепло и хруст, поэтому продукт подходит для доставки и навынос.",
+      "en": "Chef’s Specials 10 mm fries with a crispy coating. The coating helps retain heat and crunch, making them suitable for delivery and takeaway."
     },
-    "pricePerKg": 197.0,
+    "pricePerKg": 197,
     "packKg": 12.5,
-    "img": "assets/products/fries-10mm.webp",
+    "img": "assets/products/ff-crispy-coated-10mm.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2309,19 +2326,19 @@
     "id": 106,
     "name": {
       "ru": "Картофель фри BRAVI (Farm Frites) соломка 10мм 12,5кг(2,5*5шт)",
-      "en": "Картофель фри BRAVI (Farm Frites) соломка 10мм 12,5кг(2,5*5шт)"
+      "en": "Farm Frites BRAVI French fries, 10 mm, 12.5 kg (2.5 kg × 5)"
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
+      "en": "FARM FRITES (Belgium, Netherlands, Poland) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Замороженный картофель фри BRAVI прямой нарезки 10 мм. Практичный формат для стабильной работы профессиональной кухни.",
+      "en": "Frozen BRAVI straight-cut 10 mm fries. A practical format for consistent professional kitchen service."
     },
-    "pricePerKg": 155.0,
+    "pricePerKg": 155,
     "packKg": 12.5,
-    "img": "assets/products/fries-10mm.webp",
+    "img": "assets/products/ff-bravi-10mm.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2332,19 +2349,19 @@
     "id": 107,
     "name": {
       "ru": "Картофель FARM FRITES фри волнистая 12 mm 12,5 кг (2,5кг*5шт)/ТС 279.012",
-      "en": "Картофель FARM FRITES фри волнистая 12 mm 12,5 кг (2,5кг*5шт)/ТС 279.012"
+      "en": "FARM FRITES crinkle fries, 12 mm, 12.5 kg (2.5 kg × 5), 279.012"
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
+      "en": "FARM FRITES (Belgium, Netherlands, Poland) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Замороженный волнистый картофель фри 12 мм. Рифлёная нарезка даёт выразительную текстуру и хорошо удерживает соусы.",
+      "en": "Frozen 12 mm crinkle-cut fries. The ridged cut adds texture and holds sauces well."
     },
-    "pricePerKg": 210.0,
+    "pricePerKg": 210,
     "packKg": 12.5,
-    "img": "assets/products/fries-10mm.webp",
+    "img": "assets/products/ff-crinkle-12mm.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2355,19 +2372,19 @@
     "id": 108,
     "name": {
       "ru": "Картофель FARM FRITES фри 7mm 12,5 кг (2,5кг*5шт) 173.021",
-      "en": "Картофель FARM FRITES фри 7mm 12,5 кг (2,5кг*5шт) 173.021"
+      "en": "FARM FRITES French fries, 7 mm, 12.5 kg (2.5 kg × 5), 173.021"
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
+      "en": "FARM FRITES (Belgium, Netherlands, Poland) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Тонкий замороженный картофель фри прямой нарезки 7 мм. Подходит для быстрого сервиса, гарниров и снековых блюд.",
+      "en": "Thin frozen straight-cut 7 mm fries. Suitable for quick service, side dishes and snack menus."
     },
-    "pricePerKg": 210.0,
+    "pricePerKg": 210,
     "packKg": 12.5,
-    "img": "assets/products/fries-10mm.webp",
+    "img": "assets/products/ff-regular-7mm.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2378,19 +2395,19 @@
     "id": 109,
     "name": {
       "ru": "Картофель FARM FRITES фри соломка Fast Fry 12 mm волнистый 12,5 кг (2,5кг*5шт)/ТС 278.002",
-      "en": "Картофель FARM FRITES фри соломка Fast Fry 12 mm волнистый 12,5 кг (2,5кг*5шт)/ТС 278.002"
+      "en": "FARM FRITES Fast Fry crinkle fries, 12 mm, 12.5 kg (2.5 kg × 5), 278.002"
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
+      "en": "FARM FRITES (Belgium, Netherlands, Poland) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Волнистый картофель фри Fast Fry 12 мм для быстрого приготовления в часы пик. Рифлёная форма обеспечивает заметный хруст и удобна для подачи с соусами.",
+      "en": "Fast Fry 12 mm crinkle fries designed for quick preparation during peak service. The ridged shape adds crunch and works well with dips."
     },
-    "pricePerKg": 230.0,
+    "pricePerKg": 230,
     "packKg": 12.5,
-    "img": "assets/products/fries-10mm.webp",
+    "img": "assets/products/ff-fast-fry-crinkle.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2401,19 +2418,19 @@
     "id": 110,
     "name": {
       "ru": "Картофель FARM FRITES фри соломка Fast Fry 10mm 12,5 кг (2,5кг*5шт)/ТС 086.013",
-      "en": "Картофель FARM FRITES фри соломка Fast Fry 10mm 12,5 кг (2,5кг*5шт)/ТС 086.013"
+      "en": "FARM FRITES Fast Fry French fries, 10 mm, 12.5 kg (2.5 kg × 5), 086.013"
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
+      "en": "FARM FRITES (Belgium, Netherlands, Poland) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Картофель фри Fast Fry прямой нарезки 10 мм. Разработан для быстрого приготовления и стабильной подачи при высокой загрузке кухни.",
+      "en": "Fast Fry straight-cut 10 mm fries. Designed for quick preparation and consistent service during busy periods."
     },
-    "pricePerKg": 225.0,
+    "pricePerKg": 225,
     "packKg": 12.5,
-    "img": "assets/products/fries-10mm.webp",
+    "img": "assets/products/ff-fast-fry-10mm.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2424,19 +2441,19 @@
     "id": 111,
     "name": {
       "ru": "Картофель FARM FRITES дольки без специй 10 кг (2,5кг*4шт)/ТС 337.034",
-      "en": "Картофель FARM FRITES дольки без специй 10 кг (2,5кг*4шт)/ТС 337.034"
+      "en": "FARM FRITES unseasoned skin-on wedges, 10 kg (2.5 kg × 4), 337.034"
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
+      "en": "FARM FRITES (Belgium, Netherlands, Poland) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Замороженные картофельные дольки с кожурой без специй. Универсальны как гарнир, закуска или основа для блюда с соусом.",
+      "en": "Frozen unseasoned skin-on potato wedges. Versatile as a side dish, snack or base for a loaded dish."
     },
-    "pricePerKg": 185.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 185,
+    "packKg": 10,
+    "img": "assets/products/ff-wedges-skin-on.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2447,19 +2464,19 @@
     "id": 112,
     "name": {
       "ru": "Картофельные дольки со специями FARM FRITES12,5 кг (2,5кг*5шт)/ТС 375.001",
-      "en": "Картофельные дольки со специями FARM FRITES12,5 кг (2,5кг*5шт)/ТС 375.001"
+      "en": "FARM FRITES seasoned potato wedges, 12.5 kg (2.5 kg × 5), 375.001"
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
+      "en": "FARM FRITES (Belgium, Netherlands, Poland) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Картофельные дольки с кожурой, специями и хрустящим покрытием. Подходят для гарниров, закусок и доставки.",
+      "en": "Seasoned skin-on potato wedges with a crispy coating. Suitable for side dishes, snacks and delivery."
     },
-    "pricePerKg": 225.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 225,
+    "packKg": 12.5,
+    "img": "assets/products/ff-seasoned-wedges.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2470,19 +2487,19 @@
     "id": 113,
     "name": {
       "ru": "Картофель FARM FRITES шарики 10 кг (2,5кг*4шт)/ТС 760.006",
-      "en": "Картофель FARM FRITES шарики 10 кг (2,5кг*4шт)/ТС 760.006"
+      "en": "FARM FRITES Noisettes potato balls, 10 kg (2.5 kg × 4), 760.006"
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
+      "en": "FARM FRITES (Belgium, Netherlands, Poland) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Картофельные шарики Noisettes из картофельного пюре. После приготовления получаются хрустящими снаружи и мягкими внутри.",
+      "en": "Noisettes potato balls made from mashed potato. They cook crispy on the outside and fluffy on the inside."
     },
-    "pricePerKg": 285.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 285,
+    "packKg": 10,
+    "img": "assets/products/ff-noisettes.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2493,19 +2510,19 @@
     "id": 114,
     "name": {
       "ru": "Картофель FARM FRITES пюре 10 кг (2,5кг*4шт)/ТС 647.003",
-      "en": "Картофель FARM FRITES пюре 10 кг (2,5кг*4шт)/ТС 647.003"
+      "en": "FARM FRITES mashed potato, 10 kg (2.5 kg × 4), 647.003"
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
+      "en": "FARM FRITES (Belgium, Netherlands, Poland) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Порционное замороженное картофельное пюре для быстрого приготовления. Подходит для кейтеринга, столовых и готовых блюд.",
+      "en": "Portioned frozen mashed potato for quick preparation. Suitable for catering, canteens and prepared meals."
     },
-    "pricePerKg": 250.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 250,
+    "packKg": 10,
+    "img": "assets/products/ff-mash.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2516,19 +2533,19 @@
     "id": 115,
     "name": {
       "ru": "Овальные картофельные котлетки FarmFrites 12,5 кг (2,5 кг*5 шт) 785.002",
-      "en": "Овальные картофельные котлетки FarmFrites 12,5 кг (2,5 кг*5 шт) 785.002"
+      "en": "Farm Frites oval hash browns, 12.5 kg (2.5 kg × 5), 785.002"
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
+      "en": "FARM FRITES (Belgium, Netherlands, Poland) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Овальные хэшбрауны из тёртого картофеля. Удобная порционная форма для завтраков, гарниров и закусок.",
+      "en": "Oval hash browns made from shredded potato. A convenient portioned format for breakfasts, sides and snacks."
     },
-    "pricePerKg": 320.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 320,
+    "packKg": 12.5,
+    "img": "assets/products/ff-oval-hashbrown.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2539,19 +2556,19 @@
     "id": 116,
     "name": {
       "ru": "Картофельные треугольные котлетки FARM FRITES 788.003 10 кг (2,5кг*4шт)/ТС",
-      "en": "Картофельные треугольные котлетки FARM FRITES 788.003 10 кг (2,5кг*4шт)/ТС"
+      "en": "FARM FRITES chunky triangular hash browns, 10 kg (2.5 kg × 4), 788.003"
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
+      "en": "FARM FRITES (Belgium, Netherlands, Poland) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Треугольные хэшбрауны из тёртого картофеля. Порционный формат подходит для завтраков, фудкортов и снекового меню.",
+      "en": "Chunky triangular hash browns made from shredded potato. A portioned format suited to breakfasts, food courts and snack menus."
     },
-    "pricePerKg": 285.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 285,
+    "packKg": 10,
+    "img": "assets/products/ff-triangular-hashbrown.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2562,19 +2579,19 @@
     "id": 117,
     "name": {
       "ru": "Картофель сладкий фри Батат Farm Frites 10 (2 кг * 5 шт) 486.001",
-      "en": "Картофель сладкий фри Батат Farm Frites 10 (2 кг * 5 шт) 486.001"
+      "en": "Farm Frites coated sweet potato fries, 10 kg (2 kg × 5), 486.001"
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
+      "en": "FARM FRITES (Belgium, Netherlands, Poland) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Батат фри 9 мм с кожурой и хрустящим покрытием. Имеет естественный сладковатый вкус и подходит как альтернатива классическому картофелю фри.",
+      "en": "Coated 9 mm skin-on sweet potato fries. Their naturally sweet flavour makes them a distinctive alternative to regular fries."
     },
-    "pricePerKg": 420.0,
-    "packKg": 10.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 420,
+    "packKg": 10,
+    "img": "assets/products/ff-sweet-potato-fries.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2585,19 +2602,19 @@
     "id": 118,
     "name": {
       "ru": "Картофель FARM FRITES оладьи 1,5 кг*6 шт",
-      "en": "Картофель FARM FRITES оладьи 1,5 кг*6 шт"
+      "en": "FARM FRITES potato pancakes, 1.5 kg × 6"
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
+      "en": "FARM FRITES (Belgium, Netherlands, Poland) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Хрустящие картофельные оладьи из картофеля и лука. Подходят как гарнир, закуска или самостоятельная позиция меню.",
+      "en": "Crispy potato pancakes made with potato and onion. Suitable as a side, appetizer or standalone menu item."
     },
-    "pricePerKg": 240.0,
-    "packKg": 9.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 240,
+    "packKg": 9,
+    "img": "assets/products/ff-potato-pancakes.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2608,19 +2625,19 @@
     "id": 119,
     "name": {
       "ru": "Картофель фри с кожурой 8/12 Finest 2,0*6 шт FARM FRITES 402.005",
-      "en": "Картофель фри с кожурой 8/12 Finest 2,0*6 шт FARM FRITES 402.005"
+      "en": "FARM FRITES Finest Round Cut skin-on fries, 8/12 mm, 2 kg × 6, 402.005"
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",
-      "en": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ"
+      "en": "FARM FRITES (Belgium, Netherlands, Poland) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "Премиальный картофель фри Finest Round Cut с кожурой, калибр 8/12 мм. Выразительная округлая нарезка подходит для ресторанной подачи.",
+      "en": "Premium Finest Round Cut skin-on fries in an 8/12 mm cut. Their distinctive rounded shape is suited to restaurant presentation."
     },
-    "pricePerKg": 260.0,
-    "packKg": 12.0,
-    "img": "assets/products/fries-10mm.webp",
+    "pricePerKg": 260,
+    "packKg": 12,
+    "img": "assets/products/ff-finest-8x12-skin-on.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": true,
@@ -2631,19 +2648,19 @@
     "id": 121,
     "name": {
       "ru": "Палочки из сыра моцарелла в панировке \"Оригинальные\" 1 кор*4,5 кг",
-      "en": "Палочки из сыра моцарелла в панировке \"Оригинальные\" 1 кор*4,5 кг"
+      "en": "Original breaded mozzarella sticks, 1 case × 4.5 kg"
     },
     "cat": {
       "ru": "ЮНИБУРГЕР (РОССИЯ) ЦЕНЫ ЗА КГ",
-      "en": "ЮНИБУРГЕР (РОССИЯ) ЦЕНЫ ЗА КГ"
+      "en": "UNIBURGER (RUSSIA) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Палочки из сыра моцарелла в панировке \"Оригинальные\"» — замороженная закуска. Готовится по инструкции производителя и подходит для кафе, баров и фудкортов. Минимальное количество по позиции: 4,5 кг.",
+      "en": "“Original breaded mozzarella sticks” is a frozen appetizer. Prepare according to the manufacturer’s instructions; suitable for cafés, bars and food courts. Minimum quantity for this item: 4.5 kg."
     },
-    "pricePerKg": 480.0,
-    "packKg": 5.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 480,
+    "packKg": 4.5,
+    "img": "",
     "tag": "снеки",
     "country": "Европа",
     "visible": true,
@@ -2654,19 +2671,19 @@
     "id": 122,
     "name": {
       "ru": "Шарики с сыром моцарелла \"Оригинальные\" 1 кор*4,5 кг",
-      "en": "Шарики с сыром моцарелла \"Оригинальные\" 1 кор*4,5 кг"
+      "en": "Original mozzarella cheese balls, 1 case × 4.5 kg"
     },
     "cat": {
       "ru": "ЮНИБУРГЕР (РОССИЯ) ЦЕНЫ ЗА КГ",
-      "en": "ЮНИБУРГЕР (РОССИЯ) ЦЕНЫ ЗА КГ"
+      "en": "UNIBURGER (RUSSIA) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Шарики с сыром моцарелла \"Оригинальные\"» — замороженная закуска. Готовится по инструкции производителя и подходит для кафе, баров и фудкортов. Минимальное количество по позиции: 4,5 кг.",
+      "en": "“Original mozzarella cheese balls” is a frozen appetizer. Prepare according to the manufacturer’s instructions; suitable for cafés, bars and food courts. Minimum quantity for this item: 4.5 kg."
     },
-    "pricePerKg": 490.0,
-    "packKg": 5.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 490,
+    "packKg": 4.5,
+    "img": "",
     "tag": "снеки",
     "country": "Европа",
     "visible": true,
@@ -2677,19 +2694,19 @@
     "id": 123,
     "name": {
       "ru": "Шарики острые с сыром и перцем халапеньо 1 кор*4,5 кг",
-      "en": "Шарики острые с сыром и перцем халапеньо 1 кор*4,5 кг"
+      "en": "Spicy cheese and jalapeño balls, 1 case × 4.5 kg"
     },
     "cat": {
       "ru": "ЮНИБУРГЕР (РОССИЯ) ЦЕНЫ ЗА КГ",
-      "en": "ЮНИБУРГЕР (РОССИЯ) ЦЕНЫ ЗА КГ"
+      "en": "UNIBURGER (RUSSIA) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Шарики острые с сыром и перцем халапеньо» — замороженная закуска. Готовится по инструкции производителя и подходит для кафе, баров и фудкортов. Минимальное количество по позиции: 4,5 кг.",
+      "en": "“Spicy cheese and jalapeño balls” is a frozen appetizer. Prepare according to the manufacturer’s instructions; suitable for cafés, bars and food courts. Minimum quantity for this item: 4.5 kg."
     },
-    "pricePerKg": 500.0,
+    "pricePerKg": 500,
     "packKg": 4.5,
-    "img": "assets/p2.jpg",
+    "img": "",
     "tag": "снеки",
     "country": "Европа",
     "visible": true,
@@ -2700,19 +2717,19 @@
     "id": 124,
     "name": {
       "ru": "Грибная смесь \"Сказки Лукоморья\" 0,300кг*8",
-      "en": "Грибная смесь \"Сказки Лукоморья\" 0,300кг*8"
+      "en": "CANTARELLA “Tales of Lukomorye” mushroom mix, 0.3 kg × 8"
     },
     "cat": {
       "ru": "КАНТАРЕЛЛА (Россия)",
-      "en": "КАНТАРЕЛЛА (Россия)"
+      "en": "CANTARELLA (Russia)"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Грибная смесь \"Сказки Лукоморья\"» — замороженный грибной продукт. Подходит для супов, соусов, гарниров и горячих блюд. Минимальное количество по позиции: 8 упаковок.",
+      "en": "“CANTARELLA “Tales of Lukomorye” mushroom mix” is a frozen mushroom product. Suitable for soups, sauces, side dishes and hot meals. Minimum quantity for this item: 8 packs."
     },
-    "pricePerKg": 87.0,
-    "packKg": 8.0,
-    "img": "assets/p4.jpg",
+    "pricePerKg": 87,
+    "packKg": 8,
+    "img": "assets/p2.jpg",
     "tag": "грибы",
     "country": "Европа",
     "visible": true,
@@ -2723,19 +2740,19 @@
     "id": 125,
     "name": {
       "ru": "Грибная смесь \"Тайны леса\" 0,300*8 Кантарелла",
-      "en": "Грибная смесь \"Тайны леса\" 0,300*8 Кантарелла"
+      "en": "CANTARELLA “Secrets of the Forest” mushroom mix, 0.3 kg × 8"
     },
     "cat": {
       "ru": "КАНТАРЕЛЛА (Россия)",
-      "en": "КАНТАРЕЛЛА (Россия)"
+      "en": "CANTARELLA (Russia)"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Грибная смесь \"Тайны леса\"» — замороженный грибной продукт. Подходит для супов, соусов, гарниров и горячих блюд. Минимальное количество по позиции: 8 упаковок.",
+      "en": "“CANTARELLA “Secrets of the Forest” mushroom mix” is a frozen mushroom product. Suitable for soups, sauces, side dishes and hot meals. Minimum quantity for this item: 8 packs."
     },
-    "pricePerKg": 87.0,
-    "packKg": 8.0,
-    "img": "assets/p4.jpg",
+    "pricePerKg": 87,
+    "packKg": 8,
+    "img": "assets/p2.jpg",
     "tag": "грибы",
     "country": "Европа",
     "visible": true,
@@ -2746,19 +2763,19 @@
     "id": 126,
     "name": {
       "ru": "Тесто Черемушки слоеное бездрожжевое 0,500*16 Черемушки №5002",
-      "en": "Тесто Черемушки слоеное бездрожжевое 0,500*16 Черемушки №5002"
+      "en": "CHERYOMUSHKI frozen non-yeasted puff pastry, 0.5 kg × 16, No. 5002"
     },
     "cat": {
       "ru": "ЧЕРЁМУШКИ (Россия)",
-      "en": "ЧЕРЁМУШКИ (Россия)"
+      "en": "CHERYOMUSHKI (Russia)"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Тесто Черемушки слоеное бездрожжевое» — замороженное слоёное тесто. Подходит для кафе, пекарен и пищевых производств. Минимальное количество по позиции: 16 упаковок.",
+      "en": "“CHERYOMUSHKI frozen non-yeasted puff pastry” is frozen puff pastry. Suitable for cafés, bakeries and food production. Minimum quantity for this item: 16 packs."
     },
-    "pricePerKg": 111.0,
-    "packKg": 16.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 111,
+    "packKg": 16,
+    "img": "",
     "tag": "выпечка",
     "country": "Европа",
     "visible": true,
@@ -2769,19 +2786,19 @@
     "id": 127,
     "name": {
       "ru": "Тесто Черемушки слоеное дрожжевое 0,500*16 № 5003",
-      "en": "Тесто Черемушки слоеное дрожжевое 0,500*16 № 5003"
+      "en": "CHERYOMUSHKI frozen yeasted puff pastry, 0.5 kg × 16, No. 5003"
     },
     "cat": {
       "ru": "ЧЕРЁМУШКИ (Россия)",
-      "en": "ЧЕРЁМУШКИ (Россия)"
+      "en": "CHERYOMUSHKI (Russia)"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Тесто Черемушки слоеное дрожжевое» — замороженное слоёное тесто. Подходит для кафе, пекарен и пищевых производств. Минимальное количество по позиции: 16 упаковок.",
+      "en": "“CHERYOMUSHKI frozen yeasted puff pastry” is frozen puff pastry. Suitable for cafés, bakeries and food production. Minimum quantity for this item: 16 packs."
     },
-    "pricePerKg": 111.0,
-    "packKg": 16.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 111,
+    "packKg": 16,
+    "img": "",
     "tag": "выпечка",
     "country": "Европа",
     "visible": true,
@@ -2792,19 +2809,19 @@
     "id": 128,
     "name": {
       "ru": "Донат с начинкой со вкусом капучино (Cappuccino donut) STOKSON 0,073*12шт (0,876кг)",
-      "en": "Донат с начинкой со вкусом капучино (Cappuccino donut) STOKSON 0,073*12шт (0,876кг)"
+      "en": "STOKSON cappuccino-filled donut, 0.073 kg × 12 (0.876 kg)"
     },
     "cat": {
       "ru": "ДОНАТЫ STOKSON (POLAND)",
-      "en": "ДОНАТЫ STOKSON (POLAND)"
+      "en": "STOKSON DONUTS (POLAND)"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Донат с начинкой со вкусом капучино (Cappuccino donut) STOKSON» — порционный пончик с начинкой. Подходит для витрин, кофеен и кейтеринга. Минимальное количество по позиции: 12 шт.",
+      "en": "“STOKSON cappuccino-filled donut” is a portioned filled donut. Suitable for displays, coffee shops and catering. Minimum quantity for this item: 12 pcs."
     },
-    "pricePerKg": 40.0,
-    "packKg": 12.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 40,
+    "packKg": 12,
+    "img": "",
     "tag": "выпечка",
     "country": "Европа",
     "visible": true,
@@ -2815,19 +2832,19 @@
     "id": 129,
     "name": {
       "ru": "Донат с яблочно-коричной начинкой (Cinnamon donut) STOKSON 0,061*12шт (0,732кг)",
-      "en": "Донат с яблочно-коричной начинкой (Cinnamon donut) STOKSON 0,061*12шт (0,732кг)"
+      "en": "STOKSON apple and cinnamon-filled donut, 0.061 kg × 12 (0.732 kg)"
     },
     "cat": {
       "ru": "ДОНАТЫ STOKSON (POLAND)",
-      "en": "ДОНАТЫ STOKSON (POLAND)"
+      "en": "STOKSON DONUTS (POLAND)"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Донат с яблочно-коричной начинкой (Cinnamon donut) STOKSON» — порционный пончик с начинкой. Подходит для витрин, кофеен и кейтеринга. Минимальное количество по позиции: 12 шт.",
+      "en": "“STOKSON apple and cinnamon-filled donut” is a portioned filled donut. Suitable for displays, coffee shops and catering. Minimum quantity for this item: 12 pcs."
     },
-    "pricePerKg": 40.0,
-    "packKg": 12.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 40,
+    "packKg": 12,
+    "img": "",
     "tag": "выпечка",
     "country": "Европа",
     "visible": true,
@@ -2838,19 +2855,19 @@
     "id": 130,
     "name": {
       "ru": "Донат с карамельной начинкой (Donut caramel) STOKSON 0,067*12шт (0,804кг)",
-      "en": "Донат с карамельной начинкой (Donut caramel) STOKSON 0,067*12шт (0,804кг)"
+      "en": "STOKSON caramel-filled donut, 0.067 kg × 12 (0.804 kg)"
     },
     "cat": {
       "ru": "ДОНАТЫ STOKSON (POLAND)",
-      "en": "ДОНАТЫ STOKSON (POLAND)"
+      "en": "STOKSON DONUTS (POLAND)"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Донат с карамельной начинкой (Donut caramel) STOKSON» — порционный пончик с начинкой. Подходит для витрин, кофеен и кейтеринга. Минимальное количество по позиции: 12 шт.",
+      "en": "“STOKSON caramel-filled donut” is a portioned filled donut. Suitable for displays, coffee shops and catering. Minimum quantity for this item: 12 pcs."
     },
-    "pricePerKg": 40.0,
-    "packKg": 12.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 40,
+    "packKg": 12,
+    "img": "",
     "tag": "выпечка",
     "country": "Европа",
     "visible": true,
@@ -2861,19 +2878,19 @@
     "id": 131,
     "name": {
       "ru": "Донат с начинкой со вкусом карамели (Сaramelove donut) STOKSON 0,067*12шт (0,804кг)",
-      "en": "Донат с начинкой со вкусом карамели (Сaramelove donut) STOKSON 0,067*12шт (0,804кг)"
+      "en": "STOKSON Caramelove caramel-flavoured donut, 0.067 kg × 12 (0.804 kg)"
     },
     "cat": {
       "ru": "ДОНАТЫ STOKSON (POLAND)",
-      "en": "ДОНАТЫ STOKSON (POLAND)"
+      "en": "STOKSON DONUTS (POLAND)"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Донат с начинкой со вкусом карамели (Сaramelove donut) STOKSON» — порционный пончик с начинкой. Подходит для витрин, кофеен и кейтеринга. Минимальное количество по позиции: 12 шт.",
+      "en": "“STOKSON Caramelove caramel-flavoured donut” is a portioned filled donut. Suitable for displays, coffee shops and catering. Minimum quantity for this item: 12 pcs."
     },
-    "pricePerKg": 40.0,
-    "packKg": 12.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 40,
+    "packKg": 12,
+    "img": "",
     "tag": "выпечка",
     "country": "Европа",
     "visible": true,
@@ -2884,19 +2901,19 @@
     "id": 132,
     "name": {
       "ru": "Донат \"Панна котта\" (Panna cotta donut) STOKSON 0,069*12шт (0,828кг)",
-      "en": "Донат \"Панна котта\" (Panna cotta donut) STOKSON 0,069*12шт (0,828кг)"
+      "en": "STOKSON Panna Cotta donut, 0.069 kg × 12 (0.828 kg)"
     },
     "cat": {
       "ru": "ДОНАТЫ STOKSON (POLAND)",
-      "en": "ДОНАТЫ STOKSON (POLAND)"
+      "en": "STOKSON DONUTS (POLAND)"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Донат \"Панна котта\" (Panna cotta donut) STOKSON» — порционный пончик с начинкой. Подходит для витрин, кофеен и кейтеринга. Минимальное количество по позиции: 12 шт.",
+      "en": "“STOKSON Panna Cotta donut” is a portioned filled donut. Suitable for displays, coffee shops and catering. Minimum quantity for this item: 12 pcs."
     },
-    "pricePerKg": 40.0,
-    "packKg": 12.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 40,
+    "packKg": 12,
+    "img": "",
     "tag": "выпечка",
     "country": "Европа",
     "visible": true,
@@ -2907,19 +2924,19 @@
     "id": 133,
     "name": {
       "ru": "Донат с шоколадной начинкой (Triple choc donut) STOKSON 0,069*12шт (0,828кг)",
-      "en": "Донат с шоколадной начинкой (Triple choc donut) STOKSON 0,069*12шт (0,828кг)"
+      "en": "STOKSON Triple Choc chocolate-filled donut, 0.069 kg × 12 (0.828 kg)"
     },
     "cat": {
       "ru": "ДОНАТЫ STOKSON (POLAND)",
-      "en": "ДОНАТЫ STOKSON (POLAND)"
+      "en": "STOKSON DONUTS (POLAND)"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Донат с шоколадной начинкой (Triple choc donut) STOKSON» — порционный пончик с начинкой. Подходит для витрин, кофеен и кейтеринга. Минимальное количество по позиции: 12 шт.",
+      "en": "“STOKSON Triple Choc chocolate-filled donut” is a portioned filled donut. Suitable for displays, coffee shops and catering. Minimum quantity for this item: 12 pcs."
     },
-    "pricePerKg": 40.0,
-    "packKg": 12.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 40,
+    "packKg": 12,
+    "img": "",
     "tag": "выпечка",
     "country": "Европа",
     "visible": true,
@@ -2930,19 +2947,19 @@
     "id": 134,
     "name": {
       "ru": "Донат с клубничной начинкой (Strawberry donut) STOKSON 0,070*12шт (0,840кг)",
-      "en": "Донат с клубничной начинкой (Strawberry donut) STOKSON 0,070*12шт (0,840кг)"
+      "en": "STOKSON strawberry-filled donut, 0.07 kg × 12 (0.84 kg)"
     },
     "cat": {
       "ru": "ДОНАТЫ STOKSON (POLAND)",
-      "en": "ДОНАТЫ STOKSON (POLAND)"
+      "en": "STOKSON DONUTS (POLAND)"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Донат с клубничной начинкой (Strawberry donut) STOKSON» — порционный пончик с начинкой. Подходит для витрин, кофеен и кейтеринга. Минимальное количество по позиции: 12 шт.",
+      "en": "“STOKSON strawberry-filled donut” is a portioned filled donut. Suitable for displays, coffee shops and catering. Minimum quantity for this item: 12 pcs."
     },
-    "pricePerKg": 40.0,
-    "packKg": 12.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 40,
+    "packKg": 12,
+    "img": "",
     "tag": "выпечка",
     "country": "Европа",
     "visible": true,
@@ -2953,19 +2970,19 @@
     "id": 135,
     "name": {
       "ru": "Донат с начинкой из смородины и малины (Frutti donut) STOKSON 0,070*12шт (0,840кг)",
-      "en": "Донат с начинкой из смородины и малины (Frutti donut) STOKSON 0,070*12шт (0,840кг)"
+      "en": "STOKSON currant and raspberry-filled Frutti donut, 0.07 kg × 12 (0.84 kg)"
     },
     "cat": {
       "ru": "ДОНАТЫ STOKSON (POLAND)",
-      "en": "ДОНАТЫ STOKSON (POLAND)"
+      "en": "STOKSON DONUTS (POLAND)"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Донат с начинкой из смородины и малины (Frutti donut) STOKSON» — порционный пончик с начинкой. Подходит для витрин, кофеен и кейтеринга. Минимальное количество по позиции: 12 шт.",
+      "en": "“STOKSON currant and raspberry-filled Frutti donut” is a portioned filled donut. Suitable for displays, coffee shops and catering. Minimum quantity for this item: 12 pcs."
     },
-    "pricePerKg": 40.0,
-    "packKg": 12.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 40,
+    "packKg": 12,
+    "img": "",
     "tag": "выпечка",
     "country": "Европа",
     "visible": true,
@@ -2976,19 +2993,19 @@
     "id": 136,
     "name": {
       "ru": "Донат с кокосовой начинкой (Coco donut) STOKSON 0,070*12шт (0,840кг)",
-      "en": "Донат с кокосовой начинкой (Coco donut) STOKSON 0,070*12шт (0,840кг)"
+      "en": "STOKSON coconut-filled Coco donut, 0.07 kg × 12 (0.84 kg)"
     },
     "cat": {
       "ru": "ДОНАТЫ STOKSON (POLAND)",
-      "en": "ДОНАТЫ STOKSON (POLAND)"
+      "en": "STOKSON DONUTS (POLAND)"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Донат с кокосовой начинкой (Coco donut) STOKSON» — порционный пончик с начинкой. Подходит для витрин, кофеен и кейтеринга. Минимальное количество по позиции: 12 шт.",
+      "en": "“STOKSON coconut-filled Coco donut” is a portioned filled donut. Suitable for displays, coffee shops and catering. Minimum quantity for this item: 12 pcs."
     },
-    "pricePerKg": 40.0,
-    "packKg": 12.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 40,
+    "packKg": 12,
+    "img": "",
     "tag": "выпечка",
     "country": "Европа",
     "visible": true,
@@ -2999,19 +3016,19 @@
     "id": 137,
     "name": {
       "ru": "Донат с ореховой начинкой (Nutty cream donut) STOKSON 0,071*12шт (0,852кг)",
-      "en": "Донат с ореховой начинкой (Nutty cream donut) STOKSON 0,071*12шт (0,852кг)"
+      "en": "STOKSON nut cream-filled donut, 0.071 kg × 12 (0.852 kg)"
     },
     "cat": {
       "ru": "ДОНАТЫ STOKSON (POLAND)",
-      "en": "ДОНАТЫ STOKSON (POLAND)"
+      "en": "STOKSON DONUTS (POLAND)"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Донат с ореховой начинкой (Nutty cream donut) STOKSON» — порционный пончик с начинкой. Подходит для витрин, кофеен и кейтеринга. Минимальное количество по позиции: 12 шт.",
+      "en": "“STOKSON nut cream-filled donut” is a portioned filled donut. Suitable for displays, coffee shops and catering. Minimum quantity for this item: 12 pcs."
     },
-    "pricePerKg": 40.0,
-    "packKg": 12.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 40,
+    "packKg": 12,
+    "img": "",
     "tag": "выпечка",
     "country": "Европа",
     "visible": true,
@@ -3022,19 +3039,19 @@
     "id": 138,
     "name": {
       "ru": "Донат с начинкой из лесных ягод (Wild fruits donut) STOKSON 0,070*12шт (0,840кг)",
-      "en": "Донат с начинкой из лесных ягод (Wild fruits donut) STOKSON 0,070*12шт (0,840кг)"
+      "en": "STOKSON wild berry-filled donut, 0.07 kg × 12 (0.84 kg)"
     },
     "cat": {
       "ru": "ДОНАТЫ STOKSON (POLAND)",
-      "en": "ДОНАТЫ STOKSON (POLAND)"
+      "en": "STOKSON DONUTS (POLAND)"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Донат с начинкой из лесных ягод (Wild fruits donut) STOKSON» — порционный пончик с начинкой. Подходит для витрин, кофеен и кейтеринга. Минимальное количество по позиции: 12 шт.",
+      "en": "“STOKSON wild berry-filled donut” is a portioned filled donut. Suitable for displays, coffee shops and catering. Minimum quantity for this item: 12 pcs."
     },
-    "pricePerKg": 40.0,
-    "packKg": 12.0,
-    "img": "assets/p1.jpg",
+    "pricePerKg": 40,
+    "packKg": 12,
+    "img": "",
     "tag": "выпечка",
     "country": "Европа",
     "visible": true,
@@ -3045,19 +3062,19 @@
     "id": 139,
     "name": {
       "ru": "Донат с начинкой манго (Mango donut) STOKSON 0,070*12шт (0,840кг)",
-      "en": "Донат с начинкой манго (Mango donut) STOKSON 0,070*12шт (0,840кг)"
+      "en": "STOKSON mango-filled donut, 0.07 kg × 12 (0.84 kg)"
     },
     "cat": {
       "ru": "ДОНАТЫ STOKSON (POLAND)",
-      "en": "ДОНАТЫ STOKSON (POLAND)"
+      "en": "STOKSON DONUTS (POLAND)"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Донат с начинкой манго (Mango donut) STOKSON» — порционный пончик с начинкой. Подходит для витрин, кофеен и кейтеринга. Минимальное количество по позиции: 12 шт.",
+      "en": "“STOKSON mango-filled donut” is a portioned filled donut. Suitable for displays, coffee shops and catering. Minimum quantity for this item: 12 pcs."
     },
-    "pricePerKg": 40.0,
-    "packKg": 12.0,
-    "img": "assets/p5.jpg",
+    "pricePerKg": 40,
+    "packKg": 12,
+    "img": "",
     "tag": "выпечка",
     "country": "Европа",
     "visible": true,
@@ -3068,19 +3085,19 @@
     "id": 140,
     "name": {
       "ru": "Донат с клубничной начинкой (Love donut) STOKSON 0,071*12шт (0,852кг)",
-      "en": "Донат с клубничной начинкой (Love donut) STOKSON 0,071*12шт (0,852кг)"
+      "en": "STOKSON Love strawberry-filled donut, 0.071 kg × 12 (0.852 kg)"
     },
     "cat": {
       "ru": "ДОНАТЫ STOKSON (POLAND)",
-      "en": "ДОНАТЫ STOKSON (POLAND)"
+      "en": "STOKSON DONUTS (POLAND)"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Донат с клубничной начинкой (Love donut) STOKSON» — порционный пончик с начинкой. Подходит для витрин, кофеен и кейтеринга. Минимальное количество по позиции: 12 шт.",
+      "en": "“STOKSON Love strawberry-filled donut” is a portioned filled donut. Suitable for displays, coffee shops and catering. Minimum quantity for this item: 12 pcs."
     },
-    "pricePerKg": 40.0,
-    "packKg": 12.0,
-    "img": "assets/p2.jpg",
+    "pricePerKg": 40,
+    "packKg": 12,
+    "img": "",
     "tag": "выпечка",
     "country": "Европа",
     "visible": true,
@@ -3091,20 +3108,20 @@
     "id": 141,
     "name": {
       "ru": "Калина вес 1*10 кг Россия",
-      "en": "Калина вес 1*10 кг Россия"
+      "en": "Viburnum berries, Russia, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Калина» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Viburnum berries, Russia” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 0.0,
-    "packKg": 10.0,
+    "pricePerKg": 0,
+    "packKg": 10,
     "priceUnit": "кг",
-    "img": "assets/p1.jpg",
+    "img": "",
     "tag": "ягоды",
     "country": "Россия",
     "visible": false,
@@ -3114,20 +3131,20 @@
     "id": 142,
     "name": {
       "ru": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг",
-      "en": "Клюква (садовая) 2 класс вес 1*18,14 кг/10кг"
+      "en": "Cultivated cranberries, grade 2, bulk 18.14 kg / 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Клюква (садовая) 2 класс» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Cultivated cranberries, grade 2” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 0.0,
-    "packKg": 10.0,
+    "pricePerKg": 0,
+    "packKg": 10,
     "priceUnit": "кг",
-    "img": "assets/p1.jpg",
+    "img": "",
     "tag": "ягоды",
     "country": "Европа",
     "visible": false,
@@ -3137,20 +3154,20 @@
     "id": 143,
     "name": {
       "ru": "Малина гриз Республика Беларусь вес 1*10кг",
-      "en": "Малина гриз Республика Беларусь вес 1*10кг"
+      "en": "Broken raspberries, Belarus, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Малина гриз Республика Беларусь» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Broken raspberries, Belarus” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 0.0,
-    "packKg": 10.0,
+    "pricePerKg": 0,
+    "packKg": 10,
     "priceUnit": "кг",
-    "img": "assets/p1.jpg",
+    "img": "",
     "tag": "ягоды",
     "country": "Европа",
     "visible": false,
@@ -3160,20 +3177,20 @@
     "id": 144,
     "name": {
       "ru": "Перец красный кубик КИТАЙ 1*10кг",
-      "en": "Перец красный кубик КИТАЙ 1*10кг"
+      "en": "Diced red pepper, China, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Перец красный кубик КИТАЙ» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Diced red pepper, China” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 0.0,
-    "packKg": 10.0,
+    "pricePerKg": 0,
+    "packKg": 10,
     "priceUnit": "кг",
-    "img": "assets/p2.jpg",
+    "img": "",
     "tag": "овощи",
     "country": "Китай",
     "visible": false,
@@ -3183,20 +3200,20 @@
     "id": 145,
     "name": {
       "ru": "Перец полоски Mix 1*10 РОССИЯ",
-      "en": "Перец полоски Mix 1*10 РОССИЯ"
+      "en": "Mixed pepper strips, Russia, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Перец полоски Mix» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Mixed pepper strips, Russia” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 0.0,
-    "packKg": 10.0,
+    "pricePerKg": 0,
+    "packKg": 10,
     "priceUnit": "кг",
-    "img": "assets/p2.jpg",
+    "img": "",
     "tag": "овощи",
     "country": "Россия",
     "visible": false,
@@ -3206,20 +3223,20 @@
     "id": 146,
     "name": {
       "ru": "Слива половинка  вес 1*14 кг РФ",
-      "en": "Слива половинка  вес 1*14 кг РФ"
+      "en": "Plum halves, Russia, bulk 1 × 14 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Слива половинка» — замороженный фруктовый продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 14 кг.",
+      "en": "“Plum halves, Russia” is a frozen fruit product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 14 kg."
     },
-    "pricePerKg": 0.0,
-    "packKg": 10.0,
+    "pricePerKg": 0,
+    "packKg": 14,
     "priceUnit": "кг",
-    "img": "assets/p5.jpg",
+    "img": "",
     "tag": "фрукты",
     "country": "Европа",
     "visible": false,
@@ -3229,20 +3246,20 @@
     "id": 147,
     "name": {
       "ru": "Томат резанный кубик вес 1*10 Россия",
-      "en": "Томат резанный кубик вес 1*10 Россия"
+      "en": "Diced tomatoes, Russia, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Томат резанный кубик» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Diced tomatoes, Russia” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 0.0,
-    "packKg": 10.0,
+    "pricePerKg": 0,
+    "packKg": 10,
     "priceUnit": "кг",
-    "img": "assets/p2.jpg",
+    "img": "",
     "tag": "овощи",
     "country": "Россия",
     "visible": false,
@@ -3252,20 +3269,20 @@
     "id": 148,
     "name": {
       "ru": "Тыква куб замороженный Россия/ УЗБЕКИСТАН 1*10кг",
-      "en": "Тыква куб замороженный Россия/ УЗБЕКИСТАН 1*10кг"
+      "en": "Frozen diced pumpkin, Russia / Uzbekistan, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Тыква куб замороженный Россия/ УЗБЕКИСТАН» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Frozen diced pumpkin, Russia / Uzbekistan” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 0.0,
-    "packKg": 10.0,
+    "pricePerKg": 0,
+    "packKg": 10,
     "priceUnit": "кг",
-    "img": "assets/p2.jpg",
+    "img": "",
     "tag": "овощи",
     "country": "Россия",
     "visible": false,
@@ -3275,20 +3292,20 @@
     "id": 149,
     "name": {
       "ru": "Фасоль стручковая РОССИЯ 1*10 кг",
-      "en": "Фасоль стручковая РОССИЯ 1*10 кг"
+      "en": "Green beans, Russia, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Фасоль стручковая РОССИЯ» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Green beans, Russia” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 0.0,
-    "packKg": 10.0,
+    "pricePerKg": 0,
+    "packKg": 10,
     "priceUnit": "кг",
-    "img": "assets/p2.jpg",
+    "img": "",
     "tag": "овощи",
     "country": "Россия",
     "visible": false,
@@ -3298,20 +3315,20 @@
     "id": 150,
     "name": {
       "ru": "Цветная капуста вес 1*10 кг Египет",
-      "en": "Цветная капуста вес 1*10 кг Египет"
+      "en": "Cauliflower, Egypt, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Цветная капуста» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Cauliflower, Egypt” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 0.0,
-    "packKg": 10.0,
+    "pricePerKg": 0,
+    "packKg": 10,
     "priceUnit": "кг",
-    "img": "assets/p2.jpg",
+    "img": "",
     "tag": "овощи",
     "country": "Европа",
     "visible": false,
@@ -3321,20 +3338,20 @@
     "id": 151,
     "name": {
       "ru": "Цветная капуста вес 1*10 кг Узбекистан",
-      "en": "Цветная капуста вес 1*10 кг Узбекистан"
+      "en": "Cauliflower, Uzbekistan, bulk 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Цветная капуста» — замороженный овощной продукт. Подходит для гарниров, супов и горячих блюд. Минимальное количество по позиции: 10 кг.",
+      "en": "“Cauliflower, Uzbekistan” is a frozen vegetable product. Suitable for side dishes, soups and hot meals. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 0.0,
-    "packKg": 10.0,
+    "pricePerKg": 0,
+    "packKg": 10,
     "priceUnit": "кг",
-    "img": "assets/p2.jpg",
+    "img": "",
     "tag": "овощи",
     "country": "Европа",
     "visible": false,
@@ -3344,20 +3361,20 @@
     "id": 152,
     "name": {
       "ru": "Черешня 1*10кг /Китай",
-      "en": "Черешня 1*10кг /Китай"
+      "en": "Sweet cherries, China, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Черешня» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Sweet cherries, China” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 0.0,
-    "packKg": 10.0,
+    "pricePerKg": 0,
+    "packKg": 10,
     "priceUnit": "кг",
-    "img": "assets/p1.jpg",
+    "img": "",
     "tag": "ягоды",
     "country": "Китай",
     "visible": false,
@@ -3367,20 +3384,20 @@
     "id": 153,
     "name": {
       "ru": "Черешня 1*10кг /Узбекистан",
-      "en": "Черешня 1*10кг /Узбекистан"
+      "en": "Sweet cherries, Uzbekistan, 1 × 10 kg"
     },
     "cat": {
       "ru": "Весовые овощи,ягоды,фрукты",
-      "en": "Весовые овощи,ягоды,фрукты"
+      "en": "Bulk Frozen Vegetables, Berries and Fruit"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Черешня» — замороженный ягодный продукт. Подходит для напитков, десертов, выпечки и соусов. Минимальное количество по позиции: 10 кг.",
+      "en": "“Sweet cherries, Uzbekistan” is a frozen berry product. Suitable for drinks, desserts, baking and sauces. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 0.0,
-    "packKg": 10.0,
+    "pricePerKg": 0,
+    "packKg": 10,
     "priceUnit": "кг",
-    "img": "assets/p1.jpg",
+    "img": "",
     "tag": "ягоды",
     "country": "Европа",
     "visible": false,
@@ -3390,20 +3407,20 @@
     "id": 154,
     "name": {
       "ru": "Картофельные дольки с ароматной паприкой (спайси) 2,5 кг*4",
-      "en": "Картофельные дольки с ароматной паприкой (спайси) 2,5 кг*4"
+      "en": "NIKA spicy potato wedges with aromatic paprika, 2.5 kg × 4"
     },
     "cat": {
       "ru": "НИКА (РОССИЯ) ЦЕНЫ ЗА КГ",
-      "en": "НИКА (РОССИЯ) ЦЕНЫ ЗА КГ"
+      "en": "NIKA (RUSSIA) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Картофельные дольки с ароматной паприкой (спайси)» — замороженные картофельные дольки. Подходят для гарниров, закусок и доставки. Минимальное количество по позиции: 10 кг.",
+      "en": "“NIKA spicy potato wedges with aromatic paprika” is frozen potato wedges. Suitable for side dishes, appetizers and delivery. Minimum quantity for this item: 10 kg."
     },
-    "pricePerKg": 0.0,
-    "packKg": 10.0,
+    "pricePerKg": 0,
+    "packKg": 10,
     "priceUnit": "кг",
-    "img": "assets/products/fries-10mm.webp",
+    "img": "assets/products/potato-wedges.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": false,
@@ -3413,20 +3430,20 @@
     "id": 155,
     "name": {
       "ru": "Картофельные дольки Деревенские 2,5 кг*5",
-      "en": "Картофельные дольки Деревенские 2,5 кг*5"
+      "en": "NIKA country-style potato wedges, 2.5 kg × 5"
     },
     "cat": {
       "ru": "НИКА (РОССИЯ) ЦЕНЫ ЗА КГ",
-      "en": "НИКА (РОССИЯ) ЦЕНЫ ЗА КГ"
+      "en": "NIKA (RUSSIA) · PRICES PER KG"
     },
     "desc": {
-      "ru": "",
-      "en": ""
+      "ru": "«Картофельные дольки Деревенские» — замороженные картофельные дольки. Подходят для гарниров, закусок и доставки. Минимальное количество по позиции: 12,5 кг.",
+      "en": "“NIKA country-style potato wedges” is frozen potato wedges. Suitable for side dishes, appetizers and delivery. Minimum quantity for this item: 12.5 kg."
     },
-    "pricePerKg": 0.0,
-    "packKg": 10.0,
+    "pricePerKg": 0,
+    "packKg": 12.5,
     "priceUnit": "кг",
-    "img": "assets/products/fries-10mm.webp",
+    "img": "assets/products/potato-wedges.webp",
     "tag": "картофель",
     "country": "Европа",
     "visible": false,

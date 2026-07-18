@@ -16,6 +16,11 @@ import run  # noqa: E402
 
 
 class CatalogValidationTests(unittest.TestCase):
+    def test_import_classifies_berries_and_uses_an_explicit_no_photo_state(self):
+        self.assertEqual(run.infer_tag("Крыжовник замороженный", "Весовые продукты"), "ягоды")
+        self.assertEqual(run.infer_tag("Черноплодная рябина", "Весовые продукты"), "ягоды")
+        self.assertEqual(run.placeholder_for("овощи"), "")
+
     def test_order_uses_catalog_price_and_minimum_amount(self):
         product = next(item for item in run.load_products() if item.get("visible", True))
         amount = float(product.get("packKg") or 10)
