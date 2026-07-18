@@ -4,6 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
+from unittest.mock import AsyncMock, patch
 
 from aiohttp.test_utils import TestClient, TestServer
 
@@ -82,6 +83,30 @@ class CatalogValidationTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 run.clean_image_path(value)
 
+    def test_local_name_translation_keeps_pack_and_product_code(self):
+        translation, source = run.translate_product_name(
+            "Картофельные дольки со специями TEST 2,5кг*4шт F123456"
+        )
+        self.assertEqual(source, "local")
+        self.assertIn("seasoned potato wedges", translation)
+        self.assertIn("2.5 kg × 4 pcs", translation)
+        self.assertIn("F123456", translation)
+
+    def test_translation_corrects_typo_instead_of_transliterating(self):
+        translation, source = run.translate_product_name("мащина")
+        self.assertEqual(source, "local")
+        self.assertEqual(translation, "car")
+        with self.assertRaisesRegex(ValueError, "Не удалось перевести"):
+            run.translate_product_name("совершеннонеизвестноеслово")
+
+    def test_cloud_translation_restores_exact_product_codes(self):
+        translated = run.preserve_product_codes(
+            "Новый товар FR000037 и партия 005.100",
+            "New product fr000037 and batch",
+        )
+        self.assertIn("FR000037", translated)
+        self.assertIn("005.100", translated)
+
 
 class WebSecurityTests(unittest.IsolatedAsyncioTestCase):
     async def asyncSetUp(self):
@@ -100,11 +125,13 @@ class WebSecurityTests(unittest.IsolatedAsyncioTestCase):
         for path in ("style.css", "admin.js"):
             response = await self.client.get(f"/admin-static/{path}")
             self.assertEqual(response.status, 200)
+            self.assertEqual(response.headers.get("Cache-Control"), "no-store")
 
     async def test_cors_only_allows_configured_storefront(self):
-        allowed = await self.client.options("/order", headers={"Origin": "https://example.com"})
+        allowed_origin = next(iter(run.ALLOWED_ORIGINS))
+        allowed = await self.client.options("/order", headers={"Origin": allowed_origin})
         self.assertEqual(allowed.status, 204)
-        self.assertEqual(allowed.headers.get("Access-Control-Allow-Origin"), "https://example.com")
+        self.assertEqual(allowed.headers.get("Access-Control-Allow-Origin"), allowed_origin)
         blocked = await self.client.options("/order", headers={"Origin": "https://attacker.example"})
         self.assertEqual(blocked.status, 204)
         self.assertNotIn("Access-Control-Allow-Origin", blocked.headers)
@@ -140,6 +167,55 @@ class WebSecurityTests(unittest.IsolatedAsyncioTestCase):
             json={"status": "unknown"},
         )
         self.assertEqual(response.status, 400)
+
+    async def test_admin_translates_product_name(self):
+        response = await self.client.post(
+            "/api/admin/translate-name",
+            headers={"X-Admin-Password": "test-only-admin-password"},
+            json={"text": "Картофель фри Global Fries 10 mm 10 кг (2,5кг*4шт) FR000037"},
+        )
+        self.assertEqual(response.status, 200)
+        payload = await response.json()
+        self.assertEqual(payload["source"], "catalog")
+        self.assertIn("FR000037", payload["translation"])
+
+    async def test_unknown_name_is_translated_by_yandex_and_cached(self):
+        original_cache_file = run.TRANSLATION_CACHE_FILE
+        try:
+            with tempfile.TemporaryDirectory() as directory:
+                run.TRANSLATION_CACHE_FILE = Path(directory) / "translations.json"
+                provider = AsyncMock(return_value="Red delivery car fr123456")
+                with patch.object(run, "request_yandex_translation", provider):
+                    first, first_source = await run.translate_product_name_with_provider(
+                        "Красная машина для доставки FR123456"
+                    )
+                    second, second_source = await run.translate_product_name_with_provider(
+                        "Красная машина для доставки FR123456"
+                    )
+                self.assertEqual(first_source, "yandex")
+                self.assertEqual(second_source, "cache")
+                self.assertIn("FR123456", first)
+                self.assertEqual(first, second)
+                provider.assert_awaited_once()
+        finally:
+            run.TRANSLATION_CACHE_FILE = original_cache_file
+
+    async def test_unknown_name_reports_missing_yandex_configuration(self):
+        original_cache_file = run.TRANSLATION_CACHE_FILE
+        try:
+            with tempfile.TemporaryDirectory() as directory:
+                run.TRANSLATION_CACHE_FILE = Path(directory) / "translations.json"
+                with patch.object(run, "YANDEX_TRANSLATE_API_KEY", ""):
+                    response = await self.client.post(
+                        "/api/admin/translate-name",
+                        headers={"X-Admin-Password": "test-only-admin-password"},
+                        json={"text": "совершеннонеизвестноеслово"},
+                    )
+                self.assertEqual(response.status, 503)
+                payload = await response.json()
+                self.assertIn("YANDEX_TRANSLATE_API_KEY", payload["error"])
+        finally:
+            run.TRANSLATION_CACHE_FILE = original_cache_file
 
 
 if __name__ == "__main__":

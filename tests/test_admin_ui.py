@@ -47,7 +47,8 @@ class AdminUiTests(unittest.TestCase):
             "notificationsView", "offersView",
             "createModal", "newNameRu", "newNameEn", "newCatRu", "newPrice",
             "newPriceUnit", "newPack", "newImg", "newDescRu", "newVisible",
-            "imageUpload", "uploadStatus", "createBtn",
+            "imageUpload", "uploadStatus", "createBtn", "translateNameBtn",
+            "translationHint",
         }
         self.assertFalse(required_ids - self.parser.ids)
 
@@ -92,6 +93,17 @@ class AdminUiTests(unittest.TestCase):
         self.assertIn("section!=='catalog'", self.js)
         self.assertIn("ADMIN_SECTION", self.js)
         self.assertIn("reloadCurrentSection", self.js)
+
+    def test_product_name_auto_translation_remains_editable(self):
+        self.assertIn("scheduleNameTranslation", self.js)
+        self.assertIn("translateRussianName", self.js)
+        self.assertIn("englishNameManuallyEdited", self.js)
+        self.assertIn("/api/admin/translate-name", self.js)
+        self.assertIn("setTimeout(()=>translateRussianName(),320)", self.js)
+        self.assertIn('class="ghost inline-action"', self.html)
+        self.assertIn("style.css?v=20260718-5", self.html)
+        self.assertIn("admin.js?v=20260718-5", self.html)
+        self.assertIn("background: linear-gradient(135deg,#43c4f2", self.css)
 
 
 if __name__ == "__main__":

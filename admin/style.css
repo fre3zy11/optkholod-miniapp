@@ -543,7 +543,7 @@ select { appearance: auto; }
   transition: color .28s var(--ease), border-color .28s var(--ease), box-shadow .28s var(--ease), background .28s var(--ease);
 }
 .actions button .ui-icon { width: 17px; height: 17px; }
-.actions .save { width: auto; min-width: 94px; padding: 0 12px; display: inline-flex; gap: 7px; color: #087db4; font-size: 9px; font-weight: 900; white-space: nowrap; }
+.actions .save { width: auto; min-width: 98px; padding: 0 13px; display: inline-flex; gap: 7px; border-color: rgba(127,232,255,.76); background: linear-gradient(135deg,#43c4f2,#159de2 72%,#31d1e9); color: #fff; box-shadow: inset 0 1px rgba(255,255,255,.5),0 9px 20px rgba(16,153,216,.2),0 0 18px rgba(75,207,246,.12); font-size: 9px; font-weight: 900; white-space: nowrap; }
 .actions .save:disabled { cursor: wait; opacity: 1; }
 .actions .save.is-loading { color: #3585aa; background: rgba(231,247,253,.86); }
 .actions .save.is-saved { border-color: rgba(40,184,148,.26); background: rgba(228,251,244,.84); color: #168c70; }
@@ -678,6 +678,11 @@ select { appearance: auto; }
 .form-grid { margin: 26px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .form-grid label { display: grid; gap: 8px; color: #335f7a; font-size: 10px; font-weight: 850; }
 .form-grid .field-group { display: grid; gap: 8px; color: #335f7a; font-size: 10px; font-weight: 850; }
+.field-label-row { min-height: 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.field-label-row label { display: block; color: #335f7a; font-size: 10px; font-weight: 850; }
+.inline-action { min-height: 38px; padding: 0 13px; border-radius: 12px; font-size: 9px; white-space: nowrap; }
+.inline-action .ui-icon { width: 15px; height: 15px; }
+.inline-action:disabled { cursor: wait; opacity: .68; }
 .form-grid .wide { grid-column: 1 / -1; }
 .form-grid textarea { min-height: 100px; resize: vertical; }
 .modal-card footer { justify-content: flex-end; }

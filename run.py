@@ -15,7 +15,7 @@ from typing import Any
 from urllib.parse import urlsplit
 
 from dotenv import load_dotenv
-from aiohttp import web
+from aiohttp import ClientError, ClientSession, ClientTimeout, web
 from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command, CommandStart
 from aiogram.types import (
@@ -47,6 +47,7 @@ HISTORY_FILE = DATA_DIR / "price_history.json"
 SETTINGS_FILE = DATA_DIR / "settings.json"
 SUBSCRIBERS_FILE = DATA_DIR / "subscribers.json"
 ORDERS_FILE = DATA_DIR / "orders.json"
+TRANSLATION_CACHE_FILE = DATA_DIR / "translation_cache.json"
 UPLOAD_DIR = configured_path("UPLOAD_DIR", WEB_DIR / "assets" / "products" / "uploads")
 
 if PRODUCTS_FILE != BUNDLED_PRODUCTS_FILE and not PRODUCTS_FILE.exists():
@@ -57,6 +58,9 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 WEBAPP_URL = os.getenv("WEBAPP_URL")
 ORDER_CHAT_ID = os.getenv("ORDER_CHAT_ID") or os.getenv("ADMIN_CHAT_ID")
 ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD") or ""
+YANDEX_TRANSLATE_API_KEY = os.getenv("YANDEX_TRANSLATE_API_KEY", "").strip()
+YANDEX_TRANSLATE_FOLDER_ID = os.getenv("YANDEX_TRANSLATE_FOLDER_ID", "").strip()
+YANDEX_TRANSLATE_URL = "https://translate.api.cloud.yandex.net/translate/v2/translate"
 PORT = int(os.getenv("PORT", "8000"))
 WEBAPP_PARTS = urlsplit(WEBAPP_URL or "")
 WEBAPP_ORIGIN = f"{WEBAPP_PARTS.scheme}://{WEBAPP_PARTS.netloc}" if WEBAPP_PARTS.scheme and WEBAPP_PARTS.netloc else ""
@@ -77,6 +81,14 @@ bot = Bot(BOT_TOKEN)
 dp = Dispatcher()
 DATA_LOCK = threading.RLock()
 ORDER_ATTEMPTS: dict[int, list[float]] = {}
+
+
+class TranslationConfigurationError(RuntimeError):
+    """Raised when cloud translation is requested without server credentials."""
+
+
+class TranslationProviderError(RuntimeError):
+    """Raised when Yandex Translate is unavailable or returns an invalid response."""
 
 
 def rub(value: Any) -> str:
@@ -232,8 +244,10 @@ def _import_price_xls(path: Path) -> dict[str, Any]:
             existing = by_name.get(normalized_product_name(name))
             if existing:
                 old_price = float(existing.get("pricePerKg") or 0)
+                english_name, _ = translate_product_name(name)
                 existing.update({"pricePerKg":price_value, "packKg":float(pack or existing.get("packKg") or 10), "priceUnit":price_unit, "country":infer_country(name), "tag":tag, "visible":has_price})
                 existing.setdefault("name", {})["ru"] = name
+                existing.setdefault("name", {})["en"] = english_name
                 existing.setdefault("cat", {})["ru"] = section
                 if old_price != price_value:
                     history.insert(0, {
@@ -243,7 +257,8 @@ def _import_price_xls(path: Path) -> dict[str, Any]:
                     })
                 updated += 1
             else:
-                product = {"id":next_id,"name":{"ru":name,"en":name},"cat":{"ru":section,"en":section},"desc":{"ru":"","en":""},"pricePerKg":price_value,"packKg":float(pack or 10),"priceUnit":price_unit,"img":placeholder_for(tag),"tag":tag,"country":infer_country(name),"visible":has_price,"sortOrder":len(products)}
+                english_name, _ = translate_product_name(name)
+                product = {"id":next_id,"name":{"ru":name,"en":english_name},"cat":{"ru":section,"en":section},"desc":{"ru":"","en":""},"pricePerKg":price_value,"packKg":float(pack or 10),"priceUnit":price_unit,"img":placeholder_for(tag),"tag":tag,"country":infer_country(name),"visible":has_price,"sortOrder":len(products)}
                 products.append(product); by_name[normalized_product_name(name)] = product; next_id += 1; added += 1
     for index, product in enumerate(products):
         product.setdefault("country", infer_country(product_name(product)))
@@ -282,6 +297,245 @@ def clean_text(value: Any, field: str, maximum: int) -> str:
     if len(text) > maximum:
         raise ValueError(f"Поле {field} слишком длинное")
     return text
+
+
+PRODUCT_NAME_TRANSLATIONS = (
+    ("картофельные дольки с ароматной паприкой", "potato wedges with aromatic paprika"),
+    ("картофельные дольки со специями", "seasoned potato wedges"),
+    ("картофельные дольки без специй", "unseasoned potato wedges"),
+    ("треугольные картофельные котлетки", "triangular hash browns"),
+    ("треугольные картофельные котлеты", "triangular hash browns"),
+    ("овальные картофельные котлетки", "oval hash browns"),
+    ("картофельные хэшбрауны треугольные", "triangular hash browns"),
+    ("картофельные шарики", "potato balls"),
+    ("картофельное пюре", "mashed potato"),
+    ("картофельные оладьи", "potato pancakes"),
+    ("сладкий картофель фри", "sweet potato fries"),
+    ("картофель сладкий фри", "sweet potato fries"),
+    ("картофель фри", "French fries"),
+    ("луковые кольца", "onion rings"),
+    ("автомобиль", "car"),
+    ("машина", "car"),
+    ("цветная капуста", "cauliflower"),
+    ("брюссельская капуста", "Brussels sprouts"),
+    ("черная смородина", "blackcurrants"),
+    ("красная смородина", "redcurrants"),
+    ("стручковая фасоль", "green beans"),
+    ("фасоль стручковая", "green beans"),
+    ("зеленый горошек", "green peas"),
+    ("компотная смесь", "compote mix"),
+    ("грибная смесь", "mushroom mix"),
+    ("быстрозамороженный", "quick-frozen"),
+    ("быстрозамороженные", "quick-frozen"),
+    ("свежезамороженная", "frozen"),
+    ("замороженный", "frozen"),
+    ("замороженная", "frozen"),
+    ("замороженные", "frozen"),
+    ("без косточки", "pitted"),
+    ("с косточкой", "with pits"),
+    ("со специями", "seasoned"),
+    ("без специй", "unseasoned"),
+    ("в панировке", "coated"),
+    ("в кожуре", "skin-on"),
+    ("волнистая", "crinkle-cut"),
+    ("соломка", "straight-cut"),
+    ("дольки", "wedges"),
+    ("шарики", "balls"),
+    ("полоски", "strips"),
+    ("полоска", "strips"),
+    ("резанный кубик", "diced"),
+    ("кубик", "diced"),
+    ("слайсы", "slices"),
+    ("целая", "whole"),
+    ("целые", "whole"),
+    ("дикорос", "wild"),
+    ("весовая", "bulk"),
+    ("весовой", "bulk"),
+    ("китай", "China"),
+    ("россия", "Russia"),
+    ("узбекистан", "Uzbekistan"),
+    ("беларусь", "Belarus"),
+    ("киргизия", "Kyrgyzstan"),
+    ("сербия", "Serbia"),
+    ("египет", "Egypt"),
+    ("бельгия", "Belgium"),
+    ("франция", "France"),
+    ("байсад", "BAYSAD"),
+    ("черемушки", "CHERYOMUSHKI"),
+    ("батат", "sweet potato"),
+    ("ананас", "pineapple"),
+    ("брокколи", "broccoli"),
+    ("брусника", "lingonberries"),
+    ("вишня", "cherries"),
+    ("ежевика", "blackberries"),
+    ("клубника", "strawberries"),
+    ("клюква", "cranberries"),
+    ("крыжовник", "gooseberries"),
+    ("кукуруза", "sweetcorn"),
+    ("малина", "raspberries"),
+    ("манго", "mango"),
+    ("морковь", "carrots"),
+    ("облепиха", "sea buckthorn"),
+    ("перец", "pepper"),
+    ("слива", "plum"),
+    ("шпинат", "spinach"),
+    ("яблоко", "apple"),
+    ("тс", "TC"),
+)
+
+PRODUCT_NAME_TYPO_CORRECTIONS = (
+    ("мащина", "машина"),
+    ("картофиль", "картофель"),
+    ("замароженный", "замороженный"),
+    ("замароженная", "замороженная"),
+)
+
+
+def translate_product_name(value: Any) -> tuple[str, str]:
+    text = re.sub(r"\s+", " ", clean_text(value, "nameRu", 300)).strip()
+    if not text:
+        return "", "local"
+    normalized = text.casefold()
+    for product in load_products():
+        russian = re.sub(r"\s+", " ", str(product.get("name", {}).get("ru") or "")).strip()
+        english = str(product.get("name", {}).get("en") or "").strip()
+        if russian.casefold() == normalized and english:
+            return english, "catalog"
+
+    translated = re.sub(r"(?<=\d),(?=\d)", ".", text).replace("`S", "'S").replace("`s", "'s")
+    for typo, corrected in PRODUCT_NAME_TYPO_CORRECTIONS:
+        translated = re.sub(rf"\b{re.escape(typo)}\b", corrected, translated, flags=re.IGNORECASE)
+    for russian, english in PRODUCT_NAME_TRANSLATIONS:
+        translated = re.sub(re.escape(russian), english, translated, flags=re.IGNORECASE)
+    translated = re.sub(r"(?i)(\d(?:[\d.,]*))\s*кг", r"\1 kg", translated)
+    translated = re.sub(r"(?i)(\d(?:[\d.,]*))\s*мм", r"\1 mm", translated)
+    translated = re.sub(r"(?i)(\d(?:[\d.,]*))\s*шт", r"\1 pcs", translated)
+    translated = re.sub(r"(?i)(\d+)\s*кор\b", r"\1 case", translated)
+    translated = re.sub(r"(?i)\bkg\s*[хx*]\s*(?=\d)", "kg × ", translated)
+    translated = re.sub(r"(?<=\d)\s*[хx*]\s*(?=\d)", " × ", translated, flags=re.IGNORECASE)
+    translated = re.sub(r"(?i)\bвес\b", "bulk", translated)
+    translated = re.sub(r"(?i)\bс/[мз]\b", "frozen", translated)
+    translated = re.sub(r"\s+", " ", translated).strip(" ,")
+    untranslated = sorted(set(re.findall(r"[А-Яа-яЁё]+", translated)), key=str.casefold)
+    if untranslated:
+        words = ", ".join(untranslated[:5])
+        raise ValueError(f"Не удалось перевести слова: {words}. Измените английское название вручную")
+    return translated[:300], "local"
+
+
+PRODUCT_CODE_PATTERN = re.compile(
+    r"(?<![A-Za-zА-Яа-яЁё0-9])(?:[A-Za-z]{1,12}[-._/]?\d{4,}|\d{3}[.-]\d{3,})(?![A-Za-zА-Яа-яЁё0-9])",
+    flags=re.IGNORECASE,
+)
+
+
+def normalize_english_product_name(value: Any) -> str:
+    """Normalize units and packaging without rewriting brands or product codes."""
+    text = re.sub(r"\s+", " ", str(value or "")).strip()
+    text = re.sub(r"(?<=\d),(?=\d)", ".", text)
+    text = re.sub(r"(?i)(\d(?:[\d.,]*))\s*(?:kilograms?|kgs?|кг)\b", r"\1 kg", text)
+    text = re.sub(r"(?i)(\d(?:[\d.,]*))\s*(?:millimeters?|mm|мм)\b", r"\1 mm", text)
+    text = re.sub(r"(?i)(\d(?:[\d.,]*))\s*(?:pieces?|pcs?|шт)\b", r"\1 pcs", text)
+    text = re.sub(r"(?i)\bkg\s*[хx×*]\s*(?=\d)", "kg × ", text)
+    text = re.sub(r"(?<=\d)\s*[хx×*]\s*(?=\d)", " × ", text)
+    return re.sub(r"\s+", " ", text).strip(" ,")[:300]
+
+
+def preserve_product_codes(source: str, translation: str) -> str:
+    """Restore exact source spelling for identifiers such as FR000037."""
+    result = translation
+    for code in dict.fromkeys(PRODUCT_CODE_PATTERN.findall(source)):
+        match = re.search(re.escape(code), result, flags=re.IGNORECASE)
+        if match:
+            result = result[:match.start()] + code + result[match.end():]
+        else:
+            result = f"{result.rstrip()} {code}"
+    return normalize_english_product_name(result)
+
+
+def cached_product_translation(text: str) -> str:
+    cache = load_json(TRANSLATION_CACHE_FILE, {})
+    if not isinstance(cache, dict):
+        return ""
+    return str(cache.get(text.casefold()) or "").strip()
+
+
+def cache_product_translation(text: str, translation: str) -> None:
+    with DATA_LOCK:
+        cache = load_json(TRANSLATION_CACHE_FILE, {})
+        if not isinstance(cache, dict):
+            cache = {}
+        cache[text.casefold()] = translation
+        # Avoid unbounded runtime data if the catalogue is edited frequently.
+        if len(cache) > 2000:
+            cache = dict(list(cache.items())[-2000:])
+        save_json(TRANSLATION_CACHE_FILE, cache)
+
+
+async def request_yandex_translation(text: str) -> str:
+    if not YANDEX_TRANSLATE_API_KEY:
+        raise TranslationConfigurationError(
+            "Yandex Cloud Translate не настроен: добавьте YANDEX_TRANSLATE_API_KEY в .env и перезапустите сервер"
+        )
+
+    payload: dict[str, Any] = {
+        "sourceLanguageCode": "ru",
+        "targetLanguageCode": "en",
+        "format": "PLAIN_TEXT",
+        "texts": [text],
+        "speller": True,
+    }
+    if YANDEX_TRANSLATE_FOLDER_ID:
+        payload["folderId"] = YANDEX_TRANSLATE_FOLDER_ID
+    headers = {
+        "Authorization": f"Api-Key {YANDEX_TRANSLATE_API_KEY}",
+        "Content-Type": "application/json",
+    }
+    try:
+        timeout = ClientTimeout(total=10, connect=4)
+        async with ClientSession(timeout=timeout) as session:
+            async with session.post(YANDEX_TRANSLATE_URL, json=payload, headers=headers) as response:
+                if response.status != 200:
+                    raise TranslationProviderError(
+                        f"Yandex Translate вернул ошибку HTTP {response.status}. Проверьте API-ключ и права ai.translate.user"
+                    )
+                data = await response.json(content_type=None)
+    except TranslationProviderError:
+        raise
+    except (ClientError, asyncio.TimeoutError, ValueError, TypeError) as error:
+        raise TranslationProviderError(
+            "Yandex Translate временно недоступен. Попробуйте ещё раз"
+        ) from error
+
+    translations = data.get("translations") if isinstance(data, dict) else None
+    translated = translations[0].get("text") if translations and isinstance(translations[0], dict) else ""
+    if not isinstance(translated, str) or not translated.strip():
+        raise TranslationProviderError("Yandex Translate вернул пустой перевод")
+    return translated.strip()
+
+
+async def translate_product_name_with_provider(value: Any) -> tuple[str, str]:
+    text = re.sub(r"\s+", " ", clean_text(value, "nameRu", 300)).strip()
+    if not text:
+        return "", "local"
+
+    # Existing catalogue translations and the domain dictionary are faster,
+    # free, and preserve the exact price-list wording.
+    try:
+        return translate_product_name(text)
+    except ValueError:
+        pass
+
+    cached = cached_product_translation(text)
+    if cached:
+        return preserve_product_codes(text, cached), "cache"
+
+    translated = await request_yandex_translation(text)
+    translated = preserve_product_codes(text, translated)
+    if re.search(r"[А-Яа-яЁё]", translated):
+        raise TranslationProviderError("Yandex Translate не смог полностью перевести название")
+    cache_product_translation(text, translated)
+    return translated, "yandex"
 
 
 def clean_image_path(value: Any) -> str:
@@ -620,7 +874,7 @@ async def response_headers(request: web.Request, handler):
     response.headers.setdefault("X-Content-Type-Options", "nosniff")
     response.headers.setdefault("Referrer-Policy", "no-referrer")
     response.headers.setdefault("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
-    if request.path.startswith("/api/") or request.path in {"/", "/admin", "/admin/", "/products.json"}:
+    if request.path.startswith(("/api/", "/admin-static/")) or request.path in {"/", "/admin", "/admin/", "/products.json"}:
         response.headers["Cache-Control"] = "no-store"
     origin = request.headers.get("Origin", "").rstrip("/")
     if origin and origin in ALLOWED_ORIGINS:
@@ -694,6 +948,19 @@ async def order(request: web.Request):
 async def api_products(request: web.Request):
     check_admin(request)
     return web.json_response({"ok": True, "products": load_products()})
+
+
+async def api_translate_product_name(request: web.Request):
+    check_admin(request)
+    try:
+        translation, source = await translate_product_name_with_provider((await request.json()).get("text"))
+    except (AttributeError, ValueError) as error:
+        return web.json_response({"ok": False, "error": str(error)}, status=400)
+    except TranslationConfigurationError as error:
+        return web.json_response({"ok": False, "error": str(error)}, status=503)
+    except TranslationProviderError as error:
+        return web.json_response({"ok": False, "error": str(error)}, status=502)
+    return web.json_response({"ok": True, "translation": translation, "source": source})
 
 
 async def api_update_price(request: web.Request):
@@ -956,6 +1223,7 @@ def create_web_app() -> web.Application:
     app.router.add_post("/order", order)
 
     app.router.add_get("/api/admin/products", api_products)
+    app.router.add_post("/api/admin/translate-name", api_translate_product_name)
     app.router.add_post("/api/admin/products", api_create_product)
     app.router.add_post("/api/admin/products/{product_id}/price", api_update_price)
     app.router.add_post("/api/admin/products/reorder", api_reorder_products)

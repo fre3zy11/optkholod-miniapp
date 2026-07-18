@@ -3,7 +3,7 @@
     "id": 1,
     "name": {
       "ru": "Картофель фри Global Fries 10 mm 10 кг (2,5кг*4шт) FR000037",
-      "en": "Global Fries French Fries 10 mm, 10 kg"
+      "en": "Global Fries French Fries 10 mm, 10 kg (2.5 kg × 4 pcs), FR000037"
     },
     "cat": {
       "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
@@ -26,7 +26,7 @@
     "id": 2,
     "name": {
       "ru": "Картофельные дольки  BART`S GOURMET (2,5кг*4шт) F000782",
-      "en": "BART'S GOURMET Potato Wedges"
+      "en": "BART'S GOURMET Potato Wedges (2.5 kg × 4 pcs), F000782"
     },
     "cat": {
       "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
@@ -49,7 +49,7 @@
     "id": 3,
     "name": {
       "ru": "Картофельные дольки со специями BART`S GOURMET (2,5кг*4шт) F000783",
-      "en": "BART'S GOURMET Spiced Potato Wedges"
+      "en": "BART'S GOURMET Spiced Potato Wedges (2.5 kg × 4 pcs), F000783"
     },
     "cat": {
       "ru": "GLOBAL FRIES/POMUNI(БЕЛЬГИЯ,ФРАНЦИЯ) ЦЕНЫ ЗА КГ",
@@ -486,7 +486,7 @@
     "id": 22,
     "name": {
       "ru": "Луковые кольца FARM FRITES 6 кг (1кг*6шт)549.004",
-      "en": "Farm Frites Onion Rings, 6 kg"
+      "en": "Farm Frites Onion Rings, 6 kg (1 kg × 6 pcs), 549.004"
     },
     "cat": {
       "ru": "FARM FRITES(Бельгия, Нидерланды, Польша) ЦЕНЫ ЗА КГ",

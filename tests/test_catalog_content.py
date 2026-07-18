@@ -62,6 +62,14 @@ class CatalogContentTests(unittest.TestCase):
         self.assertIn("non-yeasted", self.by_id[126]["name"]["en"])
         self.assertIn("yeasted", self.by_id[127]["name"]["en"])
 
+    def test_english_names_keep_price_list_codes(self):
+        code_pattern = re.compile(r"\b[A-Z]{1,5}\d{3,}\b|\b\d{3}\.\d{3}\b")
+        for product in self.products:
+            codes = code_pattern.findall(product["name"]["ru"])
+            with self.subTest(product_id=product["id"], codes=codes):
+                for code in codes:
+                    self.assertIn(code, product["name"]["en"])
+
     def test_every_assigned_image_is_local_and_exists(self):
         for product in self.products:
             image = str(product.get("img") or "").strip()
