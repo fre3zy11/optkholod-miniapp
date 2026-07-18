@@ -3,35 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#06111d" />
+  <meta name="theme-color" content="#e8f8ff" />
   <title>ОптХолод — управление каталогом</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/admin-static/style.css" />
 </head>
 <body>
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 8h12l1 13H5L6 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="m4 7 8-4 8 4-8 4-8-4Z"/><path d="m4 7v10l8 4 8-4V7M12 11v10"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M4.2 6.5l15.6 11M4.2 17.5l15.6-11M8.5 4.5 12 7l3.5-2.5M8.5 19.5 12 17l3.5 2.5M3.8 10.3 8 10l.8-4M20.2 13.7 16 14l-.8 4M3.8 13.7 8 14l.8 4M20.2 10.3 16 10l-.8-4"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6.1 8A7 7 0 0 1 18.8 6L20 8M4 16l1.2 2A7 7 0 0 0 17.9 16"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3M7 8l5-5 5 5M4 14v6h16v-6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 15v2"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="2.5"/></symbol>
+    <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="m3 3 18 18M10.6 6.2A11 11 0 0 1 12 6c6.5 0 10 6 10 6a16 16 0 0 1-2.2 2.8M6.6 6.6C3.6 8.3 2 12 2 12s3.5 6 10 6a10 10 0 0 0 4-.8M9.8 9.8a3 3 0 0 0 4.4 4.4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-package" viewBox="0 0 24 24"><path d="M5 7h14v13H5zM8 7V4h8v3M9 11h6"/></symbol>
+    <symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="6" ry="3"/><path d="M3 7v5c0 1.7 2.7 3 6 3s6-1.3 6-3V7M3 12v5c0 1.7 2.7 3 6 3 1.3 0 2.5-.2 3.5-.6"/><path d="M14 12c.9-.6 2.2-1 3.5-1 2.5 0 4.5 1.3 4.5 3s-2 3-4.5 3c-1.3 0-2.6-.4-3.5-1"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M20 13 12 21 3 12V3h9l8 8a1.4 1.4 0 0 1 0 2Z"/><circle cx="8" cy="8" r="1.5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 10v10h16V10M3 10l2-6h14l2 6"/><path d="M3 10c0 2 3 2 3 0 0 2 3 2 3 0 0 2 3 2 3 0 0 2 3 2 3 0 0 2 3 2 3 0M9 20v-5h6v5"/></symbol>
+    <symbol id="i-log-out" viewBox="0 0 24 24"><path d="M10 4H4v16h6M14 8l4 4-4 4M8 12h10"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m3 11 18-8-8 18-2-7-8-3Z"/><path d="m11 14 4-4"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="m4 17 5-4 4 3 3-2 4 3"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4l11-11-4-4L4 16v4ZM13.5 6.5l4 4"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M7 7l1 13h8l1-13M10 11v5M14 11v5"/></symbol>
+    <symbol id="i-grip" viewBox="0 0 24 24"><circle cx="8" cy="6" r="1"/><circle cx="16" cy="6" r="1"/><circle cx="8" cy="12" r="1"/><circle cx="16" cy="12" r="1"/><circle cx="8" cy="18" r="1"/><circle cx="16" cy="18" r="1"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="m7 14 5-5 5 5"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+  </svg>
   <div class="shell">
     <aside class="sidebar">
       <a class="brand" href="/admin" aria-label="ОптХолод">
-        <span class="brand-mark">ОХ</span>
+        <span class="brand-mark"><img src="/assets/optkholod_logo_mobile.png" alt="" width="64" height="64"></span>
         <span><b>ОптХолод</b><small>панель управления</small></span>
       </a>
 
       <nav class="nav" aria-label="Навигация">
-        <button class="nav-item active" type="button" data-section="catalog"><span>▦</span> Каталог</button>
-        <button class="nav-item" type="button" disabled><span>◎</span> Заказы <i>скоро</i></button>
-        <button class="nav-item" type="button" disabled><span>▤</span> Остатки <i>скоро</i></button>
-        <button class="nav-item" type="button" data-section="categories"><span>◇</span> Категории</button>
-        <button class="nav-item" type="button" data-section="history"><span>↶</span> История цен</button>
-        <button class="nav-item" type="button" data-section="notifications"><span>◉</span> Уведомления</button>
-        <button class="nav-item" type="button" data-section="offers"><span>❄</span> Холодные предложения</button>
-        <button class="nav-item" type="button" disabled><span>◫</span> Аналитика <i>скоро</i></button>
+        <button class="nav-item active" type="button" data-section="catalog"><svg class="ui-icon"><use href="#i-grid"/></svg><span>Каталог</span></button>
+        <button class="nav-item" type="button" disabled><svg class="ui-icon"><use href="#i-bag"/></svg><span>Заказы</span><i>скоро</i></button>
+        <button class="nav-item" type="button" disabled><svg class="ui-icon"><use href="#i-box"/></svg><span>Остатки</span><i>скоро</i></button>
+        <button class="nav-item" type="button" data-section="categories"><svg class="ui-icon"><use href="#i-layers"/></svg><span>Категории</span></button>
+        <button class="nav-item" type="button" data-section="history"><svg class="ui-icon"><use href="#i-history"/></svg><span>История цен</span></button>
+        <button class="nav-item" type="button" data-section="notifications"><svg class="ui-icon"><use href="#i-bell"/></svg><span>Уведомления</span></button>
+        <button class="nav-item" type="button" data-section="offers"><svg class="ui-icon"><use href="#i-snow"/></svg><span>Холодные предложения</span></button>
+        <button class="nav-item" type="button" disabled><svg class="ui-icon"><use href="#i-chart"/></svg><span>Аналитика</span><i>скоро</i></button>
       </nav>
 
       <div class="sidebar-foot">
-        <div class="store-state"><span></span><div><b>Магазин работает</b><small>Каталог доступен</small></div></div>
-        <button id="logoutBtn" class="logout hidden" type="button">Выйти</button>
+        <div class="store-state"><span class="state-icon"><svg class="ui-icon"><use href="#i-store"/></svg></span><div><b>Магазин работает</b><small>Каталог доступен</small></div></div>
+        <button id="logoutBtn" class="logout hidden" type="button"><svg class="ui-icon"><use href="#i-log-out"/></svg> Выйти</button>
       </div>
     </aside>
 
@@ -42,46 +73,47 @@
           <h1 id="pageHeading">Каталог товаров</h1>
         </div>
         <div class="top-actions">
-          <button id="reloadBtn" class="icon-btn hidden" type="button" title="Обновить">↻</button>
-          <label id="importPriceBtn" class="import-button hidden">Импорт XLS<input id="priceImport" type="file" accept=".xls" /></label>
-          <button id="openCreateBtn" class="primary hidden" type="button"><span>＋</span> Добавить товар</button>
+          <button id="reloadBtn" class="icon-btn hidden" type="button" title="Обновить" aria-label="Обновить каталог"><svg class="ui-icon"><use href="#i-refresh"/></svg></button>
+          <label id="importPriceBtn" class="import-button hidden"><svg class="ui-icon"><use href="#i-upload"/></svg><span>Импорт XLS</span><input id="priceImport" type="file" accept=".xls" /></label>
+          <button id="openCreateBtn" class="primary hidden" type="button"><svg class="ui-icon"><use href="#i-plus"/></svg><span>Добавить товар</span></button>
         </div>
       </header>
 
       <section id="loginView" class="login-view">
         <div class="login-visual">
-          <span class="visual-label">ОптХолод · Admin</span>
-          <h2>Всё важное<br>в одном месте.</h2>
+          <div class="login-brand"><img src="/assets/optkholod_logo_mobile.png" alt="ОптХолод" width="112" height="112"><span class="visual-label">ОптХолод · Admin</span></div>
+          <h2>Холодный контроль.<br>Тёплый сервис.</h2>
           <p>Обновляйте цены и ассортимент — изменения сразу появятся в Telegram-магазине.</p>
-          <div class="ice-orb"><span>❄</span></div>
+          <div class="ice-ridge" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="ice-orb" aria-hidden="true"><svg class="ui-icon"><use href="#i-snow"/></svg></div>
         </div>
         <form id="loginForm" class="login-card">
-          <span class="lock">⌁</span>
+          <span class="lock"><svg class="ui-icon"><use href="#i-lock"/></svg></span>
           <p class="eyebrow">Добро пожаловать</p>
           <h2>Вход в панель</h2>
           <p>Используйте пароль администратора, указанный в настройках сервера.</p>
           <label for="password">Пароль</label>
           <div class="password-wrap">
             <input id="password" type="password" placeholder="Введите пароль" autocomplete="current-password" />
-            <button id="togglePassword" type="button" aria-label="Показать пароль">◉</button>
+            <button id="togglePassword" type="button" aria-label="Показать пароль" aria-pressed="false"><svg class="ui-icon"><use href="#i-eye"/></svg></button>
           </div>
-          <button id="loginBtn" class="primary login-submit" type="submit">Войти в панель <span>→</span></button>
-          <div id="loginStatus" class="login-status"></div>
+          <button id="loginBtn" class="primary login-submit" type="submit"><span>Войти в панель</span><svg class="ui-icon"><use href="#i-grid"/></svg></button>
+          <div id="loginStatus" class="login-status" role="alert"></div>
         </form>
       </section>
 
       <div id="panel" class="dashboard hidden">
         <section class="stats" aria-label="Сводка">
-          <article><span class="stat-icon blue">▦</span><div><small>Всего товаров</small><strong id="totalProducts">0</strong></div></article>
-          <article><span class="stat-icon green">₽</span><div><small>Средняя цена</small><strong id="averagePrice">0 ₽</strong></div></article>
-          <article><span class="stat-icon orange">◇</span><div><small>Категорий</small><strong id="totalCategories">0</strong></div></article>
-          <article><span class="stat-icon violet">✓</span><div><small>Заполненность</small><strong id="catalogHealth">0%</strong></div></article>
+          <article><span class="stat-icon blue"><svg class="ui-icon"><use href="#i-package"/></svg></span><div><small>Всего товаров</small><strong id="totalProducts">0</strong></div></article>
+          <article><span class="stat-icon green"><svg class="ui-icon"><use href="#i-coins"/></svg></span><div><small>Средняя цена за кг</small><strong id="averagePrice">0 ₽</strong></div></article>
+          <article><span class="stat-icon orange"><svg class="ui-icon"><use href="#i-tag"/></svg></span><div><small>Категорий</small><strong id="totalCategories">0</strong></div></article>
+          <article><span class="stat-icon violet"><svg class="ui-icon"><use href="#i-check"/></svg></span><div><small>Заполненность</small><strong id="catalogHealth">0%</strong></div></article>
         </section>
 
         <section class="catalog-panel">
           <div class="catalog-head">
             <div><h2>Все товары</h2><p id="catalogCaption">Управляйте ассортиментом и ценами</p></div>
-            <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Найти товар или категорию..." /></label>
+            <label class="search" for="search"><svg class="ui-icon" aria-hidden="true"><use href="#i-search"/></svg><input id="search" type="search" aria-label="Поиск по каталогу" placeholder="Найти товар или категорию..." /></label>
           </div>
           <div id="status" class="status" role="status"></div>
           <div class="table-labels"><span>Товар</span><span>Цена с НДС</span><span>Минимум</span><span>Действия</span></div>
@@ -99,30 +131,30 @@
         </section>
 
         <section id="notificationsView" class="feature-panel hidden">
-          <div class="feature-head"><div><p class="eyebrow">Telegram</p><h2>Уведомления</h2><p>Сообщения отправляются в чат, указанный в ORDER_CHAT_ID.</p></div><button id="testNotification" class="ghost" type="button">Отправить тест</button></div>
+          <div class="feature-head"><div><p class="eyebrow">Telegram</p><h2>Уведомления</h2><p>Сообщения отправляются в чат, указанный в ORDER_CHAT_ID.</p></div><button id="testNotification" class="ghost" type="button"><svg class="ui-icon"><use href="#i-send"/></svg> Отправить тест</button></div>
           <div class="settings-list">
             <label class="setting-row"><div><b>Новые заказы</b><small>Отправлять состав заказа и данные клиента</small></div><input id="notifyOrders" type="checkbox" /></label>
             <label class="setting-row"><div><b>Низкие остатки</b><small>Будет активно после запуска модуля «Остатки»</small></div><input id="notifyStock" type="checkbox" /></label>
           </div>
-          <button id="saveNotifications" class="primary" type="button">Сохранить настройки</button>
+          <button id="saveNotifications" class="primary" type="button"><svg class="ui-icon"><use href="#i-check"/></svg><span>Сохранить настройки</span></button>
         </section>
 
         <section id="offersView" class="feature-panel hidden">
           <div class="feature-head"><div><p class="eyebrow">Рассылка покупателям</p><h2>Холодные предложения</h2><p>Сообщение получат пользователи, которые уже запускали бота.</p></div></div>
           <div class="offer-composer">
             <label>Текст предложения<textarea id="offerText" placeholder="Например: Картофель фри Global Fries по новой цене 155 ₽/кг с НДС."></textarea></label>
-            <div class="offer-preview"><span>❄️ Холодное предложение</span><p id="offerPreview">Здесь появится текст рассылки</p><button type="button">❄️ Перейти в магазин</button></div>
+            <div class="offer-preview"><span><svg class="ui-icon"><use href="#i-snow"/></svg> Холодное предложение</span><p id="offerPreview">Здесь появится текст рассылки</p><button type="button"><svg class="ui-icon"><use href="#i-store"/></svg> Перейти в магазин</button></div>
           </div>
-          <button id="sendOffer" class="primary" type="button">Отправить предложение</button>
+          <button id="sendOffer" class="primary" type="button"><svg class="ui-icon"><use href="#i-send"/></svg><span>Отправить предложение</span></button>
         </section>
       </div>
     </main>
   </div>
 
-  <div id="createModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="createTitle">
+  <div id="createModal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="createTitle" aria-describedby="modalEyebrow">
     <div class="modal-backdrop" data-close-modal></div>
     <section id="addProduct" class="modal-card">
-      <header><div><p id="modalEyebrow" class="eyebrow">Новая позиция</p><h2 id="createTitle">Добавить товар</h2></div><button class="close-btn" type="button" data-close-modal>×</button></header>
+      <header><div><p id="modalEyebrow" class="eyebrow">Новая позиция</p><h2 id="createTitle">Добавить товар</h2></div><button class="close-btn" type="button" data-close-modal aria-label="Закрыть"><svg class="ui-icon"><use href="#i-close"/></svg></button></header>
       <div class="form-grid">
         <label class="wide">Название товара <input id="newNameRu" placeholder="Например, картофель фри 10 мм" /></label>
         <label class="wide">Название на английском <input id="newNameEn" placeholder="Product name in English" /></label>
@@ -130,7 +162,7 @@
         <label>Единица цены <select id="newPriceUnit"><option value="кг">за кг</option><option value="шт">за штуку</option><option value="упак">за упаковку</option></select></label>
         <label>Минимальное количество <input id="newPack" type="number" min="0" step="0.1" placeholder="10" /></label>
         <label class="wide">Категория <input id="newCatRu" placeholder="Замороженный картофель" /></label>
-        <label class="wide">Изображение <div class="upload-row"><input id="newImg" placeholder="assets/products/product.webp" /><label class="upload-button">Загрузить<input id="imageUpload" type="file" accept="image/jpeg,image/png,image/webp" /></label></div><small id="uploadStatus">JPG, PNG или WEBP · до 10 МБ</small></label>
+        <div class="wide field-group"><label for="newImg">Изображение</label><div class="upload-row"><input id="newImg" placeholder="assets/products/product.webp" /><label class="upload-button"><svg class="ui-icon" aria-hidden="true"><use href="#i-upload"/></svg><span>Загрузить</span><input id="imageUpload" type="file" accept="image/jpeg,image/png,image/webp" aria-label="Загрузить изображение товара" /></label></div><small id="uploadStatus">JPG, PNG или WEBP · до 10 МБ</small></div>
         <label class="wide">Описание <textarea id="newDescRu" placeholder="Коротко расскажите о товаре"></textarea></label>
         <label class="visible-control wide"><input id="newVisible" type="checkbox" checked /><span>Показывать товар в магазине</span></label>
       </div>
