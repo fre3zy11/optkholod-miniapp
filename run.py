@@ -785,7 +785,31 @@ async def api_history(request: web.Request):
 
 async def api_orders(request: web.Request):
     check_admin(request)
-    return web.json_response({"ok": True, "orders": load_json(ORDERS_FILE, [])})
+    orders = load_json(ORDERS_FILE, [])
+    for order in orders:
+        order.setdefault("status", "new")
+    return web.json_response({"ok": True, "orders": orders})
+
+
+async def api_update_order_status(request: web.Request):
+    check_admin(request)
+    order_id = request.match_info["order_id"]
+    try:
+        status = clean_text((await request.json()).get("status"), "status", 30)
+    except (AttributeError, ValueError):
+        return web.json_response({"ok": False, "error": "Некорректный статус заказа"}, status=400)
+    if status not in {"new", "processing", "completed", "cancelled"}:
+        return web.json_response({"ok": False, "error": "Некорректный статус заказа"}, status=400)
+
+    with DATA_LOCK:
+        orders = load_json(ORDERS_FILE, [])
+        order = next((item for item in orders if item.get("orderId") == order_id), None)
+        if not order:
+            return web.json_response({"ok": False, "error": "Заказ не найден"}, status=404)
+        order["status"] = status
+        order["statusUpdatedAt"] = datetime.now(timezone.utc).isoformat()
+        save_json(ORDERS_FILE, orders)
+    return web.json_response({"ok": True, "order": order})
 
 
 async def api_reorder_products(request: web.Request):
@@ -940,6 +964,7 @@ def create_web_app() -> web.Application:
     app.router.add_post("/api/admin/upload", api_upload_image)
     app.router.add_get("/api/admin/history", api_history)
     app.router.add_get("/api/admin/orders", api_orders)
+    app.router.add_post("/api/admin/orders/{order_id}/status", api_update_order_status)
     app.router.add_get("/api/admin/notifications", api_notifications)
     app.router.add_post("/api/admin/notifications", api_notifications)
     app.router.add_post("/api/admin/notifications/test", api_test_notification)

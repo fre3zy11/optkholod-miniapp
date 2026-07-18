@@ -51,7 +51,7 @@
 
       <nav class="nav" aria-label="Навигация">
         <button class="nav-item active" type="button" data-section="catalog"><svg class="ui-icon"><use href="#i-grid"/></svg><span>Каталог</span></button>
-        <button class="nav-item" type="button" disabled><svg class="ui-icon"><use href="#i-bag"/></svg><span>Заказы</span><i>скоро</i></button>
+        <button class="nav-item" type="button" data-section="orders"><svg class="ui-icon"><use href="#i-bag"/></svg><span>Заказы</span><b id="ordersBadge" class="nav-badge hidden" aria-label="Новые заказы">0</b></button>
         <button class="nav-item" type="button" disabled><svg class="ui-icon"><use href="#i-box"/></svg><span>Остатки</span><i>скоро</i></button>
         <button class="nav-item" type="button" data-section="categories"><svg class="ui-icon"><use href="#i-layers"/></svg><span>Категории</span></button>
         <button class="nav-item" type="button" data-section="history"><svg class="ui-icon"><use href="#i-history"/></svg><span>История цен</span></button>
@@ -118,6 +118,24 @@
           <div id="status" class="status" role="status"></div>
           <div class="table-labels"><span>Товар</span><span>Цена с НДС</span><span>Минимум</span><span>Действия</span></div>
           <div id="products" class="products"></div>
+        </section>
+
+        <section id="ordersView" class="feature-panel orders-panel hidden">
+          <div class="feature-head orders-head">
+            <div><p class="eyebrow">Продажи</p><h2>Заказы покупателей</h2><p id="ordersCaption">Здесь появятся заказы из Telegram-магазина.</p></div>
+            <button id="reloadOrders" class="ghost" type="button"><svg class="ui-icon"><use href="#i-refresh"/></svg> Обновить</button>
+          </div>
+          <div class="orders-summary" aria-label="Сводка по заказам">
+            <article><small>Новые</small><strong id="newOrdersCount">0</strong></article>
+            <article><small>В работе</small><strong id="processingOrdersCount">0</strong></article>
+            <article><small>Завершены</small><strong id="completedOrdersCount">0</strong></article>
+            <article><small>Сумма заказов</small><strong id="ordersRevenue">0 ₽</strong></article>
+          </div>
+          <div class="orders-toolbar">
+            <label class="search" for="ordersSearch"><svg class="ui-icon" aria-hidden="true"><use href="#i-search"/></svg><input id="ordersSearch" type="search" aria-label="Поиск по заказам" placeholder="Номер, товар или покупатель..." /></label>
+            <label class="order-filter">Статус<select id="ordersFilter" aria-label="Фильтр заказов по статусу"><option value="all">Все заказы</option><option value="new">Новые</option><option value="processing">В работе</option><option value="completed">Завершённые</option><option value="cancelled">Отменённые</option></select></label>
+          </div>
+          <div id="ordersList" class="orders-list" aria-live="polite"></div>
         </section>
 
         <section id="categoriesView" class="feature-panel hidden">

@@ -109,6 +109,38 @@ class WebSecurityTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(blocked.status, 204)
         self.assertNotIn("Access-Control-Allow-Origin", blocked.headers)
 
+    async def test_admin_can_update_order_status(self):
+        original_orders_file = run.ORDERS_FILE
+        try:
+            with tempfile.TemporaryDirectory() as directory:
+                run.ORDERS_FILE = Path(directory) / "orders.json"
+                run.save_json(run.ORDERS_FILE, [{
+                    "orderId": "OH-20260718-ABC123",
+                    "requestId": "request_abcdefgh",
+                    "status": "new",
+                    "items": [],
+                    "total": 100,
+                }])
+                response = await self.client.post(
+                    "/api/admin/orders/OH-20260718-ABC123/status",
+                    headers={"X-Admin-Password": "test-only-admin-password"},
+                    json={"status": "processing"},
+                )
+                self.assertEqual(response.status, 200)
+                payload = await response.json()
+                self.assertEqual(payload["order"]["status"], "processing")
+                self.assertEqual(run.load_json(run.ORDERS_FILE, [])[0]["status"], "processing")
+        finally:
+            run.ORDERS_FILE = original_orders_file
+
+    async def test_admin_rejects_unknown_order_status(self):
+        response = await self.client.post(
+            "/api/admin/orders/missing/status",
+            headers={"X-Admin-Password": "test-only-admin-password"},
+            json={"status": "unknown"},
+        )
+        self.assertEqual(response.status, 400)
+
 
 if __name__ == "__main__":
     unittest.main()

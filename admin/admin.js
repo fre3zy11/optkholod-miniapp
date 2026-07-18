@@ -1,5 +1,6 @@
 let adminPassword = sessionStorage.getItem('ADMIN_PASSWORD') || '';
-let products = [], editingId = null, currentSection = 'catalog', modalOpener = null;
+let products = [], orders = [], editingId = null, currentSection = sessionStorage.getItem('ADMIN_SECTION') || 'catalog', modalOpener = null;
+if(!['catalog','orders','categories','history','notifications','offers'].includes(currentSection))currentSection='catalog';
 const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
 const esc = value => String(value ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
@@ -11,9 +12,15 @@ const icon = name => `<svg class="ui-icon" aria-hidden="true"><use href="#i-${na
 function setStatus(text='', ok=true){const el=$('#status');el.textContent=text;el.classList.toggle('error',!ok);el.classList.toggle('visible',Boolean(text));clearTimeout(setStatus.timer);if(text)setStatus.timer=setTimeout(()=>el.classList.remove('visible'),3500)}
 async function api(path,options={}){const headers={'X-Admin-Password':adminPassword,...(options.headers||{})};if(!(options.body instanceof FormData))headers['Content-Type']='application/json';const response=await fetch(path,{...options,headers});const data=await response.json().catch(()=>({}));if(!response.ok||data.ok===false)throw new Error(data.error||data.message||'Не удалось выполнить запрос');return data}
 
-function showDashboard(){$('#loginView').classList.add('hidden');$('#panel').classList.remove('hidden');$('#reloadBtn').classList.remove('hidden');$('#openCreateBtn').classList.remove('hidden');$('#importPriceBtn').classList.remove('hidden');$('#logoutBtn').classList.remove('hidden')}
+function applySectionVisibility(section){
+  $$('[data-section]').forEach(button=>button.classList.toggle('active',button.dataset.section===section));
+  $('.catalog-panel').classList.toggle('hidden',section!=='catalog');$('#ordersView').classList.toggle('hidden',section!=='orders');$('#categoriesView').classList.toggle('hidden',section!=='categories');$('#historyView').classList.toggle('hidden',section!=='history');$('#notificationsView').classList.toggle('hidden',section!=='notifications');$('#offersView').classList.toggle('hidden',section!=='offers');$('.stats').classList.toggle('hidden',section!=='catalog');
+  $('#openCreateBtn').classList.toggle('hidden',section!=='catalog');$('#importPriceBtn').classList.toggle('hidden',section!=='catalog');
+  const names={catalog:'Каталог товаров',orders:'Заказы',categories:'Категории',history:'История цен',notifications:'Уведомления',offers:'Холодные предложения'};$('#pageHeading').textContent=names[section];
+}
+function showDashboard(){$('#loginView').classList.add('hidden');$('#panel').classList.remove('hidden');$('#reloadBtn').classList.remove('hidden');$('#logoutBtn').classList.remove('hidden');applySectionVisibility(currentSection)}
 function updateStats(){const prices=products.filter(p=>(p.priceUnit||'кг')==='кг').map(p=>Number(p.pricePerKg||0)).filter(Boolean),cats=new Set(products.map(category).filter(c=>c!=='Без категории')),complete=products.filter(p=>title(p)&&Number(p.pricePerKg)>0&&category(p)!=='Без категории'&&p.desc?.ru&&p.desc?.en).length;$('#totalProducts').textContent=products.length;$('#averagePrice').textContent=money(prices.reduce((a,b)=>a+b,0)/(prices.length||1));$('#totalCategories').textContent=cats.size;$('#catalogHealth').textContent=`${Math.round(complete/(products.length||1)*100)}%`;$('#catalogCaption').textContent=`${products.length} позиций · ${products.filter(p=>p.visible!==false).length} опубликовано · ${products.filter(p=>p.img).length} с фото`}
-async function loadProducts(){setStatus('Обновляем каталог…');const data=await api('/api/admin/products');products=(data.products||[]).sort((a,b)=>(a.sortOrder??9999)-(b.sortOrder??9999));renderProducts();renderCategories();updateStats();showDashboard();setStatus('Каталог обновлён')}
+async function loadProducts(){setStatus('Обновляем каталог…');const data=await api('/api/admin/products');products=(data.products||[]).sort((a,b)=>(a.sortOrder??9999)-(b.sortOrder??9999));renderProducts();renderCategories();updateStats();showDashboard();loadOrders().catch(()=>{});setStatus('Каталог обновлён')}
 
 function renderProducts(){
   const q=($('#search').value||'').trim().toLowerCase();
@@ -32,7 +39,23 @@ function renderProducts(){
   }).join('')||'<div class="empty">Ничего не найдено.</div>';
 }
 
-async function saveQuick(card){const id=Number(card.dataset.id),p=products.find(x=>Number(x.id)===id),payload={pricePerKg:Number(card.querySelector('.price').value),packKg:Number(card.querySelector('.pack').value)};const data=await api(`/api/admin/products/${id}`,{method:'POST',body:JSON.stringify(payload)});Object.assign(p,data.product);updateStats();setStatus(`Сохранено: ${title(p)}`)}
+async function saveQuick(card,button){
+  if(button.disabled)return;
+  const id=Number(card.dataset.id),p=products.find(x=>Number(x.id)===id),price=card.querySelector('.price'),pack=card.querySelector('.pack');
+  const payload={pricePerKg:Number(price.value),packKg:Number(pack.value)};
+  if(!Number.isFinite(payload.pricePerKg)||payload.pricePerKg<=0||!Number.isFinite(payload.packKg)||payload.packKg<=0){setStatus('Цена и минимальное количество должны быть больше нуля',false);return}
+  const original=button.innerHTML;
+  button.disabled=true;button.classList.remove('is-saved','is-error');button.classList.add('is-loading');button.innerHTML=`<span class="button-spinner" aria-hidden="true"></span><span>Сохраняем</span>`;
+  try{
+    const data=await api(`/api/admin/products/${id}`,{method:'POST',body:JSON.stringify(payload)});
+    Object.assign(p,data.product);price.value=Number(p.pricePerKg||0);pack.value=Number(p.packKg||0);updateStats();
+    button.classList.remove('is-loading');button.classList.add('is-saved');button.innerHTML=`${icon('check')}<span>Сохранено</span>`;setStatus(`Сохранено: ${title(p)}`);
+    setTimeout(()=>{if(button.isConnected){button.classList.remove('is-saved');button.innerHTML=original;button.disabled=false}},1500);
+  }catch(error){
+    button.classList.remove('is-loading');button.classList.add('is-error');button.innerHTML=`${icon('close')}<span>Ошибка</span>`;button.disabled=false;setStatus(error.message,false);
+    setTimeout(()=>{if(button.isConnected){button.classList.remove('is-error');button.innerHTML=original}},1800);
+  }
+}
 async function toggleVisible(card){const p=products.find(x=>Number(x.id)===Number(card.dataset.id)),data=await api(`/api/admin/products/${p.id}`,{method:'POST',body:JSON.stringify({visible:p.visible===false})});Object.assign(p,data.product);renderProducts();updateStats();setStatus(p.visible===false?'Товар скрыт':'Товар опубликован')}
 
 function resetForm(){editingId=null;['#newNameRu','#newNameEn','#newCatRu','#newPrice','#newPack','#newImg','#newDescRu'].forEach(id=>$(id).value='');$('#newPriceUnit').value='кг';$('#newVisible').checked=true;$('#uploadStatus').textContent='JPG, PNG или WEBP · до 10 МБ';$('#modalEyebrow').textContent='Новая позиция';$('#createTitle').textContent='Добавить товар';$('#createBtn').innerHTML=`${icon('plus')}<span>Добавить товар</span>`}
@@ -60,13 +83,51 @@ async function saveNotifications(){await api('/api/admin/notifications',{method:
 async function importPrice(file){if(!file)return;const form=new FormData();form.append('price',file);setStatus('Импортируем прайс…');const data=await api('/api/admin/import-price',{method:'POST',body:form});await loadProducts();setStatus(`Прайс импортирован: добавлено ${data.added}, обновлено ${data.updated}, без цены ${data.unavailable||0}`)}
 async function sendOffer(){const text=$('#offerText').value.trim();if(!text)throw new Error('Введите текст предложения');if(!confirm('Отправить это предложение всем подписчикам бота?'))return;const data=await api('/api/admin/broadcast',{method:'POST',body:JSON.stringify({text})});setStatus(`Рассылка завершена: отправлено ${data.sent}, ошибок ${data.failed}`)}
 
-function switchSection(section){currentSection=section;$$('[data-section]').forEach(b=>b.classList.toggle('active',b.dataset.section===section));$('.catalog-panel').classList.toggle('hidden',section!=='catalog');$('#categoriesView').classList.toggle('hidden',section!=='categories');$('#historyView').classList.toggle('hidden',section!=='history');$('#notificationsView').classList.toggle('hidden',section!=='notifications');$('#offersView').classList.toggle('hidden',section!=='offers');$('.stats').classList.toggle('hidden',section!=='catalog');$('#openCreateBtn').classList.toggle('hidden',section!=='catalog');$('#importPriceBtn').classList.toggle('hidden',section!=='catalog');const names={catalog:'Каталог товаров',categories:'Категории',history:'История цен',notifications:'Уведомления',offers:'Холодные предложения'};$('#pageHeading').textContent=names[section];if(section==='history')loadHistory().catch(e=>setStatus(e.message,false));if(section==='notifications')loadNotifications().catch(e=>setStatus(e.message,false))}
+const orderStatus={new:['Новый','new'],processing:['В работе','processing'],completed:['Завершён','completed'],cancelled:['Отменён','cancelled']};
+const orderDate=value=>{const date=new Date(value);return Number.isNaN(date.getTime())?'Дата не указана':date.toLocaleString('ru-RU',{day:'2-digit',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'})};
+function renderOrders(){
+  const q=($('#ordersSearch').value||'').trim().toLowerCase(),filter=$('#ordersFilter').value;
+  const list=orders.filter(order=>(filter==='all'||(order.status||'new')===filter)&&(!q||JSON.stringify(order).toLowerCase().includes(q)));
+  $('#ordersList').innerHTML=list.map(order=>{
+    const buyer=order.buyer||{},status=order.status||'new',meta=orderStatus[status]||orderStatus.new,username=String(buyer.username||'').replace(/^@/,'');
+    const items=(order.items||[]).map(item=>`<li><div><b>${esc(item.name||`Товар #${item.id}`)}</b><small>${Number(item.amount||item.weight||0)} ${esc(item.unit||'кг')} × ${Number(item.qty||1)} · ${money(item.pricePerKg)}/${esc(item.unit||'кг')}</small></div><strong>${money(item.total)}</strong></li>`).join('');
+    const contact=username?`<a href="https://t.me/${encodeURIComponent(username)}" target="_blank" rel="noopener">@${esc(username)}</a>`:'<span>без username</span>';
+    return `<article class="order-card" data-order-id="${esc(order.orderId)}">
+      <header><div><span class="order-status ${meta[1]}">${esc(meta[0])}</span><h3>${esc(order.orderId||'Заказ без номера')}</h3><time>${esc(orderDate(order.createdAt))}</time></div><strong>${money(order.total)}</strong></header>
+      <div class="order-body"><section class="order-buyer"><small>Покупатель</small><b>${esc(buyer.firstName||'Клиент')}</b>${contact}<span>Telegram ID: ${esc(buyer.id||'не указан')}</span></section><ul>${items||'<li class="order-empty-item">Состав заказа не указан</li>'}</ul></div>
+      <footer><div><small>Уведомление менеджеру</small><span class="notification-state ${esc(order.notificationStatus||'pending')}">${order.notificationStatus==='sent'?'Отправлено':order.notificationStatus==='failed'?'Ошибка отправки':order.notificationStatus==='disabled'?'Отключено':'Ожидает отправки'}</span></div><label>Статус<select class="order-status-select" aria-label="Статус заказа ${esc(order.orderId)}"><option value="new" ${status==='new'?'selected':''}>Новый</option><option value="processing" ${status==='processing'?'selected':''}>В работе</option><option value="completed" ${status==='completed'?'selected':''}>Завершён</option><option value="cancelled" ${status==='cancelled'?'selected':''}>Отменён</option></select></label></footer>
+    </article>`;
+  }).join('')||'<div class="empty orders-empty">Заказов с такими параметрами пока нет.</div>';
+}
+function updateOrderStats(){
+  const count=status=>orders.filter(order=>(order.status||'new')===status).length;
+  $('#newOrdersCount').textContent=count('new');$('#processingOrdersCount').textContent=count('processing');$('#completedOrdersCount').textContent=count('completed');
+  $('#ordersRevenue').textContent=money(orders.filter(order=>(order.status||'new')!=='cancelled').reduce((sum,order)=>sum+Number(order.total||0),0));
+  $('#ordersCaption').textContent=`${orders.length} заказов · ${count('new')} требуют внимания`;
+  const badge=$('#ordersBadge');badge.textContent=count('new');badge.classList.toggle('hidden',count('new')===0);
+}
+async function loadOrders(){
+  $('#ordersList').innerHTML='<div class="empty">Загружаем заказы…</div>';
+  const data=await api('/api/admin/orders');orders=data.orders||[];updateOrderStats();renderOrders();
+}
+async function updateOrderStatus(select){
+  const card=select.closest('.order-card'),order=orders.find(item=>item.orderId===card.dataset.orderId),previous=order.status||'new';
+  select.disabled=true;
+  try{const data=await api(`/api/admin/orders/${encodeURIComponent(order.orderId)}/status`,{method:'POST',body:JSON.stringify({status:select.value})});Object.assign(order,data.order);updateOrderStats();renderOrders();setStatus(`Статус заказа ${order.orderId} обновлён`)}
+  catch(error){select.value=previous;select.disabled=false;setStatus(error.message,false)}
+}
+
+function switchSection(section){currentSection=section;sessionStorage.setItem('ADMIN_SECTION',section);applySectionVisibility(section);if(section==='orders')loadOrders().catch(e=>{$('#ordersList').innerHTML='<div class="empty">Не удалось загрузить заказы.</div>';setStatus(e.message,false)});if(section==='history')loadHistory().catch(e=>setStatus(e.message,false));if(section==='notifications')loadNotifications().catch(e=>setStatus(e.message,false))}
+async function reloadCurrentSection(){if(currentSection==='orders'){await loadOrders();setStatus('Заказы обновлены');return}if(currentSection==='history'){await loadHistory();setStatus('История цен обновлена');return}if(currentSection==='notifications'){await loadNotifications();setStatus('Настройки обновлены');return}await loadProducts()}
 
 $('#password').value=adminPassword;
 $('#loginForm').addEventListener('submit',async e=>{e.preventDefault();adminPassword=$('#password').value.trim();$('#loginStatus').textContent='';try{await loadProducts();sessionStorage.setItem('ADMIN_PASSWORD',adminPassword)}catch(error){$('#loginStatus').textContent=error.message||'Неверный пароль'}});
 $('#togglePassword').onclick=()=>{const el=$('#password'),button=$('#togglePassword'),show=el.type==='password';el.type=show?'text':'password';button.setAttribute('aria-pressed',String(show));button.setAttribute('aria-label',show?'Скрыть пароль':'Показать пароль');button.querySelector('use').setAttribute('href',show?'#i-eye-off':'#i-eye')};
-$('#reloadBtn').onclick=()=>loadProducts().catch(e=>setStatus(e.message,false));$('#search').oninput=renderProducts;$('#openCreateBtn').onclick=openCreate;$('#createBtn').onclick=()=>saveFullProduct().catch(e=>setStatus(e.message,false));$('#imageUpload').onchange=e=>uploadImage(e.target.files[0]).catch(err=>{$('#uploadStatus').textContent=err.message});$('#logoutBtn').onclick=()=>{sessionStorage.removeItem('ADMIN_PASSWORD');location.reload()};$('#saveNotifications').onclick=()=>saveNotifications().catch(e=>setStatus(e.message,false));$('#testNotification').onclick=()=>api('/api/admin/notifications/test',{method:'POST',body:'{}'}).then(()=>setStatus('Тест отправлен в Telegram')).catch(e=>setStatus(e.message,false));
+$('#reloadBtn').onclick=()=>reloadCurrentSection().catch(e=>setStatus(e.message,false));$('#search').oninput=renderProducts;$('#openCreateBtn').onclick=openCreate;$('#createBtn').onclick=()=>saveFullProduct().catch(e=>setStatus(e.message,false));$('#imageUpload').onchange=e=>uploadImage(e.target.files[0]).catch(err=>{$('#uploadStatus').textContent=err.message});$('#logoutBtn').onclick=()=>{sessionStorage.removeItem('ADMIN_PASSWORD');sessionStorage.removeItem('ADMIN_SECTION');location.reload()};$('#saveNotifications').onclick=()=>saveNotifications().catch(e=>setStatus(e.message,false));$('#testNotification').onclick=()=>api('/api/admin/notifications/test',{method:'POST',body:'{}'}).then(()=>setStatus('Тест отправлен в Telegram')).catch(e=>setStatus(e.message,false));
 $('#priceImport').onchange=e=>importPrice(e.target.files[0]).catch(x=>setStatus(x.message,false));$('#offerText').oninput=e=>$('#offerPreview').textContent=e.target.value||'Здесь появится текст рассылки';$('#sendOffer').onclick=()=>sendOffer().catch(e=>setStatus(e.message,false));
+$('#reloadOrders').onclick=()=>loadOrders().then(()=>setStatus('Заказы обновлены')).catch(e=>setStatus(e.message,false));$('#ordersSearch').oninput=renderOrders;$('#ordersFilter').onchange=renderOrders;
 $$('[data-close-modal]').forEach(el=>el.onclick=()=>closeModal());$$('[data-section]').forEach(el=>el.onclick=()=>switchSection(el.dataset.section));document.addEventListener('keydown',e=>{const modal=$('#createModal');if(e.key==='Escape'&&!modal.classList.contains('hidden')){e.preventDefault();closeModal();return}if(e.key!=='Tab'||modal.classList.contains('hidden'))return;const focusable=[...modal.querySelectorAll('button,input,textarea,select,[href]')].filter(el=>!el.disabled&&el.offsetParent!==null);if(!focusable.length)return;const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}});
-document.addEventListener('click',e=>{const card=e.target.closest('.product');if(card){if(e.target.closest('[data-save]'))saveQuick(card).catch(x=>setStatus(x.message,false));if(e.target.closest('[data-toggle]'))toggleVisible(card).catch(x=>setStatus(x.message,false));if(e.target.closest('[data-edit]'))openEdit(card.dataset.id);if(e.target.closest('[data-delete]'))removeProduct(card).catch(x=>setStatus(x.message,false))}const move=e.target.closest('[data-move]');if(move){const item=move.closest('.sort-item');moveProduct(Number(item.dataset.id),move.dataset.move).catch(x=>setStatus(x.message,false))}});
+document.addEventListener('click',e=>{const card=e.target.closest('.product');if(card){const save=e.target.closest('[data-save]');if(save)saveQuick(card,save);if(e.target.closest('[data-toggle]'))toggleVisible(card).catch(x=>setStatus(x.message,false));if(e.target.closest('[data-edit]'))openEdit(card.dataset.id);if(e.target.closest('[data-delete]'))removeProduct(card).catch(x=>setStatus(x.message,false))}const move=e.target.closest('[data-move]');if(move){const item=move.closest('.sort-item');moveProduct(Number(item.dataset.id),move.dataset.move).catch(x=>setStatus(x.message,false))}});
+document.addEventListener('change',e=>{const select=e.target.closest('.order-status-select');if(select)updateOrderStatus(select)});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('.product .price, .product .pack')){e.preventDefault();const card=e.target.closest('.product'),save=card.querySelector('[data-save]');saveQuick(card,save)}});
 if(adminPassword)loadProducts().catch(()=>sessionStorage.removeItem('ADMIN_PASSWORD'));

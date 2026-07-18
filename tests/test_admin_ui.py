@@ -41,7 +41,10 @@ class AdminUiTests(unittest.TestCase):
             "panel", "reloadBtn", "importPriceBtn", "priceImport", "openCreateBtn",
             "totalProducts", "averagePrice", "totalCategories", "catalogHealth",
             "search", "status", "products", "categoriesView", "categoryGroups",
-            "historyView", "historyList", "notificationsView", "offersView",
+            "ordersView", "ordersList", "ordersSearch", "ordersFilter", "ordersBadge",
+            "reloadOrders", "newOrdersCount", "processingOrdersCount",
+            "completedOrdersCount", "ordersRevenue", "historyView", "historyList",
+            "notificationsView", "offersView",
             "createModal", "newNameRu", "newNameEn", "newCatRu", "newPrice",
             "newPriceUnit", "newPack", "newImg", "newDescRu", "newVisible",
             "imageUpload", "uploadStatus", "createBtn",
@@ -75,6 +78,20 @@ class AdminUiTests(unittest.TestCase):
         self.assertIn("Цена с НДС", self.js)
         self.assertIn("Минимум", self.js)
         self.assertIn("aria-label", self.js)
+
+    def test_orders_are_available_and_quick_save_has_feedback(self):
+        self.assertIn('data-section="orders"', self.html)
+        self.assertIn("async function loadOrders", self.js)
+        self.assertIn("async function updateOrderStatus", self.js)
+        self.assertIn("is-loading", self.js)
+        self.assertIn("Сохранено", self.js)
+        self.assertIn(".order-card", self.css)
+
+    def test_catalog_actions_only_show_in_catalog_section(self):
+        self.assertIn("function applySectionVisibility", self.js)
+        self.assertIn("section!=='catalog'", self.js)
+        self.assertIn("ADMIN_SECTION", self.js)
+        self.assertIn("reloadCurrentSection", self.js)
 
 
 if __name__ == "__main__":
