@@ -17,10 +17,28 @@ if (tg) {
   // Не включаем fullscreen: окно Mini App масштабируется вместе с окном Telegram.
 }
 
+function getTelegramInitData() {
+  const sdkInitData = String(tg?.initData || '');
+  if (sdkInitData) return sdkInitData;
+
+  // Some Telegram Desktop/WebView builds expose launch parameters in the
+  // URL before the SDK has populated WebApp.initData. Preserve server-side
+  // signature validation by forwarding only Telegram's raw tgWebAppData.
+  for (const rawParams of [window.location.hash.slice(1), window.location.search.slice(1)]) {
+    if (!rawParams) continue;
+    const launchInitData = new URLSearchParams(rawParams).get('tgWebAppData');
+    if (launchInitData) return launchInitData;
+  }
+  return '';
+}
+
 let products = [];
 
 const API_BASE_URL = String(import.meta.env.VITE_API_BASE_URL || '').trim().replace(/\/+$/, '');
 const PRODUCT_UNITS = new Set(['кг', 'шт', 'упак']);
+const SUPPORT_USERNAME = 'optxolodsupport';
+const SUPPORT_PHONE_HREF = '+79957962036';
+const SUPPORT_PHONE_LABEL = '+7 995 796-20-36';
 
 function apiUrl(path) {
   const cleanPath = String(path).replace(/^\/+/, '');
@@ -87,7 +105,7 @@ const translations = {
     lang: 'RU', appTitle: 'ОптХолод — замороженные продукты оптом', appName: 'ОптХолод', brandAlt: 'ОптХолод — замороженные продукты оптом', metaDescription: 'Оптовый каталог замороженных продуктов с доставкой и самовывозом в Москве.', search: 'Найти товар', searchLabel: 'Поиск по каталогу', filtersLabel: 'Выбрать страну', countriesLabel: 'Страна производства', mainNavLabel: 'Основная навигация',
     showAll: 'Категории ›', backAll: 'Все товары', allProducts: 'Все товары', allCountryChip: 'Все', new: 'Товары', catalog: 'Каталог', fav: 'Избранное', cart: 'Корзина', add: 'В корзину',
     emptyProducts: 'Ничего не найдено', emptyCart: 'В корзине пока пусто', total: 'Итого', back: 'Назад', allCountries: 'Все страны',
-    vatShort: 'с НДС', amount: 'Количество', amountFrom: 'От', customWeight: 'Минимум', amountHint: 'Можно ввести своё количество', amountInput: 'Количество товара', ask: 'Написать менеджеру', itemTotal: 'Сумма',
+    vatShort: 'с НДС', amount: 'Количество', amountFrom: 'От', customWeight: 'Минимум', amountHint: 'Можно ввести своё количество', amountInput: 'Количество товара', itemTotal: 'Сумма',
     inCart: 'Товар добавлен', description: 'Описание', checkout: 'Отправить заказ', sending: 'Отправляем…',
     orderNote: 'Минимальный заказ — от одной палеты. Самовывоз со склада в Москве.', vatNote: 'Все цены с НДС.',
     orderSuccessTitle: 'Спасибо за заказ!', orderSuccessText: 'Заказ принят. Менеджер свяжется с вами, чтобы уточнить детали.', orderSuccessOk: 'Готово',
@@ -96,7 +114,8 @@ const translations = {
     noPhoto: 'Фото скоро появится', detailsManager: 'Подробности и наличие уточнит менеджер.', openProduct: 'Открыть товар', addFavorite: 'Добавить в избранное', removeFavorite: 'Убрать из избранного',
     decreaseQty: 'Уменьшить количество', increaseQty: 'Увеличить количество', removeItem: 'Удалить из корзины',
     switchLanguage: 'Switch to English', offline: 'Нет подключения к интернету', online: 'Подключение восстановлено',
-    managerPopupTitle: 'Написать менеджеру', managerPopupText: 'Закройте магазин и напишите вопрос в чат с ботом. Или позвоните: +7 995 796-20-36.', openChat: 'Перейти в чат',
+    supportWrite: 'Напишите вопрос пользователю', supportCall: 'или позвоните по номеру:',
+    phoneLabel: 'Ваш номер телефона', phonePlaceholder: '+7 (___) ___-__-__', phoneRequired: 'Укажите номер телефона для связи',
     countries: { Европа: 'Европа', Китай: 'Китай', Россия: 'Россия' },
     cats: { все:'Все товары', картофель:'Картофель', овощи:'Овощи', ягоды:'Ягоды', грибы:'Грибы', фрукты:'Фрукты', смеси:'Овощные смеси', снеки:'Снеки', выпечка:'Выпечка и донаты' }
   },
@@ -104,7 +123,7 @@ const translations = {
     lang: 'EN', appTitle: 'OptKholod — frozen foods wholesale', appName: 'OptKholod', brandAlt: 'OptKholod — frozen foods wholesale', metaDescription: 'Wholesale catalog of frozen foods with delivery and pickup in Moscow.', search: 'Find a product', searchLabel: 'Search the catalog', filtersLabel: 'Choose a country', countriesLabel: 'Country of origin', mainNavLabel: 'Main navigation',
     showAll: 'Categories ›', backAll: 'All products', allProducts: 'All products', allCountryChip: 'All', new: 'Products', catalog: 'Catalog', fav: 'Favorites', cart: 'Cart', add: 'Add to cart',
     emptyProducts: 'No matching products', emptyCart: 'Your cart is empty', total: 'Total', back: 'Back', allCountries: 'All countries',
-    vatShort: 'VAT incl.', amount: 'Quantity', amountFrom: 'From', customWeight: 'Minimum', amountHint: 'You can enter a custom quantity', amountInput: 'Product quantity', ask: 'Message the manager', itemTotal: 'Subtotal',
+    vatShort: 'VAT incl.', amount: 'Quantity', amountFrom: 'From', customWeight: 'Minimum', amountHint: 'You can enter a custom quantity', amountInput: 'Product quantity', itemTotal: 'Subtotal',
     inCart: 'Added to cart', description: 'Description', checkout: 'Send order', sending: 'Sending…',
     orderNote: 'Minimum order: one pallet. Pickup from our Moscow warehouse.', vatNote: 'All prices include VAT.',
     orderSuccessTitle: 'Thank you!', orderSuccessText: 'Your order is confirmed. Our manager will contact you to discuss the details.', orderSuccessOk: 'Done',
@@ -113,14 +132,13 @@ const translations = {
     noPhoto: 'Photo coming soon', detailsManager: 'Ask the manager for details and availability.', openProduct: 'Open product', addFavorite: 'Add to favorites', removeFavorite: 'Remove from favorites',
     decreaseQty: 'Decrease quantity', increaseQty: 'Increase quantity', removeItem: 'Remove from cart',
     switchLanguage: 'Switch to Russian', offline: 'No internet connection', online: 'Connection restored',
-    managerPopupTitle: 'Message the manager', managerPopupText: 'Close the shop and send your question in the bot chat. Or call +7 995 796-20-36.', openChat: 'Open chat',
+    supportWrite: 'Send your question to', supportCall: 'or call:',
+    phoneLabel: 'Your phone number', phonePlaceholder: '+7 (___) ___-__-__', phoneRequired: 'Please provide your phone number',
     countries: { Европа: 'Europe', Китай: 'China', Россия: 'Russia' },
     cats: { все:'All products', картофель:'Potato', овощи:'Vegetables', ягоды:'Berries', грибы:'Mushrooms', фрукты:'Fruit', смеси:'Vegetable mixes', снеки:'Snacks', выпечка:'Bakery and donuts' }
   }
 };
 
-let catalogCountry = '';
-let countryFilter = '';
 let currentLang = readStoredString('lang') === 'en' ? 'en' : 'ru';
 let productsLoadState = 'loading';
 const CARD_BATCH_SIZE = 24;
@@ -160,7 +178,6 @@ const productById = (id) => products.find(p => p.id === Number(id));
 const localized = (value) => typeof value === 'string'
   ? value
   : String(value?.[currentLang] ?? value?.ru ?? value?.en ?? '');
-const countryLabel = (country) => translations[currentLang].countries[country] || String(country || '');
 const favoriteLabel = (id) => text(fav.includes(Number(id)) ? 'removeFavorite' : 'addFavorite');
 const normalizePriceUnit = (p) => PRODUCT_UNITS.has(p?.priceUnit) ? p.priceUnit : 'кг';
 const unitLabel = (p) => ({
@@ -329,9 +346,8 @@ function filteredProducts() {
   const q = ($('#search')?.value || '').trim().toLowerCase();
   let arr = products.filter(p => {
     const matchCategory = activeCat === 'все' || p.tag === activeCat;
-    const matchCountry = !countryFilter || p.country === countryFilter;
     const matchSearch = !q || p._searchText.includes(q);
-    return p.visible !== false && matchCountry && matchCategory && matchSearch;
+    return p.visible !== false && matchCategory && matchSearch;
   }).sort((a, b) => (a.sortOrder ?? 999999) - (b.sortOrder ?? 999999));
   if (mode === 'fav') arr = arr.filter(p => fav.includes(p.id));
   return arr;
@@ -354,7 +370,7 @@ function renderProductCards(arr) {
     return;
   }
   const query = ($('#search')?.value || '').trim().toLowerCase();
-  const nextWindowKey = [mode, activeCat, countryFilter, query, currentLang, productsLoadState].join('|');
+  const nextWindowKey = [mode, activeCat, query, currentLang, productsLoadState].join('|');
   if (productWindowKey !== nextWindowKey) {
     productWindowKey = nextWindowKey;
     visibleProductLimit = CARD_BATCH_SIZE;
@@ -400,21 +416,17 @@ function renderCatalog() {
   $('#pageTitle').textContent = text('catalog');
   setShowAll('none');
   $('#products').className = 'catalog-list';
-  if (!catalogCountry) {
-    $('#products').innerHTML = ['Европа','Китай','Россия'].map(country => `
-      <button class="catalog-item country-item" data-catalog-country="${escapeHtml(country)}" type="button"><span><b aria-hidden="true">${country === 'Европа' ? '🇪🇺' : country === 'Китай' ? '🇨🇳' : '🇷🇺'}</b>${escapeHtml(countryLabel(country))}</span><span class="arrow" aria-hidden="true">›</span></button>
-    `).join('');
-    animateCatalog();
-    return;
-  }
-  const tags = [...new Set(products.filter(p => p.visible !== false && p.country === catalogCountry).map(p => p.tag).filter(Boolean))];
   const labels = translations[currentLang].cats;
-  $('#products').innerHTML = `<button class="catalog-back" data-catalog-back type="button">‹ ${escapeHtml(text('allCountries'))}</button><div class="catalog-country-title">${escapeHtml(countryLabel(catalogCountry))}</div>` + tags.map(c => `
+  const availableTags = new Set(products.filter(p => p.visible !== false).map(p => p.tag).filter(Boolean));
+  const preferredTags = Object.keys(labels).filter(tag => tag !== 'все' && availableTags.has(tag));
+  const extraTags = [...availableTags].filter(tag => !preferredTags.includes(tag));
+  const tags = [...preferredTags, ...extraTags];
+  $('#products').innerHTML = tags.map(c => `
     <button class="catalog-item" data-catalog-cat="${escapeHtml(c)}" type="button">
       <span>${escapeHtml(labels[c] || c)}</span>
       <span class="arrow" aria-hidden="true">›</span>
     </button>
-  `).join('');
+  `).join('') || `<div class="empty">${escapeHtml(text('emptyProducts'))}</div>`;
   animateCatalog();
 }
 
@@ -458,7 +470,12 @@ function renderDetail() {
       </div>
       <div class="detail-total" aria-live="polite"><span>${escapeHtml(text('itemTotal'))}:</span><b>${money(itemTotal)}</b></div>
       <button class="detail-add" data-cart="${Number(p.id)}" data-detail-cart="1" type="button" aria-label="${escapeHtml(`${text('add')}: ${localized(p.name)}`)}">${icon('cart')}<span>${escapeHtml(text('add'))}</span></button>
-      <button class="ask-btn" type="button">${escapeHtml(text('ask'))}</button>
+      <p class="support-contact">
+        ${escapeHtml(text('supportWrite'))}
+        <a href="https://t.me/${SUPPORT_USERNAME}" target="_blank" rel="noopener noreferrer">@${SUPPORT_USERNAME}</a>
+        ${escapeHtml(text('supportCall'))}
+        <a href="tel:${SUPPORT_PHONE_HREF}">${SUPPORT_PHONE_LABEL}</a>
+      </p>
     </div>
   `;
   animateDetail();
@@ -484,10 +501,13 @@ function buildOrderPayload(requestId = createRequestId()) {
       qty
     };
   }).filter(Boolean);
+  const phoneInput = document.getElementById('customerPhone') as HTMLInputElement | null;
+  const phone = phoneInput?.value?.trim() || '';
   return {
     requestId,
-    initData: tg?.initData || '',
-    items
+    initData: getTelegramInitData(),
+    items,
+    phone
   };
 }
 
@@ -530,6 +550,14 @@ function showOrderSuccess() {
 let checkoutInFlight = false;
 async function checkoutOrder() {
   if (checkoutInFlight) return;
+  const phoneInput = document.getElementById('customerPhone') as HTMLInputElement | null;
+  const phone = phoneInput?.value?.trim() || '';
+  if (!phone) {
+    showToast(text('phoneRequired'), 3000, true);
+    phoneInput?.focus();
+    return;
+  }
+  writeStoredString('customerPhone', phone);
   const requestId = readStoredString('pendingOrderRequestId') || createRequestId();
   writeStoredString('pendingOrderRequestId', requestId);
   const payload = buildOrderPayload(requestId);
@@ -624,11 +652,16 @@ function renderCartPage() {
   }, 0);
 
   const hasItems = Boolean(rows);
+  const savedPhone = readStoredString('customerPhone', '');
   $('#products').innerHTML = (rows || `<div class="empty">${escapeHtml(text('emptyCart'))}</div>`) + `
     <div class="total"><span>${escapeHtml(text('total'))}</span><b>${money(total)}</b></div>
     <div class="cart-note">
       <b>${escapeHtml(text('vatNote'))}</b>
       <span>${escapeHtml(text('orderNote'))}</span>
+    </div>
+    <div class="phone-field">
+      <label for="customerPhone">${escapeHtml(text('phoneLabel'))}</label>
+      <input id="customerPhone" name="phone" type="tel" inputmode="tel" placeholder="${escapeHtml(text('phonePlaceholder'))}" value="${escapeHtml(savedPhone)}" required ${hasItems ? '' : 'disabled'} />
     </div>
     <button class="checkout cart-checkout" data-checkout type="button" ${hasItems ? '' : 'disabled'}>${escapeHtml(text('checkout'))}</button>
   `;
@@ -665,15 +698,6 @@ function setActiveNav(tab) {
     btn.classList.toggle('active', active);
     if (active) btn.setAttribute('aria-current', 'page');
     else btn.removeAttribute('aria-current');
-  });
-}
-
-function setCountryFilter(country = '') {
-  countryFilter = ['Европа', 'Китай', 'Россия'].includes(country) ? country : '';
-  document.querySelectorAll('[data-country-filter]').forEach(button => {
-    const selected = button.dataset.countryFilter === countryFilter;
-    button.classList.toggle('active', selected);
-    button.setAttribute('aria-pressed', String(selected));
   });
 }
 
@@ -756,22 +780,7 @@ function applyLanguage() {
   $('#search').placeholder = text('search');
   $('#search').setAttribute('aria-label', text('searchLabel'));
   $('#filterBtn')?.setAttribute('aria-label', text('filtersLabel'));
-  $('#countryFilters')?.setAttribute('aria-label', text('countriesLabel'));
   document.querySelector('.bottom-nav')?.setAttribute('aria-label', text('mainNavLabel'));
-  document.querySelectorAll('[data-country-filter]').forEach(button => {
-    const country = button.dataset.countryFilter;
-    if (!country) {
-      button.textContent = text('allCountryChip');
-      return;
-    }
-    const flag = button.querySelector('.flag');
-    if (flag) {
-      flag.setAttribute('aria-hidden', 'true');
-      button.replaceChildren(flag, document.createTextNode(` ${countryLabel(country)}`));
-    } else {
-      button.textContent = countryLabel(country);
-    }
-  });
   setShowAll('none', text('showAll'));
   document.querySelector('[data-tab="new"] span').textContent = text('new');
   document.querySelector('[data-tab="catalog"] span').textContent = text('catalog');
@@ -801,22 +810,11 @@ document.addEventListener('click', (e) => {
   const catalogCat = e.target.closest('[data-catalog-cat]');
   if (catalogCat) {
     activeCat = catalogCat.dataset.catalogCat;
-    setCountryFilter(catalogCountry);
-    catalogCountry = '';
     mode = 'new';
     setActiveNav('new');
     renderProducts();
     return;
   }
-  const catalogCountryButton = e.target.closest('[data-catalog-country]');
-  if (catalogCountryButton) {
-    catalogCountry = ['Европа', 'Китай', 'Россия'].includes(catalogCountryButton.dataset.catalogCountry)
-      ? catalogCountryButton.dataset.catalogCountry
-      : '';
-    renderCatalog();
-    return;
-  }
-  if (e.target.closest('[data-catalog-back]')) { catalogCountry = ''; renderCatalog(); return; }
 
   const favBtn = e.target.closest('[data-fav]');
   if (favBtn) {
@@ -878,13 +876,6 @@ document.addEventListener('click', (e) => {
     mode = nav.dataset.tab;
     if (mode === 'new') {
       activeCat = 'все';
-      catalogCountry = '';
-      setCountryFilter('');
-    } else if (mode === 'catalog') {
-      catalogCountry = '';
-      setCountryFilter('');
-    } else if (mode === 'fav') {
-      setCountryFilter('');
     }
     setActiveNav(mode);
     renderProducts();
@@ -905,9 +896,7 @@ let searchTimer;
 function applySearch() {
   window.clearTimeout(searchTimer);
   if (mode === 'cart' || mode === 'catalog' || mode === 'detail') {
-    if (mode === 'catalog' && catalogCountry) setCountryFilter(catalogCountry);
     mode = 'new';
-    catalogCountry = '';
   }
   setActiveNav(mode);
   renderProducts();
@@ -995,18 +984,15 @@ showAllBtn()?.addEventListener('click', () => {
     return;
   }
   mode = 'catalog';
-  catalogCountry = '';
-  setCountryFilter('');
   setActiveNav('catalog');
   renderProducts();
 });
 
 $('#filterBtn')?.addEventListener('click', () => {
-  const chips = document.querySelector('.country-chips');
-  if (!chips) return;
-  chips.classList.add('highlighted');
-  (chips.querySelector('.active') || chips.firstElementChild)?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-  window.setTimeout(() => chips.classList.remove('highlighted'), 700);
+  mode = 'catalog';
+  setActiveNav('catalog');
+  renderProducts();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 async function loadProducts() {
@@ -1063,29 +1049,3 @@ syncPhoneViewport();
 setActiveNav('new');
 applyLanguage();
 loadProducts().finally(() => applyLanguage());
-
-
-document.addEventListener('click', (e) => {
-  const countryChip = e.target.closest('[data-country-filter]');
-  if (countryChip) {
-    setCountryFilter(countryChip.dataset.countryFilter);
-    catalogCountry = '';
-    activeCat = 'все';
-    mode = 'new';
-    setActiveNav('new');
-    renderProducts();
-    return;
-  }
-  const btn = e.target.closest('.ask-btn');
-  if (!btn) return;
-  e.preventDefault();
-  if (tg?.initData && tg.showPopup) {
-    tg.showPopup({
-      title: text('managerPopupTitle'),
-      message: text('managerPopupText'),
-      buttons: [{ id: 'chat', type: 'default', text: text('openChat') }, { type: 'cancel' }]
-    }, id => { if (id === 'chat') tg.close(); });
-  } else {
-    window.location.href = 'tel:+79957962036';
-  }
-});

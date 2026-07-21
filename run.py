@@ -62,6 +62,7 @@ YANDEX_TRANSLATE_API_KEY = os.getenv("YANDEX_TRANSLATE_API_KEY", "").strip()
 YANDEX_TRANSLATE_FOLDER_ID = os.getenv("YANDEX_TRANSLATE_FOLDER_ID", "").strip()
 YANDEX_TRANSLATE_URL = "https://translate.api.cloud.yandex.net/translate/v2/translate"
 PORT = int(os.getenv("PORT", "8000"))
+ADMIN_HOST = os.getenv("ADMIN_HOST", "").strip().lower().split(":", 1)[0]
 WEBAPP_PARTS = urlsplit(WEBAPP_URL or "")
 WEBAPP_ORIGIN = f"{WEBAPP_PARTS.scheme}://{WEBAPP_PARTS.netloc}" if WEBAPP_PARTS.scheme and WEBAPP_PARTS.netloc else ""
 ALLOWED_ORIGINS = {
@@ -634,11 +635,15 @@ def normalize_order(order_data: dict[str, Any]) -> dict[str, Any]:
     request_id = clean_text(order_data.get("requestId"), "requestId", 80)
     if request_id and not re.fullmatch(r"[A-Za-z0-9_-]{8,80}", request_id):
         raise ValueError("Некорректный идентификатор заказа")
+    phone = clean_text(order_data.get("phone"), "phone", 30)
+    if not phone:
+        raise ValueError("Укажите номер телефона для связи")
     return {
         "requestId": request_id or uuid.uuid4().hex,
         "items": items,
         "total": round(sum(item["total"] for item in items), 2),
         "vatIncluded": True,
+        "phone": phone,
     }
 
 
@@ -726,15 +731,22 @@ def build_order_text(order: dict[str, Any], user: Any = None) -> str:
             f"Telegram ID: {buyer_data.get('id') or 'неизвестно'}"
         )
 
+    phone = order.get("phone", "")
+    phone_line = f"📞 Телефон: {phone}" if phone else ""
+
     lines = [
         "🧾 Новый заказ ОптХолод",
         f"Номер: {order.get('orderId') or 'формируется'}",
         "",
         "👤 Покупатель:",
         buyer,
+    ]
+    if phone_line:
+        lines.append(phone_line)
+    lines.extend([
         "",
         "📦 Товары:",
-    ]
+    ])
 
     if not items:
         lines.append("Корзина пустая")
@@ -845,6 +857,9 @@ async def customer_message(message: Message):
 
 
 async def index(request: web.Request):
+    request_host = request.host.lower().split(":", 1)[0]
+    if ADMIN_HOST and request_host == ADMIN_HOST:
+        return web.FileResponse(ADMIN_DIR / "index.html")
     return web.FileResponse(WEB_DIR / "index.html")
 
 
@@ -891,7 +906,15 @@ async def auth(request: web.Request):
 
     try:
         parsed = parse_telegram_init_data(init_data)
-    except Exception:
+    except Exception as exc:
+        print(
+            "Telegram initData validation failed in /api/auth:",
+            type(exc).__name__,
+            str(exc),
+            f"present={bool(init_data)}",
+            f"length={len(str(init_data or ''))}",
+            flush=True,
+        )
         return web.json_response({"ok": False, "error": "Invalid initData"}, status=401)
 
     user = parsed.user
@@ -915,7 +938,15 @@ async def order(request: web.Request):
     try:
         parsed = parse_telegram_init_data(init_data)
         parsed_user = parsed.user
-    except Exception:
+    except Exception as exc:
+        print(
+            "Telegram initData validation failed in /api/order:",
+            type(exc).__name__,
+            str(exc),
+            f"present={bool(init_data)}",
+            f"length={len(str(init_data or ''))}",
+            flush=True,
+        )
         return web.json_response({"ok": False, "error": "Invalid or expired Telegram initData"}, status=401)
     if not allow_order_attempt(int(parsed_user.id)):
         return web.json_response({"ok": False, "error": "Слишком много попыток. Подождите минуту."}, status=429)
